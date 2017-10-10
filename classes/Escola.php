@@ -6,10 +6,11 @@ class Escola extends Crud {
     
     private $inep;
     private $nome;
-    private $localizacao;
+    private $localidade;
     private $endereco;
-    private $diretor;
+    private $id_diretor;
     private $fone;
+    private $id_polo;
             
     function setInep($inep){
         $this->inep = $inep;
@@ -19,20 +20,24 @@ class Escola extends Crud {
         $this->nome = $nome;
     }
     
-    function setLocalizacao($localizacao){
-        $this->localizacao = $localizacao;
+    function setLocalidade($localidade){
+        $this->localidade = $localidade;
     }
     
     function setEndereco($endereco){
         $this->endereco = $endereco;
     }
     
-    function setDiretor($diretor){
-        $this->diretor = $diretor;
+    function setId_diretor($id_diretor){
+        $this->id_diretor = $id_diretor;
     }
     
     function setFone($fone){
         $this->fone = $fone;
+    }
+    
+    function setId_polo($id_polo){
+        $this->id_polo = $id_polo;
     }
     
 }
