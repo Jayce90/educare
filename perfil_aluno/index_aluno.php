@@ -12,6 +12,7 @@ and open the template in the editor.
     <body>
         <?php
         echo 'teste de envio';
+        echo 'silvarney';
         ?>
     </body>
 </html>
