@@ -8,6 +8,11 @@
     padding-bottom: 1%;
     background-color: #324270;
 }
+
+.box_conteudo{
+    background-color: #f6f3f3;
+}
+
 #titulo{
     font-size: 40px;
     color: white;
