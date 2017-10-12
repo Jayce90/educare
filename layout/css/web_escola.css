@@ -23,13 +23,13 @@
 }
 
 li{
-    font-size: 22px;
+    font-size: 20px;
 }
 label{
     font-size: 18px;
 }
 
-.imagem_titulo{
+.imagem_titulo{ 
     background-color: #428bca;
     color: #fff;
     text-align: center;

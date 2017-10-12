@@ -10,8 +10,12 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <?php
-        // put your code here
-        ?>
+        <select class="form-control">
+            <option>Aluno</option>
+            <option>Professor</option>
+            <option>Secretaria</option>
+            <option>Diretor</option>
+            <option>SEMED</option>
+        </select>
     </body>
 </html>
