@@ -51,17 +51,36 @@
 
                                 <form action="" method="post">
 
+                                    <div class="row">
+                                        <div class="col-md-6">
 
-                                    <div class="form-group">
-                                        <label for="inputTurma">Nome da Turma</label>
-                                        <input type="text" name="cad_nome_turma" class="form-control" id="inputTurma" placeholder="digite nome da turma">
+                                            <div class="form-group">
+                                                <label for="inputTurma">1. Nome da Turma</label>
+                                                <input type="text" name="cad_nome_turma" class="form-control" id="inputTurma" placeholder="digite nome da turma">
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-6">
+
+                                            <label for="inputMaiseducacao">2. Ano da turma :</label><br>
+
+                                            <select class="form-control" name="ano_turma">
+                                                <option value="2017">2017</option>                                               
+                                                <option value="2018">2018</option>                                        
+                                                <option value="2019">2019</option>                                        
+                                                <option value="2020">2020</option>                                        
+                                            </select>
+
+                                        </div>
                                     </div>
+
+
 
                                     <div class="row">
                                         <div class="col-md-4">
 
                                             <div class="form-group">
-                                                <label for="inputiniciofuncionamento">Horário de funcionamento Inicio</label>
+                                                <label for="inputiniciofuncionamento">3. Horário de funcionamento Inicio</label>
                                                 <input type="text" name="cad_horario_turma[]" class="form-control" id="inputiniciofuncionamento" placeholder="horário inicio">
                                             </div>
 
@@ -69,14 +88,14 @@
                                         <div class="col-md-4">
 
                                             <div class="form-group">
-                                                <label for="inputfinalfuncionamento">Horário de funcionamento Fim</label>
+                                                <label for="inputfinalfuncionamento">3. Horário de funcionamento Fim</label>
                                                 <input type="text" name="cad_horario_turma[]" class="form-control" id="inputfinalfuncionamento" placeholder="horário final">
                                             </div>
 
                                         </div>
                                     </div>
 
-                                    <label for="inputDiassemana">Dias da semana da turma :</label><br>
+                                    <label for="inputDiassemana">4. Dias da semana da turma :</label><br>
 
                                     <label class="checkbox-inline">
                                         <input type="checkbox" name="cad_diassemana_turma[]" id="inputDiassemana" value="segunda"> Segunda
@@ -98,7 +117,7 @@
                                     </label><br><br>
 
 
-                                    <label for="inputAtendimento">Tipo de atendimento :</label><br>
+                                    <label for="inputAtendimento">5. Tipo de atendimento :</label><br>
 
                                     <label class="radio-inline">
                                         <input type="radio" name="cad_atendimento_turma" id="inputAtendimento" value="hospitalar"> Classe hospitalar
@@ -117,20 +136,20 @@
                                     </label>
                                     <label class="radio-inline">
                                         <input type="radio" name="cad_atendimento_turma" id="inputAtendimento" value="naoseaplica"> Não se aplica
-                                    </label>
+                                    </label><br>
 
-                                    <label for="inputMaiseducacao">Turma participante do programa mais educação/Ensino médio inovador :</label><br>
+                                    <label for="inputMaiseducacao">6. Turma participante do programa mais educação/Ensino médio inovador :</label><br>
 
                                     <label class="radio-inline">
                                         <input type="radio" name="cad_maiseducacao_turma" id="inputMaiseducacao" value="sim"> Sim
                                     </label>
                                     <label class="radio-inline">
                                         <input type="radio" name="cad_maiseducacao_turma" id="inputMaiseducacao" value="nao"> Não
-                                    </label>
+                                    </label><br><br>
 
 
                                     <div class="form-group">
-                                        <label for="inputAeeatividades">Atividades do atendimento educacional especializado (AEE) :</label><br>
+                                        <label for="inputAeeatividades">7. Atividades do atendimento educacional especializado (AEE) :</label><br>
 
 
                                         <div class="row">
@@ -175,29 +194,69 @@
 
                                             </div>
                                         </div>
+                                    </div><br>
 
 
+                                    <label for="inputModalidade">8. Modalidade :</label><br>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="cad_modalidade_turma" id="inputModalidade" value="EnsinoRegular"> Ensino Regular
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="cad_modalidade_turma" id="inputModalidade" value="EducaçãoEspecial"> Educação Especial - Modalidade Substitutiva
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="cad_modalidade_turma" id="inputModalidade" value="EJA"> Educação de Jovens e Adultos (EJA)
+                                    </label><br><br>
 
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label for="inputNivel">9. Nivel de ensino :</label><br>
 
-                                    </div>
+                                            <select class="form-control" name="nivel_turma">
+                                                <option value="infantil">Educação Infantil</option>                                               
+                                                <option value="Fundamental">Ensino Fundamental</option>                                        
+                                                <option value="Eja">EJA</option>                                        
+                                            </select>
 
-                                    <div class="form-group">
-                                        <label for="inputCodigodaturma">Codigo da turma</label>
-                                        <input type="text" name="cad_codigo_turma" class="form-control" id="inputCodigodaturma" placeholder="digite o cadigo da turma">
-                                    </div>
+                                        </div>
+                                        <div class="col-md-6">
 
-                                    <div class="form-group">
-                                        <label for="inputEscolarizacao">Recebe escolarização em Outro espaço :</label>
+                                            <label for="inputEtapa">9a. Etapa :</label><br>
 
-                                        <label class="radio-inline">
-                                            <input type="radio" name="cad_escolarizacao_aluno" id="inputEscolarizacao" value="sim"> Sim
-                                        </label>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="cad_escolarizacao_aluno" id="inputEscolarizacao" value="nao"> Não
-                                        </label>
-
-                                    </div>
-
+                                            <select class="form-control" name="etapa_turma">
+                                                <option value="Creche">Creche</option>                                               
+                                                <option value="preescola">Pré - Escola</option>                                        
+                                                <option value="1º ano">1º ano</option>                                        
+                                                <option value="2º ano">2º ano</option>                                        
+                                                <option value="3º ano">3º ano</option>                                        
+                                                <option value="4º ano">4º ano</option>                                        
+                                                <option value="5º ano">5º ano</option>                                        
+                                                <option value="6º ano">6º ano</option>                                        
+                                                <option value="7º ano">7º ano</option>                                        
+                                                <option value="8º ano">8º ano</option>                                        
+                                                <option value="9º ano">9º ano</option>                                        
+                                                <option value="fundamentalInicial">EJA - Ensino Fundamental
+                                                    anos iniciais</option>                                        
+                                                <option value="fundamentalFinal">EJA - Ensino Fundamental
+                                                    anos finais</option>                                        
+                                                <option value="fundamentalInicialeFinal">EJA - Ensino Fundamental
+                                                    anos iniciais e anos finais</option>                                        
+                                                <option value="fic">EJA - EJA integrada à Educação
+                                                    Profissional de Nível Fundamental (FIC)</option>                                        
+                                                <option value="urbano">EJA - Ensino Fundamental -
+                                                    Projovem (Urbano)</option>                                        
+                                                <option value="ensinomedio">EJA - Ensino Médio</option>                                        
+                                                <option value="profissionalmedio">EJA integrada à Educação
+                                                    Profissional de Nível Médio</option>                                        
+                                            </select>
+                                        </div>
+                                    </div><br>
+                                    
+                                    <label for="inputDescricaodaturma">10. Descrição da turma :</label><br>
+                                    <textarea class="form-control" rows="6"></textarea>
+                                    
+                                    
+                                    
                                 </form><br>
 
                                 <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
