@@ -40,37 +40,6 @@
                             <div class="panel-heading">USUÁRIO</div>
                             <div class="panel-body box_conteudo">
 
-                                <form action="" method="post">
-                                    <div class="form-group">
-                                        <label for="inputNomeusuario">Nome Usuário</label>
-                                        <input type="text" name="cad_nome_usuario" class="form-control" id="inputNomeusuario" placeholder="digite o nome do usuario">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="inputEmailusuario">Email usuário</label>
-                                        <input type="text" name="cad_email_usuario" class="form-control" id="inputEmailusuario" placeholder="digite email do usuario">
-                                    </div>
-
-
-                                    <div class="form-group">
-                                        <label for="inputTelefoneusuario">Telefone Usuário</label>
-                                        <input type="text" name="cad_fone_usuario" class="form-control" id="inputTelefoneusuario" placeholder="digite o telefone">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="inputApelido">Apelido</label>
-                                        <input type="text" name="cad_apelido_usuario" class="form-control" id="inputApelido" placeholder="digite o apelido">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="inputSenha">Senha</label>
-                                        <input type="password" name="cad_senha_usuario" class="form-control" id="inputSenha" placeholder="digite a senha">
-                                    </div>
-
-                                    
-                                    <button type="submit" class="btn btn-default">Enviar</button>
-                                </form>
-
                             </div>
                         </div>
                     </div>
@@ -80,32 +49,158 @@
                             <div class="panel-heading">CADASTRO DA TURMA</div>
                             <div class="panel-body box_conteudo">
 
-                                <div class="form-group">
-                                    <label for="inputTurma">Nome da Turma</label>
-                                    <input type="text" name="cad_nome_turma" class="form-control" id="inputTurma" placeholder="digite nome da turma">
-                                </div>
+                                <form action="" method="post">
 
-                                <div class="form-group">
-                                    <label for="inputFrequencia">Frequencia da turma</label>
-                                    <input type="text" name="cad_frequencia_turma" class="form-control" id="inputFrequencia" placeholder="digite a frequencia da turma">
-                                </div>
 
-                                <div class="form-group">
-                                    <label for="inputCodigodaturma">Codigo da turma</label>
-                                    <input type="text" name="cad_codigo_turma" class="form-control" id="inputCodigodaturma" placeholder="digite o cadigo da turma">
-                                </div>
+                                    <div class="form-group">
+                                        <label for="inputTurma">Nome da Turma</label>
+                                        <input type="text" name="cad_nome_turma" class="form-control" id="inputTurma" placeholder="digite nome da turma">
+                                    </div>
 
-                                <div class="form-group">
-                                    <label for="inputEscolarizacao">Recebe escolarização em Outro espaço :</label>
+                                    <div class="row">
+                                        <div class="col-md-4">
+
+                                            <div class="form-group">
+                                                <label for="inputiniciofuncionamento">Horário de funcionamento Inicio</label>
+                                                <input type="text" name="cad_horario_turma[]" class="form-control" id="inputiniciofuncionamento" placeholder="horário inicio">
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-4">
+
+                                            <div class="form-group">
+                                                <label for="inputfinalfuncionamento">Horário de funcionamento Fim</label>
+                                                <input type="text" name="cad_horario_turma[]" class="form-control" id="inputfinalfuncionamento" placeholder="horário final">
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <label for="inputDiassemana">Dias da semana da turma :</label><br>
+
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="cad_diassemana_turma[]" id="inputDiassemana" value="segunda"> Segunda
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="cad_diassemana_turma[]" id="inputDiassemana" value="terca"> Terça
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="cad_diassemana_turma[]" id="inputDiassemana" value="quarta"> Quarta
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="cad_diassemana_turma[]" id="inputDiassemana" value="quinta"> Quinta
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="cad_diassemana_turma[]" id="inputDiassemana" value="sexta"> Sexta
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="cad_diassemana_turma[]" id="inputDiassemana" value="sabado"> Sábado
+                                    </label><br><br>
+
+
+                                    <label for="inputAtendimento">Tipo de atendimento :</label><br>
 
                                     <label class="radio-inline">
-                                        <input type="radio" name="cad_escolarizacao_aluno" id="inputEscolarizacao" value="sim"> Sim
+                                        <input type="radio" name="cad_atendimento_turma" id="inputAtendimento" value="hospitalar"> Classe hospitalar
                                     </label>
                                     <label class="radio-inline">
-                                        <input type="radio" name="cad_escolarizacao_aluno" id="inputEscolarizacao" value="nao"> Não
+                                        <input type="radio" name="cad_atendimento_turma" id="inputAtendimento" value="internacaosocioeducativa"> Unidade de internação socioeducativa
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="cad_atendimento_turma" id="inputAtendimento" value="unidadeprisional"> Unidade prisional
+                                    </label>                                      
+                                    <label class="radio-inline">
+                                        <input type="radio" name="cad_atendimento_turma" id="inputAtendimento" value="atividadecomplementar"> Atividade complementar
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="cad_atendimento_turma" id="inputAtendimento" value="aee"> Atendimento educacional especializado (AEE)
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="cad_atendimento_turma" id="inputAtendimento" value="naoseaplica"> Não se aplica
                                     </label>
 
-                                </div>
+                                    <label for="inputMaiseducacao">Turma participante do programa mais educação/Ensino médio inovador :</label><br>
+
+                                    <label class="radio-inline">
+                                        <input type="radio" name="cad_maiseducacao_turma" id="inputMaiseducacao" value="sim"> Sim
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="cad_maiseducacao_turma" id="inputMaiseducacao" value="nao"> Não
+                                    </label>
+
+
+                                    <div class="form-group">
+                                        <label for="inputAeeatividades">Atividades do atendimento educacional especializado (AEE) :</label><br>
+
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="cad_aeeatividades_turma" id="inputAeeatividades" value="braile"> Ensino do sistema braile
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="cad_aeeatividades_turma" id="inputAeeatividades" value="libras"> Ensino da língua brasileira de sinais (libras)
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="cad_aeeatividades_turma" id="inputAeeatividades" value="informáticaacessivel"> Ensino da usabilidade e das funcionalidades de informática acessível
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="cad_aeeatividades_turma" id="inputAeeatividades" value="opticosenaoopticos"> Ensino do uso de recursos ópticos e não ópticos
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="cad_aeeatividades_turma" id="inputAeeatividades" value="caa"> Ensino do uso da comunicação alternativa e aumentativa (CAA)
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="cad_aeeatividades_turma" id="inputAeeatividades" value="lportuguesaescrita"> Ensino da língua portuguesa na modalidade escrita
+                                                </label>
+
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="cad_aeeatividades_turma" id="inputAeeatividades" value="processosmentais"> Estratégias para o desenvolvimento de processos mentais
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="cad_aeeatividades_turma" id="inputAeeatividades" value="enriquecimentocurricular"> Estratégias para o emriquecimento curricular
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="cad_aeeatividades_turma" id="inputAeeatividades" value="autonomiaescolar"> Estratégias para autonomia no ambiente escolar
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="cad_aeeatividades_turma" id="inputAeeatividades" value="orientaaoemobilidade"> Técnicas de orientação e mobilidade
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="cad_aeeatividades_turma" id="inputAeeatividades" value="soroban"> Ensino do uso do Soroban
+                                                </label>
+
+                                            </div>
+                                        </div>
+
+
+
+
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="inputCodigodaturma">Codigo da turma</label>
+                                        <input type="text" name="cad_codigo_turma" class="form-control" id="inputCodigodaturma" placeholder="digite o cadigo da turma">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="inputEscolarizacao">Recebe escolarização em Outro espaço :</label>
+
+                                        <label class="radio-inline">
+                                            <input type="radio" name="cad_escolarizacao_aluno" id="inputEscolarizacao" value="sim"> Sim
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="cad_escolarizacao_aluno" id="inputEscolarizacao" value="nao"> Não
+                                        </label>
+
+                                    </div>
+
+                                </form><br>
+
+                                <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
 
                             </div>
                         </div>
