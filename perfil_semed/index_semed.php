@@ -384,9 +384,84 @@
                                                     <input type="radio" name="cad_raca_professor" id="inputRacaProfessor" value="naodeclarada"> Não Declarada
                                                 </label>
                                             </div>
-
                                         </div>
                                     </div><br>
+
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="inputPaisorigemProfessor">11. País de origem</label>
+                                                <input type="text" name="cad_paisorigem_professor" class="form-control" id="inputPaisorigemProfessor" placeholder="digite o país de origem">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="inputUfdenascimentoProfessor">12. UF de nascimento</label>
+                                                <input type="text" name="cad_ufnasci_Professor" class="form-control" id="inputUfdenascimentoProfessor" placeholder="UF de nascimento">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="inputMunidenascimentoProfessor">13. Município de nascimento</label>
+                                                <input type="text" name="cad_muninasci_Professor" class="form-control" id="inputMunidenascimentoProfessor" placeholder="digite o município de nascimento">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="inputNecessidadeEspecialProfessor">14. Profissional Escolar com deficiência :</label>
+
+                                        <label class="radio-inline">
+                                            <input type="radio" name="cad_deficiencia_professor" id="inputNecessidadeEspecialProfessor" value="sim"> Sim
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="cad_deficiencia_professor" id="inputNecessidadeEspecialProfessor" value="nao"> Não
+                                        </label>
+                                    </div>
+
+                                    <label for="inputTipoDeficienciaProfessor">14a. Tipo de deficiência :</label><br>
+
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="cad_tipo_deficiencia_professor[]" id="inputTipoDeficienciaProfessor" value="deficienciaintelectual"> Deficiência Intelectual
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="cad_tipo_deficiencia_professor[]" id="inputTipoDeficienciaProfessor" value="baixavisao"> Baixa Visão
+                                            </label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="cad_tipo_deficiencia_professor[]" id="inputTipoDeficienciaProfessor" value="surdez"> Surdez
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="cad_tipo_deficiencia_professor[]" id="inputTipoDeficienciaProfessor" value="deficienciaauditiva"> Deficiência Auditiva
+                                            </label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="cad_tipo_deficiencia_professor[]" id="inputTipoDeficienciaProfessor" value="surdocegueira"> Surdocegueira
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="cad_tipo_deficiencia_professor[]" id="inputTipoDeficienciaProfessor" value="deficienciafisica"> Deficiência Física
+                                            </label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="cad_tipo_deficiencia_professor[]" id="inputTipoDeficienciaProfessor" value="cegueira"> Cegueira
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="cad_tipo_deficiencia_professor[]" id="inputTipoDeficienciaProfessor" value="deficienciamultipla"> Deficiência Múltipla
+                                            </label>
+                                        </div>
+                                    </div><br>
+
+
+
+
+
+
 
 
                                     <button type="submit" class="btn btn-primary btn-lg">Enviar</button>

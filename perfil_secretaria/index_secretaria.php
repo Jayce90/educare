@@ -123,16 +123,16 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="inputnacionalidade">9. Nacionalidade do aluno :</label>
+                                        <label for="inputNacionalidade">9. Nacionalidade do aluno :</label>
 
                                         <label class="radio-inline">
-                                            <input type="radio" name="cad_nacionalidade_aluno" id="inputnacionalidade" value="brasileira"> Brasileiro
+                                            <input type="radio" name="cad_nacionalidade_aluno" id="inputNacionalidade" value="brasileira"> Brasileiro
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="cad_nacionalidade_aluno" id="inputnacionalidade" value="naturalizado"> Naturalizado
+                                            <input type="radio" name="cad_nacionalidade_aluno" id="inputNacionalidade" value="naturalizado"> Naturalizado
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="cad_nacionalidade_aluno" id="inputnacionalidade" value="extrangeiro"> Extrangeiro
+                                            <input type="radio" name="cad_nacionalidade_aluno" id="inputNacionalidade" value="extrangeiro"> Extrangeiro
                                         </label>
 
                                     </div>
@@ -142,15 +142,15 @@
 
                                             <div class="form-group">
                                                 <label for="inputPaisorigem">10. País de origem</label>
-                                                <input type="text" name="cad_paisorigem_aluno" class="form-control" id="inputPaisorigem" placeholder="digite o país de origem">
+                                                <input type="text" name="cad_pais_aluno" class="form-control" id="inputPaisorigem" placeholder="digite o país de origem">
                                             </div>
 
                                         </div>
                                         <div class="col-md-3">
 
                                             <div class="form-group">
-                                                <label for="inputUfdenascimento">11. UF de nascimento</label>
-                                                <input type="text" name="cad_ufnasci_aluno" class="form-control" id="inputUfdenascimento" placeholder="UF de nascimento">
+                                                <label for="inputEstadonasc">11. UF de nascimento</label>
+                                                <input type="text" name="cad_estadonasc_aluno" class="form-control" id="inputEstadonasc" placeholder="UF de nascimento">
                                             </div>
 
                                         </div>
