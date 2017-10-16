@@ -7,15 +7,20 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <link href="layout/css/bootstrap.min.css" rel="stylesheet">
+        <link href="layout/css/web_escola.css" rel="stylesheet">
+        <script src="layout/js/bootstrap.min.js"></script>
+        <title>Bem Vindo</title>
     </head>
     <body>
-        <select class="form-control">
-            <option>Aluno</option>
-            <option>Professor</option>
-            <option>Secretaria</option>
-            <option>Diretor</option>
-            <option>SEMED</option>
-        </select>
+
+        <div class="panel panel-default" id="box_login">
+            <div class="panel-body">
+                <h1>Perfils</h1>
+                <a href="perfil_secretaria/index_secretaria.php">Secretaria</a><br><br>
+                <a href="perfil_semed/index_semed.php">SEMED</a>
+            </div>
+        </div>
     </body>
 </html>

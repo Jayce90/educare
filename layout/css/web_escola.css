@@ -9,6 +9,12 @@
     background-color: #324270;
 }
 
+#box_login{
+    margin-top: 5%;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
 .box_conteudo{
     background-color: #f6f3f3;
 }

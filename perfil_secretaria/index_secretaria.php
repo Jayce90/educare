@@ -267,7 +267,7 @@
 
                                             <div class="form-group">
                                                 <label for="inputComplementorg">15a. Complemento da identidade</label>
-                                                <input type="text" name="cad_complmento_identidade_aluno" class="form-control" id="inputComplementorg" placeholder="digite o complemento da identidade">
+                                                <input type="text" name="cad_complemento_identidade_aluno" class="form-control" id="inputComplementorg" placeholder="digite o complemento da identidade">
 
                                             </div>
 
