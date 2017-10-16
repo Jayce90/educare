@@ -150,7 +150,37 @@
 
                                             <div class="form-group">
                                                 <label for="inputEstadonasc">11. UF de nascimento</label>
-                                                <input type="text" name="cad_estadonasc_aluno" class="form-control" id="inputEstadonasc" placeholder="UF de nascimento">
+
+                                                <select class="form-control" name="cad_estadonasc_aluno">
+                                                    <option value="">Selecione</option>
+                                                    <option value="AC">AC</option>
+                                                    <option value="AL">AL</option>
+                                                    <option value="AM">AM</option>
+                                                    <option value="AP">AP</option>
+                                                    <option value="BA">BA</option>
+                                                    <option value="CE">CE</option>
+                                                    <option value="DF">DF</option>
+                                                    <option value="ES">ES</option>
+                                                    <option value="GO">GO</option>
+                                                    <option value="MA">MA</option>
+                                                    <option value="MG">MG</option>
+                                                    <option value="MS">MS</option>
+                                                    <option value="MT">MT</option>
+                                                    <option value="PA">PA</option>
+                                                    <option value="PB">PB</option>
+                                                    <option value="PE">PE</option>
+                                                    <option value="PI">PI</option>
+                                                    <option value="PR">PR</option>
+                                                    <option value="RJ">RJ</option>
+                                                    <option value="RN">RN</option>
+                                                    <option value="RS">RS</option>
+                                                    <option value="RO">RO</option>
+                                                    <option value="RR">RR</option>
+                                                    <option value="SC">SC</option>
+                                                    <option value="SE">SE</option>
+                                                    <option value="SP">SP</option>
+                                                    <option value="TO">TO</option>
+                                                </select>
                                             </div>
 
                                         </div>
@@ -169,7 +199,7 @@
 
                                             <div class="form-group">
                                                 <label for="inputMunidenascimento">13. Município de nascimento</label>
-                                                <input type="text" name="cad_muninasci_aluno" class="form-control" id="inputMunidenascimento" placeholder="digite o município de nascimento">
+                                                <input type="text" name="cad_municipionasc_aluno" class="form-control" id="inputMunidenascimento" placeholder="digite o município de nascimento">
                                             </div>
 
                                         </div>
@@ -288,7 +318,37 @@
 
                                             <div class="form-group">
                                                 <label for="inputUfIdentidade">15c. UF da identidade</label>
-                                                <input type="text" name="cad_uf_identidade_aluno" class="form-control" id="inputUfIdentidade" placeholder="digite a UF da identidade">
+
+                                                <select class="form-control" name="cad_estado_identidade_aluno">
+                                                    <option value="">Selecione</option>
+                                                    <option value="AC">AC</option>
+                                                    <option value="AL">AL</option>
+                                                    <option value="AM">AM</option>
+                                                    <option value="AP">AP</option>
+                                                    <option value="BA">BA</option>
+                                                    <option value="CE">CE</option>
+                                                    <option value="DF">DF</option>
+                                                    <option value="ES">ES</option>
+                                                    <option value="GO">GO</option>
+                                                    <option value="MA">MA</option>
+                                                    <option value="MG">MG</option>
+                                                    <option value="MS">MS</option>
+                                                    <option value="MT">MT</option>
+                                                    <option value="PA">PA</option>
+                                                    <option value="PB">PB</option>
+                                                    <option value="PE">PE</option>
+                                                    <option value="PI">PI</option>
+                                                    <option value="PR">PR</option>
+                                                    <option value="RJ">RJ</option>
+                                                    <option value="RN">RN</option>
+                                                    <option value="RS">RS</option>
+                                                    <option value="RO">RO</option>
+                                                    <option value="RR">RR</option>
+                                                    <option value="SC">SC</option>
+                                                    <option value="SE">SE</option>
+                                                    <option value="SP">SP</option>
+                                                    <option value="TO">TO</option>
+                                                </select>
                                             </div>
 
                                         </div>
@@ -308,12 +368,10 @@
 
                                             <label for="inputCertidaoCivil">16. Certidão Civil :</label><br>
 
-                                            <label class="radio-inline">
-                                                <input type="radio" name="cad_certidaocivil_aluno[]" id="inputCertidaoCivil" value="modeloantigo"> Modelo antigo
-                                            </label>   
-                                            <label class="radio-inline">
-                                                <input type="radio" name="cad_certidaocivil_aluno[]" id="inputCertidaoCivil" value="modelonovo"> Modelo novo
-                                            </label>   
+                                            <select class="form-control" name="cad_certidaocivil_aluno[]">
+                                                <option value="ModeloNovo">Modelo Novo</option>                                               
+                                                <option value="ModeloAntigo">Modelo Antigo</option>
+                                            </select> 
 
                                         </div>
 
@@ -321,12 +379,10 @@
 
                                             <label for="inputTipoCertidao">16a. Tipo de certidão Civil :</label><br>
 
-                                            <label class="radio-inline">
-                                                <input type="radio" name="cad_certidaocivil_aluno[]" id="inputTipoCertidao" value="casamento"> Certidão de casamento
-                                            </label>   
-                                            <label class="radio-inline">
-                                                <input type="radio" name="cad_certidaocivil_aluno[]" id="inputTipoCertidao" value="nascimento"> Certidão de nascimento
-                                            </label>
+                                            <select class="form-control" name="cad_certidaocivil_aluno[]">
+                                                <option value="nascimento">Certidão de nascimento</option>                                               
+                                                <option value="casamento">Certidão de casamento</option>
+                                            </select>
 
                                         </div>
                                     </div>
@@ -377,8 +433,37 @@
 
                                             <div class="form-group">
                                                 <label for="inputUfcartorio">16f. UF do cartório</label>
-                                                <input type="text" name="cad_certidaocivil_aluno[]" class="form-control" id="inputUfcartorio" placeholder="uf do cartorio">
 
+                                                <select class="form-control" name="cad_estadonasc_aluno">
+                                                    <option value="">Selecione</option>
+                                                    <option value="AC">AC</option>
+                                                    <option value="AL">AL</option>
+                                                    <option value="AM">AM</option>
+                                                    <option value="AP">AP</option>
+                                                    <option value="BA">BA</option>
+                                                    <option value="CE">CE</option>
+                                                    <option value="DF">DF</option>
+                                                    <option value="ES">ES</option>
+                                                    <option value="GO">GO</option>
+                                                    <option value="MA">MA</option>
+                                                    <option value="MG">MG</option>
+                                                    <option value="MS">MS</option>
+                                                    <option value="MT">MT</option>
+                                                    <option value="PA">PA</option>
+                                                    <option value="PB">PB</option>
+                                                    <option value="PE">PE</option>
+                                                    <option value="PI">PI</option>
+                                                    <option value="PR">PR</option>
+                                                    <option value="RJ">RJ</option>
+                                                    <option value="RN">RN</option>
+                                                    <option value="RS">RS</option>
+                                                    <option value="RO">RO</option>
+                                                    <option value="RR">RR</option>
+                                                    <option value="SC">SC</option>
+                                                    <option value="SE">SE</option>
+                                                    <option value="SP">SP</option>
+                                                    <option value="TO">TO</option>
+                                                </select>
                                             </div>
 
                                         </div>
@@ -506,7 +591,36 @@
                                         <div class="col-md-2">
                                             <div class="form-group">
                                                 <label for="inputUf">25. UF</label>
-                                                <input type="text" name="cad_uf_aluno" class="form-control" id="inputUf" placeholder="digite o UF">
+                                                <select class="form-control" name="cad_estado_aluno">
+                                                    <option value="">Selecione</option>
+                                                    <option value="AC">AC</option>
+                                                    <option value="AL">AL</option>
+                                                    <option value="AM">AM</option>
+                                                    <option value="AP">AP</option>
+                                                    <option value="BA">BA</option>
+                                                    <option value="CE">CE</option>
+                                                    <option value="DF">DF</option>
+                                                    <option value="ES">ES</option>
+                                                    <option value="GO">GO</option>
+                                                    <option value="MA">MA</option>
+                                                    <option value="MG">MG</option>
+                                                    <option value="MS">MS</option>
+                                                    <option value="MT">MT</option>
+                                                    <option value="PA">PA</option>
+                                                    <option value="PB">PB</option>
+                                                    <option value="PE">PE</option>
+                                                    <option value="PI">PI</option>
+                                                    <option value="PR">PR</option>
+                                                    <option value="RJ">RJ</option>
+                                                    <option value="RN">RN</option>
+                                                    <option value="RS">RS</option>
+                                                    <option value="RO">RO</option>
+                                                    <option value="RR">RR</option>
+                                                    <option value="SC">SC</option>
+                                                    <option value="SE">SE</option>
+                                                    <option value="SP">SP</option>
+                                                    <option value="TO">TO</option>
+                                                </select> 
 
                                             </div>
                                         </div>
