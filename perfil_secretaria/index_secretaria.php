@@ -80,8 +80,8 @@
                                     <div class="row">
                                         <div class="col-xs-6 col-md-4">
                                             <div class="form-group">
-                                                <label for="inputNIS">5. Número de identificação Social (NIS)</label>
-                                                <input type="text" name="cad_nis_aluno" class="form-control" id="inputNIS" placeholder="digite o NIS">
+                                                <label for="inputNis">5. Número de identificação Social (NIS)</label>
+                                                <input type="text" name="cad_nis_aluno" class="form-control" id="inputNis" placeholder="digite o NIS">
                                             </div>
 
                                         </div>
@@ -108,9 +108,7 @@
                                                 <label class="radio-inline">
                                                     <input type="radio" name="cad_raca_aluno" id="inputraca" value="naodeclarada"> Não Declarada
                                                 </label>
-
-                                            </div>   
-
+                                            </div> 
                                         </div>
                                     </div>
 
@@ -197,29 +195,29 @@
 
                                             <label for="inputTipoDeficiencia">14a. Deficiência :</label><br>
 
-                                            <label class="radio-inline">
-                                                <input type="radio" name="cad_tipo_deficiencia_aluno" id="inputTipoDeficiencia" value="cegueira"> Cegueira
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficiencia" value="cegueira"> Cegueira
                                             </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="cad_tipo_deficiencia_aluno" id="inputTipoDeficiencia" value="baixavisao"> Baixa Visão
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficiencia" value="baixavisao"> Baixa Visão
                                             </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="cad_tipo_deficiencia_aluno" id="inputTipoDeficiencia" value="surdez"> Surdez
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficiencia" value="surdez"> Surdez
                                             </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="cad_tipo_deficiencia_aluno" id="inputTipoDeficiencia" value="deficienciaauditiva"> Deficiência Auditiva
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficiencia" value="deficienciaauditiva"> Deficiência Auditiva
                                             </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="cad_tipo_deficiencia_aluno" id="inputTipoDeficiencia" value="surdocegueira"> Surdocegueira
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficiencia" value="surdocegueira"> Surdocegueira
                                             </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="cad_tipo_deficiencia_aluno" id="inputTipoDeficiencia" value="deficienciafisica"> Deficiência Física
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficiencia" value="deficienciafisica"> Deficiência Física
                                             </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="cad_tipo_deficiencia_aluno" id="inputTipoDeficiencia" value="deficienciaintelectual"> Deficiência Intelectual
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficiencia" value="deficienciaintelectual"> Deficiência Intelectual
                                             </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="cad_tipo_deficiencia_aluno" id="inputTipoDeficiencia" value="deficienciamultipla"> Deficiência Múltipla
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficiencia" value="deficienciamultipla"> Deficiência Múltipla
                                             </label>                                            
 
                                         </div> 
@@ -228,17 +226,17 @@
 
                                             <label for="inputTranstornog">14b. Transtorno global do desenvolvimento :</label><br>
 
-                                            <label class="radio-inline">
-                                                <input type="radio" name="cad_tipo_deficiencia_aluno" id="inputTranstornog" value="autismoinfantil"> Autismo Infantil
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTranstornog" value="autismoinfantil"> Autismo Infantil
                                             </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="cad_tipo_deficiencia_aluno" id="inputTranstornog" value="sindromedeasperger"> Síndrome de Asperger 
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTranstornog" value="sindromedeasperger"> Síndrome de Asperger 
                                             </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="cad_tipo_deficiencia_aluno" id="inputTranstornog" value="sindromederett"> Síndrome de Rett
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTranstornog" value="sindromederett"> Síndrome de Rett
                                             </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="cad_tipo_deficiencia_aluno" id="inputTranstornog" value="Transtornodesintegrativodainfancia"> Transtorno desintegrativo da infância
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTranstornog" value="Transtornodesintegrativodainfancia"> Transtorno desintegrativo da infância
                                             </label>
 
 
@@ -247,8 +245,8 @@
 
                                             <label for="inputTranstornog">14c. Altas Habilidades/Superdotação :</label><br>
 
-                                            <label class="radio-inline">
-                                                <input type="radio" name="cad_tipo_deficiencia_aluno" id="inputTranstornog" value="superdotacao"> Altas Habilidades/Superdotação
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTranstornog" value="superdotacao"> Altas Habilidades/Superdotação
                                             </label>
 
                                         </div>
@@ -531,7 +529,7 @@
                                     </label>
                                     <label class="radio-inline">
                                         <input type="radio" name="cad_escolarizacao_espaco_aluno" id="inputEscolarizacaoEspaco" value="nao"> Não
-                                    </label>
+                                    </label><br>
 
                                     <div class="row">
                                         <div class="col-md-6">
@@ -618,13 +616,14 @@
                                             </label>
 
                                         </div>
-                                    </div>
+                                    </div><br>
 
-                                </form><br>
+                                    <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+
+                                </form>
 
 
 
-                                <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
 
 
                             </div>

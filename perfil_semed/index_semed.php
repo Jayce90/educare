@@ -26,7 +26,7 @@
                 <ul class="nav nav-pills nav-stacked" id="myTabs">
                     <li class="active"><a class="glyphicon glyphicon-pencil" href="#cad_aluno" data-toggle="pill"> Usuário</a></li>
                     <li><a class="glyphicon glyphicon-pencil" href="#cad_turma" data-toggle="pill"> Cadastro Turma</a></li>
-                    <li><a class="glyphicon glyphicon-pencil" href="#cad_notas" data-toggle="pill"> Cadastro Notas</a></li>
+                    <li><a class="glyphicon glyphicon-pencil" href="#cad_notas" data-toggle="pill"> Cadastro Professor</a></li>
                     <li><a class="glyphicon glyphicon-alert" href="../index.php"> Sair</a></li>
                 </ul>
             </div>
@@ -74,26 +74,32 @@
                                         </div>
                                     </div>
 
-
-
                                     <div class="row">
                                         <div class="col-md-4">
-
                                             <div class="form-group">
                                                 <label for="inputiniciofuncionamento">3. Horário de funcionamento Inicio</label>
                                                 <input type="text" name="cad_horario_turma[]" class="form-control" id="inputiniciofuncionamento" placeholder="horário inicio">
                                             </div>
-
                                         </div>
                                         <div class="col-md-4">
-
                                             <div class="form-group">
                                                 <label for="inputfinalfuncionamento">3. Horário de funcionamento Fim</label>
                                                 <input type="text" name="cad_horario_turma[]" class="form-control" id="inputfinalfuncionamento" placeholder="horário final">
                                             </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="inputTurno">3a. Turno :</label><br>
 
+                                            <select class="form-control" name="turno_turma">
+                                                <option value="manha">Manhã</option>                                               
+                                                <option value="tarde">Tarde</option>                                        
+                                                <option value="noite">Noite</option>                                        
+                                                <option value="intermediario">Intermediário</option>                                        
+                                                <option value="integral">Integral</option>                                        
+                                            </select>
                                         </div>
                                     </div>
+
 
                                     <label for="inputDiassemana">4. Dias da semana da turma :</label><br>
 
@@ -224,8 +230,10 @@
                                             <label for="inputEtapa">9a. Etapa :</label><br>
 
                                             <select class="form-control" name="etapa_turma">
-                                                <option value="Creche">Creche</option>                                               
-                                                <option value="preescola">Pré - Escola</option>                                        
+                                                <option value="Creche 2">Creche 2</option>                                               
+                                                <option value="Creche 3">Creche 3</option>                                               
+                                                <option value="preescola 1">Pré - Escola 1</option>                                        
+                                                <option value="preescola 2">Pré - Escola 2</option>                                        
                                                 <option value="1º ano">1º ano</option>                                        
                                                 <option value="2º ano">2º ano</option>                                        
                                                 <option value="3º ano">3º ano</option>                                        
@@ -251,15 +259,14 @@
                                             </select>
                                         </div>
                                     </div><br>
-                                    
-                                    <label for="inputDescricaodaturma">10. Descrição da turma :</label><br>
-                                    <textarea class="form-control" rows="6"></textarea>
-                                    
-                                    
-                                    
-                                </form><br>
 
-                                <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                                    <label for="inputDescricaodaturma">10. Descrição da turma :</label><br>
+                                    <textarea class="form-control" rows="6"></textarea><br>
+
+                                    <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+
+                                </form>
+
 
                             </div>
                         </div>
@@ -267,8 +274,128 @@
 
                     <div class="tab-pane" id="cad_notas">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">CADASTRO NOTAS</div>
+                            <div class="panel-heading">CADASTRO DO PROFESSOR</div>
                             <div class="panel-body">
+
+                                <form action="" method="post">
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+
+                                            <div class="form-group">
+                                                <label for="inputIdProfessor">1. Identificação Unica</label>
+                                                <input type="text" name="cad_id_professor" class="form-control" id="inputIdProfessor" placeholder="digite a identificação unica">
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-6">
+
+                                            <div class="form-group">
+                                                <label for="inputCpfProfessor">2. CPF</label>
+                                                <input type="text" name="cad_cpf_professor" class="form-control" id="inputCpfProfessor" placeholder="digite o CPF">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-9">
+
+                                            <div class="form-group">
+                                                <label for="inputNomeProfessor">3. Nome do professor</label>
+                                                <input type="text" name="cad_nome_professor" class="form-control" id="inputNomeProfessor" placeholder="digite nome do professor">
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-3">
+
+                                            <div class="form-group">
+                                                <label for="inputNascimentoProfessor">4. Data de Nascimento</label>
+                                                <input type="text" name="cad_nasc_professor" class="form-control" id="inputNascimentoProfessor" placeholder="digite a data de nascimento">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="inputMaeProfessor">5. Nome da mãe</label>
+                                        <input type="text" name="cad_mae_professor" class="form-control" id="inputMaeProfessor" placeholder="digite nome da mae">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="inputPaiProfessor">6. Nome do pai</label>
+                                        <input type="text" name="cad_pai_professor" class="form-control" id="inputPaiProfessor" placeholder="digite nome do pai">
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+
+                                            <div class="form-group">
+                                                <label for="inputEmailProfessor">7.  Endereço eletrônico (e-mail)</label>
+                                                <input type="text" name="cad_email_professor" class="form-control" id="inputEmailProfessor" placeholder="digite o Email">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+
+                                            <div class="form-group">
+                                                <label for="inputNisProfessor">8. Número de identificação Social (NIS)</label>
+                                                <input type="text" name="cad_nis_professor" class="form-control" id="inputNisProfessor" placeholder="digite o NIS">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+
+                                            <div class="form-group">
+                                                <label for="inputSexoProfessor">9. Sexo :</label><br>
+
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="cad_sexo_professor" id="inputSexoProfessor" value="masculino"> Masculino
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="cad_sexo_professor" id="inputSexoProfessor" value="feminino"> Feminino
+                                                </label>
+
+                                            </div>
+
+
+                                        </div>
+                                        <div class="col-md-8">
+
+                                            <div class="form-group">
+                                                <label for="inputRacaProfessor">10. Cor/Raça :</label><br>
+
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="cad_raca_professor" id="inputRacaProfessor" value="branca"> Branca
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="cad_raca_professor" id="inputRacaProfessor" value="preta"> Preta
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="cad_raca_professor" id="inputRacaProfessor" value="parda"> Parda
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="cad_raca_professor" id="inputRacaProfessor" value="amarela"> Amarela
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="cad_raca_professor" id="inputRacaProfessor" value="indigena"> Indígena
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="cad_raca_professor" id="inputRacaProfessor" value="naodeclarada"> Não Declarada
+                                                </label>
+                                            </div>
+
+                                        </div>
+                                    </div><br>
+
+
+                                    <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+
+                                </form>
+
+
+
+
 
                             </div>
                         </div>
