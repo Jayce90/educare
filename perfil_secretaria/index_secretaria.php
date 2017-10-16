@@ -677,55 +677,36 @@
 
                                             <label for="inputTipoveiculo">28b. Rodoviário :</label><br>
 
-                                            <label class="radio-inline">
-                                                <input type="radio" name="cad_tipo_transporte_aluno" id="inputTipoveiculo" value="vankombi"> Van/WK Kombi
-                                            </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="cad_tipo_transporte_aluno" id="inputTipoveiculo" value="microonibus"> Micro-Ônibus 
-                                            </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="cad_tipo_transporte_aluno" id="inputTipoveiculo" value="onibus"> Ônibus
-                                            </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="cad_tipo_transporte_aluno" id="inputTipoveiculo" value="bicicleta"> Bicicleta
-                                            </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="cad_tipo_transporte_aluno" id="inputTipoveiculo" value="tracao animal"> Tração animal
-                                            </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="cad_tipo_transporte_aluno" id="inputTipoveiculo" value="outrotipodeveiculo"> Outro tipo de veículo rodoviário
-                                            </label>
-
+                                            <select class="form-control" name="cad_tipo_transporte_aluno[]">
+                                                <option value="">Selecione</option>                                               
+                                                <option value="Van/Kombi">Van/Kombi</option>                                               
+                                                <option value="Micro - Ônibus">Micro - Ônibus</option>                                       
+                                                <option value="Ônibus">Ônibus</option>                                       
+                                                <option value="Bicicleta">Bicicleta</option>                                       
+                                                <option value="Tração animal">Tração animal</option>                                       
+                                                <option value="Outro tipo de veículo rodoviário">Outro tipo de veículo rodoviário</option>                                       
+                                            </select>
                                         </div>
 
                                         <div class="col-md-4">
-
-                                            <label for="inputTipoveiculo">28c. Aquaviário/Embarcação :</label><br>
-
-                                            <label class="radio-inline">
-                                                <input type="radio" name="cad_tipo_transporte_aluno" id="inputTipoveiculo" value="5 alunos"> Capacidade de até 5 alunos
-                                            </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="cad_tipo_transporte_aluno" id="inputTipoveiculo" value="5 a 15alunos"> Capacidade entre 5 a 15 alunos 
-                                            </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="cad_tipo_transporte_aluno" id="inputTipoveiculo" value="15 a 35 alunos"> Capacidade entre 15 a 35 alunos
-                                            </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="cad_tipo_transporte_aluno" id="inputTipoveiculo" value="acimade 35 alunos"> Capacidade acima de 35 alunos
-                                            </label>
-
-
-                                        </div>
-
-                                        <div class="col-md-4">
-
                                             <label for="inputTipoveiculo">28d. Ferroviário :</label><br>
 
-                                            <label class="radio-inline">
-                                                <input type="radio" name="cad_tipoveiculo_aluno" id="inputTipoveiculo" value="tremmetro"> Trem/Metrô
-                                            </label>
+                                            <select class="form-control" name="cad_tipo_transporte_aluno[]">
+                                                <option value="">Selecione</option>                                               
+                                                <option value="Capacidade de até 5 alunos">Capacidade de até 5 alunos</option>                                               
+                                                <option value="Capacidade entre 5 a 15 alunos">Capacidade entre 5 a 15 alunos</option>                                       
+                                                <option value="Capacidade entre 15 a 35 alunos">Capacidade entre 15 a 35 alunos</option>                                       
+                                                <option value="Capacidade acima de 35 alunos">Capacidade acima de 35 alunos</option>                                      
+                                            </select>
+                                        </div>
 
+                                        <div class="col-md-4">
+                                            <label for="inputTipoveiculo">28d. Ferroviário :</label><br>
+
+                                            <select class="form-control" name="cad_tipo_transporte_aluno[]">
+                                                <option value="">Selecione</option>                                               
+                                                <option value="Trem/Metrô">Trem/Metrô</option>                                             
+                                            </select>
                                         </div>
                                     </div><br>
 
