@@ -434,7 +434,7 @@
                                             <div class="form-group">
                                                 <label for="inputUfcartorio">16f. UF do cartório</label>
 
-                                                <select class="form-control" name="cad_estadonasc_aluno">
+                                                <select class="form-control" name="cad_certidaocivil_aluno[]">
                                                     <option value="">Selecione</option>
                                                     <option value="AC">AC</option>
                                                     <option value="AL">AL</option>
@@ -559,7 +559,7 @@
 
                                             <div class="form-group">
                                                 <label for="inputNumeroendereco">22. Número</label>
-                                                <input type="text" name="cad_numeroendereco_aluno" class="form-control" id="inputNumeroendereco" placeholder="numero">
+                                                <input type="text" name="cad_numero_aluno" class="form-control" id="inputNumeroendereco" placeholder="numero">
 
                                             </div>
 
@@ -571,7 +571,7 @@
 
                                             <div class="form-group">
                                                 <label for="inputComplementoendereco">23. Complemento</label>
-                                                <input type="text" name="cad_complementoendereco_aluno" class="form-control" id="inputComplementoendereco" placeholder="complemento">
+                                                <input type="text" name="cad_complemento_aluno" class="form-control" id="inputComplementoendereco" placeholder="complemento">
 
                                             </div>
 
@@ -660,10 +660,10 @@
                                             <label for="inputPoderpublico">28a. Poder público responsável pelo transporte :</label><br>
 
                                             <label class="radio-inline">
-                                                <input type="radio" name="cad_poderpublico_aluno" id="inputPoderpublico" value="municipal"> Municipal
+                                                <input type="radio" name="cad_responsavel_transporte_aluno" id="inputPoderpublico" value="municipal"> Municipal
                                             </label>
                                             <label class="radio-inline">
-                                                <input type="radio" name="cad_poderpublico_aluno" id="inputPoderpublico" value="estadual"> Estadual
+                                                <input type="radio" name="cad_responsavel_transporte_aluno" id="inputPoderpublico" value="estadual"> Estadual
                                             </label>
 
                                         </div>
@@ -678,22 +678,22 @@
                                             <label for="inputTipoveiculo">28b. Rodoviário :</label><br>
 
                                             <label class="radio-inline">
-                                                <input type="radio" name="cad_tipoveiculo_aluno" id="inputTipoveiculo" value="vankombi"> Van/WK Kombi
+                                                <input type="radio" name="cad_tipo_transporte_aluno" id="inputTipoveiculo" value="vankombi"> Van/WK Kombi
                                             </label>
                                             <label class="radio-inline">
-                                                <input type="radio" name="cad_tipoveiculo_aluno" id="inputTipoveiculo" value="microonibus"> Micro-Ônibus 
+                                                <input type="radio" name="cad_tipo_transporte_aluno" id="inputTipoveiculo" value="microonibus"> Micro-Ônibus 
                                             </label>
                                             <label class="radio-inline">
-                                                <input type="radio" name="cad_tipoveiculo_aluno" id="inputTipoveiculo" value="onibus"> Ônibus
+                                                <input type="radio" name="cad_tipo_transporte_aluno" id="inputTipoveiculo" value="onibus"> Ônibus
                                             </label>
                                             <label class="radio-inline">
-                                                <input type="radio" name="cad_tipoveiculo_aluno" id="inputTipoveiculo" value="bicicleta"> Bicicleta
+                                                <input type="radio" name="cad_tipo_transporte_aluno" id="inputTipoveiculo" value="bicicleta"> Bicicleta
                                             </label>
                                             <label class="radio-inline">
-                                                <input type="radio" name="cad_tipoveiculo_aluno" id="inputTipoveiculo" value="tracao animal"> Tração animal
+                                                <input type="radio" name="cad_tipo_transporte_aluno" id="inputTipoveiculo" value="tracao animal"> Tração animal
                                             </label>
                                             <label class="radio-inline">
-                                                <input type="radio" name="cad_tipoveiculo_aluno" id="inputTipoveiculo" value="outrotipodeveiculo"> Outro tipo de veículo rodoviário
+                                                <input type="radio" name="cad_tipo_transporte_aluno" id="inputTipoveiculo" value="outrotipodeveiculo"> Outro tipo de veículo rodoviário
                                             </label>
 
                                         </div>
@@ -703,16 +703,16 @@
                                             <label for="inputTipoveiculo">28c. Aquaviário/Embarcação :</label><br>
 
                                             <label class="radio-inline">
-                                                <input type="radio" name="cad_tipoveiculo_aluno" id="inputTipoveiculo" value="5alunos"> Capacidade de até 5 alunos
+                                                <input type="radio" name="cad_tipo_transporte_aluno" id="inputTipoveiculo" value="5 alunos"> Capacidade de até 5 alunos
                                             </label>
                                             <label class="radio-inline">
-                                                <input type="radio" name="cad_tipoveiculo_aluno" id="inputTipoveiculo" value="5a15alunos"> Capacidade entre 5 a 15 alunos 
+                                                <input type="radio" name="cad_tipo_transporte_aluno" id="inputTipoveiculo" value="5 a 15alunos"> Capacidade entre 5 a 15 alunos 
                                             </label>
                                             <label class="radio-inline">
-                                                <input type="radio" name="cad_tipoveiculo_aluno" id="inputTipoveiculo" value="15a35alunos"> Capacidade entre 15 a 35 alunos
+                                                <input type="radio" name="cad_tipo_transporte_aluno" id="inputTipoveiculo" value="15 a 35 alunos"> Capacidade entre 15 a 35 alunos
                                             </label>
                                             <label class="radio-inline">
-                                                <input type="radio" name="cad_tipoveiculo_aluno" id="inputTipoveiculo" value="acimade35alunos"> Capacidade acima de 35 alunos
+                                                <input type="radio" name="cad_tipo_transporte_aluno" id="inputTipoveiculo" value="acimade 35 alunos"> Capacidade acima de 35 alunos
                                             </label>
 
 
