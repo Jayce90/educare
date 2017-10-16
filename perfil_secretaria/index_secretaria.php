@@ -504,22 +504,19 @@
 
                                     <div class="row">
                                         <div class="col-md-2">
-
                                             <div class="form-group">
                                                 <label for="inputUf">25. UF</label>
                                                 <input type="text" name="cad_uf_aluno" class="form-control" id="inputUf" placeholder="digite o UF">
 
                                             </div>
-
                                         </div>
-                                        <div class="col-md-10">
 
+                                        <div class="col-md-10">
                                             <div class="form-group">
                                                 <label for="inputMunicipio">26. Município</label>
                                                 <input type="text" name="cad_municipio_aluno" class="form-control" id="inputMunicipio" placeholder="municipio">
 
                                             </div>
-
                                         </div>
                                     </div>
 
