@@ -420,7 +420,7 @@
                                         </label>
                                     </div>
 
-                                    <label for="inputTipoDeficienciaProfessor">14a. Tipo de deficiência :</label><br>
+                                    <label for="inputTipoDeficienciaProfessor">14a. Tipo de deficiência :</label>
 
                                     <div class="row">
                                         <div class="col-md-3">
@@ -457,19 +457,114 @@
                                         </div>
                                     </div><br>
 
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="inputLocalizacaoProfessor">15. Localização/Zona de residência :</label><br>
 
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="cad_localizacao_professor" id="inputLocalizacaoProfessor" value="urbana"> Urbana
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="cad_localizacao_professor" id="inputLocalizacaoProfessor" value="rural"> Rural
+                                                </label>
 
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="inputCepProfessor">16. CEP</label>
+                                                <input type="text" name="cad_cep_professor" class="form-control" id="inputCepProfessor" placeholder="digite o CEP">
 
+                                            </div>
+                                        </div>
+                                    </div>
 
+                                    <div class="row">
+                                        <div class="col-md-10">
 
+                                            <div class="form-group">
+                                                <label for="inputEnderecoProfessor">17. Endereço</label>
+                                                <input type="text" name="cad_endereco_professor" class="form-control" id="inputEnderecoProfessor" placeholder="digite o endereco">
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-2">
+
+                                            <div class="form-group">
+                                                <label for="inputNumeroEnderecoProfessor">18. Número</label>
+                                                <input type="text" name="cad_numeroendereco_professor" class="form-control" id="inputNumeroEnderecoProfessor" placeholder="numero">
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+
+                                            <div class="form-group">
+                                                <label for="inputComplementoEnderecoProfessor">19. Complemento</label>
+                                                <input type="text" name="cad_complementoendereco_professor" class="form-control" id="inputComplementoEnderecoProfessor" placeholder="complemento">
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+
+                                            <div class="form-group">
+                                                <label for="inputBairroProfessor">20. Bairro</label>
+                                                <input type="text" name="cad_bairro_professor" class="form-control" id="inputBairroProfessor" placeholder="bairro">
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label for="inputUfProfessor">21. UF</label>
+                                                <input type="text" name="cad_uf_professor" class="form-control" id="inputUfProfessor" placeholder="digite o UF">
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-10">
+                                            <div class="form-group">
+                                                <label for="inputMunicipioProfessor">22. Município</label>
+                                                <input type="text" name="cad_municipio_professor" class="form-control" id="inputMunicipioProfessor" placeholder="municipio">
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label for="inputEscolaridade">23. Escolaridade :</label><br>
+
+                                            <select class="form-control" name="escolaridade_professor">
+                                                <option value="FundamentalIncompleto">Fundamental incompleto</option>                                               
+                                                <option value="FundamentalCompleto">Fundamental completo</option>                                        
+                                                <option value="EnsinoMedioMagisterio">Ensino Médio – Normal/Magistério</option>                                        
+                                                <option value="EnsinoMedioIndigena">Ensino Médio – Normal/Magistério Específico Indígena</option>                                        
+                                                <option value="EnsinoMedio">Ensino Médio</option>                                        
+                                                <option value="Superior">Superior</option>                                        
+                                            </select>
+
+                                        </div>
+                                        <div class="col-md-8">
+                                            <label for="inputCursoProfessor">24. Curso</label>
+                                            <input type="text" name="cad_curso_professor" class="form-control" id="inputCursoProfessor" placeholder="curso">
+                                        </div>
+                                    </div>
+
+                                    <label for="inputInstituicaoProfessor">25. Nome da instituição</label>
+                                    <input type="text" name="cad_instituicao_professor" class="form-control" id="inputInstituicaoProfessor" placeholder="instituição">
 
 
                                     <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
 
                                 </form>
-
-
-
 
 
                             </div>
