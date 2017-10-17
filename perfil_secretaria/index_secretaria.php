@@ -40,7 +40,7 @@
                             <div class="panel-heading">CADASTRO DE ALUNO</div>
                             <div class="panel-body box_conteudo">
 
-                                <form action="" method="post">
+                                <form action="../controle/cadastrando_aluno.php" method="post">
 
                                     <div class="form-group">
                                         <label for="inputId">1. Identificação Unica</label>
@@ -689,7 +689,8 @@
                                         </div>
 
                                         <div class="col-md-4">
-                                            <label for="inputTipoveiculo">28d. Ferroviário :</label><br>
+                                            <label for="inputTipoveiculo">28c. Aquaviário/Embarcação
+ :</label><br>
 
                                             <select class="form-control" name="cad_tipo_transporte_aluno[]">
                                                 <option value="">Selecione</option>                                               
