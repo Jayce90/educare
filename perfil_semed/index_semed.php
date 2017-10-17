@@ -64,7 +64,8 @@
 
                                             <label for="inputMaiseducacao">2. Ano da turma :</label><br>
 
-                                            <select class="form-control" name="ano_turma">
+                                            <select class="form-control" name="cad_ano_turma">
+                                                <option value="">Selecione</option>                                               
                                                 <option value="2017">2017</option>                                               
                                                 <option value="2018">2018</option>                                        
                                                 <option value="2019">2019</option>                                        
@@ -90,7 +91,8 @@
                                         <div class="col-md-4">
                                             <label for="inputTurno">3a. Turno :</label><br>
 
-                                            <select class="form-control" name="turno_turma">
+                                            <select class="form-control" name="cad_turno_turma">
+                                                <option value="">Selecione</option>                                               
                                                 <option value="manha">Manhã</option>                                               
                                                 <option value="tarde">Tarde</option>                                        
                                                 <option value="noite">Noite</option>                                        
@@ -218,7 +220,8 @@
                                         <div class="col-md-6">
                                             <label for="inputNivel">9. Nivel de ensino :</label><br>
 
-                                            <select class="form-control" name="nivel_turma">
+                                            <select class="form-control" name="cad_nivel_turma">
+                                                <option value="">Selecione</option>                                               
                                                 <option value="infantil">Educação Infantil</option>                                               
                                                 <option value="Fundamental">Ensino Fundamental</option>                                        
                                                 <option value="Eja">EJA</option>                                        
@@ -229,7 +232,8 @@
 
                                             <label for="inputEtapa">9a. Etapa :</label><br>
 
-                                            <select class="form-control" name="etapa_turma">
+                                            <select class="form-control" name="cad_etapa_turma">
+                                                <option value="">Selecione</option>                                               
                                                 <option value="Creche 2">Creche 2</option>                                               
                                                 <option value="Creche 3">Creche 3</option>                                               
                                                 <option value="preescola 1">Pré - Escola 1</option>                                        
@@ -398,7 +402,36 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="inputUfdenascimentoProfessor">12. UF de nascimento</label>
-                                                <input type="text" name="cad_ufnasci_Professor" class="form-control" id="inputUfdenascimentoProfessor" placeholder="UF de nascimento">
+                                                <select class="form-control" name="cad_estadonasc_professor">
+                                                    <option value="">Selecione</option>
+                                                    <option value="AC">AC</option>
+                                                    <option value="AL">AL</option>
+                                                    <option value="AM">AM</option>
+                                                    <option value="AP">AP</option>
+                                                    <option value="BA">BA</option>
+                                                    <option value="CE">CE</option>
+                                                    <option value="DF">DF</option>
+                                                    <option value="ES">ES</option>
+                                                    <option value="GO">GO</option>
+                                                    <option value="MA">MA</option>
+                                                    <option value="MG">MG</option>
+                                                    <option value="MS">MS</option>
+                                                    <option value="MT">MT</option>
+                                                    <option value="PA">PA</option>
+                                                    <option value="PB">PB</option>
+                                                    <option value="PE">PE</option>
+                                                    <option value="PI">PI</option>
+                                                    <option value="PR">PR</option>
+                                                    <option value="RJ">RJ</option>
+                                                    <option value="RN">RN</option>
+                                                    <option value="RS">RS</option>
+                                                    <option value="RO">RO</option>
+                                                    <option value="RR">RR</option>
+                                                    <option value="SC">SC</option>
+                                                    <option value="SE">SE</option>
+                                                    <option value="SP">SP</option>
+                                                    <option value="TO">TO</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
@@ -524,7 +557,36 @@
                                         <div class="col-md-2">
                                             <div class="form-group">
                                                 <label for="inputUfProfessor">21. UF</label>
-                                                <input type="text" name="cad_uf_professor" class="form-control" id="inputUfProfessor" placeholder="digite o UF">
+                                                <select class="form-control" name="cad_estado_professor">
+                                                    <option value="">Selecione</option>
+                                                    <option value="AC">AC</option>
+                                                    <option value="AL">AL</option>
+                                                    <option value="AM">AM</option>
+                                                    <option value="AP">AP</option>
+                                                    <option value="BA">BA</option>
+                                                    <option value="CE">CE</option>
+                                                    <option value="DF">DF</option>
+                                                    <option value="ES">ES</option>
+                                                    <option value="GO">GO</option>
+                                                    <option value="MA">MA</option>
+                                                    <option value="MG">MG</option>
+                                                    <option value="MS">MS</option>
+                                                    <option value="MT">MT</option>
+                                                    <option value="PA">PA</option>
+                                                    <option value="PB">PB</option>
+                                                    <option value="PE">PE</option>
+                                                    <option value="PI">PI</option>
+                                                    <option value="PR">PR</option>
+                                                    <option value="RJ">RJ</option>
+                                                    <option value="RN">RN</option>
+                                                    <option value="RS">RS</option>
+                                                    <option value="RO">RO</option>
+                                                    <option value="RR">RR</option>
+                                                    <option value="SC">SC</option>
+                                                    <option value="SE">SE</option>
+                                                    <option value="SP">SP</option>
+                                                    <option value="TO">TO</option>
+                                                </select>
 
                                             </div>
                                         </div>
@@ -542,7 +604,8 @@
                                         <div class="col-md-4">
                                             <label for="inputEscolaridade">23. Escolaridade :</label><br>
 
-                                            <select class="form-control" name="escolaridade_professor">
+                                            <select class="form-control" name="cad_escolaridade_professor">
+                                                <option value="">Selecione</option>                                               
                                                 <option value="FundamentalIncompleto">Fundamental incompleto</option>                                               
                                                 <option value="FundamentalCompleto">Fundamental completo</option>                                        
                                                 <option value="EnsinoMedioMagisterio">Ensino Médio – Normal/Magistério</option>                                        
@@ -558,8 +621,25 @@
                                         </div>
                                     </div>
 
-                                    <label for="inputInstituicaoProfessor">25. Nome da instituição</label>
-                                    <input type="text" name="cad_instituicao_professor" class="form-control" id="inputInstituicaoProfessor" placeholder="instituição">
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <label for="inputInstituicaoProfessor">25. Nome da instituição</label>
+                                            <input type="text" name="cad_instituicao_professor" class="form-control" id="inputInstituicaoProfessor" placeholder="instituição">
+                                        </div>
+
+                                        <div class="col-md-3">
+
+                                            <label for="inputEscolaridade">25a. Situação do curso superior :</label><br>
+
+                                            <select class="form-control" name="cad_situacao_curso_professor">
+                                                <option value="">Selecione</option>                                               
+                                                <option value="concluido">Concluído</option>                                               
+                                                <option value="emandamento">Em andamento</option>                                       
+                                            </select>
+                                        </div>
+                                    </div>
+
+
 
 
                                     <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
