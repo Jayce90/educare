@@ -142,7 +142,7 @@
 
                                             <div class="form-group">
                                                 <label for="inputPaisorigem">10. País de origem</label>
-                                                <input type="text" name="cad_pais_aluno" class="form-control" id="inputPaisorigem" placeholder="digite o país de origem">
+                                                <input type="text" name="cad_pais_nasc_aluno" class="form-control" id="inputPaisorigem" placeholder="digite o país de origem">
                                             </div>
 
                                         </div>

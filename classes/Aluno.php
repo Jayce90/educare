@@ -83,8 +83,8 @@ class Aluno extends Crud {
         $this->pais_nasc = $pais_nasc;
     }
 
-    function setEstado_nasc($pais_nasc) {
-        $this->pais_nasc = $pais_nasc;
+    function setEstado_nasc($estado_nasc) {
+        $this->estado_nasc = $estado_nasc;
     }
 
     function setFone($fone) {
@@ -197,7 +197,7 @@ class Aluno extends Crud {
 
     public function inserir_aluno() {
         try {
-            $sql = "INSERT INTO aluno(id_aluno, nome_aluno, nascimento_aluno, sexo_aluno, nis_aluno,"
+            $sql = "INSERT INTO aluno (id_aluno, nome_aluno, nascimento_aluno, sexo_aluno, nis_aluno,"
                     . " raca_aluno, mae_aluno, pai_aluno, nacionalidade_aluno, pais_nasc_aluno,"
                     . " estado_nasc_aluno, fone_aluno, municipio_nasc_aluno, deficiencia_aluno,"
                     . " tipo_deficiencia_aluno, identidade_aluno, complemento_identidade_aluno,"
@@ -239,7 +239,7 @@ class Aluno extends Crud {
             $stmt->bindParam(':passaporte', $this->passaporte);
             $stmt->bindParam(':justificativa', $this->justificativa);
             $stmt->bindParam(':localizacao', $this->localizacao);
-            $stmt->bindParam(':localizacao', $this->cep);
+            $stmt->bindParam(':cep', $this->cep);
             $stmt->bindParam(':endereco', $this->endereco);
             $stmt->bindParam(':numero', $this->numero);
             $stmt->bindParam(':complemento', $this->complemento);
@@ -248,7 +248,6 @@ class Aluno extends Crud {
             $stmt->bindParam(':municipio', $this->municipio);
             $stmt->bindParam(':escolarizacao', $this->escolarizacao);
             $stmt->bindParam(':transporte', $this->transporte);
-            $stmt->bindParam(':responsavel_transporte', $this->responsavel_transporte);
             $stmt->bindParam(':responsavel_transporte', $this->responsavel_transporte);
             $stmt->bindParam(':tipo_transporte', $this->tipo_transporte);
             $stmt->bindParam(':status', $this->status);
