@@ -13,9 +13,9 @@
     <body>
         <div class="cabecalho">
             <div class="banner">
-                <img src="../imagens/logo.png">
-                <span id="titulo">WEB_ESCOLA - SEMED</span><br>
-                <span id="sub-titulo">Prefeitura Municipal de Tomé-Açu</span>
+                <div class="imagem_banner">
+                    <img src="../imagens/logo.png">
+                </div>
             </div>
         </div>
 

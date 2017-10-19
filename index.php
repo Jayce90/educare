@@ -13,14 +13,22 @@ and open the template in the editor.
         <script src="layout/js/bootstrap.min.js"></script>
         <title>Bem Vindo</title>
     </head>
-    <body>
+    <body id="fundo_index">
 
-        <div class="panel panel-default" id="box_login">
-            <div class="panel-body">
-                <h1>Perfils</h1>
-                <a href="perfil_secretaria/index_secretaria.php">Secretaria</a><br><br>
-                <a href="perfil_semed/index_semed.php">SEMED</a>
+        <div class="cabecalho">
+            <div class="banner">
+                <img src="imagens/logo.png">
             </div>
         </div>
+
+
+            <div class="panel panel-default" id="box_login">
+                <div class="panel-body">
+                    <h1>Perfils</h1>
+                    <a href="perfil_secretaria/index_secretaria.php">Secretaria</a><br><br>
+                    <a href="perfil_semed/index_semed.php">SEMED</a>
+                </div>
+            </div>
+
     </body>
 </html>

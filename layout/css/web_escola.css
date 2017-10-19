@@ -9,6 +9,15 @@
     background-color: #324270;
 }
 
+#fundo_index{
+    background: linear-gradient(90deg, #324270, #324680, #337ab7);
+}
+
+.imagem_banner{
+    width: auto;
+    height: auto;
+}
+
 #box_login{
     margin-top: 5%;
     margin-left: 30%;
