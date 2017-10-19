@@ -11,7 +11,9 @@ and open the template in the editor.
         <link href="layout/css/bootstrap.min.css" rel="stylesheet">
         <link href="layout/css/local.css" rel="stylesheet">
         <script src="layout/js/bootstrap.min.js"></script>
-        <script src="layout/js/local.js"></script>
+        <script src="layout/js/componente_local.js"></script>
+        <script src="layout/js/mascara_local.js"></script>
+        <script src="layout/js/validacao_local.js"></script>
         <link rel="shortcut icon" href="imagens/icone.png" type="image/x-icon">
         <title>Bem Vindo</title>
     </head>
@@ -67,7 +69,7 @@ and open the template in the editor.
                         <h4 class="modal-title" id="myModalLabel">Login - Usuário</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="" method="post">
+                        <form name="loginUsuario" action="" method="post">
 
                             <div class="form-group">
                                 <label for="inputUsuario">Usuário</label>
@@ -79,7 +81,7 @@ and open the template in the editor.
                                 <input type="password" name="senha_usuario" class="form-control" id="inputSenha" placeholder="digite a senha">
                             </div> 
 
-                            <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                            <button type="submit" class="btn btn-primary btn-lg" onclick="return validar_login()">Enviar</button>
 
                         </form>
                     </div>
