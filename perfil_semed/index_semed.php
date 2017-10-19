@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <link href="../layout/css/bootstrap.min.css" rel="stylesheet">
-        <link href="../layout/css/web_escola.css" rel="stylesheet">
+        <link href="../layout/css/local.css" rel="stylesheet">
         <script src="../layout/js/bootstrap.min.js"></script>
         <title>SECRETARIA ESCOLAR</title>
     </head>
