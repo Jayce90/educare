@@ -57,7 +57,7 @@ and open the template in the editor.
             </a>
         </div>
 
-        
+
         <!-- Modal - Login -->
         <div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
@@ -67,16 +67,29 @@ and open the template in the editor.
                         <h4 class="modal-title" id="myModalLabel">Login - Usuário</h4>
                     </div>
                     <div class="modal-body">
-                        ...
+                        <form action="" method="post">
+
+                            <div class="form-group">
+                                <label for="inputUsuario">Usuário</label>
+                                <input type="text" name="login_usuario" class="form-control" id="inputUsuario" placeholder="digite o usuário">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="inputSenha">Senha</label>
+                                <input type="password" name="senha_usuario" class="form-control" id="inputSenha" placeholder="digite a senha">
+                            </div> 
+
+                            <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+
+                        </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
                     </div>
                 </div>
             </div>
         </div>
-        
+
         <!-- Modal - Login -->
         <div class="modal fade" id="modalCadastro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
@@ -86,10 +99,42 @@ and open the template in the editor.
                         <h4 class="modal-title" id="myModalLabel">Cadastro - Usuário</h4>
                     </div>
                     <div class="modal-body">
-                        ...
+                        <form action="" method="post">
+                            <div class="form-group">
+                                <label for="inputNomeusuario">Nome Usuário</label>
+                                <input type="text" name="cad_nome_usuario" class="form-control" id="inputNomeusuario" placeholder="nome completo">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputEmailusuario">Email usuário</label>
+                                <input type="text" name="cad_email_usuario" class="form-control" id="inputEmailusuario" placeholder="digite o email">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputTelefoneUsuario">Telefone Usuário</label>
+                                <input type="text" name="cad_fone_usuario" class="form-control" id="inputTelefoneUsuario" placeholder="digite o telefone">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputApelidoUsuario">Apelido</label>
+                                <input type="text" name="cad_apelido_usuario" class="form-control" id="inputApelidoUsuario" placeholder="apelido de usuário">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputSenhaUsuario">Senha</label>
+                                <input type="password" name="cad_senha_usuario" class="form-control" id="inputSenhaUsuario" placeholder="digite a senha">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="inputConfirmarSenhaUsuario">Confirme a senha</label>
+                                <input type="password" name="cad_confirmar_senha_usuario" class="form-control" id="inputConfirmarSenhaUsuario" placeholder="confirme a senha">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                        </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-warning" data-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
                     </div>
                 </div>
             </div>
