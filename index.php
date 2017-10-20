@@ -75,7 +75,7 @@ and open the template in the editor.
                                 <label for="inputUsuario">Usuário</label>
                                 <input type="text" name="login_usuario" class="form-control" id="inputUsuario" placeholder="digite o usuário">
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="inputSenha">Senha</label>
                                 <input type="password" name="senha_usuario" class="form-control" id="inputSenha" placeholder="digite a senha">
@@ -103,18 +103,29 @@ and open the template in the editor.
                     <div class="modal-body">
                         <form action="" method="post">
                             <div class="form-group">
-                                <label for="inputNomeusuario">Nome Usuário</label>
+                                <label for="inputNomeusuario">Nome</label>
                                 <input type="text" name="cad_nome_usuario" class="form-control" id="inputNomeusuario" placeholder="nome completo">
                             </div>
 
                             <div class="form-group">
-                                <label for="inputEmailusuario">Email usuário</label>
+                                <label for="inputEmailusuario">Email</label>
                                 <input type="text" name="cad_email_usuario" class="form-control" id="inputEmailusuario" placeholder="digite o email">
                             </div>
 
-                            <div class="form-group">
-                                <label for="inputTelefoneUsuario">Telefone Usuário</label>
-                                <input type="text" name="cad_fone_usuario" class="form-control" id="inputTelefoneUsuario" placeholder="digite o telefone">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="inputTelefoneUsuario">Telefone</label>
+                                        <input type="text" name="cad_fone_usuario" class="form-control" id="inputTelefoneUsuario" placeholder="91 000000000" required="" maxlength="12" onkeypress="formatar('## #########', this)" onblur="showhide()">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="inputCpfUsuario">CPF</label>
+                                        <input type="text" name="cad_cpf_usuario" class="form-control" id="inputCpfUsuario" placeholder="digite o CPF" required="" maxlength="14" onkeypress="formatar('###.###.###-##', this)" onblur="showhide()">
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="form-group">
@@ -126,10 +137,19 @@ and open the template in the editor.
                                 <label for="inputSenhaUsuario">Senha</label>
                                 <input type="password" name="cad_senha_usuario" class="form-control" id="inputSenhaUsuario" placeholder="digite a senha">
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="inputConfirmarSenhaUsuario">Confirme a senha</label>
-                                <input type="password" name="cad_confirmar_senha_usuario" class="form-control" id="inputConfirmarSenhaUsuario" placeholder="confirme a senha">
+                                <input type="password" name="cad_confirmar_senha_usuario" class="form-control" id="inputConfirmarSenhaUsuario" placeholder="confirme a senha"><br>
+
+                                <label for="inputPerfilUsuario">Perfil</label>
+                                <select class="form-control" name="cad_perfil_usuario">
+                                    <option value="">Selecione</option>
+                                    <option value="Aluno">Aluno</option>
+                                    <option value="Professor(a)">Professor(a)</option>
+                                    <option value="Secretário(a)">Secretário(a)</option>
+                                </select>
+
                             </div>
 
                             <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
