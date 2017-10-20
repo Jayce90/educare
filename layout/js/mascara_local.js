@@ -8,6 +8,3 @@ function formatar(mascara, documento) {
     }
 
 }
-function soNumeros(v){
-    return v.replace(/\D/g,"")
-}
