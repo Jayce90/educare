@@ -104,7 +104,7 @@
                                                     <input type="radio" name="cad_raca_aluno" id="inputraca" value="indigena"> Indígena
                                                 </label>
                                                 <label class="radio-inline">
-                                                    <input type="radio" name="cad_raca_aluno" id="inputraca" value="naodeclarada"> Não Declarada
+                                                    <input type="radio" name="cad_raca_aluno" id="inputraca" value="nao declarada"> Não Declarada
                                                 </label>
                                             </div> 
                                         </div>
@@ -224,28 +224,28 @@
                                             <label for="inputTipoDeficiencia">14a. Deficiência :</label><br>
 
                                             <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficiencia" value="cegueira"> Cegueira
+                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficiencia" value="Cegueira"> Cegueira
                                             </label>
                                             <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficiencia" value="baixavisao"> Baixa Visão
+                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficiencia" value="Baixa Visao"> Baixa Visão
                                             </label>
                                             <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficiencia" value="surdez"> Surdez
+                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficiencia" value="Surdez"> Surdez
                                             </label>
                                             <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficiencia" value="deficienciaauditiva"> Deficiência Auditiva
+                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficiencia" value="Deficiencia Auditiva"> Deficiência Auditiva
                                             </label>
                                             <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficiencia" value="surdocegueira"> Surdocegueira
+                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficiencia" value="Surdo Cegueira"> Surdocegueira
                                             </label>
                                             <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficiencia" value="deficienciafisica"> Deficiência Física
+                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficiencia" value="Deficiencia Fisica"> Deficiência Física
                                             </label>
                                             <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficiencia" value="deficienciaintelectual"> Deficiência Intelectual
+                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficiencia" value="Deficiencia Intelectual"> Deficiência Intelectual
                                             </label>
                                             <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficiencia" value="deficienciamultipla"> Deficiência Múltipla
+                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficiencia" value="Deficiencia Multipla"> Deficiência Múltipla
                                             </label>                                            
 
                                         </div> 
@@ -255,16 +255,16 @@
                                             <label for="inputTranstornog">14b. Transtorno global do desenvolvimento :</label><br>
 
                                             <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTranstornog" value="autismoinfantil"> Autismo Infantil
+                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTranstornog" value="Autismo Infantil"> Autismo Infantil
                                             </label>
                                             <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTranstornog" value="sindromedeasperger"> Síndrome de Asperger 
+                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTranstornog" value="Sindrome de Asperger"> Síndrome de Asperger 
                                             </label>
                                             <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTranstornog" value="sindromederett"> Síndrome de Rett
+                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTranstornog" value="Sindrome de Rett"> Síndrome de Rett
                                             </label>
                                             <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTranstornog" value="Transtornodesintegrativodainfancia"> Transtorno desintegrativo da infância
+                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTranstornog" value="Transtorno Desintegrativo da Infancia"> Transtorno desintegrativo da infância
                                             </label>
 
 
@@ -274,7 +274,7 @@
                                             <label for="inputTranstornog">14c. Altas Habilidades/Superdotação :</label><br>
 
                                             <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTranstornog" value="superdotacao"> Altas Habilidades/Superdotação
+                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTranstornog" value="Super Dotacao"> Altas Habilidades/Superdotação
                                             </label>
 
                                         </div>
@@ -367,8 +367,8 @@
                                             <label for="inputCertidaoCivil">16. Certidão Civil :</label><br>
 
                                             <select class="form-control" name="cad_certidaocivil_aluno[]">
-                                                <option value="ModeloNovo">Modelo Novo</option>                                               
-                                                <option value="ModeloAntigo">Modelo Antigo</option>
+                                                <option value="Modelo Novo">Modelo Novo</option>                                               
+                                                <option value="Modelo Antigo">Modelo Antigo</option>
                                             </select> 
 
                                         </div>
@@ -378,8 +378,8 @@
                                             <label for="inputTipoCertidao">16a. Tipo de certidão Civil :</label><br>
 
                                             <select class="form-control" name="cad_certidaocivil_aluno[]">
-                                                <option value="nascimento">Certidão de nascimento</option>                                               
-                                                <option value="casamento">Certidão de casamento</option>
+                                                <option value="Nascimento">Certidão de nascimento</option>                                               
+                                                <option value="Casamento">Certidão de casamento</option>
                                             </select>
 
                                         </div>
@@ -649,7 +649,7 @@
                                                 <input type="radio" name="cad_transporte_aluno" id="inputTransporteescolar" value="utiliza"> Utiliza
                                             </label>
                                             <label class="radio-inline">
-                                                <input type="radio" name="cad_transporte_aluno" id="inputTransporteescolar" value="naoutiliza"> Não Utiliza
+                                                <input type="radio" name="cad_transporte_aluno" id="inputTransporteescolar" value="não utiliza"> Não Utiliza
                                             </label>
 
                                         </div>
@@ -671,7 +671,7 @@
 
 
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-6">
 
                                             <label for="inputTipoveiculo">28b. Rodoviário :</label><br>
 
@@ -686,7 +686,7 @@
                                             </select>
                                         </div>
 
-                                        <div class="col-md-4">
+                                        <div class="col-md-6">
                                             <label for="inputTipoveiculo">28c. Aquaviário/Embarcação
  :</label><br>
 
@@ -699,14 +699,7 @@
                                             </select>
                                         </div>
 
-                                        <div class="col-md-4">
-                                            <label for="inputTipoveiculo">28d. Ferroviário :</label><br>
-
-                                            <select class="form-control" name="cad_tipo_transporte_aluno[]">
-                                                <option value="">Selecione</option>                                               
-                                                <option value="Trem/Metrô">Trem/Metrô</option>                                             
-                                            </select>
-                                        </div>
+                                        
                                     </div><br>
 
                                     <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
