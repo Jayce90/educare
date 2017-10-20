@@ -101,7 +101,7 @@ and open the template in the editor.
                         <h4 class="modal-title" id="myModalLabel">Cadastro - Usuário</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="" method="post">
+                        <form action="controle/cadastrando_usuario.php" method="post">
                             <div class="form-group">
                                 <label for="inputNomeusuario">Nome</label>
                                 <input type="text" name="cad_nome_usuario" class="form-control" id="inputNomeusuario" placeholder="nome completo">

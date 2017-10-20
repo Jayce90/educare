@@ -7,6 +7,7 @@
         <link href="../layout/css/bootstrap.min.css" rel="stylesheet">
         <link href="../layout/css/local.css" rel="stylesheet">
         <script src="../layout/js/bootstrap.min.js"></script>
+        <link rel="shortcut icon" href="../imagens/icone.png" type="image/x-icon">
         <title>SECRETARIA ESCOLAR</title>
     </head>
 
