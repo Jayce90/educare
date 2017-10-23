@@ -7,6 +7,7 @@
         <link href="../layout/css/bootstrap.min.css" rel="stylesheet">
         <link href="../layout/css/local.css" rel="stylesheet">
         <script src="../layout/js/bootstrap.min.js"></script>
+        <script src="../layout/js/mascara_local.js"></script>
         <link rel="shortcut icon" href="../imagens/icone.png" type="image/x-icon">
         <title>SECRETARIA ESCOLAR</title>
     </head>
@@ -56,7 +57,7 @@
 
                                             <div class="form-group">
                                                 <label for="inputNascimento">3. Data de Nascimento</label>
-                                                <input type="text" name="cad_nasc_aluno" class="form-control" id="inputNascimento" placeholder="digite a data de nascimento">
+                                                <input type="text" name="cad_nasc_aluno" class="form-control" id="inputNascimento" placeholder="00/00/0000" required="" maxlength="10" onkeypress="formatar('##/##/####', this)" onblur="showride()">
                                             </div>
                                         </div>
                                         <div class="col-xs-6 col-md-6">
@@ -80,7 +81,7 @@
                                         <div class="col-xs-6 col-md-4">
                                             <div class="form-group">
                                                 <label for="inputNis">5. Número de identificação Social (NIS)</label>
-                                                <input type="text" name="cad_nis_aluno" class="form-control" id="inputNis" placeholder="digite o NIS">
+                                                <input type="text" name="cad_nis_aluno" class="form-control" id="inputNis" placeholder="digite o NIS" required="" maxlength="14" onkeypress="formatar('########### ##', this)" onblur="showride()">
                                             </div>
 
                                         </div>
@@ -187,7 +188,7 @@
 
                                             <div class="form-group">
                                                 <label for="inputtelefonealuno">12. Telefone</label>
-                                                <input type="text" name="cad_telefone_aluno" class="form-control" id="inputtelefonealuno" placeholder="telefone">
+                                                <input type="text" name="cad_telefone_aluno" class="form-control" id="inputtelefonealuno" placeholder="91 000000000" required="" maxlength="12" onkeypress="formatar('## #########', this)" onblur="showhide()">
                                             </div>
 
                                         </div>
@@ -491,13 +492,13 @@
 
 
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
 
                                             <label for="inputCpf">17. Número do CPF</label>
-                                            <input type="text" name="cad_cpf_aluno" class="form-control" id="inputCpf" placeholder="digite o CPF">
+                                            <input type="text" name="cad_cpf_aluno" class="form-control" id="inputCpf" placeholder="digite o CPF" required="" maxlength="14" onkeypress="formatar ('###.###.###-##', this)" onblur="showhide()">
 
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
 
                                             <label for="inputPassaporte">18. Documento extrangeiro/Passaporte</label>
                                             <input type="text" name="cad_passaporte_aluno" class="form-control" id="inputPassaporte" placeholder="digite o passaporte">
@@ -537,7 +538,7 @@
 
                                             <div class="form-group">
                                                 <label for="inputCep">20. CEP</label>
-                                                <input type="text" name="cad_cep_aluno" class="form-control" id="inputCep" placeholder="digite o CEP">
+                                                <input type="text" name="cad_cep_aluno" class="form-control" id="inputCep" placeholder="digite o CEP" required="" maxlength="9" onkeypress="formatar('#####-###', this)" onblur="showride()">
 
                                             </div>
 
@@ -689,7 +690,7 @@
 
                                         <div class="col-md-6">
                                             <label for="inputTipoveiculo">28c. Aquaviário/Embarcação
- :</label><br>
+                                                :</label><br>
 
                                             <select class="form-control" name="cad_tipo_transporte_aluno[]">
                                                 <option value="">Selecione</option>                                               
@@ -700,7 +701,7 @@
                                             </select>
                                         </div>
 
-                                        
+
                                     </div><br>
 
                                     <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
