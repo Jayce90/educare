@@ -7,6 +7,8 @@
         <link href="../layout/css/bootstrap.min.css" rel="stylesheet">
         <link href="../layout/css/local.css" rel="stylesheet">
         <script src="../layout/js/bootstrap.min.js"></script>
+        <script src="../layout/js/mascara_local.js"></script>
+        <link rel="shortcut icon" href="../imagens/icone.png" type="image/x-icon">
         <title>SECRETARIA ESCOLAR</title>
     </head>
 
@@ -30,8 +32,8 @@
                     <li><a class="glyphicon glyphicon-alert" href="../index.php"> Sair</a></li>
                 </ul>
             </div>
-            
-            
+
+
 
             <!-- Content -->
             <div class="col-md-9" id="box_conteudo">
@@ -55,7 +57,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="inputCpfGestorEscola">2. Número do CPF do Gestor Escolar</label>
-                                                <input type="text" name="cad_cpf_gestor_escola" class="form-control" id="inputCpfGestorEscola" placeholder="CPF gestor escolar">
+                                                <input type="text" name="cad_cpf_gestor_escola" class="form-control" id="inputCpfGestorEscola" placeholder="CPF gestor escolar" required="" maxlength="14" onkeypress="formatar ('###.###.###-##', this)" onblur="showhide()">
                                             </div>
                                         </div>
                                     </div>
@@ -104,7 +106,7 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="inputCepEscola">7. CEP</label>
-                                                <input type="text" name="cad_cep_escola" class="form-control" id="inputCepEscola" placeholder="digite o CEP">
+                                                <input type="text" name="cad_cep_escola" class="form-control" id="inputCepEscola" placeholder="digite o CEP" required="" maxlength="9" onkeypress="formatar('#####-###', this)" onblur="showride()">
                                             </div>
                                         </div>
 
@@ -196,14 +198,14 @@
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label for="inputFoneEscola">15. Telefone</label>
-                                                <input type="text" name="cad_fone_escola" class="form-control" id="inputFoneEscola" placeholder="digite o telefone">
+                                                <input type="text" name="cad_fone_escola" class="form-control" id="inputFoneEscola" placeholder="91 000000000" required="" maxlength="12" onkeypress="formatar('## #########', this)" onblur="showhide()">
                                             </div>                                            
                                         </div>
 
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label for="inputOutroFoneEscola">16. Outro telefone</label>
-                                                <input type="text" name="cad_outro_fone_escola" class="form-control" id="inputOutroFoneEscola" placeholder="digite o outro telefone">
+                                                <input type="text" name="cad_outro_fone_escola" class="form-control" id="inputOutroFoneEscola" placeholder="91 000000000" required="" maxlength="12" onkeypress="formatar('## #########', this)" onblur="showhide()">
                                             </div>
                                         </div>
 
@@ -290,13 +292,13 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="inputiniciofuncionamento">3. Horário de funcionamento Inicio</label>
-                                                <input type="text" name="cad_horario_turma[]" class="form-control" id="inputiniciofuncionamento" placeholder="horário inicio">
+                                                <input type="text" name="cad_horario_turma[]" class="form-control" id="inputiniciofuncionamento" placeholder="00:00" required="" maxlength="5" onkeypress="formatar('##:##', this)" onblur="showhide()">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="inputfinalfuncionamento">3. Horário de funcionamento Fim</label>
-                                                <input type="text" name="cad_horario_turma[]" class="form-control" id="inputfinalfuncionamento" placeholder="horário final">
+                                                <input type="text" name="cad_horario_turma[]" class="form-control" id="inputfinalfuncionamento" placeholder="00:00" required="" maxlength="5" onkeypress="formatar('##:##', this)" onblur="showhide()">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
@@ -507,7 +509,7 @@
 
                                             <div class="form-group">
                                                 <label for="inputCpfProfessor">2. CPF</label>
-                                                <input type="text" name="cad_cpf_professor" class="form-control" id="inputCpfProfessor" placeholder="digite o CPF">
+                                                <input type="text" name="cad_cpf_professor" class="form-control" id="inputCpfProfessor" placeholder="digite o CPF" required="" maxlength="14" onkeypress="formatar('###.###.###-##', this)" onblur="showhide()">
                                             </div>
                                         </div>
                                     </div>
@@ -525,7 +527,7 @@
 
                                             <div class="form-group">
                                                 <label for="inputNascimentoProfessor">4. Data de Nascimento</label>
-                                                <input type="text" name="cad_nasc_professor" class="form-control" id="inputNascimentoProfessor" placeholder="digite a data de nascimento">
+                                                <input type="text" name="cad_nasc_professor" class="form-control" id="inputNascimentoProfessor" placeholder="00/00/0000" required="" maxlength="10" onkeypress="formatar('##/##/####', this)" onblur="showride()">
                                             </div>
                                         </div>
                                     </div>
@@ -553,7 +555,7 @@
 
                                             <div class="form-group">
                                                 <label for="inputNisProfessor">8. Número de identificação Social (NIS)</label>
-                                                <input type="text" name="cad_nis_professor" class="form-control" id="inputNisProfessor" placeholder="digite o NIS">
+                                                <input type="text" name="cad_nis_professor" class="form-control" id="inputNisProfessor" placeholder="digite o NIS" required="" maxlength="14" onkeypress="formatar('########### ##', this)" onblur="showride()">
                                             </div>
                                         </div>
                                     </div>
@@ -718,7 +720,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="inputCepProfessor">16. CEP</label>
-                                                <input type="text" name="cad_cep_professor" class="form-control" id="inputCepProfessor" placeholder="digite o CEP">
+                                                <input type="text" name="cad_cep_professor" class="form-control" id="inputCepProfessor" placeholder="digite o CEP" required="" maxlength="9" onkeypress="formatar('#####-###', this)" onblur="showride()">
 
                                             </div>
                                         </div>
