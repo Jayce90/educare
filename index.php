@@ -69,7 +69,7 @@ and open the template in the editor.
                         <h4 class="modal-title" id="myModalLabel">Login - Usuário</h4>
                     </div>
                     <div class="modal-body">
-                        <form name="loginUsuario" action="" method="post">
+                        <form name="loginUsuario" action="controle/autenticacao.php" method="post">
 
                             <div class="form-group">
                                 <label for="inputUsuario">Usuário</label>
