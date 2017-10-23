@@ -356,7 +356,7 @@
 
                                             <div class="form-group">
                                                 <label for="inputDataIdentidade">15d. Data da expedição</label>
-                                                <input type="text" name="cad_data_identidade_aluno" class="form-control" id="inputDataIdentidade" placeholder="data de expedicao da identidade">
+                                                <input type="text" name="cad_data_identidade_aluno" class="form-control" id="inputDataIdentidade" placeholder="00/00/0000" required="" maxlength="10" onkeypress="formatar('##/##/####', this)" onblur="showride()">
                                             </div>
 
                                         </div>
@@ -424,7 +424,7 @@
 
                                             <div class="form-group">
                                                 <label for="inputDatacertidao">16e. Data de emissão da certidão</label>
-                                                <input type="text" name="cad_certidaocivil_aluno[]" class="form-control" id="inputDatacertidao" placeholder="data da certidao">
+                                                <input type="text" name="cad_certidaocivil_aluno[]" class="form-control" id="inputDatacertidao" placeholder="00/00/0000" required="" maxlength="10" onkeypress="formatar('##/##/####', this)" onblur="showride()">
 
                                             </div>
 
@@ -501,7 +501,7 @@
                                         <div class="col-md-4">
 
                                             <label for="inputPassaporte">18. Documento extrangeiro/Passaporte</label>
-                                            <input type="text" name="cad_passaporte_aluno" class="form-control" id="inputPassaporte" placeholder="digite o passaporte">
+                                            <input type="text" name="cad_passaporte_aluno" class="form-control" id="inputPassaporte" placeholder="digite o passaporte" required="" maxlength="8" onkeypress="formatar('########', this)" onblur="showhide()">
 
                                         </div>
                                     </div><br>
