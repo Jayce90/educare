@@ -54,7 +54,7 @@ and open the template in the editor.
             <a href="https://www.facebook.com/Secretaria-Municipal-de-Educa%C3%A7%C3%A3o-e-Desporto-Tom%C3%A9-A%C3%A7u-1431109870283496/">
                 <img src="imagens/banner_semed.png" class="imagem_banner_box">
             </a>
-            <a href="imagens/banner_cad.png">
+            <a href="https://www.facebook.com/cadcorporation/">
                 <img src="imagens/banner_cad.png" class="imagem_banner_box">
             </a>
         </div>
