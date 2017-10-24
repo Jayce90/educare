@@ -29,6 +29,7 @@
                 <ul class="nav nav-pills nav-stacked" id="myTabs">
                     <li class="active"><a class="glyphicon glyphicon-pencil" href="#cad_escola" data-toggle="pill"> Cadastro Escola</a></li>
                     <li><a class="glyphicon glyphicon-book" href="#cad_turma" data-toggle="pill"> Cadastro Turma</a></li>
+                    <li><a class="glyphicon glyphicon-folder-open" href="#cad_disciplina" data-toggle="pill"> Cadastro Disciplina</a></li>
                     <li><a class="glyphicon glyphicon-briefcase" href="#cad_professor" data-toggle="pill"> Cadastro Professor</a></li>
                     <li><a class="glyphicon glyphicon-alert" href="../index.php"> Sair</a></li>
                 </ul>
@@ -50,23 +51,26 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="inputIdEscola">1. Identificação Unica</label>
-                                                <input type="text" name="cad_id_escola" class="form-control" id="inputIdEscola" placeholder="digite a identificação unica" required="" maxlength="" onkeypress="formatar(, this)" onblur="showride()">
+                                                <label for="inputIdEscola">1. INEP</label>
+                                                <input type="text" name="cad_id_escola" class="form-control" id="inputIdEscola" placeholder="digite a identificação unica" required="" maxlength="" onkeypress="return SomenteNumero(event);" onblur="showride()">
                                             </div>
                                         </div>
 
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="inputCpfGestorEscola">2. Número do CPF do Gestor Escolar</label>
-                                                <input type="text" name="cad_cpf_gestor_escola" class="form-control" id="inputCpfGestorEscola" placeholder="CPF gestor escolar" required="" maxlength="14" onkeypress="formatar ('###.###.###-##', this)" onblur="showhide()">
+                                                <input type="text" name="cad_cpf_gestor_escola" class="form-control" id="inputCpfGestorEscola" placeholder="CPF gestor escolar" required="" maxlength="14" onkeypress="formatar('###.###.###-##', this); return SomenteNumero(event);" onblur="showhide()">
                                             </div>
                                         </div>
                                     </div>
 
+                                    <label for="inputNomeGestorEscola">3. Nome do Gestor Escolar</label>
+                                    <input type="text" name="cad_nome_gestor_escola" class="form-control" id="inputNomeGestorEscola" placeholder="digite o nome"><br>
+
                                     <div class="row">
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="inputCargoGestorEscola">3. Cargo</label><br>
+                                                <label for="inputCargoGestorEscola">4. Cargo</label><br>
 
                                                 <label class="radio-inline">
                                                     <input type="radio" name="cad_cargo_gestor_escola" id="inputCargoGestorEscola" value="diretor"> Diretor
@@ -79,14 +83,14 @@
                                         </div>
                                         <div class="col-md-5">
                                             <div class="form-group">
-                                                <label for="inputEmailGestorEscola">4. Endereço eletrônico (e-mail)</label>
+                                                <label for="inputEmailGestorEscola">5. Endereço eletrônico (e-mail)</label>
                                                 <input type="text" name="cad_email_gestor_escola" class="form-control" id="inputEmailGestorEscola" placeholder="digite o Email">
                                             </div>
                                         </div>
 
                                         <div class="col-md-4">
 
-                                            <label for="inputFuncionamentoEscola">5. Situação de funcionamento</label>
+                                            <label for="inputFuncionamentoEscola">6. Situação de funcionamento</label>
 
                                             <label class="radio-inline">
                                                 <input type="radio" name="cad_funcionamento_escola" id="inputFuncionamentoEscola" value="Em atividade"> Em atividade
@@ -100,60 +104,27 @@
                                         </div>
                                     </div>
 
-                                    <label for="inputNomeEscola">6. Nome da escola</label>
+                                    <label for="inputNomeEscola">7. Nome da escola</label>
                                     <input type="text" name="cad_nome_escola" class="form-control" id="inputNomeEscola" placeholder="nome da escola"><br>
 
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="inputCepEscola">7. CEP</label>
-                                                <input type="text" name="cad_cep_escola" class="form-control" id="inputCepEscola" placeholder="digite o CEP" required="" maxlength="9" onkeypress="formatar('#####-###', this)" onblur="showride()">
+                                                <label for="inputCepEscola">8. CEP</label>
+                                                <input type="text" name="cad_cep_escola" class="form-control" id="inputCepEscola" placeholder="digite o CEP" required="" maxlength="9" onkeypress="formatar('#####-###', this); return SomenteNumero(event);" onblur="showride()">
                                             </div>
                                         </div>
 
-                                        <div class="col-md-2">
+                                        <div class="col-md-8">
                                             <div class="form-group">
-                                                <label for="inputUfEscola">8. UF</label>
+                                                <label for="inputPoloEscola">9. Polo</label>
 
-                                                <select class="form-control" name="cad_uf_escola">
+                                                <select class="form-control" name="cad_polo_escola">
                                                     <option value="">Selecione</option>
-                                                    <option value="AC">AC</option>
-                                                    <option value="AL">AL</option>
-                                                    <option value="AM">AM</option>
-                                                    <option value="AP">AP</option>
-                                                    <option value="BA">BA</option>
-                                                    <option value="CE">CE</option>
-                                                    <option value="DF">DF</option>
-                                                    <option value="ES">ES</option>
-                                                    <option value="GO">GO</option>
-                                                    <option value="MA">MA</option>
-                                                    <option value="MG">MG</option>
-                                                    <option value="MS">MS</option>
-                                                    <option value="MT">MT</option>
-                                                    <option value="PA">PA</option>
-                                                    <option value="PB">PB</option>
-                                                    <option value="PE">PE</option>
-                                                    <option value="PI">PI</option>
-                                                    <option value="PR">PR</option>
-                                                    <option value="RJ">RJ</option>
-                                                    <option value="RN">RN</option>
-                                                    <option value="RS">RS</option>
-                                                    <option value="RO">RO</option>
-                                                    <option value="RR">RR</option>
-                                                    <option value="SC">SC</option>
-                                                    <option value="SE">SE</option>
-                                                    <option value="SP">SP</option>
-                                                    <option value="TO">TO</option>
                                                 </select>
                                             </div>
                                         </div>
 
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="inputMunicipioEscola">9. Município</label>
-                                                <input type="text" name="cad_municipio_escola" class="form-control" id="inputMunicipioEscola" placeholder="digite o Municipio">
-                                            </div>
-                                        </div>
                                     </div>
 
                                     <div class="row">
@@ -176,7 +147,7 @@
                                         <div class="col-md-2">
                                             <div class="form-group">
                                                 <label for="inputNumeroEscola">12. Número</label>
-                                                <input type="text" name="cad_numero_escola" class="form-control" id="inputNumeroEscola" placeholder="digite o numero">
+                                                <input type="text" name="cad_numero_escola" class="form-control" id="inputNumeroEscola" placeholder="digite o numero" onkeypress="return SomenteNumero(event);">
                                             </div>
                                         </div>
 
@@ -199,14 +170,14 @@
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label for="inputFoneEscola">15. Telefone</label>
-                                                <input type="text" name="cad_fone_escola" class="form-control" id="inputFoneEscola" placeholder="91 000000000" required="" maxlength="12" onkeypress="formatar('## #########', this)" onblur="showhide()">
+                                                <input type="text" name="cad_fone_escola" class="form-control" id="inputFoneEscola" placeholder="91 000000000" required="" maxlength="12" onkeypress="formatar('## #########', this); return SomenteNumero(event);" onblur="showhide()">
                                             </div>                                            
                                         </div>
 
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label for="inputOutroFoneEscola">16. Outro telefone</label>
-                                                <input type="text" name="cad_outro_fone_escola" class="form-control" id="inputOutroFoneEscola" placeholder="91 000000000" required="" maxlength="12" onkeypress="formatar('## #########', this)" onblur="showhide()">
+                                                <input type="text" name="cad_outro_fone_escola" class="form-control" id="inputOutroFoneEscola" placeholder="91 000000000" required="" maxlength="12" onkeypress="formatar('## #########', this); return SomenteNumero(event);" onblur="showhide()">
                                             </div>
                                         </div>
 
@@ -293,13 +264,13 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="inputiniciofuncionamento">3. Horário de funcionamento Inicio</label>
-                                                <input type="text" name="cad_horario_turma[]" class="form-control" id="inputiniciofuncionamento" placeholder="00:00" required="" maxlength="5" onkeypress="formatar('##:##', this)" onblur="showhide()">
+                                                <input type="text" name="cad_horario_turma[]" class="form-control" id="inputiniciofuncionamento" placeholder="00:00" required="" maxlength="5" onkeypress="formatar('##:##', this); return SomenteNumero(event);" onblur="showhide()">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="inputfinalfuncionamento">3. Horário de funcionamento Fim</label>
-                                                <input type="text" name="cad_horario_turma[]" class="form-control" id="inputfinalfuncionamento" placeholder="00:00" required="" maxlength="5" onkeypress="formatar('##:##', this)" onblur="showhide()">
+                                                <input type="text" name="cad_horario_turma[]" class="form-control" id="inputfinalfuncionamento" placeholder="00:00" required="" maxlength="5" onkeypress="formatar('##:##', this); return SomenteNumero(event);" onblur="showhide()">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
@@ -484,7 +455,103 @@
                                     <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
 
                                 </form>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="tab-pane" id="cad_disciplina">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">CADASTRO DISCIPLINA</div>
+                            <div class="panel-body">
+                                <form action="" method="post">
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+
+                                            <label for="inputNomeDisciplina">1. Nome da disciplina</label>
+                                            <input type="text" name="cad_nome_disciplina" class="form-control" id="inputNomeDisciplina" placeholder="nome da disciplina">
+                                        </div>
+
+                                        <div class="col-md-4">
+
+                                            <label for="inputCargaHorariaDisciplina">2. Carga Horária</label>
+                                            <input type="text" name="cad_carga_horaria_disciplina" class="form-control" id="inputCargaHorariaDisciplina" placeholder="carga horária">                                            
+                                        </div>
+
+                                        <div class="col-md-4">
+
+                                            <label for="inputNivelDisciplina">3. Nivel da disciplina</label><br>
+
+                                            <select class="form-control" name="cad_nivel_disciplina">
+                                                <option value="">Selecione</option>                                               
+                                                <option value="infantil">Educação Infantil</option>                                               
+                                                <option value="Fundamental">Ensino Fundamental</option>                                        
+                                                <option value="Eja">EJA</option>                                        
+                                            </select>                                             
+                                        </div>
+                                    </div><br>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+
+                                            <label for="inputEtapaDisciplina">4. Etapa da disciplina</label><br>
+
+                                            <select class="form-control" name="cad_etapa_disciplina">
+                                                <option value="">Selecione</option>                                               
+                                                <option value="Creche 2">Creche 2</option>                                               
+                                                <option value="Creche 3">Creche 3</option>                                               
+                                                <option value="preescola 1">Pré - Escola 1</option>                                        
+                                                <option value="preescola 2">Pré - Escola 2</option>                                        
+                                                <option value="1º ano">1º ano</option>                                        
+                                                <option value="2º ano">2º ano</option>                                        
+                                                <option value="3º ano">3º ano</option>                                        
+                                                <option value="4º ano">4º ano</option>                                        
+                                                <option value="5º ano">5º ano</option>                                        
+                                                <option value="6º ano">6º ano</option>                                        
+                                                <option value="7º ano">7º ano</option>                                        
+                                                <option value="8º ano">8º ano</option>                                        
+                                                <option value="9º ano">9º ano</option>                                        
+                                                <option value="fundamentalInicial">EJA - Ensino Fundamental
+                                                    anos iniciais</option>                                        
+                                                <option value="fundamentalFinal">EJA - Ensino Fundamental
+                                                    anos finais</option>                                        
+                                                <option value="fundamentalInicialeFinal">EJA - Ensino Fundamental
+                                                    anos iniciais e anos finais</option>                                        
+                                                <option value="fic">EJA - EJA integrada à Educação
+                                                    Profissional de Nível Fundamental (FIC)</option>                                        
+                                                <option value="urbano">EJA - Ensino Fundamental -
+                                                    Projovem (Urbano)</option>                                        
+                                                <option value="ensinomedio">EJA - Ensino Médio</option>                                        
+                                                <option value="profissionalmedio">EJA integrada à Educação
+                                                    Profissional de Nível Médio</option>                                        
+                                            </select>
+                                        </div>
+
+                                        <div class="col-md-4">
+
+                                            <label for="inputProfessorDisciplina">5. Professor da disciplina</label><br>
+
+                                            <select class="form-control" name="cad_professor_disciplina">
+                                                <option value="">Selecione</option>                                              
+                                            </select>
+                                        </div>
+
+                                        <div class="col-md-4">
+
+                                            <label for="inputTurmaDisciplina">6. Turma da disciplina</label><br>
+
+                                            <select class="form-control" name="cad_turma_disciplina">
+                                                <option value="">Selecione</option>                                              
+                                            </select>
+                                        </div>
+                                    </div><br>
+
+                                    <label for="inputDescricaoDisciplina">7. Descrição da disciplina</label><br>
+                                    <textarea class="form-control" rows="6"></textarea><br>
+
+
+                                    <button type="submit" class="btn btn-primary btn-lg">Enviar</button>  
+                                </form>
 
                             </div>
                         </div>
