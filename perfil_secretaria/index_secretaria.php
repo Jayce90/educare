@@ -39,14 +39,14 @@
 
                     <div class="tab-pane active" id="cad_aluno">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">CADASTRO DE ALUNO</div>
+                            <div class="panel-heading">CADASTRO DO ALUNO</div>
                             <div class="panel-body box_conteudo">
 
                                 <form action="../controle/cadastrando_aluno.php" method="post">
 
                                     <div class="form-group">
                                         <label for="inputIdAluno">1. Identificação Unica</label>
-                                        <input type="text" name="cad_id_aluno" class="form-control" id="inputIdAluno" placeholder="digite a identificação unica" required="" maxlength="" onkeypress="formatar(, this)" onblur="showride()">
+                                        <input type="text" name="cad_id_aluno" class="form-control" id="inputIdAluno" placeholder="digite a identificação unica" required="" maxlength="" onkeypress="return SomenteNumero(event);" onblur="showride()">
                                     </div>
 
                                     <div class="form-group">
@@ -59,7 +59,7 @@
 
                                             <div class="form-group">
                                                 <label for="inputNascimentoAluno">3. Data de Nascimento</label>
-                                                <input type="text" name="cad_nasc_aluno" class="form-control" id="inputNascimentoAluno" placeholder="00/00/0000" required="" maxlength="10" onkeypress="formatar('##/##/####', this)" onblur="showride()">
+                                                <input type="text" name="cad_nasc_aluno" class="form-control" id="inputNascimentoAluno" placeholder="00/00/0000" required="" maxlength="10" onkeypress="formatar('##/##/####', this); return SomenteNumero(event);" onblur="showride()">
                                             </div>
                                         </div>
                                         <div class="col-xs-6 col-md-6">
@@ -83,7 +83,7 @@
                                         <div class="col-xs-6 col-md-4">
                                             <div class="form-group">
                                                 <label for="inputNisAluno">5. Número de identificação Social (NIS)</label>
-                                                <input type="text" name="cad_nis_aluno" class="form-control" id="inputNisAluno" placeholder="digite o NIS" required="" maxlength="14" onkeypress="formatar('########### ##', this)" onblur="showride()">
+                                                <input type="text" name="cad_nis_aluno" class="form-control" id="inputNisAluno" placeholder="digite o NIS" required="" maxlength="11" onkeypress="formatar('###########', this); return SomenteNumero(event);" onblur="showride()">
                                             </div>
 
                                         </div>
@@ -190,7 +190,7 @@
 
                                             <div class="form-group">
                                                 <label for="inputTelefoneAluno">12. Telefone</label>
-                                                <input type="text" name="cad_telefone_aluno" class="form-control" id="inputTelefoneAluno" placeholder="91 000000000" required="" maxlength="12" onkeypress="formatar('## #########', this)" onblur="showhide()">
+                                                <input type="text" name="cad_telefone_aluno" class="form-control" id="inputTelefoneAluno" placeholder="91 000000000" required="" maxlength="12" onkeypress="formatar('## #########', this); return SomenteNumero(event);" onblur="showhide()">
                                             </div>
 
                                         </div>
@@ -290,7 +290,7 @@
 
                                             <div class="form-group">
                                                 <label for="inputIdentidadeAluno">15. Número da identidade</label>
-                                                <input type="text" name="cad_identidade_aluno" class="form-control" id="inputIdentidadeAluno" placeholder="digite o numero da identidade">
+                                                <input type="text" name="cad_identidade_aluno" class="form-control" id="inputIdentidadeAluno" placeholder="digite o numero da identidade" required="" maxlength="20" onkeypress="formatar('####################', this); return SomenteNumero(event);" onblur="showride()">
 
                                             </div>
 
@@ -299,7 +299,7 @@
 
                                             <div class="form-group">
                                                 <label for="inputComplementoIdentidadeAluno">15a. Complemento da identidade</label>
-                                                <input type="text" name="cad_complemento_identidade_aluno" class="form-control" id="inputComplementoIdentidadeAluno" placeholder="digite o complemento da identidade">
+                                                <input type="text" name="cad_complemento_identidade_aluno" class="form-control" id="inputComplementoIdentidadeAluno" placeholder="digite o complemento da identidade" required="" maxlength="4" onkeypress="formatar('####', this); return SomenteNumero(event);" onblur="showride()">
 
                                             </div>
 
@@ -358,7 +358,7 @@
 
                                             <div class="form-group">
                                                 <label for="inputDataIdentidadeAluno">15d. Data da expedição</label>
-                                                <input type="text" name="cad_data_identidade_aluno" class="form-control" id="inputDataIdentidadeAluno" placeholder="00/00/0000" required="" maxlength="10" onkeypress="formatar('##/##/####', this)" onblur="showride()">
+                                                <input type="text" name="cad_data_identidade_aluno" class="form-control" id="inputDataIdentidadeAluno" placeholder="00/00/0000" required="" maxlength="10" onkeypress="formatar('##/##/####', this); return SomenteNumero(event);" onblur="showride()">
                                             </div>
 
                                         </div>
@@ -371,6 +371,7 @@
                                             <label for="inputCertidaoCivilAluno">16. Certidão Civil :</label><br>
 
                                             <select class="form-control" name="cad_certidaocivil_aluno[]">
+                                                <option value="">Selecione</option>
                                                 <option value="Modelo Novo">Modelo Novo</option>                                               
                                                 <option value="Modelo Antigo">Modelo Antigo</option>
                                             </select> 
@@ -382,6 +383,7 @@
                                             <label for="inputTipoCertidaoAluno">16a. Tipo de certidão Civil :</label><br>
 
                                             <select class="form-control" name="cad_certidaocivil_aluno[]">
+                                                <option value="">Selecione</option>
                                                 <option value="Nascimento">Certidão de nascimento</option>                                               
                                                 <option value="Casamento">Certidão de casamento</option>
                                             </select>
@@ -395,7 +397,7 @@
 
                                             <div class="form-group">
                                                 <label for="inputTermoCertidaoAluno">16b. Número do termo</label>
-                                                <input type="text" name="cad_certidaocivil_aluno[]" class="form-control" id="inputTermoCertidaoAluno" placeholder="digite o numero do termo">
+                                                <input type="text" name="cad_certidaocivil_aluno[]" class="form-control" id="inputTermoCertidaoAluno" placeholder="digite o numero do termo" required="" maxlength="8" onkeypress="formatar('########', this); return SomenteNumero(event);" onblur="showride()">
 
                                             </div>
 
@@ -404,7 +406,7 @@
 
                                             <div class="form-group">
                                                 <label for="inputFolhaCertidaoAluno">16c. Folha</label>
-                                                <input type="text" name="cad_certidaocivil_aluno[]" class="form-control" id="inputFolhaCertidaoAluno" placeholder="folha">
+                                                <input type="text" name="cad_certidaocivil_aluno[]" class="form-control" id="inputFolhaCertidaoAluno" placeholder="folha" required="" maxlength="4" onkeypress="formatar('####', this); return SomenteNumero(event);" onblur="showride()">
 
                                             </div>
 
@@ -413,7 +415,7 @@
 
                                             <div class="form-group">
                                                 <label for="inputLivroCertidaoAluno">16d. Livro</label>
-                                                <input type="text" name="cad_certidaocivil_aluno[]" class="form-control" id="inputLivroCertidaoAluno" placeholder="livro">
+                                                <input type="text" name="cad_certidaocivil_aluno[]" class="form-control" id="inputLivroCertidaoAluno" placeholder="livro" required="" maxlength="8" onkeypress="formatar('########', this); return SomenteNumero(event);" onblur="showride()">
 
                                             </div>
 
@@ -426,7 +428,7 @@
 
                                             <div class="form-group">
                                                 <label for="inputDataCertidaoAluno">16e. Data de emissão da certidão</label>
-                                                <input type="text" name="cad_certidaocivil_aluno[]" class="form-control" id="inputDataCertidaoAluno" placeholder="00/00/0000" required="" maxlength="10" onkeypress="formatar('##/##/####', this)" onblur="showride()">
+                                                <input type="text" name="cad_certidaocivil_aluno[]" class="form-control" id="inputDataCertidaoAluno" placeholder="00/00/0000" required="" maxlength="10" onkeypress="formatar('##/##/####', this); return SomenteNumero(event);" onblur="showride()">
 
                                             </div>
 
@@ -488,7 +490,7 @@
 
                                     <div class="form-group">
                                         <label for="inputNumeroMatriculaAluno">16i. Número da matricula (Registro civil - Certidão nova)</label>
-                                        <input type="text" name="cad_certidaocivil_aluno[]" class="form-control" id="inputNumeroMatriculaAluno" placeholder="numero da matricula">
+                                        <input type="text" name="cad_certidaocivil_aluno[]" class="form-control" id="inputNumeroMatriculaAluno" placeholder="numero da matricula" required="" maxlength="40" onkeypress="formatar('###### ## ## #### # ##### ### ####### ##', this); return SomenteNumero(event);" onblur="showride()">
 
                                     </div>
 
@@ -497,7 +499,7 @@
                                         <div class="col-md-4">
 
                                             <label for="inputCpfAluno">17. Número do CPF</label>
-                                            <input type="text" name="cad_cpf_aluno" class="form-control" id="inputCpfAluno" placeholder="digite o CPF" required="" maxlength="14" onkeypress="formatar('###.###.###-##', this)" onblur="showhide()">
+                                            <input type="text" name="cad_cpf_aluno" class="form-control" id="inputCpfAluno" placeholder="digite o CPF" required="" maxlength="14" onkeypress="formatar('###.###.###-##', this); return SomenteNumero(event);" onblur="showhide()">
 
                                         </div>
                                         <div class="col-md-4">
@@ -540,7 +542,7 @@
 
                                             <div class="form-group">
                                                 <label for="inputCepAluno">20. CEP</label>
-                                                <input type="text" name="cad_cep_aluno" class="form-control" id="inputCepAluno" placeholder="digite o CEP" required="" maxlength="9" onkeypress="formatar('#####-###', this)" onblur="showride()">
+                                                <input type="text" name="cad_cep_aluno" class="form-control" id="inputCepAluno" placeholder="digite o CEP" required="" maxlength="9" onkeypress="formatar('#####-###', this); return SomenteNumero(event);" onblur="showride()">
 
                                             </div>
 
@@ -561,7 +563,7 @@
 
                                             <div class="form-group">
                                                 <label for="inputNumeroEnderecoAluno">22. Número</label>
-                                                <input type="text" name="cad_numero_aluno" class="form-control" id="inputNumeroEnderecoAluno" placeholder="numero">
+                                                <input type="text" name="cad_numero_aluno" class="form-control" id="inputNumeroEnderecoAluno" placeholder="numero" onkeypress="return SomenteNumero(event);">
 
                                             </div>
 
