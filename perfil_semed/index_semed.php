@@ -8,6 +8,7 @@
         <link href="../layout/css/local.css" rel="stylesheet">
         <script src="../layout/js/bootstrap.min.js"></script>
         <script src="../layout/js/mascara_local.js"></script>
+        <script src="../layout/js/validacao_local.js"></script>
         <link rel="shortcut icon" href="../imagens/icone.png" type="image/x-icon">
         <title>SECRETARIA ESCOLAR</title>
     </head>
@@ -27,8 +28,8 @@
             <div class="col-md-2">
                 <ul class="nav nav-pills nav-stacked" id="myTabs">
                     <li class="active"><a class="glyphicon glyphicon-pencil" href="#cad_escola" data-toggle="pill"> Cadastro Escola</a></li>
-                    <li><a class="glyphicon glyphicon-pencil" href="#cad_turma" data-toggle="pill"> Cadastro Turma</a></li>
-                    <li><a class="glyphicon glyphicon-pencil" href="#cad_professor" data-toggle="pill"> Cadastro Professor</a></li>
+                    <li><a class="glyphicon glyphicon-book" href="#cad_turma" data-toggle="pill"> Cadastro Turma</a></li>
+                    <li><a class="glyphicon glyphicon-briefcase" href="#cad_professor" data-toggle="pill"> Cadastro Professor</a></li>
                     <li><a class="glyphicon glyphicon-alert" href="../index.php"> Sair</a></li>
                 </ul>
             </div>
@@ -50,7 +51,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="inputIdEscola">1. Identificação Unica</label>
-                                                <input type="text" name="cad_id_escola" class="form-control" id="inputIdEscola" placeholder="identificação unica">
+                                                <input type="text" name="cad_id_escola" class="form-control" id="inputIdEscola" placeholder="digite a identificação unica" required="" maxlength="" onkeypress="formatar(, this)" onblur="showride()">
                                             </div>
                                         </div>
 
@@ -501,7 +502,7 @@
 
                                             <div class="form-group">
                                                 <label for="inputIdProfessor">1. Identificação Unica</label>
-                                                <input type="text" name="cad_id_professor" class="form-control" id="inputIdProfessor" placeholder="digite a identificação unica">
+                                                <input type="text" name="cad_id_professor" class="form-control" id="inputIdProfessor" placeholder="digite a identificação unica" required="" maxlength="" onkeypress="formatar(, this)" onblur="showride()">
                                             </div>
 
                                         </div>
