@@ -47,13 +47,13 @@
                             <div class="panel-heading">CADASTRO DA ESCOLA</div>
                             <div class="panel-body box_conteudo">
 
-                                <form action="" method="post">
+                                <form action="../controle/cadastrando_escola.php" method="post">
 
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="inputIdEscola">1. INEP</label>
-                                                <input type="text" name="cad_id_escola" class="form-control" id="inputIdEscola" placeholder="digite a identificação unica" required="" maxlength="" onkeypress="return SomenteNumero(event);" onblur="showride()">
+                                                <input type="text" name="cad_inep_escola" class="form-control" id="inputIdEscola" placeholder="digite a identificação unica" required="" maxlength="" onkeypress="return SomenteNumero(event);" onblur="showride()">
                                             </div>
                                         </div>
 
@@ -219,6 +219,18 @@
                                                 </label>
                                             </div>
                                         </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="inputAutorizacaoEscola">20. Autorização para emitir/assinar documentos</label><br>
+
+                                        <label class="radio-inline">
+                                            <input type="radio" name="cad_autorizacao_escola" id="inputAutorizacaoEscola" value="sim"> Sim
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="cad_autorizacao_escola" id="inputAutorizacaoEscola" value="não"> Não
+                                        </label>
+
                                     </div><br>
 
                                     <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
@@ -235,7 +247,7 @@
                             <div class="panel-heading">CADASTRO DA TURMA</div>
                             <div class="panel-body box_conteudo">
 
-                                <form action="" method="post">
+                                <form action="../controle/cadastrando_turma.php" method="post">
 
                                     <div class="row">
                                         <div class="col-md-6">
@@ -314,31 +326,31 @@
                                     <label for="inputAtendimento">5. Tipo de atendimento</label><br>
 
                                     <label class="radio-inline">
-                                        <input type="radio" name="cad_atendimento_turma" id="inputAtendimento" value="hospitalar"> Classe hospitalar
+                                        <input type="radio" name="cad_tipo_turma" id="inputAtendimento" value="hospitalar"> Classe hospitalar
                                     </label>
                                     <label class="radio-inline">
-                                        <input type="radio" name="cad_atendimento_turma" id="inputAtendimento" value="internacaosocioeducativa"> Unidade de internação socioeducativa
+                                        <input type="radio" name="cad_tipo_turma" id="inputAtendimento" value="internacaosocioeducativa"> Unidade de internação socioeducativa
                                     </label>
                                     <label class="radio-inline">
-                                        <input type="radio" name="cad_atendimento_turma" id="inputAtendimento" value="unidadeprisional"> Unidade prisional
+                                        <input type="radio" name="cad_tipo_turma" id="inputAtendimento" value="unidadeprisional"> Unidade prisional
                                     </label>                                      
                                     <label class="radio-inline">
-                                        <input type="radio" name="cad_atendimento_turma" id="inputAtendimento" value="atividadecomplementar"> Atividade complementar
+                                        <input type="radio" name="cad_tipo_turma" id="inputAtendimento" value="atividadecomplementar"> Atividade complementar
                                     </label>
                                     <label class="radio-inline">
-                                        <input type="radio" name="cad_atendimento_turma" id="inputAtendimento" value="aee"> Atendimento educacional especializado (AEE)
+                                        <input type="radio" name="cad_tipo_turma" id="inputAtendimento" value="aee"> Atendimento educacional especializado (AEE)
                                     </label>
                                     <label class="radio-inline">
-                                        <input type="radio" name="cad_atendimento_turma" id="inputAtendimento" value="naoseaplica"> Não se aplica
+                                        <input type="radio" name="cad_tipo_turma" id="inputAtendimento" value="naoseaplica"> Não se aplica
                                     </label><br>
 
                                     <label for="inputMaiseducacao">6. Turma participante do programa mais educação/Ensino médio inovador</label><br>
 
                                     <label class="radio-inline">
-                                        <input type="radio" name="cad_maiseducacao_turma" id="inputMaiseducacao" value="sim"> Sim
+                                        <input type="radio" name="cad_programa_turma" id="inputMaiseducacao" value="sim"> Sim
                                     </label>
                                     <label class="radio-inline">
-                                        <input type="radio" name="cad_maiseducacao_turma" id="inputMaiseducacao" value="nao"> Não
+                                        <input type="radio" name="cad_programa_turma" id="inputMaiseducacao" value="nao"> Não
                                     </label><br><br>
 
 
@@ -451,7 +463,7 @@
                                     </div><br>
 
                                     <label for="inputDescricaodaturma">10. Descrição da turma</label><br>
-                                    <textarea class="form-control" rows="6"></textarea><br>
+                                    <textarea class="form-control" name="cad_descricao_turma" rows="6"></textarea><br>
 
                                     <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
 
@@ -1044,7 +1056,7 @@
                         </div>
                     </div>
 
-                    <div class="tab-pane active" id="cad_aluno">
+                    <div class="tab-pane" id="cad_aluno">
                         <div class="panel panel-primary">
                             <div class="panel-heading">CADASTRO DO ALUNO</div>
                             <div class="panel-body box_conteudo">

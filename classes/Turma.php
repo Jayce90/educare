@@ -1,5 +1,10 @@
 <?php
+
 require_once '../conexao/Crud.php';
+
+/**
+ * @author Silvarney
+ */
 
 class Turma extends Crud{
     private $nome_turma;
@@ -68,5 +73,32 @@ class Turma extends Crud{
         $this->id_escola= $id_escola;
     }
     
+    public function inserir_turma() {
+        try {
+            $sql = "INSERT INTO turma (nome_turma, ano_turma, horario_turma, turno_turma, dias_turma, tipo_turma, "
+                    . "programa_turma, aee_turma, modalidade_turma, nivel_turma, etapa_turma, descricao_turma, escola_id_escola) "
+                    . "VALUES (:nome_turma, :ano_turma, :horario_turma, :turno_turma, :dias_turma, :tipo_turma, :programa_turma, "
+                    . ":aee_turma, :modalidade_turma, :nivel_turma, :etapa_turma, :descricao_turma, :id_escola)";
+
+            $stmt = DB::prepare($sql);
+            $stmt->bindParam(':nome_turma', $this->nome_turma);
+            $stmt->bindParam(':ano_turma', $this->ano_turma);
+            $stmt->bindParam(':horario_turma', $this->horario_turma);
+            $stmt->bindParam(':turno_turma', $this->turno_turma);
+            $stmt->bindParam(':dias_turma', $this->dias_turma);
+            $stmt->bindParam(':tipo_turma', $this->tipo_turma);
+            $stmt->bindParam(':programa_turma', $this->programa_turma);
+            $stmt->bindParam(':aee_turma', $this->aee_turma);
+            $stmt->bindParam(':modalidade_turma', $this->modalidade_turma);
+            $stmt->bindParam(':nivel_turma', $this->nivel_turma);
+            $stmt->bindParam(':etapa_turma', $this->etapa_turma);
+            $stmt->bindParam(':descricao_turma', $this->descricao_turma);
+            $stmt->bindParam(':id_escola', $this->id_escola);
+            return $stmt->execute();
+        } catch (Exception $ex) {
+            echo 'Falha ao inserir Turma<br>';
+            echo $ex->getMessage();
+        }
+    }
     
 }
