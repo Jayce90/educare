@@ -2,7 +2,7 @@
 
 require_once '../conexao/Crud.php';
 
-class Usuário extends Crud {
+class Usuario extends Crud {
 
     private $nome;
     private $email;
@@ -45,7 +45,7 @@ class Usuário extends Crud {
     function setStatus($status) {
         $this->status = $status;
     }
-    
+
     function setId_escola($id_escola) {
         $this->id_escola = $id_escola;
     }
@@ -69,6 +69,48 @@ class Usuário extends Crud {
         } catch (Exception $ex) {
             echo 'Falha ao inserir Usuário<br>';
             echo $ex->getMessage();
+        }
+    }
+
+    public function login_usuario($apelido_usuario, $senhas_usuario) {
+        try {
+            $sql = "SELECT * FROM usuario WHERE apelido_usuario = :apelido AND senha_usuario = :senha";
+            $stmt = DB::prepare($sql);
+            $stmt->bindParam(':apelido', $apelido_usuario);
+            $stmt->bindParam(':senha', $senhas_usuario);
+            $stmt->execute();
+
+            if ($stmt->rowCount() > 0) {
+                return $stmt->fetch(PDO::FETCH_OBJ);
+            }
+        } catch (Exception $ex) {
+            echo 'Falha ao executar login <br>';
+            echo $ex->getMessage();
+        }
+    }
+
+    public function usuarios_pendente() {
+        try {
+            $sql = "SELECT * FROM usuario WHERE status_usuario = 'aguardando'";
+            $stmt = DB::prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
+        } catch (Exception $exc) {
+            echo 'Falha ao ler todos os Usuários pendentes<br>';
+            echo $exc->getMessage();
+        }
+    }
+    
+    public function aprovando_usuarios_pendente($id_aprovado) {
+        try {
+            $sql = "UPDATE usuario SET status_usuario = 'aprovado' WHERE id_usuario = :id_usuario";
+            $stmt = DB::prepare($sql);
+            $stmt->bindParam(':id_usuario', $id_aprovado);
+            $stmt->execute();
+            return $stmt;
+        } catch (Exception $exc) {
+            echo 'Falha ao auterar Usuário pendente<br>';
+            echo $exc->getMessage();
         }
     }
 

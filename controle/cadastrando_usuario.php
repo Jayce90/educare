@@ -18,9 +18,9 @@ $apelido_usuario = isset($_POST['cad_apelido_usuario']) ? $_POST['cad_apelido_us
 $senha_usuario = isset($_POST['cad_senha_usuario']) ? $_POST['cad_senha_usuario'] : '';
 $perfil_usuario = isset($_POST['cad_perfil_usuario']) ? $_POST['cad_perfil_usuario'] : '';
 $status_usuario = "aguardando";
-$id_escola = 1001;
+$id_escola = 1;
 
-$usuario = new Usuário();
+$usuario = new Usuario();
 
 $usuario->setNome($nome_usuario);
 $usuario->setEmail($email_usuario);
@@ -32,9 +32,5 @@ $usuario->setPerfil($perfil_usuario);
 $usuario->setStatus($status_usuario);
 $usuario->setId_escola($id_escola);
 
-try {
-    $usuario->inserir_usuario();
-    echo "<script>confirmacao()</script>";
-} catch (Exception $exc) {
-    echo $exc->getTraceAsString();
-}
+$usuario->inserir_usuario();
+echo "<script>confirmacao()</script>";

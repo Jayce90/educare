@@ -30,7 +30,10 @@ and open the template in the editor.
             <div class="panel-body">
                 <div class="grupo_login">
                     <div class="row">
-                        <h2>Seu cadastro está aguardando validação.</h2>
+                        <h2>Seu cadastro está aguardando validação.</h2><br>
+                        <a href="index.php">
+                            <h4>voltar</h4>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -49,9 +52,9 @@ and open the template in the editor.
         </div>
 
 
-        
 
-        
+
+
 
     </body>
 </html>

@@ -69,16 +69,16 @@ and open the template in the editor.
                         <h4 class="modal-title" id="myModalLabel">Login - Usuário</h4>
                     </div>
                     <div class="modal-body">
-                        <form name="loginUsuario" action="controle/autenticacao.php" method="post">
+                        <form name="loginUsuario" action="controle/logando_usuario.php" method="post">
 
                             <div class="form-group">
-                                <label for="inputUsuario">Usuário</label>
-                                <input type="text" name="login_usuario" class="form-control" id="inputUsuario" placeholder="digite o usuário">
+                                <label for="inputUsuario">Apelido</label>
+                                <input type="text" name="apelido_login" class="form-control" id="inputUsuario" placeholder="digite o usuário">
                             </div>
 
                             <div class="form-group">
                                 <label for="inputSenha">Senha</label>
-                                <input type="password" name="senha_usuario" class="form-control" id="inputSenha" placeholder="digite a senha">
+                                <input type="password" name="senha_login" class="form-control" id="inputSenha" placeholder="digite a senha">
                             </div> 
 
                             <button type="submit" class="btn btn-primary btn-lg" onclick="return validar_login()">Enviar</button>

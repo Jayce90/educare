@@ -1,5 +1,12 @@
 <!DOCTYPE html>
+<?php
+session_start();
 
+include_once '../classes/Usuario.php';
+
+$pendentes = new Usuario();
+$mostrar_pendentes = $pendentes->usuarios_pendente();
+?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -32,6 +39,7 @@
                     <li><a class="glyphicon glyphicon-folder-open" href="#cad_disciplina" data-toggle="pill"> Cadastro Disciplina</a></li>
                     <li><a class="glyphicon glyphicon-briefcase" href="#cad_professor" data-toggle="pill"> Cadastro Professor</a></li>
                     <li><a class="glyphicon glyphicon-user" href="#cad_aluno" data-toggle="pill"> Cadastro Aluno</a></li>
+                    <li><a class="glyphicon glyphicon-folder-open" href="#aprovacao" data-toggle="pill"> Aprovar Usuário</a></li>
                     <li><a class="glyphicon glyphicon-alert" href="../index.php"> Sair</a></li>
                 </ul>
             </div>
@@ -1696,6 +1704,34 @@
                                     <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
 
                                 </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" id="aprovacao">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">APROVAÇÃO DE USUÁRIOS PENDENTES</div>
+                            <div class="panel-body box_conteudo">
+
+                                <form action="../controle/aprovando_usuario.php" method="post">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label for="inputNivelDisciplina">Usuários</label><br>
+                                            <select class="form-control" name="id_aprovado">
+                                                <?php
+                                                foreach ($mostrar_pendentes as $linha_pendente) {
+                                                    echo "<option value='". $linha_pendente->id_usuario ."'>". $linha_pendente->id_usuario ." Nome: " . $linha_pendente->nome_usuario . " - Fone: " . $linha_pendente->fone_usuario . " - Perfil: " . $linha_pendente->perfil_usuario . "</option>";
+                                                }?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <br><button type="submit" class="btn btn-primary btn-lg">Aprovar</button>
+                                        </div>
+                                    </div>
+                                </form>
+
                             </div>
                         </div>
                     </div>
