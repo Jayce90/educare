@@ -581,7 +581,7 @@
                                         <div class="col-md-6">
 
                                             <div class="form-group">
-                                                <label for="inputIdProfessor">1. Identificação Unica</label>
+                                                <label for="inputIdProfessor">1. INEP Professor</label>
                                                 <input type="text" name="cad_id_professor" class="form-control" id="inputIdProfessor" placeholder="digite a identificação unica" required="" maxlength="" onkeypress="return SomenteNumero(event);" onblur="showride()">
                                             </div>
 
@@ -683,20 +683,32 @@
                                                 </label>
                                             </div>
                                         </div>
-                                    </div><br>
+                                    </div>
+
+                                    <label for="inputNacionalidadeProfessor">11. Nacionalidade</label><br>
+
+                                    <label class="radio-inline">
+                                        <input type="radio" name="cad_nacionalidade_professor" id="inputNacionalidadeProfessor" value="brasileira"> Brasileira
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="cad_nacionalidade_professor" id="inputNacionalidadeProfessor" value="brasileira – nascido no exterior ou naturalizado"> brasileira – nascido no exterior ou naturalizado
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="cad_nacionalidade_professor" id="inputNacionalidadeProfessor" value="Estrangeira"> Estrangeira
+                                    </label><br><br>
 
 
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="inputPaisorigemProfessor">11. País de origem</label>
-                                                <input type="text" name="cad_paisorigem_professor" class="form-control" id="inputPaisorigemProfessor" placeholder="digite o país de origem">
+                                                <label for="inputPaisorigemProfessor">12. País de origem</label>
+                                                <input type="text" name="cad_pais_nasc_professor" class="form-control" id="inputPaisorigemProfessor" placeholder="digite o país de origem">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="inputUfdenascimentoProfessor">12. UF de nascimento</label>
-                                                <select class="form-control" name="cad_estadonasc_professor">
+                                                <label for="inputUfdenascimentoProfessor">13. UF de nascimento</label>
+                                                <select class="form-control" name="cad_estado_nasc_professor">
                                                     <option value="">Selecione</option>
                                                     <option value="AC">AC</option>
                                                     <option value="AL">AL</option>
@@ -730,14 +742,14 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="inputMunidenascimentoProfessor">13. Município de nascimento</label>
+                                                <label for="inputMunidenascimentoProfessor">14. Município de nascimento</label>
                                                 <input type="text" name="cad_muninasci_Professor" class="form-control" id="inputMunidenascimentoProfessor" placeholder="digite o município de nascimento">
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="inputNecessidadeEspecialProfessor">14. Profissional Escolar com deficiência</label>
+                                        <label for="inputNecessidadeEspecialProfessor">15. Profissional Escolar com deficiência</label>
 
                                         <label class="radio-inline">
                                             <input type="radio" name="cad_deficiencia_professor" id="inputNecessidadeEspecialProfessor" value="sim"> Sim
@@ -747,7 +759,7 @@
                                         </label>
                                     </div>
 
-                                    <label for="inputTipoDeficienciaProfessor">14a. Tipo de deficiência</label>
+                                    <label for="inputTipoDeficienciaProfessor">15a. Tipo de deficiência</label>
 
                                     <div class="row">
                                         <div class="col-md-3">
@@ -787,7 +799,7 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="inputLocalizacaoProfessor">15. Localização/Zona de residência</label><br>
+                                                <label for="inputLocalizacaoProfessor">16. Localização/Zona de residência</label><br>
 
                                                 <label class="radio-inline">
                                                     <input type="radio" name="cad_localizacao_professor" id="inputLocalizacaoProfessor" value="urbana"> Urbana
@@ -800,7 +812,7 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="inputCepProfessor">16. CEP</label>
+                                                <label for="inputCepProfessor">17. CEP</label>
                                                 <input type="text" name="cad_cep_professor" class="form-control" id="inputCepProfessor" placeholder="digite o CEP" required="" maxlength="9" onkeypress="formatar('#####-###', this); return SomenteNumero(event);" onblur="showride()">
 
                                             </div>
@@ -811,7 +823,7 @@
                                         <div class="col-md-10">
 
                                             <div class="form-group">
-                                                <label for="inputEnderecoProfessor">17. Endereço</label>
+                                                <label for="inputEnderecoProfessor">18. Endereço</label>
                                                 <input type="text" name="cad_endereco_professor" class="form-control" id="inputEnderecoProfessor" placeholder="digite o endereco">
 
                                             </div>
@@ -820,7 +832,7 @@
                                         <div class="col-md-2">
 
                                             <div class="form-group">
-                                                <label for="inputNumeroEnderecoProfessor">18. Número</label>
+                                                <label for="inputNumeroEnderecoProfessor">19. Número</label>
                                                 <input type="text" name="cad_numeroendereco_professor" class="form-control" id="inputNumeroEnderecoProfessor" placeholder="numero" onkeypress="return SomenteNumero(event);">
 
                                             </div>
@@ -831,7 +843,7 @@
                                         <div class="col-md-6">
 
                                             <div class="form-group">
-                                                <label for="inputComplementoEnderecoProfessor">19. Complemento</label>
+                                                <label for="inputComplementoEnderecoProfessor">20. Complemento</label>
                                                 <input type="text" name="cad_complementoendereco_professor" class="form-control" id="inputComplementoEnderecoProfessor" placeholder="complemento">
 
                                             </div>
@@ -840,59 +852,16 @@
                                         <div class="col-md-6">
 
                                             <div class="form-group">
-                                                <label for="inputBairroProfessor">20. Bairro</label>
+                                                <label for="inputBairroProfessor">21. Bairro</label>
                                                 <input type="text" name="cad_bairro_professor" class="form-control" id="inputBairroProfessor" placeholder="bairro">
 
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>                                   
 
-                                    <div class="row">
-                                        <div class="col-md-2">
-                                            <div class="form-group">
-                                                <label for="inputUfProfessor">21. UF</label>
-                                                <select class="form-control" name="cad_estado_professor">
-                                                    <option value="">Selecione</option>
-                                                    <option value="AC">AC</option>
-                                                    <option value="AL">AL</option>
-                                                    <option value="AM">AM</option>
-                                                    <option value="AP">AP</option>
-                                                    <option value="BA">BA</option>
-                                                    <option value="CE">CE</option>
-                                                    <option value="DF">DF</option>
-                                                    <option value="ES">ES</option>
-                                                    <option value="GO">GO</option>
-                                                    <option value="MA">MA</option>
-                                                    <option value="MG">MG</option>
-                                                    <option value="MS">MS</option>
-                                                    <option value="MT">MT</option>
-                                                    <option value="PA">PA</option>
-                                                    <option value="PB">PB</option>
-                                                    <option value="PE">PE</option>
-                                                    <option value="PI">PI</option>
-                                                    <option value="PR">PR</option>
-                                                    <option value="RJ">RJ</option>
-                                                    <option value="RN">RN</option>
-                                                    <option value="RS">RS</option>
-                                                    <option value="RO">RO</option>
-                                                    <option value="RR">RR</option>
-                                                    <option value="SC">SC</option>
-                                                    <option value="SE">SE</option>
-                                                    <option value="SP">SP</option>
-                                                    <option value="TO">TO</option>
-                                                </select>
+                                    <label for="inputMunicipioProfessor">22. Município</label>
+                                    <input type="text" name="cad_municipio_professor" class="form-control" id="inputMunicipioProfessor" placeholder="municipio"><br>
 
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-10">
-                                            <div class="form-group">
-                                                <label for="inputMunicipioProfessor">22. Município</label>
-                                                <input type="text" name="cad_municipio_professor" class="form-control" id="inputMunicipioProfessor" placeholder="municipio">
-
-                                            </div>
-                                        </div>
-                                    </div>
 
                                     <div class="row">
                                         <div class="col-md-4">
