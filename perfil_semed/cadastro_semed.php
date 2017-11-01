@@ -43,7 +43,7 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
-        
+
         <div class="row">
             <!-- Navigation Buttons -->
             <div class="col-md-2">
@@ -51,8 +51,8 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                     <li class="active"><a class="glyphicon glyphicon-pencil" href="#cad_escola" data-toggle="pill"> Cadastro Escola</a></li>
                     <li><a class="glyphicon glyphicon-book" href="#cad_turma" data-toggle="pill"> Cadastro Turma</a></li>
                     <li><a class="glyphicon glyphicon-folder-open" href="#cad_disciplina" data-toggle="pill"> Cadastro Disciplina</a></li>
-                    <li><a class="glyphicon glyphicon-briefcase" href="#cad_professor" data-toggle="pill"> Cadastro Professor</a></li>
-                    <li><a class="glyphicon glyphicon-user" href="#cad_aluno" data-toggle="pill"> Cadastro Aluno</a></li>
+                    <li><a class="glyphicon glyphicon-briefcase" href="#cad_professor" data-toggle="pill"> Cadastro Professor(a)</a></li>
+                    <li><a class="glyphicon glyphicon-user" href="#cad_aluno" data-toggle="pill"> Cadastro Aluno(a)</a></li>
                     <li><a class="glyphicon glyphicon-folder-open" href="#aprovacao" data-toggle="pill"> Aprovar Usuário</a></li>
                     <li><a class="glyphicon glyphicon-alert" href="../index.php"> Sair</a></li>
                 </ul>
@@ -81,66 +81,77 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
 
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="inputCpfGestorEscola">2. Número do CPF do Gestor Escolar</label>
+                                                <label for="inputCpfGestorEscola">2. Número do CPF do Gestor(a) Escolar</label>
                                                 <input type="text" name="cad_cpf_gestor_escola" class="form-control" id="inputCpfGestorEscola" placeholder="CPF gestor escolar" required="" maxlength="14" onkeypress="formatar('###.###.###-##', this); return SomenteNumero(event);" onblur="showhide()">
                                             </div>
                                         </div>
                                     </div>
 
-                                    <label for="inputNomeGestorEscola">3. Nome do Gestor Escolar</label>
-                                    <input type="text" name="cad_nome_gestor_escola" class="form-control" id="inputNomeGestorEscola" placeholder="digite o nome"><br>
+                                    <div class="row">
+                                        <div class="col-md-6">
+
+                                            <label for="inputNomeGestorEscola">3. Nome do Gestor(a) Escolar</label>
+                                            <input type="text" name="cad_nome_gestor_escola" class="form-control" id="inputNomeGestorEscola" placeholder="digite o nome"><br>
+
+                                        </div>
+
+                                        <div class="col-md-3">
+
+                                            <label for="inputFoneGestorEscola">4. Telefone</label>
+                                            <input type="text" name="cad_fone_gestor_escola" class="form-control" id="inputFoneGestorEscola" placeholder="91 000000000" required="" maxlength="12" onkeypress="formatar('## #########', this); return SomenteNumero(event);" onblur="showhide()">
+
+                                        </div>
+                                    </div>
+
 
                                     <div class="row">
-                                        <div class="col-md-3">
+                                        <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="inputCargoGestorEscola">4. Cargo</label><br>
+                                                <label for="inputCargoGestorEscola">5. Cargo</label><br>
 
                                                 <label class="radio-inline">
-                                                    <input type="radio" name="cad_cargo_gestor_escola" id="inputCargoGestorEscola" value="diretor"> Diretor
+                                                    <input type="radio" name="cad_cargo_gestor_escola" id="inputCargoGestorEscola" value="Diretor(a)"> Diretor(a)
                                                 </label>
                                                 <label class="radio-inline">
-                                                    <input type="radio" name="cad_cargo_gestor_escola" id="inputCargoGestorEscola" value="outro cargo"> Outro cargo
+                                                    <input type="radio" name="cad_cargo_gestor_escola" id="inputCargoGestorEscola" value="Professor(a) Dirigente"> Professor(a) Dirigente
                                                 </label>
 
                                             </div>
                                         </div>
-                                        <div class="col-md-5">
+                                        <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="inputEmailGestorEscola">5. Endereço eletrônico (e-mail)</label>
+                                                <label for="inputEmailGestorEscola">6. Endereço eletrônico (e-mail)</label>
                                                 <input type="text" name="cad_email_gestor_escola" class="form-control" id="inputEmailGestorEscola" placeholder="digite o Email">
                                             </div>
                                         </div>
 
                                         <div class="col-md-4">
 
-                                            <label for="inputFuncionamentoEscola">6. Situação de funcionamento</label>
+                                            <label for="inputFuncionamentoEscola">7. Situação de funcionamento</label><br>
 
                                             <label class="radio-inline">
-                                                <input type="radio" name="cad_funcionamento_escola" id="inputFuncionamentoEscola" value="Em atividade"> Em atividade
+                                                <input type="radio" name="cad_funcionamento_escola" id="inputFuncionamentoEscola" value="Ativa"> Ativa
                                             </label>
                                             <label class="radio-inline">
-                                                <input type="radio" name="cad_funcionamento_escola" id="inputFuncionamentoEscola" value="Paralisada"> Paralisada
-                                            </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="cad_funcionamento_escola" id="inputFuncionamentoEscola" value="Extinta"> Extinta
-                                            </label>
+                                                <input type="radio" name="cad_funcionamento_escola" id="inputFuncionamentoEscola" value="Inativa"> Inativa
+                                            </label>                                            
                                         </div>
                                     </div>
 
-                                    <label for="inputNomeEscola">7. Nome da escola</label>
+                                    <label for="inputNomeEscola">8. Nome da escola</label>
                                     <input type="text" name="cad_nome_escola" class="form-control" id="inputNomeEscola" placeholder="nome da escola"><br>
 
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="inputCepEscola">8. CEP</label>
+                                                <label for="inputCepEscola">9. CEP</label>
                                                 <input type="text" name="cad_cep_escola" class="form-control" id="inputCepEscola" placeholder="digite o CEP" required="" maxlength="9" onkeypress="formatar('#####-###', this); return SomenteNumero(event);" onblur="showride()">
                                             </div>
                                         </div>
 
                                         <div class="col-md-8">
                                             <div class="form-group">
-                                                <label for="inputPoloEscola">9. Polo</label>
+                                                <label for="inputPoloEscola">10. Polo</label>
 
                                                 <select class="form-control" name="cad_polo_escola">
                                                     <option value="">Selecione</option>
@@ -153,14 +164,14 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="inputDistritoEscola">10. Distrito</label>
+                                                <label for="inputDistritoEscola">11. Distrito</label>
                                                 <input type="text" name="cad_distrito_escola" class="form-control" id="inputDistritoEscola" placeholder="digite o Distrito">
                                             </div>
                                         </div>
 
                                         <div class="col-md-8">
                                             <div class="form-group">
-                                                <label for="inputEnderecoEscola">11. Endereço</label>
+                                                <label for="inputEnderecoEscola">12. Endereço</label>
                                                 <input type="text" name="cad_endereco_escola" class="form-control" id="inputEnderecoEscola" placeholder="digite o endereço">
                                             </div>
                                         </div>
@@ -169,21 +180,21 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                                     <div class="row">
                                         <div class="col-md-2">
                                             <div class="form-group">
-                                                <label for="inputNumeroEscola">12. Número</label>
+                                                <label for="inputNumeroEscola">13. Número</label>
                                                 <input type="text" name="cad_numero_escola" class="form-control" id="inputNumeroEscola" placeholder="digite o numero" onkeypress="return SomenteNumero(event);">
                                             </div>
                                         </div>
 
                                         <div class="col-md-7">
                                             <div class="form-group">
-                                                <label for="inputComplementoEnderecoEscola">13. Complemento</label>
+                                                <label for="inputComplementoEnderecoEscola">14. Complemento</label>
                                                 <input type="text" name="cad_complemento_endereco_escola" class="form-control" id="inputComplementoEnderecoEscola" placeholder="digite o complemento">
                                             </div>
                                         </div>
 
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="inputBairroEscola">14. Bairro</label>
+                                                <label for="inputBairroEscola">15. Bairro</label>
                                                 <input type="text" name="cad_bairro_escola" class="form-control" id="inputBairroEscola" placeholder="digite o bairro">
                                             </div>
                                         </div>
@@ -192,30 +203,21 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                                     <div class="row">
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="inputFoneEscola">15. Telefone</label>
+                                                <label for="inputFoneEscola">16. Telefone</label>
                                                 <input type="text" name="cad_fone_escola" class="form-control" id="inputFoneEscola" placeholder="91 000000000" required="" maxlength="12" onkeypress="formatar('## #########', this); return SomenteNumero(event);" onblur="showhide()">
                                             </div>                                            
                                         </div>
 
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <label for="inputOutroFoneEscola">16. Outro telefone</label>
-                                                <input type="text" name="cad_outro_fone_escola" class="form-control" id="inputOutroFoneEscola" placeholder="91 000000000" required="" maxlength="12" onkeypress="formatar('## #########', this); return SomenteNumero(event);" onblur="showhide()">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="inputEmailEscola">17. Endereço eletrônico (e-mail)</label>
                                                 <input type="text" name="cad_email_escola" class="form-control" id="inputEmailEscola" placeholder="digite o email">
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="inputLocalizacaoescola">18. Localização/Zona da escola</label><br>
+                                                <label for="inputLocalizacaoescola">18. Localização/Espaço da escola</label><br>
 
                                                 <label class="radio-inline">
                                                     <input type="radio" name="cad_localizacao_escola" id="inputLocalizacaoescola" value="urbana"> Urbana
@@ -225,21 +227,28 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                                                 </label>
                                             </div>
                                         </div>
+                                    </div>
 
+                                    <div class="row">
                                         <div class="col-md-8">
                                             <div class="form-group">
-                                                <label for="inputRegulamentacaoEscola">19. Autorização no conselho ou órgão municipal, estadual ou federal de educação</label><br>
+                                                <label for="inputRegulamentacaoEscola">19. Autorização no conselho ou órgão municipal de educação</label><br>
 
                                                 <label class="radio-inline">
-                                                    <input type="radio" name="cad_regulamentacao_escola" id="inputRegulamentacaoEscola" value="sim"> Sim
+                                                    <input type="radio" name="cad_regulamentacao_escola[]" id="inputRegulamentacaoEscola" value="sim"> Sim
                                                 </label>
                                                 <label class="radio-inline">
-                                                    <input type="radio" name="cad_regulamentacao_escola" id="inputRegulamentacaoEscola" value="Em tramitação"> Em tramitação
+                                                    <input type="radio" name="cad_regulamentacao_escola[]" id="inputRegulamentacaoEscola" value="Em tramitação"> Em tramitação
                                                 </label>
                                                 <label class="radio-inline">
-                                                    <input type="radio" name="cad_regulamentacao_escola" id="inputRegulamentacaoEscola" value="nao"> Não
+                                                    <input type="radio" name="cad_regulamentacao_escola[]" id="inputRegulamentacaoEscola" value="nao"> Não
                                                 </label>
                                             </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <label for="inputRegulamentacaoEscola">19a. De acordo com a portaria:</label>
+                                            <input type="text" name="cad_regulamentacao_escola[]" class="form-control" id="inputRegulamentacaoEscola" placeholder="digite a portaria">
                                         </div>
                                     </div>
 
@@ -467,19 +476,10 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                                                 <option value="7º ano">7º ano</option>                                        
                                                 <option value="8º ano">8º ano</option>                                        
                                                 <option value="9º ano">9º ano</option>                                        
-                                                <option value="fundamentalInicial">EJA - Ensino Fundamental
-                                                    anos iniciais</option>                                        
-                                                <option value="fundamentalFinal">EJA - Ensino Fundamental
-                                                    anos finais</option>                                        
-                                                <option value="fundamentalInicialeFinal">EJA - Ensino Fundamental
-                                                    anos iniciais e anos finais</option>                                        
-                                                <option value="fic">EJA - EJA integrada à Educação
-                                                    Profissional de Nível Fundamental (FIC)</option>                                        
-                                                <option value="urbano">EJA - Ensino Fundamental -
-                                                    Projovem (Urbano)</option>                                        
-                                                <option value="ensinomedio">EJA - Ensino Médio</option>                                        
-                                                <option value="profissionalmedio">EJA integrada à Educação
-                                                    Profissional de Nível Médio</option>                                        
+                                                <option value="fundamentalInicial">EJA - Ensino Fundamental anos iniciais</option>                                        
+                                                <option value="fundamentalFinal">EJA - Ensino Fundamental anos finais</option>                                        
+                                                <option value="fundamentalInicialeFinal">EJA - Ensino Fundamental anos iniciais e anos finais</option>                                        
+                                                <option value="fic">EJA - EJA integrada à Educação Profissional de Nível Fundamental (FIC)</option>                                      
                                             </select>
                                         </div>
                                     </div><br>
@@ -546,19 +546,10 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                                                 <option value="7º ano">7º ano</option>                                        
                                                 <option value="8º ano">8º ano</option>                                        
                                                 <option value="9º ano">9º ano</option>                                        
-                                                <option value="fundamentalInicial">EJA - Ensino Fundamental
-                                                    anos iniciais</option>                                        
-                                                <option value="fundamentalFinal">EJA - Ensino Fundamental
-                                                    anos finais</option>                                        
-                                                <option value="fundamentalInicialeFinal">EJA - Ensino Fundamental
-                                                    anos iniciais e anos finais</option>                                        
-                                                <option value="fic">EJA - EJA integrada à Educação
-                                                    Profissional de Nível Fundamental (FIC)</option>                                        
-                                                <option value="urbano">EJA - Ensino Fundamental -
-                                                    Projovem (Urbano)</option>                                        
-                                                <option value="ensinomedio">EJA - Ensino Médio</option>                                        
-                                                <option value="profissionalmedio">EJA integrada à Educação
-                                                    Profissional de Nível Médio</option>                                        
+                                                <option value="fundamentalInicial">EJA - Ensino Fundamental anos iniciais</option>                                        
+                                                <option value="fundamentalFinal">EJA - Ensino Fundamental anos finais</option>                                        
+                                                <option value="fundamentalInicialeFinal">EJA - Ensino Fundamental anos iniciais e anos finais</option>                                        
+                                                <option value="fic">EJA - EJA integrada à Educação Profissional de Nível Fundamental (FIC)</option>                                        
                                             </select>
                                         </div>
 
@@ -594,7 +585,7 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
 
                     <div class="tab-pane" id="cad_professor">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">CADASTRO DO PROFESSOR</div>
+                            <div class="panel-heading">CADASTRO DO PROFESSOR(A)</div>
                             <div class="panel-body box_conteudo">
 
                                 <form action="" method="post">
@@ -603,7 +594,7 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                                         <div class="col-md-6">
 
                                             <div class="form-group">
-                                                <label for="inputIdProfessor">1. INEP Professor</label>
+                                                <label for="inputIdProfessor">1. INEP Professor(a)</label>
                                                 <input type="text" name="cad_id_professor" class="form-control" id="inputIdProfessor" placeholder="digite a identificação unica" required="" maxlength="" onkeypress="return SomenteNumero(event);" onblur="showride()">
                                             </div>
 
@@ -621,7 +612,7 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                                         <div class="col-md-9">
 
                                             <div class="form-group">
-                                                <label for="inputNomeProfessor">3. Nome do professor</label>
+                                                <label for="inputNomeProfessor">3. Nome do professor(a)</label>
                                                 <input type="text" name="cad_nome_professor" class="form-control" id="inputNomeProfessor" placeholder="digite nome do professor">
                                             </div>
 
@@ -1049,7 +1040,7 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
 
                     <div class="tab-pane" id="cad_aluno">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">CADASTRO DO ALUNO</div>
+                            <div class="panel-heading">CADASTRO DO ALUNO(A)</div>
                             <div class="panel-body box_conteudo">
 
                                 <form action="../controle/cadastrando_aluno.php" method="post">
@@ -1060,7 +1051,7 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="inputNomeAluno">2. Nome do aluno</label>
+                                        <label for="inputNomeAluno">2. Nome do aluno(a)</label>
                                         <input type="text" name="cad_nome_aluno" class="form-control" id="inputNomeAluno" placeholder="digite nome do aluno">
                                     </div>
 
@@ -1218,7 +1209,7 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                                         <div class="col-md-6">
 
                                             <div class="form-group">
-                                                <label for="inputNecessidadeEspecialAluno">14. Aluno com deficiência, transtorno global do
+                                                <label for="inputNecessidadeEspecialAluno">14. Aluno(a) com deficiência, transtorno global do
                                                     desenvolvimento ou altas habilidades/superdotação :</label>
 
                                                 <label class="radio-inline">
@@ -1529,6 +1520,9 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                                         <label class="radio-inline">
                                             <input type="radio" name="cad_justificativa_aluno" id="inputJustificativaAluno" value="escolanaopossuiinformaçãodedocumentodoaluno"> Escola não possui informação de documento do aluno
                                         </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="cad_justificativa_aluno" id="inputJustificativaAluno" value="Documentação Pendente"> Documentação Pendente
+                                        </label>
 
                                     </div>
 
@@ -1536,7 +1530,7 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                                         <div class="col-md-6">
 
                                             <div class="form-group">
-                                                <label for="inputLocalizacaoAluno">19. Localização/Zona de residência :</label><br>
+                                                <label for="inputLocalizacaoAluno">19. Localização da residência :</label><br>
 
                                                 <label class="radio-inline">
                                                     <input type="radio" name="cad_localizacao_aluno" id="inputLocalizacaoAluno" value="urbana"> Urbana
@@ -1696,9 +1690,7 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                                                 <option value="Van/Kombi">Van/Kombi</option>                                               
                                                 <option value="Micro - Ônibus">Micro - Ônibus</option>                                       
                                                 <option value="Ônibus">Ônibus</option>                                       
-                                                <option value="Bicicleta">Bicicleta</option>                                       
-                                                <option value="Tração animal">Tração animal</option>                                       
-                                                <option value="Outro tipo de veículo rodoviário">Outro tipo de veículo rodoviário</option>                                       
+                                                <option value="Bicicleta">Bicicleta</option>
                                             </select>
                                         </div>
 
@@ -1707,10 +1699,8 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
 
                                             <select class="form-control" name="cad_tipo_transporte_aluno[]">
                                                 <option value="">Selecione</option>                                               
-                                                <option value="Capacidade de até 5 alunos">Capacidade de até 5 alunos</option>                                               
-                                                <option value="Capacidade entre 5 a 15 alunos">Capacidade entre 5 a 15 alunos</option>                                       
-                                                <option value="Capacidade entre 15 a 35 alunos">Capacidade entre 15 a 35 alunos</option>                                       
-                                                <option value="Capacidade acima de 35 alunos">Capacidade acima de 35 alunos</option>                                      
+                                                <option value="Barco">Barco</option>                                               
+                                                <option value="Lancha">Lancha</option>                                                                             
                                             </select>
                                         </div>
                                     </div><br>
@@ -1734,8 +1724,9 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                                             <select class="form-control" name="id_aprovado">
                                                 <?php
                                                 foreach ($mostrar_pendentes as $linha_pendente) {
-                                                    echo "<option value='". $linha_pendente->id_usuario ."'>". $linha_pendente->id_usuario ." Nome: " . $linha_pendente->nome_usuario . " - Fone: " . $linha_pendente->fone_usuario . " - Perfil: " . $linha_pendente->perfil_usuario . "</option>";
-                                                }?>
+                                                    echo "<option value='" . $linha_pendente->id_usuario . "'>" . $linha_pendente->id_usuario . " Nome: " . $linha_pendente->nome_usuario . " - Fone: " . $linha_pendente->fone_usuario . " - Perfil: " . $linha_pendente->perfil_usuario . "</option>";
+                                                }
+                                                ?>
                                             </select>
                                         </div>
                                     </div>
