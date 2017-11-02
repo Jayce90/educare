@@ -247,8 +247,8 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                                         </div>
 
                                         <div class="col-md-4">
-                                            <label for="inputRegulamentacaoEscola">19a. De acordo com a portaria:</label>
-                                            <input type="text" name="cad_regulamentacao_escola[]" class="form-control" id="inputRegulamentacaoEscola" placeholder="digite a portaria">
+                                            <label for="inputPortariaEscola">19a. De acordo com a portaria:</label>
+                                            <input type="text" name="cad_portaria_escola" class="form-control" id="inputPortariaEscola" placeholder="digite a portaria">
                                         </div>
                                     </div>
 
