@@ -82,3 +82,65 @@ label{
 #box_conteudo{
     font-size: 22px;
 }
+
+.table{
+    text-align: center;
+    font-size: 7px;
+    border: 0px
+
+}
+
+th{
+
+    text-align: center;
+    font-size: 7x;
+}
+
+.medidasmapao {
+
+    height: 32cm;
+    width: 55cm;
+
+}
+
+.prefeitura{
+    font-size: 22px;
+
+}
+
+.semed{
+
+    font-size: 20px;
+}
+
+.mapa{
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.tomeacu{
+    height: 30%;
+    width: 20%;
+
+
+}
+
+.tituloboletim{
+
+    text-align: center;
+
+}
+
+.medidaboletim{
+
+    height: 21cm;
+    width: 29.7cm;
+
+}
+
+.tomeacuboletim{
+
+    height: 10%;
+    width: 5%;
+
+}

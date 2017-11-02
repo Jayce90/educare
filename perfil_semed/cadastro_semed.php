@@ -497,7 +497,7 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                     <div class="tab-pane" id="cad_disciplina">
                         <div class="panel panel-primary">
                             <div class="panel-heading">CADASTRO DE DISCIPLINA</div>
-                            <div class="panel-body">
+                            <div class="panel-body box_conteudo">
                                 <form action="" method="post">
 
                                     <div class="row">

@@ -26,6 +26,7 @@ class Escola extends Crud {
     private $email_escola;
     private $localizacao_escola;
     private $regulamentacao_escola;
+    private $portaria_escola;
     private $autorizacao_escola;
 
     function setInep_escola($inep_escola) {
@@ -104,15 +105,19 @@ class Escola extends Crud {
         $this->regulamentacao_escola = $regulamentacao_escola;
     }
 
+    function setPortaria_escola($portaria_escola) {
+        $this->portaria_escola = $portaria_escola;
+    }
+
     function setAutorizacao_escola($autorizacao_escola) {
         $this->autorizacao_escola = $autorizacao_escola;
     }
 
     public function inserir_escola() {
         try {
-            $sql = "INSERT INTO escola(inep_escola, cpf_gestor_escola, nome_gestor_escola, cargo_gestor_escola, email_gestor_escola, situacao_escola, nome_escola, cep_escola, polo_escola, distrito_escola, endereco_escola, numero_escola, complemento_escola, bairro_escola, fone_escola, outro_fone_escola, email_escola, localizacao_escola, regulamentacao_escola, autorizacao_escola) "
+            $sql = "INSERT INTO escola(inep_escola, cpf_gestor_escola, nome_gestor_escola, cargo_gestor_escola, email_gestor_escola, situacao_escola, nome_escola, cep_escola, polo_escola, distrito_escola, endereco_escola, numero_escola, complemento_escola, bairro_escola, fone_escola, outro_fone_escola, email_escola, localizacao_escola, regulamentacao_escola, portaria_escola, autorizacao_escola) "
                     . "VALUES (:inep_escola, :cpf_gestor, :nome_gestor, :cargo_gestor, :email_gestor, :situacao_escola, :nome_escola, :cep_escola, :polo_escola, :distrito_escola, :endereco_escola, :numero_escola, :complemento_escola, "
-                    . ":bairro_escola, :fone_escola, :outro_fone_escola, :email_escola, :localizacao_escola, :regulamentacao_escola, :autorizacao_escola)";
+                    . ":bairro_escola, :fone_escola, :outro_fone_escola, :email_escola, :localizacao_escola, :regulamentacao_escola, :portaria_escola, :autorizacao_escola)";
 
             $stmt = DB::prepare($sql);
             $stmt->bindParam(':inep_escola', $this->inep_escola);
@@ -134,6 +139,7 @@ class Escola extends Crud {
             $stmt->bindParam(':email_escola', $this->email_escola);
             $stmt->bindParam(':localizacao_escola', $this->localizacao_escola);
             $stmt->bindParam(':regulamentacao_escola', $this->regulamentacao_escola);
+            $stmt->bindParam(':portaria_escola', $this->portaria_escola);
             $stmt->bindParam(':autorizacao_escola', $this->autorizacao_escola);
             return $stmt->execute();
         } catch (Exception $ex) {

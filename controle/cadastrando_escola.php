@@ -29,6 +29,7 @@ $outro_fone_escola = isset($_POST['cad_outro_fone_escola']) ? $_POST['cad_outro_
 $email_escola = isset($_POST['cad_email_escola']) ? $_POST['cad_email_escola'] : '';
 $localizacao_escola = isset($_POST['cad_localizacao_escola']) ? $_POST['cad_localizacao_escola'] : '';
 $regulamentacao_escola = isset($_POST['cad_regulamentacao_escola']) ? $_POST['cad_regulamentacao_escola'] : '';
+$portaria_escola = isset($_POST['cad_portaria_escola']) ? $_POST['cad_portaria_escola'] : '';
 $autorizacao_escola = isset($_POST['cad_autorizacao_escola']) ? $_POST['cad_autorizacao_escola'] : '';
 
 $escola = new Escola();
@@ -52,6 +53,7 @@ $escola ->setOutro_fone_escola($outro_fone_escola);
 $escola ->setEmail_escola($email_escola);
 $escola ->setLocalizacao_escola($localizacao_escola);
 $escola ->setRegulamentacao_escola($regulamentacao_escola);
+$escola ->setPortaria_escola($portaria_escola);
 $escola ->setAutorizacao_escola($autorizacao_escola);
 
 try {

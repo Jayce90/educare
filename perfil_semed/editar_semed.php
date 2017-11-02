@@ -48,12 +48,11 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
             <!-- Navigation Buttons -->
             <div class="col-md-2">
                 <ul class="nav nav-pills nav-stacked" id="myTabs">
-                    <li class="active"><a class="glyphicon glyphicon-pencil" href="#cad_escola" data-toggle="pill"> Cadastro Escola</a></li>
-                    <li><a class="glyphicon glyphicon-book" href="#cad_turma" data-toggle="pill"> Cadastro Turma</a></li>
-                    <li><a class="glyphicon glyphicon-folder-open" href="#cad_disciplina" data-toggle="pill"> Cadastro Disciplina</a></li>
-                    <li><a class="glyphicon glyphicon-briefcase" href="#cad_professor" data-toggle="pill"> Cadastro Professor</a></li>
-                    <li><a class="glyphicon glyphicon-user" href="#cad_aluno" data-toggle="pill"> Cadastro Aluno</a></li>
-                    <li><a class="glyphicon glyphicon-folder-open" href="#aprovacao" data-toggle="pill"> Aprovar Usuário</a></li>
+                    <li class="active"><a class="glyphicon glyphicon-pencil" href="#cad_escola" data-toggle="pill"> Editar Escola</a></li>
+                    <li><a class="glyphicon glyphicon-book" href="#cad_turma" data-toggle="pill"> Editar Turma</a></li>
+                    <li><a class="glyphicon glyphicon-folder-open" href="#cad_disciplina" data-toggle="pill"> Editar Disciplina</a></li>
+                    <li><a class="glyphicon glyphicon-briefcase" href="#cad_professor" data-toggle="pill"> Editar Professor</a></li>
+                    <li><a class="glyphicon glyphicon-user" href="#cad_aluno" data-toggle="pill"> Editar Aluno</a></li>
                     <li><a class="glyphicon glyphicon-alert" href="../index.php"> Sair</a></li>
                 </ul>
             </div>

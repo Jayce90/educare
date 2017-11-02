@@ -4,7 +4,7 @@ google.charts.load('current', {'packages':['corechart']});
       function drawVisualization() {
         // Some raw data (not necessarily accurate)
         var data = google.visualization.arrayToDataTable([
-         ['Bimestre', 'Moura Carvalho', 'São José', 'Antodio Barbosa', 'Luterana'],
+         ['Bimestre', 'Maria', 'Antonio', 'Joãozinho', 'Luciana'],
          ['2017/01',  7,      9,         4,             6],
          ['2017/02',  8,      7,        9,             8],
          ['2017/03',  3,      2,        5,             9],
@@ -12,7 +12,7 @@ google.charts.load('current', {'packages':['corechart']});
       ]);
 
     var options = {
-      title : 'Notas das 4 melhores escolas por Bimestre',
+      title : 'Os 4 melhores da escola',
       vAxis: {title: 'Notas'},
       hAxis: {title: 'Bimestre'},
       seriesType: 'bars',
