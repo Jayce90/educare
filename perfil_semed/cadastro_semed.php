@@ -281,7 +281,7 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                                 <form action="../controle/cadastrando_turma.php" method="post">
 
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
 
                                             <div class="form-group">
                                                 <label for="inputTurma">1. Nome da Turma</label>
@@ -289,9 +289,19 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                                             </div>
 
                                         </div>
-                                        <div class="col-md-6">
 
-                                            <label for="inputMaiseducacao">2. Ano da turma</label><br>
+                                        <div class="col-md-4">
+
+                                            <div class="form-group">
+                                                <label for="inputCapacidadeTurma">2. Número de alunos</label>
+                                                <input type="text" name="cad_capacidade_turma" class="form-control" id="inputCapacidadeTurma" placeholder="digite capacidade da turma">
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-md-4">
+
+                                            <label for="inputMaiseducacao">3. Ano da turma</label><br>
 
                                             <select class="form-control" name="cad_ano_turma">
                                                 <option value="">Selecione</option>                                               
@@ -307,18 +317,18 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="inputiniciofuncionamento">3. Horário de funcionamento Inicio</label>
+                                                <label for="inputiniciofuncionamento">4. Horário de funcionamento Inicio</label>
                                                 <input type="text" name="cad_horario_turma[]" class="form-control" id="inputiniciofuncionamento" placeholder="00:00" required="" maxlength="5" onkeypress="formatar('##:##', this); return SomenteNumero(event);" onblur="showhide()">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="inputfinalfuncionamento">3. Horário de funcionamento Fim</label>
+                                                <label for="inputfinalfuncionamento">4. Horário de funcionamento Fim</label>
                                                 <input type="text" name="cad_horario_turma[]" class="form-control" id="inputfinalfuncionamento" placeholder="00:00" required="" maxlength="5" onkeypress="formatar('##:##', this); return SomenteNumero(event);" onblur="showhide()">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <label for="inputTurno">3a. Turno</label><br>
+                                            <label for="inputTurno">4a. Turno</label><br>
 
                                             <select class="form-control" name="cad_turno_turma">
                                                 <option value="">Selecione</option>                                               
@@ -332,7 +342,7 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                                     </div>
 
 
-                                    <label for="inputDiassemana">4. Dias da semana da turma</label><br>
+                                    <label for="inputDiassemana">5. Dias da semana da turma</label><br>
 
                                     <label class="checkbox-inline">
                                         <input type="checkbox" name="cad_diassemana_turma[]" id="inputDiassemana" value="segunda, terça, quarta, quinta e sexta"> Segunda a Sexta
@@ -357,7 +367,7 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                                     </label><br><br>
 
 
-                                    <label for="inputAtendimento">5. Tipo de atendimento</label><br>
+                                    <label for="inputAtendimento">6. Tipo de atendimento</label><br>
 
                                     <label class="radio-inline">
                                         <input type="radio" name="cad_tipo_turma" id="inputAtendimento" value="hospitalar"> Classe hospitalar
@@ -378,7 +388,7 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                                         <input type="radio" name="cad_tipo_turma" id="inputAtendimento" value="naoseaplica"> Não se aplica
                                     </label><br>
 
-                                    <label for="inputMaiseducacao">6. Turma participante do programa mais educação/Ensino médio inovador</label><br>
+                                    <label for="inputMaiseducacao">7. Turma participante do programa mais educação/Ensino médio inovador</label><br>
 
                                     <label class="radio-inline">
                                         <input type="radio" name="cad_programa_turma" id="inputMaiseducacao" value="sim"> Sim
@@ -389,7 +399,7 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
 
 
                                     <div class="form-group">
-                                        <label for="inputAeeatividades">7. Atividades do atendimento educacional especializado (AEE)</label><br>
+                                        <label for="inputAeeatividades">8. Atividades do atendimento educacional especializado (AEE)</label><br>
 
 
                                         <div class="row">
@@ -437,7 +447,7 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                                     </div><br>
 
 
-                                    <label for="inputModalidade">8. Modalidade</label><br>
+                                    <label for="inputModalidade">9. Modalidade</label><br>
                                     <label class="radio-inline">
                                         <input type="radio" name="cad_modalidade_turma" id="inputModalidade" value="EnsinoRegular"> Ensino Regular
                                     </label>
@@ -450,7 +460,7 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
 
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <label for="inputNivel">9. Nivel de ensino</label><br>
+                                            <label for="inputNivel">10. Nivel de ensino</label><br>
 
                                             <select class="form-control" name="cad_nivel_turma">
                                                 <option value="">Selecione</option>                                               
@@ -462,7 +472,7 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                                         </div>
                                         <div class="col-md-6">
 
-                                            <label for="inputEtapa">9a. Etapa</label><br>
+                                            <label for="inputEtapa">10a. Etapa</label><br>
 
                                             <select class="form-control" name="cad_etapa_turma">
                                                 <option value="">Selecione</option>                                               
@@ -487,7 +497,7 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                                         </div>
                                     </div><br>
 
-                                    <label for="inputDescricaodaturma">10. Descrição da turma</label><br>
+                                    <label for="inputDescricaodaturma">11. Descrição da turma</label><br>
                                     <textarea class="form-control" name="cad_descricao_turma" rows="6"></textarea><br>
 
                                     <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
