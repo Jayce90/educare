@@ -15,7 +15,7 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
         <link href="../layout/css/local.css" rel="stylesheet">
         <script src="../layout/js/bootstrap.min.js"></script>
         <script src="../layout/js/mascara_local.js"></script>
-        <script src="../layout/js/validacao_local.js"></script>
+        <script src="../layout/js/validacao_local.js"></script>        
         <link rel="shortcut icon" href="../imagens/icone.png" type="image/x-icon">
         <title>SECRETARIA ESCOLAR</title>
     </head>
@@ -51,8 +51,8 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                     <li class="active"><a class="glyphicon glyphicon-pencil" href="#cad_escola" data-toggle="pill"> Cadastro Escola</a></li>
                     <li><a class="glyphicon glyphicon-book" href="#cad_turma" data-toggle="pill"> Cadastro Turma</a></li>
                     <li><a class="glyphicon glyphicon-folder-open" href="#cad_disciplina" data-toggle="pill"> Cadastro Disciplina</a></li>
-                    <li><a class="glyphicon glyphicon-briefcase" href="#cad_professor" data-toggle="pill"> Cadastro Professor(a)</a></li>
-                    <li><a class="glyphicon glyphicon-user" href="#cad_aluno" data-toggle="pill"> Cadastro Aluno(a)</a></li>
+                    <li><a class="glyphicon glyphicon-briefcase" href="#cad_professor" data-toggle="pill"> Cadastro Professor</a></li>
+                    <li><a class="glyphicon glyphicon-user" href="#cad_aluno" data-toggle="pill"> Cadastro Aluno</a></li>
                     <li><a class="glyphicon glyphicon-folder-open" href="#aprovacao" data-toggle="pill"> Aprovar Usuário</a></li>
                     <li><a class="glyphicon glyphicon-alert" href="../index.php"> Sair</a></li>
                 </ul>
@@ -334,6 +334,9 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
 
                                     <label for="inputDiassemana">4. Dias da semana da turma</label><br>
 
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="cad_diassemana_turma[]" id="inputDiassemana" value="segunda, terça, quarta, quinta e sexta"> Segunda a Sexta
+                                    </label>
                                     <label class="checkbox-inline">
                                         <input type="checkbox" name="cad_diassemana_turma[]" id="inputDiassemana" value="segunda"> Segunda
                                     </label>
@@ -1208,82 +1211,60 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                                         </div>
                                         <div class="col-md-6">
 
-                                            <div class="form-group">
-                                                <label for="inputNecessidadeEspecialAluno">14. Aluno(a) com deficiência, transtorno global do
-                                                    desenvolvimento ou altas habilidades/superdotação :</label>
+                                            <label for="inputNecessidadeEspecialAluno">14. Aluno(a) com deficiência :</label><br>
 
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="cad_deficiencia_aluno" id="inputNecessidadeEspecialAluno" value="sim"> Sim
-                                                </label>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="cad_deficiencia_aluno" id="inputNecessidadeEspecialAluno" value="nao"> Não
-                                                </label>
-                                            </div>
+                                            <select class="form-control" name="cad_deficiencia_aluno" id="inputNecessidadeEspecialAluno">
+                                                <option value="">Selecione</option>
+                                                <option value="Sim">Sim</option>                                               
+                                                <option value="Não">Não</option>
+                                            </select>                             
 
                                         </div>
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
 
                                             <label for="inputTipoDeficienciaAluno">14a. Deficiência :</label><br>
 
-                                            <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficienciaAluno" value="Cegueira"> Cegueira
-                                            </label>
-                                            <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficienciaAluno" value="Baixa Visao"> Baixa Visão
-                                            </label>
-                                            <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficienciaAluno" value="Surdez"> Surdez
-                                            </label>
-                                            <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficienciaAluno" value="Deficiencia Auditiva"> Deficiência Auditiva
-                                            </label>
-                                            <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficienciaAluno" value="Surdo Cegueira"> Surdocegueira
-                                            </label>
-                                            <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficienciaAluno" value="Deficiencia Fisica"> Deficiência Física
-                                            </label>
-                                            <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficienciaAluno" value="Deficiencia Intelectual"> Deficiência Intelectual
-                                            </label>
-                                            <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficienciaAluno" value="Deficiencia Multipla"> Deficiência Múltipla
-                                            </label>                                            
+                                            <select class="form-control" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficienciaAluno">
+                                                <option value="">Selecione</option>
+                                                <option value="Cegueira">Cegueira</option>                                               
+                                                <option value="Baixa Visao">Baixa Visão</option>
+                                                <option value="Surdez">Surdez</option>
+                                                <option value="Deficiência Auditiva">Deficiência Auditiva</option>
+                                                <option value="Surdocegueira">Surdocegueira</option>
+                                                <option value="Deficiência Física">Deficiência Física</option>
+                                                <option value="Deficiência Intelectual">Deficiência Intelectual</option>
+                                                <option value="Deficiência Múltipla">Deficiência Múltipla</option>
+                                            </select>                                            
 
                                         </div> 
 
-                                        <div class="col-md-4">
+                                        <div class="col-md-5">
 
                                             <label for="inputTranstornoGloAluno">14b. Transtorno global do desenvolvimento :</label><br>
 
-                                            <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTranstornoGloAluno" value="Autismo Infantil"> Autismo Infantil
-                                            </label>
-                                            <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTranstornoGloAluno" value="Sindrome de Asperger"> Síndrome de Asperger 
-                                            </label>
-                                            <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTranstornoGloAluno" value="Sindrome de Rett"> Síndrome de Rett
-                                            </label>
-                                            <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTranstornoGloAluno" value="Transtorno Desintegrativo da Infancia"> Transtorno desintegrativo da infância
-                                            </label>
-
-
+                                            <select class="form-control" name="cad_tipo_deficiencia_aluno[]" id="inputTranstornoGloAluno">
+                                                <option value="">Selecione</option>
+                                                <option value="Autismo Infantil">Autismo Infantil</option>                                               
+                                                <option value="Síndrome de Asperger">Síndrome de Asperger</option>
+                                                <option value="Síndrome de Rett">Síndrome de Rett</option>
+                                                <option value="Transtorno desintegrativo da infância">Transtorno desintegrativo da infância</option>                                                
+                                            </select>                                          
                                         </div>
+
                                         <div class="col-md-4">
 
                                             <label for="inputSuperdotacaoAluno">14c. Altas Habilidades/Superdotação :</label><br>
 
-                                            <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputSuperdotacaoAluno" value="Super Dotacao"> Altas Habilidades/Superdotação
-                                            </label>
+                                            <select class="form-control" name="cad_tipo_deficiencia_aluno[]" id="inputSuperdotacaoAluno">
+                                                <option value="">Selecione</option>
+                                                <option value="Autismo Infantil">Altas Habilidades/Superdotação</option>                                              
+                                            </select>
 
                                         </div>
-                                    </div>
+                                    </div><br>
 
 
                                     <div class="row">
@@ -1511,20 +1492,32 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                                         </div>
                                     </div><br>
 
-                                    <div class="form-group">
-                                        <label for="inputJustificativaAluno">Justificativa da falta de informação de documento do aluno :</label><br>
+                                    <div class="row">
+                                        <div class="col-md-6">
 
-                                        <label class="radio-inline">
-                                            <input type="radio" name="cad_justificativa_aluno" id="inputJustificativaAluno" value="alunonaopossuidocumento"> Aluno não possui documento
-                                        </label>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="cad_justificativa_aluno" id="inputJustificativaAluno" value="escolanaopossuiinformaçãodedocumentodoaluno"> Escola não possui informação de documento do aluno
-                                        </label>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="cad_justificativa_aluno" id="inputJustificativaAluno" value="Documentação Pendente"> Documentação Pendente
-                                        </label>
+                                            <label for="inputJustificativaAluno">Justificativa da falta de informação de documento do aluno :</label><br>
 
-                                    </div>
+                                            <select class="form-control" name="cad_justificativa_aluno">
+                                                <option value="">Selecione</option>
+                                                <option value="Aluno não possui documento">Aluno não possui documento</option>                                               
+                                                <option value="Escola não possui informação de documento do aluno">Escola não possui informação de documento do aluno</option>
+                                            </select>
+
+                                        </div>
+
+                                        <div class="col-md-6">
+
+                                            <label for="inputDocumentacaoPedenteAluno">Documentação Pedente :</label><br>
+
+                                            <select class="form-control" name="cad_documentacao_pedente_aluno">
+                                                <option value="">Selecione</option>
+                                                <option value="Sim">Sim</option>                                               
+                                                <option value="Não">Não</option>
+                                            </select>
+
+                                        </div>
+
+                                    </div><br>                                    
 
                                     <div class="row">
                                         <div class="col-md-6">
