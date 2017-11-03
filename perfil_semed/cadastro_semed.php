@@ -601,14 +601,14 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                             <div class="panel-heading">CADASTRO DO PROFESSOR(A)</div>
                             <div class="panel-body box_conteudo">
 
-                                <form action="" method="post">
+                                <form action="../controle/cadastrando_educador.php" method="post">
 
                                     <div class="row">
                                         <div class="col-md-6">
 
                                             <div class="form-group">
                                                 <label for="inputIdProfessor">1. INEP Professor(a)</label>
-                                                <input type="text" name="cad_id_professor" class="form-control" id="inputIdProfessor" placeholder="digite a identificação unica" required="" maxlength="" onkeypress="return SomenteNumero(event);" onblur="showride()">
+                                                <input type="text" name="cad_inep_professor" class="form-control" id="inputIdProfessor" placeholder="digite a identificação unica" required="" maxlength="" onkeypress="return SomenteNumero(event);" onblur="showride()">
                                             </div>
 
                                         </div>
@@ -769,7 +769,7 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="inputMunidenascimentoProfessor">14. Município de nascimento</label>
-                                                <input type="text" name="cad_muninasci_Professor" class="form-control" id="inputMunidenascimentoProfessor" placeholder="digite o município de nascimento">
+                                                <input type="text" name="cad_municipio_nasc_professor" class="form-control" id="inputMunidenascimentoProfessor" placeholder="digite o município de nascimento">
                                             </div>
                                         </div>
                                     </div>
@@ -859,7 +859,7 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
 
                                             <div class="form-group">
                                                 <label for="inputNumeroEnderecoProfessor">19. Número</label>
-                                                <input type="text" name="cad_numeroendereco_professor" class="form-control" id="inputNumeroEnderecoProfessor" placeholder="numero" onkeypress="return SomenteNumero(event);">
+                                                <input type="text" name="cad_numero_professor" class="form-control" id="inputNumeroEnderecoProfessor" placeholder="numero" onkeypress="return SomenteNumero(event);">
 
                                             </div>
                                         </div>
@@ -870,7 +870,7 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
 
                                             <div class="form-group">
                                                 <label for="inputComplementoEnderecoProfessor">20. Complemento</label>
-                                                <input type="text" name="cad_complementoendereco_professor" class="form-control" id="inputComplementoEnderecoProfessor" placeholder="complemento">
+                                                <input type="text" name="cad_complemento_professor" class="form-control" id="inputComplementoEnderecoProfessor" placeholder="complemento">
 
                                             </div>
                                         </div>

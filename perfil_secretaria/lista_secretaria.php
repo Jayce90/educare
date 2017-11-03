@@ -71,6 +71,29 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                             <div class="panel-heading">LISTAGEM DE TODOS OS ALUNO</div>
                             <div class="panel-body box_conteudo">
 
+                                <table class="table info">
+                                    <tr>
+                                        <th data-field="teste">NOME</th>
+                                        <th data-field="teste">TELEFONE</th>
+                                        <th data-field="teste">PERFIL</th>
+                                        <th data-field="teste">VISUALIZAR REGISTRO</th>
+                                    </tr>
+                                    <tbody> 
+                                        <?php
+                                        foreach ($mostrar_pendentes as $linha_pendente) {
+                                            echo "<tr>"
+                                            . "<form action='mostrardados.php' method='post'>" .
+                                            "<td>" . $linha_pendente->nome_usuario . "</td>" .
+                                            "<td>" . $linha_pendente->fone_usuario . "</td>" .
+                                            "<td>" . $linha_pendente->perfil_usuario . "</td>" .
+                                            "<td> <input type='hidden' name='escola' value=" . $linha_pendente->id_usuario . ">"
+                                            . "<input type='submit' class='btn btn-success' value='ver'></td>" .
+                                            "</form></tr>";
+                                        }
+                                        ?>
+                                    </tbody>
+                                </table>
+
                                 <label for="inputNivelDisciplina">Usuários</label><br>
                                 <select class="form-control" name="id_aprovado">
                                     <?php

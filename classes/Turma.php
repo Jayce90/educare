@@ -8,6 +8,7 @@ require_once '../conexao/Crud.php';
 
 class Turma extends Crud{
     private $nome_turma;
+    private $capacidade_turma;
     private $ano_turma;
     private $horario_turma;
     private $turno_turma;
@@ -23,6 +24,10 @@ class Turma extends Crud{
     
     function setNome_turma($nome_turma) {
         $this->nome_turma = $nome_turma;
+    }
+    
+    function setCapacidade_turma($capacidade_turma) {
+        $this->capacidade_turma = $capacidade_turma;
     }
     
     function setAno_turma($ano_turma) {
@@ -75,13 +80,14 @@ class Turma extends Crud{
     
     public function inserir_turma() {
         try {
-            $sql = "INSERT INTO turma (nome_turma, ano_turma, horario_turma, turno_turma, dias_turma, tipo_turma, "
+            $sql = "INSERT INTO turma (nome_turma, capacidade_turma, ano_turma, horario_turma, turno_turma, dias_turma, tipo_turma, "
                     . "programa_turma, aee_turma, modalidade_turma, nivel_turma, etapa_turma, descricao_turma, escola_id_escola) "
-                    . "VALUES (:nome_turma, :ano_turma, :horario_turma, :turno_turma, :dias_turma, :tipo_turma, :programa_turma, "
+                    . "VALUES (:nome_turma, :capacidade_turma, :ano_turma, :horario_turma, :turno_turma, :dias_turma, :tipo_turma, :programa_turma, "
                     . ":aee_turma, :modalidade_turma, :nivel_turma, :etapa_turma, :descricao_turma, :id_escola)";
 
             $stmt = DB::prepare($sql);
             $stmt->bindParam(':nome_turma', $this->nome_turma);
+            $stmt->bindParam(':capacidade_turma', $this->capacidade_turma);
             $stmt->bindParam(':ano_turma', $this->ano_turma);
             $stmt->bindParam(':horario_turma', $this->horario_turma);
             $stmt->bindParam(':turno_turma', $this->turno_turma);

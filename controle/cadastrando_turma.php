@@ -12,6 +12,7 @@ include_once '../classes/Turma.php';
 include 'verificacao_de_campos.php';
 
 $nome_turma = isset($_POST['cad_nome_turma']) ? $_POST['cad_nome_turma'] : '';
+$capacidade_turma = isset($_POST['cad_capacidade_turma']) ? $_POST['cad_capacidade_turma'] : '';
 $ano_turma = isset($_POST['cad_ano_turma']) ? $_POST['cad_ano_turma'] : '';
 $horarios_turma = isset($_POST['cad_horario_turma']) ? $_POST['cad_horario_turma'] : '';
 $horario_turma = validar_array($horarios_turma);
@@ -30,6 +31,7 @@ $id_escola = 1;
 $turma = new Turma();
 
 $turma ->setNome_turma($nome_turma);
+$turma ->setCapacidade_turma($capacidade_turma);
 $turma ->setAno_turma($ano_turma);
 $turma ->setHorario_turma($horario_turma);
 $turma ->setTurno_turma($turno_turma);
