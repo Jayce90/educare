@@ -2,7 +2,7 @@
     function confirmacao()
     {
         alert("Educador(a) cadastrado(a) com sucesso!");
-        location.href = "../perfil_secretaria/cadastro_secretaria.php";
+        history.back(-1);
     }
 </script>
 

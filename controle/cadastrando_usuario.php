@@ -2,12 +2,13 @@
     function confirmacao()
     {
         alert("Usuario cadastrado com sucesso!");
-        location.href = "../index.php";
+        history.back(-1);
     }
 </script>
 
 
 <?php
+//location.href = "../index.php";
 include_once '../classes/Usuario.php';
 
 $nome_usuario = isset($_POST['cad_nome_usuario']) ? $_POST['cad_nome_usuario'] : '';

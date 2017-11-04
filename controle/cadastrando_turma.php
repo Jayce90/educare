@@ -2,7 +2,7 @@
     function confirmacao()
     {
         alert("Turma cadastrada com sucesso!");
-        location.href = "../perfil_semed/index_semed.php";
+        history.back(-1);
     }
 </script>
 

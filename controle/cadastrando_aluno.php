@@ -1,3 +1,11 @@
+<script language="JavaScript">
+    function confirmacao()
+    {
+        alert("Aluno(a) cadastrado(a) com sucesso!");
+        history.back(-1);
+    }
+</script>
+
 <?php
 
 include_once '../classes/Aluno.php';
@@ -44,7 +52,7 @@ $responsavel_transporte_aluno = isset($_POST['cad_responsavel_transporte_aluno']
 $tipos_transporte_aluno = isset($_POST['cad_tipo_transporte_aluno']) ? $_POST['cad_tipo_transporte_aluno'] : '';
 $tipo_transporte_aluno = validar_array($tipos_transporte_aluno);
 $status_aluno = "aguardando";
-$id_escola_aluno = 1001;
+$id_escola_aluno = 1;
 
 $aluno = new Aluno();
 
@@ -89,13 +97,4 @@ $aluno->setId_escola($id_escola_aluno);
 
 $aluno->inserir_aluno();
 
-
-
-
-
-//$tipos_deficiencia_aluno = isset($_POST['cad_tipo_deficiencia_aluno']) ? $_POST['cad_tipo_deficiencia_aluno'] : '';
-//
-//$tipo_deficiencia_aluno = validar_array($tipos_deficiencia_aluno);
-//echo 'Resposta da funcao: '.$tipo_deficiencia_aluno;
-//
-//
+echo "<script>confirmacao()</script>";

@@ -1179,7 +1179,7 @@ require '../controle/autenticacao.php';
                         <div class="panel panel-primary">
                             <div class="panel-heading">CADASTRO DE DISCIPLINA</div>
                             <div class="panel-body box_conteudo">
-                                <form action="" method="post">
+                                <form action="../controle/cadastrando_disciplina.php" method="post">
 
                                     <div class="row">
                                         <div class="col-md-4">
@@ -1254,7 +1254,7 @@ require '../controle/autenticacao.php';
                                     </div><br>
 
                                     <label for="inputDescricaoDisciplina">7. Descrição da disciplina</label><br>
-                                    <textarea class="form-control" rows="6"></textarea><br>
+                                    <textarea class="form-control" rows="6" name="cad_descricao_disciplina"></textarea><br>
 
 
                                     <button type="submit" class="btn btn-primary btn-lg">Enviar</button>  
