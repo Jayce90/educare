@@ -51,7 +51,7 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                     <li class="active"><a class="glyphicon glyphicon-pencil" href="#cad_escola" data-toggle="pill"> Cadastro Escola</a></li>
                     <li><a class="glyphicon glyphicon-book" href="#cad_turma" data-toggle="pill"> Cadastro Turma</a></li>
                     <li><a class="glyphicon glyphicon-folder-open" href="#cad_disciplina" data-toggle="pill"> Cadastro Disciplina</a></li>
-                    <li><a class="glyphicon glyphicon-briefcase" href="#cad_professor" data-toggle="pill"> Cadastro Professor</a></li>
+                    <li><a class="glyphicon glyphicon-briefcase" href="#cad_professor" data-toggle="pill"> Cadastro Educador</a></li>
                     <li><a class="glyphicon glyphicon-user" href="#cad_aluno" data-toggle="pill"> Cadastro Aluno</a></li>
                     <li><a class="glyphicon glyphicon-folder-open" href="#aprovacao" data-toggle="pill"> Aprovar Usuário</a></li>
                     <li><a class="glyphicon glyphicon-alert" href="../index.php"> Sair</a></li>
@@ -598,7 +598,7 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
 
                     <div class="tab-pane" id="cad_professor">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">CADASTRO DO PROFESSOR(A)</div>
+                            <div class="panel-heading">CADASTRO DO EDUCADOR(A)</div>
                             <div class="panel-body box_conteudo">
 
                                 <form action="../controle/cadastrando_educador.php" method="post">
@@ -607,7 +607,7 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                                         <div class="col-md-6">
 
                                             <div class="form-group">
-                                                <label for="inputIdProfessor">1. INEP Professor(a)</label>
+                                                <label for="inputIdProfessor">1. INEP Educador(a)</label>
                                                 <input type="text" name="cad_inep_professor" class="form-control" id="inputIdProfessor" placeholder="digite a identificação unica" required="" maxlength="" onkeypress="return SomenteNumero(event);" onblur="showride()">
                                             </div>
 

@@ -41,7 +41,7 @@
             <div class="col-md-2">
                 <ul class="nav nav-pills nav-stacked" id="myTabs">
                     <li class="active"><a class="glyphicon glyphicon-pushpin" href="#vincular_aluno" data-toggle="pill"> Vincular Aluno</a></li>
-                    <li><a class="glyphicon glyphicon-pushpin" href="#vincular_educador" data-toggle="pill"> Vincular Educador(a)</a></li>
+                    <li><a class="glyphicon glyphicon-pushpin" href="#vincular_educador" data-toggle="pill"> Vincular Educador</a></li>
                 </ul>
             </div>
 
@@ -51,18 +51,18 @@
 
                     <div class="tab-pane active" id="vincular_aluno">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">VINCULAR ALUNO</div>
+                            <div class="panel-heading">VINCULAR ALUNO(A)</div>
                             <div class="panel-body box_conteudo">
                                 <form action="" method="post">
 
-                                    <label for="inputVincularTurma">Vincular a turma :</label><br>
+                                    <label for="inputVincularTurma">Vincular a Turma :</label><br>
 
                                     <select class="form-control" name="vincular_turma">
                                         <option value="">Selecione</option>                                              
                                     </select>                                        
 
 
-                                    <label for="inputVincularAluno">Vincular o aluno :</label><br>
+                                    <label for="inputVincularAluno">Vincular o Aluno :</label><br>
 
                                     <select class="form-control" name="vincular_aluno">
                                         <option value="">Selecione</option>                                             
@@ -76,7 +76,7 @@
 
                     <div class="tab-pane" id="vincular_educador">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">VINCULAR EDUCADOR</div>
+                            <div class="panel-heading">VINCULAR EDUCADOR(A)</div>
                             <div class="panel-body box_conteudo">
                                 <form action="" method="post">
 
