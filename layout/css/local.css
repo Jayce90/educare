@@ -24,7 +24,7 @@
 }
 
 .cursor_alterado {
-cursor:Pointer;
+    cursor:Pointer;
 }
 
 .banner_box{
@@ -146,5 +146,14 @@ th{
 
     height: 10%;
     width: 5%;
+
+}
+
+
+tbody{
+
+    background-color: #ffffff;
+    border-bottom: solid 1px;
+    border-top: solid 1px;
 
 }

@@ -50,7 +50,7 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
             <div class="col-md-2">
                 <ul class="nav nav-pills nav-stacked" id="myTabs">
                     <li class="active"><a class="glyphicon glyphicon-list" href="#list_turmas" data-toggle="pill"> Listar Turmas</a></li>
-                    <li><a class="glyphicon glyphicon-list" href="#list_alunos" data-toggle="pill"> Listar ALunos</a></li>
+                    <li><a class="glyphicon glyphicon-list" href="#list_alunos" data-toggle="pill"> Listar Alunos</a></li>
                     <li><a class="glyphicon glyphicon-list" href="#list_educadores" data-toggle="pill"> Listar Educadores</a></li>
                     <li><a class="glyphicon glyphicon-list" href="#list_disciplinas" data-toggle="pill"> Listar Disciplinas</a></li>
                 </ul>
@@ -65,6 +65,16 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                             <div class="panel-heading">LISTAGEM DE TODAS AS TURMAS</div>
                             <div class="panel-body box_conteudo">
 
+                                <table width="100%">
+                                    <tr>
+                                        <th data-field="teste">NOME</th>
+                                        <th data-field="teste">TELEFONE</th>
+                                        <th data-field="teste">PERFIL</th>
+                                        <th data-field="teste">VISUALIZAR REGISTRO</th>
+                                    </tr>
+
+                                </table>
+
                             </div>
                         </div>
                     </div>
@@ -74,13 +84,14 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                             <div class="panel-heading">LISTAGEM DE TODOS OS ALUNO</div>
                             <div class="panel-body box_conteudo">
 
-                                <table class="table info">
+                                <table width="100%">
                                     <tr>
                                         <th data-field="teste">NOME</th>
                                         <th data-field="teste">TELEFONE</th>
                                         <th data-field="teste">PERFIL</th>
                                         <th data-field="teste">VISUALIZAR REGISTRO</th>
                                     </tr>
+
                                     <tbody> 
                                         <?php
                                         foreach ($mostrar_pendentes as $linha_pendente) {
@@ -106,6 +117,8 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                                     ?>
                                 </select>
 
+
+
                             </div>
                         </div>
                     </div>
@@ -115,6 +128,16 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                             <div class="panel-heading">LISTAGEM DE TODOS OS EDUCADORES</div>
                             <div class="panel-body box_conteudo">
 
+                                <table width="100%">
+                                    <tr>
+                                        <th data-field="teste">NOME</th>
+                                        <th data-field="teste">TELEFONE</th>
+                                        <th data-field="teste">PERFIL</th>
+                                        <th data-field="teste">VISUALIZAR REGISTRO</th>
+                                    </tr>
+
+                                </table>
+
                             </div>
                         </div>
                     </div>
@@ -123,6 +146,16 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                         <div class="panel panel-primary">
                             <div class="panel-heading">LISTAGEM DE TODAS AS DISCIPLINAS</div>
                             <div class="panel-body box_conteudo">
+
+                                <table width="100%">
+                                    <tr>
+                                        <th data-field="teste">NOME</th>
+                                        <th data-field="teste">TELEFONE</th>
+                                        <th data-field="teste">PERFIL</th>
+                                        <th data-field="teste">VISUALIZAR REGISTRO</th>
+                                    </tr>
+
+                                </table>
 
                             </div>
                         </div>
