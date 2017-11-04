@@ -2,7 +2,7 @@
 
 function validar_array($conteudo) {
     if ($conteudo == "") {
-        $resposta = 'NÃO CONSTA';
+        $resposta = ' ';
         return $resposta;
     } else {
         $resposta = implode("; ", $conteudo);

@@ -1,3 +1,11 @@
+<script language="JavaScript" charset="utf-8">
+    function falhaLogin()
+    {
+        alert("Usuario n\u00e3o cadastrado no sistema!");
+        location.href="../index.php";
+    }
+</script>
+
 <?php
 
 session_start();
@@ -17,6 +25,7 @@ if (isset($login)) {
     $_SESSION['email'] = $login->email_usuario;
     $_SESSION['perfil'] = $login->perfil_usuario;
     $_SESSION['status'] = $login->status_usuario;
+    $_SESSION['id_escola'] = $login->escola_id_escola;
     if ($_SESSION['status'] == "aguardando") {
         header("location:../aguardandoConfirmacao.php");
     } elseif ($_SESSION['status'] == "aprovado" && $_SESSION['perfil'] == "Secretário(a)") {
@@ -24,9 +33,9 @@ if (isset($login)) {
     } elseif ($_SESSION['status'] == "aprovado" && $_SESSION['perfil'] == "Semed") {
         header("location:../perfil_semed/index_semed.php");
     } else {
-        echo "<script>falha_login()</script>";
+        echo "<script>falhaLogin()</script>";
     }
 } else {
-    echo "<script>falha_login()</script>";
+    echo "<script>falhaLogin()</script>";
 }
 

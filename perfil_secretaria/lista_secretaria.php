@@ -1,10 +1,13 @@
 <?php
+session_start();
+require '../controle/autenticacao.php';
 include_once '../classes/Usuario.php';
+//Secretaria();
 
 $pendentes = new Usuario();
 $mostrar_pendentes = $pendentes->usuarios_pendente();
-?>
 
+?>
 <!DOCTYPE html>
 
 <html>
@@ -35,7 +38,7 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                         <li><a class="glyphicon glyphicon-plus" href="cadastro_secretaria.php"> Cadastrar</a></li>
                         <li><a class="glyphicon glyphicon-pushpin" href="vincular_secretaria.php"> Vincular</a></li>
                         <li class="active"><a class="glyphicon glyphicon-list"> Listar<span class="sr-only">(current)</span></a></li>
-                        <li><a class="glyphicon glyphicon-alert" href="../index.php"> Sair</a></li>
+                        <li><a class="glyphicon glyphicon-alert" href="../controle/sair.php"> Sair</a></li>
                     </ul>
                 </div>
             </div>

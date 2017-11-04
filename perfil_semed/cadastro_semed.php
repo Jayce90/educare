@@ -3,9 +3,13 @@
 session_start();
 
 include_once '../classes/Usuario.php';
+include_once '../classes/Disciplina.php';
 
 $pendentes = new Usuario();
 $mostrar_pendentes = $pendentes->usuarios_pendente();
+
+$dados_disciplina = new Disciplina();
+$mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id_escola']);
 ?>
 <html>
     <head>
@@ -511,7 +515,7 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                         <div class="panel panel-primary">
                             <div class="panel-heading">CADASTRO DE DISCIPLINA</div>
                             <div class="panel-body box_conteudo">
-                                <form action="" method="post">
+                                <form action="../controle/cadastrando_disciplina.php" method="post">
 
                                     <div class="row">
                                         <div class="col-md-4">
@@ -571,7 +575,12 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                                             <label for="inputProfessorDisciplina">5. Professor da disciplina</label><br>
 
                                             <select class="form-control" name="cad_professor_disciplina">
-                                                <option value="">Selecione</option>                                              
+                                                <?php
+                                                foreach ($mostrar_dados_disciplina as $linha_disciplina) {
+                                                    echo "<option value='. $linha_disciplina->id_professor .'>" . $linha_disciplina->nome_professor . " - Email: " . $linha_disciplina->email_professor . "</option>"
+                                                    ;
+                                                }
+                                                ?>
                                             </select>
                                         </div>
 
@@ -580,7 +589,12 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                                             <label for="inputTurmaDisciplina">6. Turma da disciplina</label><br>
 
                                             <select class="form-control" name="cad_turma_disciplina">
-                                                <option value="">Selecione</option>                                              
+                                                <?php
+                                                foreach ($mostrar_dados_disciplina as $linha_disciplina) {
+                                                    echo "<option value='. $linha_disciplina->id_turma .'>" . $linha_disciplina->nome_turma . " - QTD: " . $linha_disciplina->capacidade_turma . "</option>"
+                                                    ;
+                                                }
+                                                ?>
                                             </select>
                                         </div>
                                     </div><br>

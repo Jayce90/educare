@@ -1,3 +1,9 @@
+<?php
+session_start();
+require '../controle/autenticacao.php';
+//Secretaria();
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -29,7 +35,7 @@
                         <li><a class="glyphicon glyphicon-plus" href="cadastro_secretaria.php"> Cadastrar</a></li>
                         <li class="active"><a class="glyphicon glyphicon-pushpin"> Vincular<span class="sr-only">(current)</span></a></li>
                         <li><a class="glyphicon glyphicon-list" href="lista_secretaria.php"> Listar</a></li>
-                        <li><a class="glyphicon glyphicon-alert" href="../index.php"> Sair</a></li>
+                        <li><a class="glyphicon glyphicon-alert" href="../controle/sair.php"> Sair</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->

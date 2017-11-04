@@ -1,32 +1,32 @@
 <script language="JavaScript">
-    function secretariaLogado()
+    function naoLogado()
     {
-        alert("Usuario (Secretaria) logado com sucesso!");
-        location.href="../perfil_secretaria/index_secretaria.php";
+        alert("Usuario não logado!");
+        location.href="../index.php";
     }
-    
-    function semedLogado()
+    function erroNivel()
     {
-        alert("Usuario (SEMED) logado com sucesso!");
-        location.href="../perfil_semed/index_semed.php";
-    }
-    
-    function falhaLogado()
-    {
-        alert("Usuario não cadastrado no sistema!");
+        alert("Erro: você não tem permissão para acessar essa area!");
         location.href="../index.php";
     }
 </script>
 
 <?php
 
-$login_usuario = isset($_POST['login_usuario']) ? $_POST['login_usuario'] : '';
-$senha_usuario = isset($_POST['senha_usuario']) ? $_POST['senha_usuario'] : '';
+//function usuarioLogado() {
+//    if (!isset($_SESSION["nivel"]) || !isset($_SESSION["nivel"])) {
+//        echo "<script>naoLogado()</script>";
+//    }
+//}
 
-if ($login_usuario =="secretaria" && $senha_usuario == "123") {
-    echo "<script>secretariaLogado()</script>";
-} elseif ($login_usuario =="semed" && $senha_usuario == "123") {
-    echo "<script>semedLogado()</script>";
-} else {
-    echo "<script>falhaLogado()</script>";
+function Secretaria() {
+    if ($_SESSION['status']  != 'aprovado' || $_SESSION['perfil'] != "Secretário(a)") {
+        echo "<script>erroNivel()</script>";
+    }
+}
+
+function Admin() {
+    if ($_SESSION["nivel"] != 'a') {
+        echo "<script>erroNivel()</script>";
+    }
 }
