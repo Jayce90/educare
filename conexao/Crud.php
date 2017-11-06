@@ -30,6 +30,20 @@ abstract class Crud extends DB {
 
     }
     
+    public function listagem_por_escola($id_escola, $tabela) {
+        try {
+            $sql = "SELECT * FROM ".$tabela." WHERE escola_id_escola = :id_escola;";
+            $stmt = DB::prepare($sql);
+            $stmt->bindParam(':id_escola', $id_escola);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
+        } catch (Exception $exc) {
+            echo 'Falha ao ler todos os dados <br>';
+            echo $exc->getMessage();
+        }
+
+    }
+    
     public function deletar($id, $tabela) {
         try {
             $sql = "DELETE FROM " . $tabela . " WHERE id_" . $tabela . " = :id";

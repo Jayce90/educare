@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php
 session_start();
 
@@ -11,6 +10,8 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
 $dados_disciplina = new Disciplina();
 $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id_escola']);
 ?>
+
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -577,7 +578,7 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
                                             <select class="form-control" name="cad_professor_disciplina">
                                                 <?php
                                                 foreach ($mostrar_dados_disciplina as $linha_disciplina) {
-                                                    echo "<option value='. $linha_disciplina->id_professor .'>" . $linha_disciplina->nome_professor . " - Email: " . $linha_disciplina->email_professor . "</option>"
+                                                    echo "<option value=' $linha_disciplina->id_professor '>" . $linha_disciplina->nome_professor . " - Email: " . $linha_disciplina->email_professor . "</option>"
                                                     ;
                                                 }
                                                 ?>
@@ -591,7 +592,7 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
                                             <select class="form-control" name="cad_turma_disciplina">
                                                 <?php
                                                 foreach ($mostrar_dados_disciplina as $linha_disciplina) {
-                                                    echo "<option value='. $linha_disciplina->id_turma .'>" . $linha_disciplina->nome_turma . " - QTD: " . $linha_disciplina->capacidade_turma . "</option>"
+                                                    echo "<option value=' $linha_disciplina->id_turma '>ID: ". $linha_disciplina->id_turma ." NOME: " . $linha_disciplina->nome_turma . " - QTD: " . $linha_disciplina->capacidade_turma . "</option>"
                                                     ;
                                                 }
                                                 ?>

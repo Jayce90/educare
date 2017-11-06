@@ -40,7 +40,7 @@ and open the template in the editor.
                         </div>
                         <div class="col-md-4">
                             <img src="imagens/listavagas.png" alt="..." class="img-circle imagem_box cursor_alterado"><br>
-                            <a class="cursor_alterado" href="perfil_semed/index_semed.php">Lista de Vagas</a>
+                            <a class="cursor_alterado" href="">Lista de Vagas</a>
                         </div>
                     </div>
                 </div>

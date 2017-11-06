@@ -1,12 +1,23 @@
 <?php
 session_start();
 require '../controle/autenticacao.php';
-include_once '../classes/Usuario.php';
+include_once '../classes/Turma.php';
+include_once '../classes/Aluno.php';
+include_once '../classes/Educador.php';
+include_once '../classes/Disciplina.php';
 //Secretaria();
 
-$pendentes = new Usuario();
-$mostrar_pendentes = $pendentes->usuarios_pendente();
+$listar_turmas = new Turma();
+$mostrar_turma = $listar_turmas->listagem_por_escola(1, "turma");
 
+$listar_alunos = new Aluno();
+$mostrar_aluno = $listar_alunos->ler_todos("aluno");
+
+$listar_educador = new Professor();
+$mostrar_educador = $listar_educador->ler_todos("professor");
+
+$listar_disciplina = new Disciplina();
+$mostrar_disciplina = $listar_disciplina ->ler_professor_turma(1)
 ?>
 <!DOCTYPE html>
 
@@ -68,11 +79,32 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                                 <table width="100%">
                                     <tr>
                                         <th data-field="teste">NOME</th>
-                                        <th data-field="teste">TELEFONE</th>
-                                        <th data-field="teste">PERFIL</th>
-                                        <th data-field="teste">VISUALIZAR REGISTRO</th>
+                                        <th data-field="teste">CAPACIDADE</th>
+                                        <th data-field="teste">TURNO</th>
+                                        <th data-field="teste">HORÁRIO</th>
+                                        <th data-field="teste">NÍVEL</th>
+                                        <th data-field="teste">ETAPA</th>
+                                        <th data-field="teste">DIAS</th>
+                                        <th data-field="teste">VISUALIZAR</th>
                                     </tr>
-
+                                    <tbody> 
+                                        <?php
+                                        foreach ($mostrar_turma as $linha_turma) {
+                                            echo "<tr>"
+                                            . "<form action='' method='post'>" .
+                                            "<td>" . $linha_turma->nome_turma . "</td>" .
+                                            "<td>" . $linha_turma->capacidade_turma . "</td>" .
+                                            "<td>" . $linha_turma->turno_turma . "</td>" .
+                                            "<td>" . $linha_turma->horario_turma . "</td>" .
+                                            "<td>" . $linha_turma->nivel_turma . "</td>" .
+                                            "<td>" . $linha_turma->etapa_turma . "</td>" .
+                                            "<td>" . $linha_turma->dias_turma . "</td>" .
+                                            "<td> <input type='hidden' name='list_turma' value=" . $linha_turma->id_turma . ">"
+                                            . "<input type='submit' class='btn btn-success' value='Ver Registro'></td>" .
+                                            "</form></tr>";
+                                        }
+                                        ?>
+                                    </tbody>
                                 </table>
 
                             </div>
@@ -86,38 +118,33 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
 
                                 <table width="100%">
                                     <tr>
-                                        <th data-field="teste">NOME</th>
-                                        <th data-field="teste">TELEFONE</th>
-                                        <th data-field="teste">PERFIL</th>
-                                        <th data-field="teste">VISUALIZAR REGISTRO</th>
+                                        <th data-field="aluno">NOME</th>
+                                        <th data-field="aluno">NASCIMENTO</th>
+                                        <th data-field="aluno">SEXO</th>
+                                        <th data-field="aluno">MÃE</th>
+                                        <th data-field="aluno">DEFICIÊNCIA</th>
+                                        <th data-field="aluno">TRANSPORTE PÚBLICO</th>
+                                        <th data-field="teste">VISUALIZAR</th>
                                     </tr>
 
                                     <tbody> 
                                         <?php
-                                        foreach ($mostrar_pendentes as $linha_pendente) {
+                                        foreach ($mostrar_aluno as $linha_aluno) {
                                             echo "<tr>"
-                                            . "<form action='mostrardados.php' method='post'>" .
-                                            "<td>" . $linha_pendente->nome_usuario . "</td>" .
-                                            "<td>" . $linha_pendente->fone_usuario . "</td>" .
-                                            "<td>" . $linha_pendente->perfil_usuario . "</td>" .
-                                            "<td> <input type='hidden' name='escola' value=" . $linha_pendente->id_usuario . ">"
-                                            . "<input type='submit' class='btn btn-success' value='ver'></td>" .
+                                            . "<form action='' method='post'>" .
+                                            "<td>" . $linha_aluno->nome_aluno . "</td>" .
+                                            "<td>" . $linha_aluno->nascimento_aluno . "</td>" .
+                                            "<td>" . $linha_aluno->sexo_aluno . "</td>" .
+                                            "<td>" . $linha_aluno->mae_aluno . "</td>" .
+                                            "<td>" . $linha_aluno->deficiencia_aluno . "</td>" .
+                                            "<td>" . $linha_aluno->transporte_aluno . "</td>" .
+                                            "<td> <input type='hidden' name='list_aluno' value=" . $linha_aluno->id_aluno . ">"
+                                            . "<input type='submit' class='btn btn-success' value='Ver Registro'></td>" .
                                             "</form></tr>";
                                         }
                                         ?>
                                     </tbody>
                                 </table>
-
-                                <label for="inputNivelDisciplina">Usuários</label><br>
-                                <select class="form-control" name="id_aprovado">
-                                    <?php
-                                    foreach ($mostrar_pendentes as $linha_pendente) {
-                                        echo "<option value='" . $linha_pendente->id_usuario . "'>" . $linha_pendente->id_usuario . " Nome: " . $linha_pendente->nome_usuario . " - Fone: " . $linha_pendente->fone_usuario . " - Perfil: " . $linha_pendente->perfil_usuario . "</option>";
-                                    }
-                                    ?>
-                                </select>
-
-
 
                             </div>
                         </div>
@@ -130,12 +157,32 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
 
                                 <table width="100%">
                                     <tr>
-                                        <th data-field="teste">NOME</th>
-                                        <th data-field="teste">TELEFONE</th>
-                                        <th data-field="teste">PERFIL</th>
-                                        <th data-field="teste">VISUALIZAR REGISTRO</th>
+                                        <th data-field="educador">NOME</th>
+                                        <th data-field="educador">CURSO</th>
+                                        <th data-field="educador">PÓS GRADUAÇÃO</th>
+                                        <th data-field="educador">OUTRO CURSO</th>
+                                        <th data-field="educador">FUNÇÃO</th>
+                                        <th data-field="educador">VINCULO</th>
+                                        <th data-field="educador">VISUALIZAR</th>
                                     </tr>
 
+                                    <tbody> 
+                                        <?php
+                                        foreach ($mostrar_educador as $linha_educador) {
+                                            echo "<tr>"
+                                            . "<form action='' method='post'>" .
+                                            "<td>" . $linha_educador->nome_professor . "</td>" .
+                                            "<td>" . $linha_educador->curso_professor . "</td>" .
+                                            "<td>" . $linha_educador->pos_graduacao_professor . "</td>" .
+                                            "<td>" . $linha_educador->outro_curso_professor . "</td>" .
+                                            "<td>" . $linha_educador->funcao_professor . "</td>" .
+                                            "<td>" . $linha_educador->vinculo_professor . "</td>" .
+                                            "<td> <input type='hidden' name='list_educador' value=" . $linha_educador->id_professor . ">"
+                                            . "<input type='submit' class='btn btn-success' value='Ver Registro'></td>" .
+                                            "</form></tr>";
+                                        }
+                                        ?>
+                                    </tbody>
                                 </table>
 
                             </div>
@@ -149,12 +196,36 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
 
                                 <table width="100%">
                                     <tr>
-                                        <th data-field="teste">NOME</th>
-                                        <th data-field="teste">TELEFONE</th>
-                                        <th data-field="teste">PERFIL</th>
-                                        <th data-field="teste">VISUALIZAR REGISTRO</th>
+                                        <th data-field="disciplina">DISCIPLINA</th>
+                                        <th data-field="disciplina">CARGA HORÁRIA</th>
+                                        <th data-field="disciplina">PROFESSOR</th>
+                                        <th data-field="disciplina">TURMA</th>
+                                        <th data-field="disciplina">QT. ALUNOS</th>
+                                        <th data-field="disciplina">TURNO</th>
+                                        <th data-field="disciplina">NÍVEL</th>
+                                        <th data-field="disciplina">ETAPA</th>
+                                        <th data-field="disciplina">VISUALIZAR</th>
                                     </tr>
 
+                                    <tbody> 
+                                        <?php
+                                        foreach ($mostrar_disciplina as $linha_disciplina) {
+                                            echo "<tr>"
+                                            . "<form action='' method='post'>" .
+                                            "<td>" . $linha_disciplina->nome_disciplina . "</td>" .
+                                            "<td>" . $linha_disciplina->cargaHoraria_disciplina . "</td>" .
+                                            "<td>" . $linha_disciplina->nome_professor . "</td>" .
+                                            "<td>" . $linha_disciplina->nome_turma . "</td>" .
+                                            "<td>" . $linha_disciplina->capacidade_turma . "</td>" .
+                                            "<td>" . $linha_disciplina->turno_turma . "</td>" .
+                                            "<td>" . $linha_disciplina->nivel_turma . "</td>" .
+                                            "<td>" . $linha_disciplina->etapa_turma . "</td>" .
+                                            "<td> <input type='hidden' name='list_disciplina' value=" . $linha_disciplina->id_disciplina . ">"
+                                            . "<input type='submit' class='btn btn-success' value='Ver Registro'></td>" .
+                                            "</form></tr>";
+                                        }
+                                        ?>
+                                    </tbody>
                                 </table>
 
                             </div>

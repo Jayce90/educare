@@ -46,9 +46,9 @@ class Disciplina extends Crud{
     public function inserir_disciplina() {
         try {
             $sql = "INSERT INTO disciplina(nome_disciplina, descricao_disciplina, cargaHoraria_disciplina, "
-                    . "nivel_disciplina, etapa_disciplina, professor_id_professor, turma_id_turma, turma_escola_id_escola) "
+                    . "nivel_disciplina, etapa_disciplina, turma_id_turma, locacao_professor_id_professor, locacao_escola_id_escola) "
                     . "VALUES (:nome_disciplina, :descricao_disciplina, :cargaHoraria_disciplina, "
-                    . ":nivel_disciplina, :etapa_disciplina, :id_professor, :id_turma, :id_escola)";
+                    . ":nivel_disciplina, :etapa_disciplina, :id_turma, :id_professor, :id_escola)";
 
             $stmt = DB::prepare($sql);
             $stmt->bindParam(':nome_disciplina', $this->nome_disciplina);
@@ -68,7 +68,7 @@ class Disciplina extends Crud{
     
     public function ler_professor_turma($id_escola) {
         try {
-            $sql = "SELECT * FROM professor as P, turma as T WHERE P.escola_id_escola = :id_escola AND T.escola_id_escola = :id_escola";
+            $sql = "SELECT Resultado.id_disciplina, Resultado.nome_disciplina, Resultado.cargaHoraria_disciplina, Resultado.nome_professor, Resultado2.nome_turma, Resultado2.capacidade_turma, Resultado2.turno_turma, Resultado2.nivel_turma, Resultado2.etapa_turma FROM (SELECT * FROM professor P INNER JOIN disciplina D ON P.id_professor = D.locacao_professor_id_professor) AS Resultado, (SELECT * FROM turma T INNER JOIN disciplina D ON T.id_turma = D.turma_id_turma) AS Resultado2 WHERE Resultado.locacao_escola_id_escola = :id_escola AND Resultado2.locacao_escola_id_escola = :id_escola";
             $stmt = DB::prepare($sql);
             $stmt->bindParam(':id_escola', $id_escola);
             $stmt->execute();

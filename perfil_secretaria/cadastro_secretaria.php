@@ -1,7 +1,17 @@
 <?php
 session_start();
+
+include_once '../classes/Usuario.php';
+include_once '../classes/Disciplina.php';
 require '../controle/autenticacao.php';
-//Secretaria();
+
+Secretaria();
+
+$pendentes = new Usuario();
+$mostrar_pendentes = $pendentes->usuarios_pendente();
+
+$dados_disciplina = new Disciplina();
+$mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id_escola']);
 ?>
 
 <!DOCTYPE html>
@@ -49,6 +59,7 @@ require '../controle/autenticacao.php';
                     <li class="active"><a class="glyphicon glyphicon-user" href="#cad_aluno" data-toggle="pill"> Cadastro Aluno</a></li>
                     <li><a class="glyphicon glyphicon-briefcase" href="#cad_professor" data-toggle="pill"> Cadastro Educador</a></li>
                     <li><a class="glyphicon glyphicon-folder-open" href="#cad_disciplina" data-toggle="pill"> Cadastro Disciplina</a></li>
+                    <li><a class="glyphicon glyphicon-folder-open" href="#aprovacao" data-toggle="pill"> Aprovar Usuário</a></li>
                 </ul>
             </div>
 
@@ -1239,7 +1250,12 @@ require '../controle/autenticacao.php';
                                             <label for="inputProfessorDisciplina">5. Professor da disciplina</label><br>
 
                                             <select class="form-control" name="cad_professor_disciplina">
-                                                <option value="">Selecione</option>                                              
+                                                <?php
+                                                foreach ($mostrar_dados_disciplina as $linha_disciplina) {
+                                                    echo "<option value=' $linha_disciplina->id_professor '>" . $linha_disciplina->nome_professor . " - Email: " . $linha_disciplina->email_professor . "</option>"
+                                                    ;
+                                                }
+                                                ?>
                                             </select>
                                         </div>
 
@@ -1248,16 +1264,50 @@ require '../controle/autenticacao.php';
                                             <label for="inputTurmaDisciplina">6. Turma da disciplina</label><br>
 
                                             <select class="form-control" name="cad_turma_disciplina">
-                                                <option value="">Selecione</option>                                              
+                                                <?php
+                                                foreach ($mostrar_dados_disciplina as $linha_disciplina) {
+                                                    echo "<option value=' $linha_disciplina->id_turma '>ID: " . $linha_disciplina->id_turma . " NOME: " . $linha_disciplina->nome_turma . " - QTD: " . $linha_disciplina->capacidade_turma . "</option>"
+                                                    ;
+                                                }
+                                                ?>
                                             </select>
                                         </div>
                                     </div><br>
 
                                     <label for="inputDescricaoDisciplina">7. Descrição da disciplina</label><br>
-                                    <textarea class="form-control" rows="6" name="cad_descricao_disciplina"></textarea><br>
+                                    <textarea class="form-control" rows="6"></textarea><br>
 
 
                                     <button type="submit" class="btn btn-primary btn-lg">Enviar</button>  
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" id="aprovacao">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">APROVAÇÃO DE USUÁRIOS PENDENTES</div>
+                            <div class="panel-body box_conteudo">
+
+                                <form action="../controle/aprovando_usuario.php" method="post">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label for="inputNivelDisciplina">Usuários</label><br>
+                                            <select class="form-control" name="id_aprovado">
+                                                <?php
+                                                foreach ($mostrar_pendentes as $linha_pendente) {
+                                                    echo "<option value='" . $linha_pendente->id_usuario . "'>" . $linha_pendente->id_usuario . " Nome: " . $linha_pendente->nome_usuario . " - Fone: " . $linha_pendente->fone_usuario . " - Perfil: " . $linha_pendente->perfil_usuario . "</option>";
+                                                }
+                                                ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <br><button type="submit" class="btn btn-primary btn-lg">Aprovar</button>
+                                        </div>
+                                    </div>
                                 </form>
 
                             </div>

@@ -25,3 +25,6 @@ class DB {
     }
 
 }
+
+//self::$instance = new PDO("mysql:host=localhost; dbname=educacao", "root","");
+//self::$instance = new PDO("mysql:host=mysql.hostinger.com.br; dbname=u357796814_educ", "u357796814_educ","ZzzcJ!q>9QYxO9R7]U");
