@@ -97,7 +97,7 @@ label{
 th{
 
     text-align: center;
-    font-size: 7x;
+    font-size: 7px;
 }
 
 .medidasmapao {
@@ -155,5 +155,4 @@ tbody{
     background-color: #ffffff;
     border-bottom: solid 1px;
     border-top: solid 1px;
-
 }

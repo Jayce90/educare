@@ -2,10 +2,11 @@
 
 require_once '../conexao/Crud.php';
 
-class Professor extends Crud {
+class Educador extends Crud {
 
     private $inep_professor;
     private $cpf_professor;
+    private $fone_professor;
     private $nome_professor;
     private $nascimento_professor;
     private $mae_professor;
@@ -35,7 +36,6 @@ class Professor extends Crud {
     private $outro_curso_professor;
     private $funcao_professor;
     private $vinculo_professor;
-    private $id_escola;
 
     function setInep_professor($inep_professor) {
         $this->inep_professor = $inep_professor;
@@ -43,6 +43,10 @@ class Professor extends Crud {
 
     function setCPF_professor($cpf_professor) {
         $this->cpf_professor = $cpf_professor;
+    }
+    
+    function setFone_professor($fone_professor) {
+        $this->fone_professor = $fone_professor;
     }
 
     function setNome_professor($nome_professor) {
@@ -161,31 +165,28 @@ class Professor extends Crud {
         $this->vinculo_professor = $vinculo_professor;
     }
 
-    function setId_escola($id_escola) {
-        $this->id_escola = $id_escola;
-    }
-
     public function inserir_professor() {
         try {
-            $sql = "INSERT INTO professor(inep_professor, cpf_professor, nome_professor, nascimento_professor, "
+            $sql = "INSERT INTO professor(inep_professor, cpf_professor, fone_professor, nome_professor, nascimento_professor, "
                     . "mae_professor, pai_professor, email_professor, nis_professor, sexo_professor, raca_professor, "
                     . "nacionalidade_professor, pais_nasc_professor, estado_nasc_professor, municipio_nasc_professor, "
                     . "deficiencia_professor, tipo_deficiencia_professor, localizacao_professor, cep_professor, "
                     . "endereco_professor, numero_professor, complemento_professor, bairro_professor, municipio_professor, "
                     . "escolaridade_professor, curso_professor, instituicao_curso_professor, situacao_curso_professor, "
-                    . "pos_graduacao_professor, outro_curso_professor, funcao_professor, vinculo_professor, escola_id_escola) "
+                    . "pos_graduacao_professor, outro_curso_professor, funcao_professor, vinculo_professor) "
                     . ""
-                    . "VALUES (:inep_professor, :cpf_professor, :nome_professor, :nascimento_professor, "
+                    . "VALUES (:inep_professor, :cpf_professor, :fone_professor, :nome_professor, :nascimento_professor, "
                     . ":mae_professor, :pai_professor, :email_professor, :nis_professor, :sexo_professor, :raca_professor, "
                     . ":nacionalidade_professor, :pais_nasc_professor, :estado_nasc_professor, :municipio_nasc_professor, "
                     . ":deficiencia_professor, :tipo_deficiencia_professor, :localizacao_professor, :cep_professor, "
                     . ":endereco_professor, :numero_professor, :complemento_professor, :bairro_professor, :municipio_professor, "
                     . ":escolaridade_professor, :curso_professor, :instituicao_curso_professor, :situacao_curso_professor, "
-                    . ":pos_graduacao_professor, :outro_curso_professor, :funcao_professor, :vinculo_professor, :id_escola)";
+                    . ":pos_graduacao_professor, :outro_curso_professor, :funcao_professor, :vinculo_professor)";
 
             $stmt = DB::prepare($sql);
             $stmt->bindParam(':inep_professor', $this->inep_professor);
             $stmt->bindParam(':cpf_professor', $this->cpf_professor);
+            $stmt->bindParam(':fone_professor', $this->fone_professor);
             $stmt->bindParam(':nome_professor', $this->nome_professor);
             $stmt->bindParam(':nascimento_professor', $this->nascimento_professor);
             $stmt->bindParam(':mae_professor', $this->mae_professor);
@@ -215,12 +216,10 @@ class Professor extends Crud {
             $stmt->bindParam(':outro_curso_professor', $this->outro_curso_professor);
             $stmt->bindParam(':funcao_professor', $this->funcao_professor);
             $stmt->bindParam(':vinculo_professor', $this->vinculo_professor);
-            $stmt->bindParam(':id_escola', $this->id_escola);
             return $stmt->execute();
         } catch (Exception $ex) {
             echo 'Falha ao inserir Professor<br>';
             echo $ex->getMessage();
         }
-    }
-
+    }    
 }

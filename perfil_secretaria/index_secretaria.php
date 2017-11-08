@@ -1,7 +1,9 @@
 <?php
 session_start();
+
 require '../controle/autenticacao.php';
-//Secretaria();
+
+Secretaria();
 ?>
 
 <!DOCTYPE html>

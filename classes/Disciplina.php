@@ -1,7 +1,9 @@
 <?php
+
 require_once '../conexao/Crud.php';
 
-class Disciplina extends Crud{
+class Disciplina extends Crud {
+
     private $nome_disciplina;
     private $descricao_disciplina;
     private $cargaHoraria_disciplina;
@@ -10,39 +12,39 @@ class Disciplina extends Crud{
     private $id_professor;
     private $id_turma;
     private $id_escola;
-    
+
     function setNome_disciplina($nome_disciplina) {
         $this->nome_disciplina = $nome_disciplina;
     }
-    
+
     function setDescricao_disciplina($descricao_disciplina) {
         $this->descricao_disciplina = $descricao_disciplina;
     }
-    
+
     function setCargaHoraria_disciplina($cargaHoraria_disciplina) {
         $this->cargaHoraria_disciplina = $cargaHoraria_disciplina;
     }
-    
+
     function setNivel_disciplina($nivel_disciplina) {
         $this->nivel_disciplina = $nivel_disciplina;
     }
-    
+
     function setEtapa_disciplina($etapa_disciplina) {
         $this->etapa_disciplina = $etapa_disciplina;
     }
-    
+
     function setId_professor($id_professor) {
         $this->id_professor = $id_professor;
     }
-    
+
     function setId_turma($id_turma) {
         $this->id_turma = $id_turma;
     }
-    
+
     function setId_escola($id_escola) {
         $this->id_escola = $id_escola;
     }
-    
+
     public function inserir_disciplina() {
         try {
             $sql = "INSERT INTO disciplina(nome_disciplina, descricao_disciplina, cargaHoraria_disciplina, "
@@ -65,10 +67,13 @@ class Disciplina extends Crud{
             echo $ex->getMessage();
         }
     }
-    
+
     public function ler_professor_turma($id_escola) {
         try {
-            $sql = "SELECT Resultado.id_disciplina, Resultado.nome_disciplina, Resultado.cargaHoraria_disciplina, Resultado.nome_professor, Resultado2.nome_turma, Resultado2.capacidade_turma, Resultado2.turno_turma, Resultado2.nivel_turma, Resultado2.etapa_turma FROM (SELECT * FROM professor P INNER JOIN disciplina D ON P.id_professor = D.locacao_professor_id_professor) AS Resultado, (SELECT * FROM turma T INNER JOIN disciplina D ON T.id_turma = D.turma_id_turma) AS Resultado2 WHERE Resultado.locacao_escola_id_escola = :id_escola AND Resultado2.locacao_escola_id_escola = :id_escola";
+            $sql = "SELECT Resultado.id_disciplina, Resultado.id_professor, Resultado.nome_professor, Resultado.curso_professor, Resultado.nome_disciplina, Resultado.cargaHoraria_disciplina, 
+                    Resultado.id_turma, Resultado.nome_turma, Resultado.capacidade_turma, Resultado.nivel_turma, Resultado.etapa_turma, Resultado.turno_turma FROM 
+                    (SELECT * FROM disciplina INNER JOIN professor ON professor.id_professor = disciplina.locacao_professor_id_professor
+                    INNER JOIN turma ON turma.id_turma = disciplina.turma_id_turma) as Resultado WHERE Resultado.locacao_escola_id_escola = :id_escola";
             $stmt = DB::prepare($sql);
             $stmt->bindParam(':id_escola', $id_escola);
             $stmt->execute();
@@ -77,7 +82,6 @@ class Disciplina extends Crud{
             echo 'Falha ao ler todos os dados de Professor e Turma<br>';
             echo $exc->getMessage();
         }
-
     }
-    
+
 }

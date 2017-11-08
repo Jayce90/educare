@@ -12,6 +12,7 @@ include 'verificacao_de_campos.php';
 
 $inep_professor = isset($_POST['cad_inep_professor']) ? $_POST['cad_inep_professor'] : '';
 $cpf_professor = isset($_POST['cad_cpf_professor']) ? $_POST['cad_cpf_professor'] : '';
+$fone_professor = isset($_POST['cad_fone_professor']) ? $_POST['cad_fone_professor'] : '';
 $nome_professor = isset($_POST['cad_nome_professor']) ? $_POST['cad_nome_professor'] : '';
 $nascimento_professor = isset($_POST['cad_nasc_professor']) ? $_POST['cad_nasc_professor'] : '';
 $mae_professor = isset($_POST['cad_mae_professor']) ? $_POST['cad_mae_professor'] : '';
@@ -44,12 +45,12 @@ $outro_curso_professor = validar_array($outros_curso_professor);
 $funcoes_professor = isset($_POST['cad_funcao_professor']) ? $_POST['cad_funcao_professor'] : '';
 $funcao_professor = validar_array($funcoes_professor);
 $vinculo_professor = isset($_POST['cad_vinculo_professor']) ? $_POST['cad_vinculo_professor'] : '';
-$id_escola = 1;
 
-$professor = new Professor();
+$professor = new Educador();
 
 $professor->setInep_professor($inep_professor);
 $professor->setCPF_professor($cpf_professor);
+$professor->setFone_professor($fone_professor);
 $professor->setNome_professor($nome_professor);
 $professor->setNascimento_professor($nascimento_professor);
 $professor->setMae_professor($mae_professor);
@@ -79,7 +80,6 @@ $professor->setPos_graducacao_professor($pos_graduacao_professor);
 $professor->setOutro_curso_professor($outro_curso_professor);
 $professor->setFuncao_professor($funcao_professor);
 $professor->setVinculo_professor($vinculo_professor);
-$professor->setId_escola($id_escola);
 
 $professor->inserir_professor();
  

@@ -3,9 +3,13 @@ session_start();
 require '../controle/autenticacao.php';
 include_once '../classes/Turma.php';
 include_once '../classes/Aluno.php';
-include_once '../classes/Educador.php';
+include_once '../classes/Lotacao.php';
 include_once '../classes/Disciplina.php';
-//Secretaria();
+
+Secretaria();
+
+$id_escola = 1;
+$ano_lotacao = "2017";
 
 $listar_turmas = new Turma();
 $mostrar_turma = $listar_turmas->listagem_por_escola(1, "turma");
@@ -13,8 +17,8 @@ $mostrar_turma = $listar_turmas->listagem_por_escola(1, "turma");
 $listar_alunos = new Aluno();
 $mostrar_aluno = $listar_alunos->ler_todos("aluno");
 
-$listar_educador = new Professor();
-$mostrar_educador = $listar_educador->ler_todos("professor");
+$listar_educador = new Lotacao();
+$mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao);
 
 $listar_disciplina = new Disciplina();
 $mostrar_disciplina = $listar_disciplina ->ler_professor_turma(1)
@@ -100,7 +104,7 @@ $mostrar_disciplina = $listar_disciplina ->ler_professor_turma(1)
                                             "<td>" . $linha_turma->etapa_turma . "</td>" .
                                             "<td>" . $linha_turma->dias_turma . "</td>" .
                                             "<td> <input type='hidden' name='list_turma' value=" . $linha_turma->id_turma . ">"
-                                            . "<input type='submit' class='btn btn-success' value='Ver Registro'></td>" .
+                                            . "<input type='button' class='btn btn-success' value='Ver Registro'></td>" .
                                             "</form></tr>";
                                         }
                                         ?>
@@ -139,7 +143,7 @@ $mostrar_disciplina = $listar_disciplina ->ler_professor_turma(1)
                                             "<td>" . $linha_aluno->deficiencia_aluno . "</td>" .
                                             "<td>" . $linha_aluno->transporte_aluno . "</td>" .
                                             "<td> <input type='hidden' name='list_aluno' value=" . $linha_aluno->id_aluno . ">"
-                                            . "<input type='submit' class='btn btn-success' value='Ver Registro'></td>" .
+                                            . "<input type='button' class='btn btn-success' value='Ver Registro'></td>" .
                                             "</form></tr>";
                                         }
                                         ?>
@@ -178,7 +182,7 @@ $mostrar_disciplina = $listar_disciplina ->ler_professor_turma(1)
                                             "<td>" . $linha_educador->funcao_professor . "</td>" .
                                             "<td>" . $linha_educador->vinculo_professor . "</td>" .
                                             "<td> <input type='hidden' name='list_educador' value=" . $linha_educador->id_professor . ">"
-                                            . "<input type='submit' class='btn btn-success' value='Ver Registro'></td>" .
+                                            . "<input type='button' class='btn btn-success' value='Ver Registro'></td>" .
                                             "</form></tr>";
                                         }
                                         ?>
@@ -197,7 +201,7 @@ $mostrar_disciplina = $listar_disciplina ->ler_professor_turma(1)
                                 <table width="100%">
                                     <tr>
                                         <th data-field="disciplina">DISCIPLINA</th>
-                                        <th data-field="disciplina">CARGA HORÁRIA</th>
+                                        <th data-field="disciplina">H/A</th>
                                         <th data-field="disciplina">PROFESSOR</th>
                                         <th data-field="disciplina">TURMA</th>
                                         <th data-field="disciplina">QT. ALUNOS</th>
@@ -221,7 +225,7 @@ $mostrar_disciplina = $listar_disciplina ->ler_professor_turma(1)
                                             "<td>" . $linha_disciplina->nivel_turma . "</td>" .
                                             "<td>" . $linha_disciplina->etapa_turma . "</td>" .
                                             "<td> <input type='hidden' name='list_disciplina' value=" . $linha_disciplina->id_disciplina . ">"
-                                            . "<input type='submit' class='btn btn-success' value='Ver Registro'></td>" .
+                                            . "<input type='button' class='btn btn-success' value='Ver Registro'></td>" .
                                             "</form></tr>";
                                         }
                                         ?>

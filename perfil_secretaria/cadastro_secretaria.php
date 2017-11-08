@@ -3,15 +3,22 @@ session_start();
 
 include_once '../classes/Usuario.php';
 include_once '../classes/Disciplina.php';
+include_once '../classes/Lotacao.php';
 require '../controle/autenticacao.php';
 
 Secretaria();
+
+$id_escola = 1;
+$ano_lotacao = "2017";
 
 $pendentes = new Usuario();
 $mostrar_pendentes = $pendentes->usuarios_pendente();
 
 $dados_disciplina = new Disciplina();
-$mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id_escola']);
+$mostrar_dados_disciplina = $dados_disciplina->listagem_por_escola($id_escola, "turma");
+
+$listar_educador = new Lotacao();
+$mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao);
 ?>
 
 <!DOCTYPE html>
@@ -1251,8 +1258,8 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
 
                                             <select class="form-control" name="cad_professor_disciplina">
                                                 <?php
-                                                foreach ($mostrar_dados_disciplina as $linha_disciplina) {
-                                                    echo "<option value=' $linha_disciplina->id_professor '>" . $linha_disciplina->nome_professor . " - Email: " . $linha_disciplina->email_professor . "</option>"
+                                                foreach ($mostrar_educador as $linha_educador) {
+                                                    echo "<option value=' $linha_educador->id_professor '>" . $linha_educador->nome_professor . " - Graduação: " . $linha_educador->curso_professor . "</option>"
                                                     ;
                                                 }
                                                 ?>
@@ -1266,7 +1273,7 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
                                             <select class="form-control" name="cad_turma_disciplina">
                                                 <?php
                                                 foreach ($mostrar_dados_disciplina as $linha_disciplina) {
-                                                    echo "<option value=' $linha_disciplina->id_turma '>ID: " . $linha_disciplina->id_turma . " NOME: " . $linha_disciplina->nome_turma . " - QTD: " . $linha_disciplina->capacidade_turma . "</option>"
+                                                    echo "<option value=' $linha_disciplina->id_turma '> " . $linha_disciplina->nome_turma . " - QTD: " . $linha_disciplina->capacidade_turma . "</option>"
                                                     ;
                                                 }
                                                 ?>

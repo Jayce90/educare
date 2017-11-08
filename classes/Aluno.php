@@ -258,5 +258,18 @@ class Aluno extends Crud {
             echo $ex->getMessage();
         }
     }
+    
+    public function ler_todos_alunos_escola() {
+        try {
+            $sql = "SELECT id_aluno, nome_aluno, mae_aluno, bairro_aluno, deficiencia_aluno, transporte_aluno FROM aluno WHERE escola_id_escola = 1";
+            $stmt = DB::prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
+        } catch (Exception $exc) {
+            echo 'Falha ao ler todos os dados <br>';
+            echo $exc->getMessage();
+        }
+
+    }
 
 }
