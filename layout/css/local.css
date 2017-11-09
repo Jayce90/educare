@@ -87,10 +87,6 @@ label{
     font-size: 22px;
 }
 
-.tuto_texto{
-    font-size: 14px;
-}
-
 .table{
     text-align: center;
     font-size: 7px;
@@ -101,7 +97,7 @@ label{
 th{
 
     text-align: center;
-    font-size: 7px;
+    font-size: 7x;
 }
 
 .medidasmapao {
@@ -159,4 +155,18 @@ tbody{
     background-color: #ffffff;
     border-bottom: solid 1px;
     border-top: solid 1px;
+
+}
+
+.medidaboletimII{
+
+    height: 21cm;
+    width: 29.7cm; 
+
+}
+
+.formatar{
+
+    font-size: 12px;
+
 }
