@@ -103,7 +103,7 @@ $mostrar_educador = $listar_educador->ler_todos("professor");
                                     <div class="row">
 
                                         <div class="col-md-2">
-                                            <label for="inputMaiseducacao">3. Ano da turma</label><br>
+                                            <label for="inputMaiseducacao">Ano (Atual)</label><br>
 
                                             <select class="form-control" name="ano_vincular_aluno">
                                                 <option value="">Selecione</option>                                               
@@ -114,13 +114,13 @@ $mostrar_educador = $listar_educador->ler_todos("professor");
                                             </select>
                                         </div>
                                         <div class="col-md-3">
-                                            <label for="inputNivel">10. Nivel de ensino</label><br>
+                                            <label for="inputNivel">Nivel de ensino</label><br>
 
                                             <select class="form-control" name="nivel_vincular_aluno">
                                                 <option value="">Selecione</option>                                               
-                                                <option value="infantil">Educação Infantil</option>                                               
-                                                <option value="Fundamental">Ensino Fundamental</option>                                        
-                                                <option value="Eja">EJA</option>                                        
+                                                <option value="Educação Infantil">Educação Infantil</option>                                               
+                                                <option value="Ensino Fundamental">Ensino Fundamental</option>                                        
+                                                <option value="EJA">EJA</option>                                        
                                             </select>
                                         </div>
 
@@ -130,8 +130,8 @@ $mostrar_educador = $listar_educador->ler_todos("professor");
                                                 <option value="">Selecione</option>                                               
                                                 <option value="Creche 2">Creche 2</option>                                               
                                                 <option value="Creche 3">Creche 3</option>                                               
-                                                <option value="preescola 1">Pré - Escola 1</option>                                        
-                                                <option value="preescola 2">Pré - Escola 2</option>                                        
+                                                <option value="Pré - Escola 1">Pré - Escola 1</option>                                        
+                                                <option value="Pré - Escola 2">Pré - Escola 2</option>                                        
                                                 <option value="1º ano">1º ano</option>                                        
                                                 <option value="2º ano">2º ano</option>                                        
                                                 <option value="3º ano">3º ano</option>                                        
@@ -141,10 +141,10 @@ $mostrar_educador = $listar_educador->ler_todos("professor");
                                                 <option value="7º ano">7º ano</option>                                        
                                                 <option value="8º ano">8º ano</option>                                        
                                                 <option value="9º ano">9º ano</option>                                        
-                                                <option value="fundamentalInicial">EJA - Ensino Fundamental anos iniciais</option>                                        
-                                                <option value="fundamentalFinal">EJA - Ensino Fundamental anos finais</option>                                        
-                                                <option value="fundamentalInicialeFinal">EJA - Ensino Fundamental anos iniciais e anos finais</option>                                        
-                                                <option value="fic">EJA - EJA integrada à Educação Profissional de Nível Fundamental (FIC)</option>                                        
+                                                <option value="EJA - Ensino Fundamental anos iniciais">EJA - Ensino Fundamental anos iniciais</option>                                        
+                                                <option value="EJA - Ensino Fundamental anos finais">EJA - Ensino Fundamental anos finais</option>                                        
+                                                <option value="EJA - Ensino Fundamental anos iniciais e anos finais">EJA - Ensino Fundamental anos iniciais e anos finais</option>                                        
+                                                <option value="EJA - EJA integrada à Educação Profissional de Nível Fundamental (FIC)">EJA - EJA integrada à Educação Profissional de Nível Fundamental (FIC)</option>                                        
                                             </select>  
                                         </div>
                                     </div>
@@ -265,7 +265,7 @@ $mostrar_educador = $listar_educador->ler_todos("professor");
                                     <div class="row">
                                         <div class="col-md-2">
 
-                                            <label for="inputMaiseducacao">3. Ano da turma</label><br>
+                                            <label for="inputMaiseducacao">Ano (Atual)</label><br>
 
                                             <select class="form-control" name="ano_vincular_educador">
                                                 <option value="">Selecione</option>                                               
