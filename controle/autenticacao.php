@@ -25,6 +25,12 @@ function Secretaria() {
     }
 }
 
+function Semed() {
+    if ($_SESSION['status']  != 'aprovado' || $_SESSION['perfil'] != "Semed") {
+        echo "<script>erroNivel()</script>";
+    }
+}
+
 function Admin() {
     if ($_SESSION["nivel"] != 'a') {
         echo "<script>erroNivel()</script>";

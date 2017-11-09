@@ -8,11 +8,11 @@ include_once '../classes/Disciplina.php';
 
 Secretaria();
 
-$id_escola = 1;
+$id_escola = $_SESSION['id_escola'];
 $ano_lotacao = "2017";
 
 $listar_turmas = new Turma();
-$mostrar_turma = $listar_turmas->listagem_por_escola(1, "turma");
+$mostrar_turma = $listar_turmas->listagem_por_escola($id_escola, "turma");
 
 $listar_alunos = new Aluno();
 $mostrar_aluno = $listar_alunos->ler_todos("aluno");
@@ -21,7 +21,7 @@ $listar_educador = new Lotacao();
 $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao);
 
 $listar_disciplina = new Disciplina();
-$mostrar_disciplina = $listar_disciplina ->ler_professor_turma(1)
+$mostrar_disciplina = $listar_disciplina ->ler_professor_turma($id_escola)
 ?>
 <!DOCTYPE html>
 

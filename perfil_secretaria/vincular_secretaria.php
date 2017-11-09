@@ -7,6 +7,8 @@ include_once '../classes/Educador.php';
 
 Secretaria();
 
+$id_escola = $_SESSION['id_escola'];
+
 $alunos = new Aluno();
 $mostrar_aluno = $alunos->ler_todos_alunos_escola();
 
@@ -17,7 +19,7 @@ if (isset($_POST['listar_turma_vincular'])) {
     $ano_vincular_aluno = isset($_POST['ano_vincular_aluno']) ? $_POST['ano_vincular_aluno'] : '';
     $nivel_vincular_aluno = isset($_POST['nivel_vincular_aluno']) ? $_POST['nivel_vincular_aluno'] : '';
     $etapa_vincular_aluno = isset($_POST['etapa_vincular_aluno']) ? $_POST['etapa_vincular_aluno'] : '';
-    $id_escola = 1;
+
 
     $mostrar_turma = $disciplinaealuno->ler_turmas_vincular($ano_vincular_aluno, $nivel_vincular_aluno, $etapa_vincular_aluno, $id_escola);
 } elseif (!isset($_POST['listar_turma_vincular'])) {
@@ -27,9 +29,7 @@ if (isset($_POST['listar_turma_vincular'])) {
 if (isset($_POST['listar_disciplina_vincular'])) {
 
     $id_turma_vincular_aluno = isset($_POST['id_turma_vincular']) ? $_POST['id_turma_vincular'] : '';
-    $id_escola = 1;
-
-
+    
     $mostrar_disciplinas = $disciplinaealuno->ler_disciplinas_vincular($id_turma_vincular_aluno, $id_escola);
 } elseif (!isset($_POST['listar_disciplina_vincular'])) {
     $_POST['etapa'] = "";

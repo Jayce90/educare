@@ -8,7 +8,7 @@ require '../controle/autenticacao.php';
 
 Secretaria();
 
-$id_escola = 1;
+$id_escola = $_SESSION['id_escola'];
 $ano_lotacao = "2017";
 
 $pendentes = new Usuario();

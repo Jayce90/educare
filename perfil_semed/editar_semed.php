@@ -2,7 +2,10 @@
 <?php
 session_start();
 
+require '../controle/autenticacao.php';
 include_once '../classes/Usuario.php';
+
+Semed();
 
 $pendentes = new Usuario();
 $mostrar_pendentes = $pendentes->usuarios_pendente();
