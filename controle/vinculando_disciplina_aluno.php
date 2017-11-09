@@ -2,7 +2,7 @@
     function confirmacao()
     {
         alert("Aluno vinculado com sucesso!");
-        history.back(-2);
+        location.href="../perfil_secretaria/vincular_secretaria.php";
     }
 </script>
 
@@ -24,8 +24,8 @@ foreach ($id_disciplina_vincular as $linha_disciplina) {
     $obj_disciplina->setAno_disciplinaealuno($ano_vincular_aluno);
     $obj_disciplina->setId_disciplina($lido_ids->id_disciplina);
     $obj_disciplina->setId_turma($lido_ids->turma_id_turma);
-    $obj_disciplina->setId_professor($lido_ids->locacao_professor_id_professor);
-    $obj_disciplina->setId_escola($lido_ids->locacao_escola_id_escola);
+    $obj_disciplina->setId_professor($lido_ids->lotacao_professor_id_professor);
+    $obj_disciplina->setId_escola($lido_ids->lotacao_escola_id_escola);
     $obj_disciplina->setId_aluno($id_aluno_vincular);
     
     $obj_disciplina ->vincular_aluno();

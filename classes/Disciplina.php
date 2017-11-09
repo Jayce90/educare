@@ -48,7 +48,7 @@ class Disciplina extends Crud {
     public function inserir_disciplina() {
         try {
             $sql = "INSERT INTO disciplina(nome_disciplina, descricao_disciplina, cargaHoraria_disciplina, "
-                    . "nivel_disciplina, etapa_disciplina, turma_id_turma, locacao_professor_id_professor, locacao_escola_id_escola) "
+                    . "nivel_disciplina, etapa_disciplina, turma_id_turma, lotacao_professor_id_professor, lotacao_escola_id_escola) "
                     . "VALUES (:nome_disciplina, :descricao_disciplina, :cargaHoraria_disciplina, "
                     . ":nivel_disciplina, :etapa_disciplina, :id_turma, :id_professor, :id_escola)";
 
@@ -72,8 +72,8 @@ class Disciplina extends Crud {
         try {
             $sql = "SELECT Resultado.id_disciplina, Resultado.id_professor, Resultado.nome_professor, Resultado.curso_professor, Resultado.nome_disciplina, Resultado.cargaHoraria_disciplina, 
                     Resultado.id_turma, Resultado.nome_turma, Resultado.capacidade_turma, Resultado.nivel_turma, Resultado.etapa_turma, Resultado.turno_turma FROM 
-                    (SELECT * FROM disciplina INNER JOIN professor ON professor.id_professor = disciplina.locacao_professor_id_professor
-                    INNER JOIN turma ON turma.id_turma = disciplina.turma_id_turma) as Resultado WHERE Resultado.locacao_escola_id_escola = :id_escola";
+                    (SELECT * FROM disciplina INNER JOIN professor ON professor.id_professor = disciplina.lotacao_professor_id_professor
+                    INNER JOIN turma ON turma.id_turma = disciplina.turma_id_turma) as Resultado WHERE Resultado.lotacao_escola_id_escola = :id_escola";
             $stmt = DB::prepare($sql);
             $stmt->bindParam(':id_escola', $id_escola);
             $stmt->execute();

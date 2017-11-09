@@ -38,7 +38,7 @@ class Disciplinaealuno extends Crud {
     public function vincular_aluno() {
         try {
             $sql = "INSERT INTO disciplinaealuno(ano_disciplinaEaluno, disciplina_id_disciplina, disciplina_turma_id_turma, "
-                    . "disciplina_locacao_professor_id_professor, disciplina_locacao_escola_id_escola, aluno_id_aluno) "
+                    . "disciplina_lotacao_professor_id_professor, disciplina_lotacao_escola_id_escola, aluno_id_aluno) "
                     . "VALUES (:ano_disciplinaEaluno, :id_disciplina, :id_turma, :id_professor, :id_escola, :id_aluno)";
 
             $stmt = DB::prepare($sql);
@@ -57,7 +57,7 @@ class Disciplinaealuno extends Crud {
 
     public function ler_ids_disciplinas($id_disciplina) {
         try {
-            $sql = "SELECT D.id_disciplina, D.turma_id_turma, D.locacao_professor_id_professor, D.locacao_escola_id_escola FROM disciplina AS D WHERE D.id_disciplina = :id_disciplina";
+            $sql = "SELECT D.id_disciplina, D.turma_id_turma, D.lotacao_professor_id_professor, D.lotacao_escola_id_escola FROM disciplina AS D WHERE D.id_disciplina = :id_disciplina";
             $stmt = DB::prepare($sql);
             $stmt->bindParam(':id_disciplina', $id_disciplina);
             $stmt->execute();
@@ -87,7 +87,7 @@ class Disciplinaealuno extends Crud {
     
     public function ler_disciplinas_vincular($id_turma, $id_escola) {
         try {
-            $sql = "SELECT Resultado.nome_professor, Resultado.id_disciplina, Resultado.nome_disciplina, Resultado.cargaHoraria_disciplina, Resultado.descricao_disciplina FROM (SELECT * FROM professor P INNER JOIN disciplina D ON P.id_professor = D.locacao_professor_id_professor) as Resultado WHERE Resultado.turma_id_turma = :id_turma AND Resultado.locacao_escola_id_escola = :id_escola";
+            $sql = "SELECT Resultado.nome_professor, Resultado.id_disciplina, Resultado.nome_disciplina, Resultado.cargaHoraria_disciplina, Resultado.descricao_disciplina FROM (SELECT * FROM professor P INNER JOIN disciplina D ON P.id_professor = D.lotacao_professor_id_professor) as Resultado WHERE Resultado.turma_id_turma = :id_turma AND Resultado.lotacao_escola_id_escola = :id_escola";
             $stmt = DB::prepare($sql);
             $stmt->bindParam(':id_turma', $id_turma);
             $stmt->bindParam(':id_escola', $id_escola);

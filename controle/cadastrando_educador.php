@@ -83,5 +83,5 @@ $professor->setVinculo_professor($vinculo_professor);
 
 $professor->inserir_professor();
  
-//echo "<script>confirmacao()</script>";
+echo "<script>confirmacao()</script>";
 

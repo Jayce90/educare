@@ -1273,7 +1273,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                             <select class="form-control" name="cad_turma_disciplina">
                                                 <?php
                                                 foreach ($mostrar_dados_disciplina as $linha_disciplina) {
-                                                    echo "<option value=' $linha_disciplina->id_turma '> " . $linha_disciplina->nome_turma . " - QTD: " . $linha_disciplina->capacidade_turma . "</option>"
+                                                    echo "<option value=' $linha_disciplina->id_turma '> " . $linha_disciplina->nome_turma . " - Qtd: " . $linha_disciplina->capacidade_turma . " " . $linha_disciplina->nivel_turma . " " . $linha_disciplina->etapa_turma . "</option>"
                                                     ;
                                                 }
                                                 ?>

@@ -7,6 +7,7 @@
 </script>
 
 <?php
+session_start();
 
 include_once '../classes/Aluno.php';
 include 'verificacao_de_campos.php';
@@ -52,7 +53,7 @@ $responsavel_transporte_aluno = isset($_POST['cad_responsavel_transporte_aluno']
 $tipos_transporte_aluno = isset($_POST['cad_tipo_transporte_aluno']) ? $_POST['cad_tipo_transporte_aluno'] : '';
 $tipo_transporte_aluno = validar_array($tipos_transporte_aluno);
 $status_aluno = "aguardando";
-$id_escola_aluno = 1;
+$id_escola_aluno = $_SESSION['id_escola'];
 
 $aluno = new Aluno();
 

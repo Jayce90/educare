@@ -7,8 +7,8 @@
 </script>
 
 <?php
-
 session_start();
+
 require_once '../classes/Escola.php';
 require_once '../classes/Usuario.php';
 
