@@ -30,6 +30,19 @@ abstract class Crud extends DB {
 
     }
     
+    public function ler_todos_org() {
+        try {
+            $sql = "SELECT * FROM escola ORDER BY escola.nome_escola ASC";
+            $stmt = DB::prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
+        } catch (Exception $exc) {
+            echo 'Falha ao ler todos os dados <br>';
+            echo $exc->getMessage();
+        }
+
+    }
+    
     public function listagem_por_escola($id_escola, $tabela) {
         try {
             $sql = "SELECT * FROM ".$tabela." WHERE escola_id_escola = :id_escola;";

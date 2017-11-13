@@ -2,7 +2,7 @@
     function confirmacao()
     {
         alert("Usuario cadastrado com sucesso!");
-        history.back(-1);
+        location.href="../index.php";
     }
 </script>
 
@@ -19,7 +19,7 @@ $apelido_usuario = isset($_POST['cad_apelido_usuario']) ? $_POST['cad_apelido_us
 $senha_usuario = isset($_POST['cad_senha_usuario']) ? $_POST['cad_senha_usuario'] : '';
 $perfil_usuario = isset($_POST['cad_perfil_usuario']) ? $_POST['cad_perfil_usuario'] : '';
 $status_usuario = "aguardando";
-$id_escola = 1;
+$id_escola = isset($_POST['cad_id_escola_usuario']) ? $_POST['cad_id_escola_usuario'] : '';
 
 $usuario = new Usuario();
 

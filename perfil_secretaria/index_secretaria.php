@@ -69,6 +69,7 @@ Secretaria();
                         </p><br>
                         <p class="text-justify"><b>PASSO 3, LISTAR:</b> Página com a listagem de todas as turmas, educadores e disciplinas vinculadas à escola, exceto alunos, que é a lista completa de todos cadastrados no sistema.
                         </p><br>
+                        <p class="text-justify"><b>CONTATO SUPORTE:</b> suporte@educare-pmta.com.br</p><br>
                     </div>
                 </div>
             </div>

@@ -7,8 +7,6 @@ include_once '../classes/Usuario.php';
 
 Semed();
 
-$pendentes = new Usuario();
-$mostrar_pendentes = $pendentes->usuarios_pendente();
 ?>
 <html>
     <head>
@@ -42,6 +40,7 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                         <li><a class="glyphicon glyphicon-list" href="lista_semed.php"> Listar</a></li>
                         <li class="active"><a class="glyphicon glyphicon-pencil"> Editar<span class="sr-only">(current)</span></a></li>
                         <li><a class="glyphicon glyphicon-remove" href="#"> Apagar</a></li>
+                        <li><a class="glyphicon glyphicon-alert" href="../controle/sair.php"> Sair</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
@@ -56,7 +55,6 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                     <li><a class="glyphicon glyphicon-folder-open" href="#cad_disciplina" data-toggle="pill"> Editar Disciplina</a></li>
                     <li><a class="glyphicon glyphicon-briefcase" href="#cad_professor" data-toggle="pill"> Editar Professor</a></li>
                     <li><a class="glyphicon glyphicon-user" href="#cad_aluno" data-toggle="pill"> Editar Aluno</a></li>
-                    <li><a class="glyphicon glyphicon-alert" href="../index.php"> Sair</a></li>
                 </ul>
             </div>
 

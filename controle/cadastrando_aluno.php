@@ -3,6 +3,7 @@
     {
         alert("Aluno(a) cadastrado(a) com sucesso!");
         history.back(-1);
+        document.getElementById("cadastro_aluno").reset();
     }
 </script>
 
@@ -13,7 +14,7 @@ include_once '../classes/Aluno.php';
 include 'verificacao_de_campos.php';
 
 
-$id_aluno = isset($_POST['cad_id_aluno']) ? $_POST['cad_id_aluno'] : '';
+$inep_aluno = isset($_POST['cad_inep_aluno']) ? $_POST['cad_inep_aluno'] : '';
 $nome_aluno = isset($_POST['cad_nome_aluno']) ? $_POST['cad_nome_aluno'] : '';
 $nascimento_aluno = isset($_POST['cad_nasc_aluno']) ? $_POST['cad_nasc_aluno'] : '';
 $sexo_aluno = isset($_POST['cad_sexo_aluno']) ? $_POST['cad_sexo_aluno'] : '';
@@ -57,7 +58,7 @@ $id_escola_aluno = $_SESSION['id_escola'];
 
 $aluno = new Aluno();
 
-$aluno->setId_Aluno($id_aluno);
+$aluno->setInep_Aluno($inep_aluno);
 $aluno->setNome($nome_aluno);
 $aluno->setNascimento($nascimento_aluno);
 $aluno->setSexo($sexo_aluno);

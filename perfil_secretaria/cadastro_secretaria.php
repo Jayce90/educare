@@ -12,7 +12,7 @@ $id_escola = $_SESSION['id_escola'];
 $ano_lotacao = "2017";
 
 $pendentes = new Usuario();
-$mostrar_pendentes = $pendentes->usuarios_pendente();
+$mostrar_pendentes = $pendentes->usuarios_pendente($id_escola);
 
 $dados_disciplina = new Disciplina();
 $mostrar_dados_disciplina = $dados_disciplina->listagem_por_escola($id_escola, "turma");
@@ -36,7 +36,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
         <title>SECRETARIA ESCOLAR</title>
     </head>
 
-    <body>
+    <body onload="document.cadastro_educador.reset(); document.cadastro_aluno.reset();">
         <div class="cabecalho">
             <div class="banner">
                 <img src="../imagens/logo.png">
@@ -79,7 +79,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                             <div class="panel-heading">CADASTRO DO ALUNO(A)</div>
                             <div class="panel-body box_conteudo">
 
-                                <form action="../controle/cadastrando_aluno.php" method="post">
+                                <form id="cadastro_aluno" action="../controle/cadastrando_aluno.php" method="post">
 
 
                                     <div class="form-group">
@@ -732,7 +732,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                         </div>
                                     </div><br>
 
-                                    <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                                    <input type="submit" class="btn btn-primary btn-lg" value="Enviar">
 
                                     <button type="submit" class="btn btn-success btn-lg" onClick="window.print()">Imprimir Página</button>
 
@@ -746,7 +746,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                             <div class="panel-heading">CADASTRO DO EDUCADOR(A)</div>
                             <div class="panel-body box_conteudo">
 
-                                <form action="../controle/cadastrando_educador.php" method="post">
+                                <form id="cadastro_educador" action="../controle/cadastrando_educador.php" method="post">
 
                                     <div class="row">
                                         <div class="col-md-6">
@@ -1319,7 +1319,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                             <select class="form-control" name="id_aprovado">
                                                 <?php
                                                 foreach ($mostrar_pendentes as $linha_pendente) {
-                                                    echo "<option value='" . $linha_pendente->id_usuario . "'>" . $linha_pendente->id_usuario . " Nome: " . $linha_pendente->nome_usuario . " - Fone: " . $linha_pendente->fone_usuario . " - Perfil: " . $linha_pendente->perfil_usuario . "</option>";
+                                                    echo "<option value='" . $linha_pendente->id_usuario . "'>" . $linha_pendente->nome_usuario . "&nbsp;&nbsp;&nbsp; Fone: " . $linha_pendente->fone_usuario . "&nbsp;&nbsp;&nbsp; Função: " . $linha_pendente->funcao_usuario . "</option>";
                                                 }
                                                 ?>
                                             </select>

@@ -6,9 +6,7 @@ require '../controle/autenticacao.php';
 include_once '../classes/Usuario.php';
 
 Semed();
-
-$pendentes = new Usuario();
-$mostrar_pendentes = $pendentes->usuarios_pendente();
+;
 ?>
 <html>
     <head>
@@ -49,6 +47,7 @@ $mostrar_pendentes = $pendentes->usuarios_pendente();
                         <li><a class="glyphicon glyphicon-list" href="lista_semed.php"> Listar</a></li>
                         <li><a class="glyphicon glyphicon-pencil glyphicon" href="editar_semed.php"> Editar</a></li>
                         <li><a class="glyphicon glyphicon-remove" href="#"> Apagar</a></li>
+                        <li><a class="glyphicon glyphicon-alert" href="../controle/sair.php"> Sair</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->

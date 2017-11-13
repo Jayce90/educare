@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <html>
     <head>
         <meta charset="UTF-8">
@@ -14,6 +10,7 @@ and open the template in the editor.
         <script src="layout/js/componente_local.js"></script>
         <script src="layout/js/mascara_local.js"></script>
         <script src="layout/js/validacao_local.js"></script>
+        <script src="layout/js/aviso_local.js"></script>
         <link rel="shortcut icon" href="imagens/icone.png" type="image/x-icon">
         <title>Bem Vindo</title>
     </head>
@@ -35,12 +32,13 @@ and open the template in the editor.
                             <a class="cursor_alterado" data-toggle="modal" data-target="#modalLogin">Login</a>
                         </div>
                         <div class="col-md-4">
-                            <img src="imagens/cadastrarusuarios.png" alt="..." class="img-circle imagem_box cursor_alterado" data-toggle="modal" data-target="#modalCadastro"><br>
-                            <a class="cursor_alterado" data-toggle="modal" data-target="#modalCadastro">Novo Usuário</a>
+                            <a class="cursor_alterado" href="cadastro/cadastro_educare.php">
+                            <img src="imagens/cadastrarusuarios.png" alt="..." class="img-circle imagem_box cursor_alterado" data-toggle="modal" data-target="#modalCadastro"/><br>
+                            Novo Usuário</a>
                         </div>
                         <div class="col-md-4">
-                            <img src="imagens/listavagas.png" alt="..." class="img-circle imagem_box cursor_alterado"><br>
-                            <a class="cursor_alterado" href="">Lista de Vagas</a>
+                            <img src="imagens/listavagas.png" alt="..." class="img-circle imagem_box cursor_alterado" onclick="negativa()"><br>
+                            <a class="cursor_alterado" onclick="negativa()">Lista de Vagas</a>
                         </div>
                     </div>
                 </div>

@@ -4,11 +4,17 @@ session_start();
 require '../controle/autenticacao.php';
 include_once '../classes/Usuario.php';
 include_once '../classes/Disciplina.php';
+include_once '../classes/Escola.php';
 
 Semed();
 
+$escola = new Escola();
+$mostrar_escola = $escola->ler_todos_org();
+
+$id_escola = $_SESSION['id_escola'];
+
 $pendentes = new Usuario();
-$mostrar_pendentes = $pendentes->usuarios_pendente();
+$mostrar_pendentes = $pendentes->usuarios_pendente($id_escola);
 
 $dados_disciplina = new Disciplina();
 $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id_escola']);
@@ -47,6 +53,7 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
                         <li><a class="glyphicon glyphicon-list" href="lista_semed.php"> Listar</a></li>
                         <li><a class="glyphicon glyphicon-pencil glyphicon" href="editar_semed.php"> Editar</a></li>
                         <li><a class="glyphicon glyphicon-remove" href="#"> Apagar</a></li>
+                        <li><a class="glyphicon glyphicon-alert" href="../controle/sair.php"> Sair</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
@@ -62,7 +69,6 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
                     <li><a class="glyphicon glyphicon-briefcase" href="#cad_professor" data-toggle="pill"> Cadastro Educador</a></li>
                     <li><a class="glyphicon glyphicon-user" href="#cad_aluno" data-toggle="pill"> Cadastro Aluno</a></li>
                     <li><a class="glyphicon glyphicon-folder-open" href="#aprovacao" data-toggle="pill"> Aprovar Usuário</a></li>
-                    <li><a class="glyphicon glyphicon-alert" href="../index.php"> Sair</a></li>
                 </ul>
             </div>
 
@@ -476,7 +482,7 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
                                                 <option value="">Selecione</option>                                               
                                                 <option value="Educação Infantil">Educação Infantil</option>                                               
                                                 <option value="Ensino Fundamental">Ensino Fundamental</option>                                        
-                                                <option value="EJA">EJA</option>                                        
+                                                <option value="EJA">EJA</option>                                         
                                             </select>
 
                                         </div>
@@ -506,6 +512,18 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
                                             </select>
                                         </div>
                                     </div><br>
+
+                                    <div class="form-group">
+                                        <label for="inputVincularTurmaEducador">Escola:</label><br>
+
+                                        <select class="form-control" name="cad_id_escola_turma">
+                                            <?php
+                                            foreach ($mostrar_escola as $linha_escola) {
+                                                echo "<option value='" . $linha_escola->id_escola . "'>" . $linha_escola->nome_escola . "</option>";
+                                            }
+                                            ?>                                              
+                                        </select>
+                                    </div>
 
                                     <label for="inputDescricaodaturma">11. Descrição da turma</label><br>
                                     <textarea class="form-control" name="cad_descricao_turma" rows="6"></textarea><br>

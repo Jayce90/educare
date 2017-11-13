@@ -4,7 +4,7 @@ require_once '../conexao/Crud.php';
 
 class Aluno extends Crud {
 
-    private $id_aluno;
+    private $inep_aluno;
     private $nome;
     private $nascimento;
     private $sexo;
@@ -43,8 +43,8 @@ class Aluno extends Crud {
     private $status;
     private $id_escola;
 
-    function setId_Aluno($id_aluno) {
-        $this->id_aluno = $id_aluno;
+    function setInep_Aluno($inep_aluno) {
+        $this->inep_aluno = $inep_aluno;
     }
 
     function setNome($nome) {
@@ -197,7 +197,7 @@ class Aluno extends Crud {
 
     public function inserir_aluno() {
         try {
-            $sql = "INSERT INTO aluno (id_aluno, nome_aluno, nascimento_aluno, sexo_aluno, nis_aluno,"
+            $sql = "INSERT INTO aluno (inep_aluno, nome_aluno, nascimento_aluno, sexo_aluno, nis_aluno,"
                     . " raca_aluno, mae_aluno, pai_aluno, nacionalidade_aluno, pais_nasc_aluno,"
                     . " estado_nasc_aluno, fone_aluno, municipio_nasc_aluno, deficiencia_aluno,"
                     . " tipo_deficiencia_aluno, identidade_aluno, complemento_identidade_aluno,"
@@ -207,14 +207,14 @@ class Aluno extends Crud {
                     . " bairro_aluno, estado_aluno, municipio_aluno, outra_escolarizacao_aluno, transporte_aluno,"
                     . " responsavel_transporte_aluno, tipo_transporte_aluno, status_aluno, escola_id_escola) "
                     
-                    . "VALUES (:id_aluno, :nome, :nascimento, :sexo, :nis, :raca, :mae, :pai, :nacionalidade, :pais_nasc,"
+                    . "VALUES (:inep_aluno, :nome, :nascimento, :sexo, :nis, :raca, :mae, :pai, :nacionalidade, :pais_nasc,"
                     . " :estado_nasc, :fone, :municipio_nasc, :deficiencia, :tipo_deficiencia, :identidade, :complemento_identidade,"
                     . " :orgao_identidade, :estado_identidade, :data_identidade, :certidao_civil, :cpf, :passaporte,"
                     . " :justificativa, :localizacao, :cep, :endereco, :numero, :complemento, :bairro, :estado, :municipio,"
                     . " :escolarizacao, :transporte, :responsavel_transporte, :tipo_transporte, :status, :id_escola)";
             
             $stmt = DB::prepare($sql);
-            $stmt->bindParam(':id_aluno', $this->id_aluno);
+            $stmt->bindParam(':inep_aluno', $this->inep_aluno);
             $stmt->bindParam(':nome', $this->nome);
             $stmt->bindParam(':nascimento', $this->nascimento);
             $stmt->bindParam(':sexo', $this->sexo);

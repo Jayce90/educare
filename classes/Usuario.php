@@ -89,10 +89,11 @@ class Usuario extends Crud {
         }
     }
 
-    public function usuarios_pendente() {
+    public function usuarios_pendente($id_escola) {
         try {
-            $sql = "SELECT * FROM usuario WHERE status_usuario = 'aguardando'";
+            $sql = "SELECT * FROM usuario WHERE status_usuario = 'aguardando' AND escola_id_escola = :id_escola";
             $stmt = DB::prepare($sql);
+            $stmt->bindParam(':id_escola', $id_escola);
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_OBJ);
         } catch (Exception $exc) {
