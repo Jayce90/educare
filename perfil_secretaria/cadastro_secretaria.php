@@ -63,8 +63,8 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
             <!-- Navigation Buttons -->
             <div class="col-md-2">
                 <ul class="nav nav-pills nav-stacked" id="myTabs">
-                    <li class="active"><a class="glyphicon glyphicon-user" href="#cad_aluno" data-toggle="pill"> Cadastro Aluno</a></li>
-                    <li><a class="glyphicon glyphicon-briefcase" href="#cad_professor" data-toggle="pill"> Cadastro Educador</a></li>
+                    <li class="active"><a class="glyphicon glyphicon-user" href="#cad_aluno" data-toggle="pill"> Cadastro Aluno(a)</a></li>
+                    <li><a class="glyphicon glyphicon-briefcase" href="#cad_professor" data-toggle="pill"> Cadastro Educador(a)</a></li>
                     <li><a class="glyphicon glyphicon-folder-open" href="#cad_disciplina" data-toggle="pill"> Cadastro Disciplina</a></li>
                     <li><a class="glyphicon glyphicon-folder-open" href="#aprovacao" data-toggle="pill"> Aprovar Usuário</a></li>
                 </ul>
@@ -83,27 +83,22 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
 
 
                                     <div class="form-group">
-                                        <label for="inputIdAluno">1. Identificação Unica (INEP)</label>
-                                        <input type="text" name="cad_inep_aluno" class="form-control" id="inputIdAluno" placeholder="digite a identificação unica" maxlength="8" onkeypress="formatar('########', this); return SomenteNumero(event);" onblur="showride()">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="inputNomeAluno">2. Nome do aluno(a)</label>
-                                        <input type="text" name="cad_nome_aluno" class="form-control" id="inputNomeAluno" placeholder="digite nome do aluno">
+                                        <label for="inputNomeAluno">1. Nome do aluno(a)</label>
+                                        <input type="text" name="cad_nome_aluno" class="form-control" id="inputNomeAluno" placeholder="digite nome do aluno" required="">
                                     </div>
 
                                     <div class="row">
                                         <div class="col-xs-6 col-md-6">
 
                                             <div class="form-group">
-                                                <label for="inputNascimentoAluno">3. Data de Nascimento</label>
-                                                <input type="text" name="cad_nasc_aluno" class="form-control" id="inputNascimentoAluno" placeholder="00/00/0000" maxlength="10" onkeypress="formatar('##/##/####', this); return SomenteNumero(event);" onblur="showride()">
+                                                <label for="inputNascimentoAluno">2. Data de Nascimento</label>
+                                                <input type="text" name="cad_nasc_aluno" class="form-control" id="inputNascimentoAluno" placeholder="00/00/0000" maxlength="10" onkeypress="formatar('##/##/####', this); return SomenteNumero(event);" onblur="showride()" required="">
                                             </div>
                                         </div>
                                         <div class="col-xs-6 col-md-6">
 
                                             <div class="form-group">
-                                                <label for="inputSexoAluno">4. Sexo :</label><br>
+                                                <label for="inputSexoAluno">3. Sexo :</label><br>
 
                                                 <label class="radio-inline">
                                                     <input type="radio" name="cad_sexo_aluno" id="inputSexoAluno" value="masculino" checked=""> Masculino
@@ -120,7 +115,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                     <div class="row">
                                         <div class="col-xs-6 col-md-4">
                                             <div class="form-group">
-                                                <label for="inputNisAluno">5. Número de identificação Social (NIS)</label>
+                                                <label for="inputNisAluno">4. Número de identificação Social (NIS)</label>
                                                 <input type="text" name="cad_nis_aluno" class="form-control" id="inputNisAluno" placeholder="digite o NIS" maxlength="11" onkeypress="formatar('###########', this); return SomenteNumero(event);" onblur="showride()">
                                             </div>
 
@@ -128,7 +123,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                         <div class="col-xs-6 col-md-8">
 
                                             <div class="form-group">
-                                                <label for="inputRacaAluno">6. Cor/Raça :</label><br>
+                                                <label for="inputRacaAluno">5. Cor/Raça :</label><br>
 
                                                 <label class="radio-inline">
                                                     <input type="radio" name="cad_raca_aluno" id="inputRacaAluno" value="branca"> Branca
@@ -153,17 +148,17 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="inputMaeAluno">7. Nome da mãe</label>
-                                        <input type="text" name="cad_mae_aluno" class="form-control" id="inputMaeAluno" placeholder="digite nome da mae">
+                                        <label for="inputMaeAluno">6. Nome da mãe</label>
+                                        <input type="text" name="cad_mae_aluno" class="form-control" id="inputMaeAluno" placeholder="digite nome da mãe" required="">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="inputPaiAluno">8. Nome do pai</label>
+                                        <label for="inputPaiAluno">7. Nome do pai</label>
                                         <input type="text" name="cad_pai_aluno" class="form-control" id="inputPaiAluno" placeholder="digite nome do pai">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="inputNacionalidadeAluno">9. Nacionalidade do aluno :</label>
+                                        <label for="inputNacionalidadeAluno">8. Nacionalidade do aluno :</label>
 
                                         <label class="radio-inline">
                                             <input type="radio" name="cad_nacionalidade_aluno" id="inputNacionalidadeAluno" value="brasileira" checked=""> Brasileiro
@@ -181,7 +176,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                         <div class="col-md-6">
 
                                             <div class="form-group">
-                                                <label for="inputPaisOrigemAluno">10. País de origem</label>
+                                                <label for="inputPaisOrigemAluno">9. País de origem</label>
                                                 <input type="text" name="cad_pais_nasc_aluno" class="form-control" id="inputPaisOrigemAluno" placeholder="digite o país de origem">
                                             </div>
 
@@ -189,7 +184,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                         <div class="col-md-3">
 
                                             <div class="form-group">
-                                                <label for="inputEstadoNascAluno">11. UF de nascimento</label>
+                                                <label for="inputEstadoNascAluno">10. UF de nascimento</label>
 
                                                 <select class="form-control" name="cad_estadonasc_aluno">
                                                     <option value="">Selecione</option>
@@ -227,7 +222,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                         <div class="col-md-3">
 
                                             <div class="form-group">
-                                                <label for="inputTelefoneAluno">12. Telefone</label>
+                                                <label for="inputTelefoneAluno">11. Telefone</label>
                                                 <input type="text" name="cad_telefone_aluno" class="form-control" id="inputTelefoneAluno" placeholder="91 000000000" maxlength="12" onkeypress="formatar('## #########', this); return SomenteNumero(event);" onblur="showhide()">
                                             </div>
 
@@ -238,14 +233,14 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                         <div class="col-md-6">
 
                                             <div class="form-group">
-                                                <label for="inputMunicipioNascAluno">13. Município de nascimento</label>
+                                                <label for="inputMunicipioNascAluno">12. Município de nascimento</label>
                                                 <input type="text" name="cad_municipionasc_aluno" class="form-control" id="inputMunicipioNascAluno" placeholder="digite o município de nascimento">
                                             </div>
 
                                         </div>
                                         <div class="col-md-6">
 
-                                            <label for="inputNecessidadeEspecialAluno">14. Aluno(a) com deficiência :</label><br>
+                                            <label for="inputNecessidadeEspecialAluno">13. Aluno(a) com deficiência :</label><br>
 
                                             <select class="form-control" name="cad_deficiencia_aluno" id="inputNecessidadeEspecialAluno">
                                                 <option value="">Selecione</option>
@@ -259,7 +254,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                     <div class="row">
                                         <div class="col-md-3">
 
-                                            <label for="inputTipoDeficienciaAluno">14a. Deficiência :</label><br>
+                                            <label for="inputTipoDeficienciaAluno">13a. Deficiência :</label><br>
 
                                             <select class="form-control" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficienciaAluno">
                                                 <option value="">Selecione</option>
@@ -277,7 +272,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
 
                                         <div class="col-md-5">
 
-                                            <label for="inputTranstornoGloAluno">14b. Transtorno global do desenvolvimento :</label><br>
+                                            <label for="inputTranstornoGloAluno">13b. Transtorno global do desenvolvimento :</label><br>
 
                                             <select class="form-control" name="cad_tipo_deficiencia_aluno[]" id="inputTranstornoGloAluno">
                                                 <option value="">Selecione</option>
@@ -290,7 +285,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
 
                                         <div class="col-md-4">
 
-                                            <label for="inputSuperdotacaoAluno">14c. Altas Habilidades/Superdotação :</label><br>
+                                            <label for="inputSuperdotacaoAluno">13c. Altas Habilidades/Superdotação :</label><br>
 
                                             <select class="form-control" name="cad_tipo_deficiencia_aluno[]" id="inputSuperdotacaoAluno">
                                                 <option value="">Selecione</option>
@@ -305,7 +300,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                         <div class="col-md-6">
 
                                             <div class="form-group">
-                                                <label for="inputIdentidadeAluno">15. Número da identidade</label>
+                                                <label for="inputIdentidadeAluno">14. Número da identidade</label>
                                                 <input type="text" name="cad_identidade_aluno" class="form-control" id="inputIdentidadeAluno" placeholder="digite o numero da identidade" maxlength="20" onkeypress="formatar('####################', this); return SomenteNumero(event);" onblur="showride()">
 
                                             </div>
@@ -314,7 +309,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                         <div class="col-md-6">
 
                                             <div class="form-group">
-                                                <label for="inputComplementoIdentidadeAluno">15a. Complemento da identidade</label>
+                                                <label for="inputComplementoIdentidadeAluno">14a. Complemento da identidade</label>
                                                 <input type="text" name="cad_complemento_identidade_aluno" class="form-control" id="inputComplementoIdentidadeAluno" placeholder="digite o complemento da identidade" maxlength="4" onkeypress="formatar('####', this); return SomenteNumero(event);" onblur="showride()">
 
                                             </div>
@@ -327,7 +322,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                         <div class="col-md-4">
 
                                             <div class="form-group">
-                                                <label for="inputOrgaoIdentidadeAluno">15b. Orgão emissor da identidade</label>
+                                                <label for="inputOrgaoIdentidadeAluno">14b. Orgão emissor da identidade</label>
                                                 <input type="text" name="cad_orgao_identidade_aluno" class="form-control" id="inputOrgaoIdentidadeAluno" placeholder="digite o orgao emissor">
                                             </div>
 
@@ -335,7 +330,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                         <div class="col-md-4">
 
                                             <div class="form-group">
-                                                <label for="inputEstadoIdentidadeAluno">15c. UF da identidade</label>
+                                                <label for="inputEstadoIdentidadeAluno">14c. UF da identidade</label>
 
                                                 <select class="form-control" name="cad_estado_identidade_aluno">
                                                     <option value="">Selecione</option>
@@ -373,18 +368,18 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                         <div class="col-md-4">
 
                                             <div class="form-group">
-                                                <label for="inputDataIdentidadeAluno">15d. Data da expedição</label>
+                                                <label for="inputDataIdentidadeAluno">14d. Data da expedição</label>
                                                 <input type="text" name="cad_data_identidade_aluno" class="form-control" id="inputDataIdentidadeAluno" placeholder="00/00/0000" maxlength="10" onkeypress="formatar('##/##/####', this); return SomenteNumero(event);" onblur="showride()">
                                             </div>
 
                                         </div>
-                                    </div>
+                                    </div><br>
 
 
                                     <div class="row">
                                         <div class="col-md-6">
 
-                                            <label for="inputCertidaoCivilAluno">16. Certidão Civil :</label><br>
+                                            <label for="inputCertidaoCivilAluno">15. Certidão Civil :</label><br>
 
                                             <select class="form-control" name="cad_certidaocivil_aluno[]">
                                                 <option value="">Selecione</option>
@@ -396,7 +391,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
 
                                         <div class="col-md-6">
 
-                                            <label for="inputTipoCertidaoAluno">16a. Tipo de certidão Civil :</label><br>
+                                            <label for="inputTipoCertidaoAluno">15a. Tipo de certidão Civil :</label><br>
 
                                             <select class="form-control" name="cad_certidaocivil_aluno[]">
                                                 <option value="">Selecione</option>
@@ -405,14 +400,14 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                             </select>
 
                                         </div>
-                                    </div>
+                                    </div><br>
 
 
                                     <div class="row">
                                         <div class="col-md-4">
 
                                             <div class="form-group">
-                                                <label for="inputTermoCertidaoAluno">16b. Número do termo</label>
+                                                <label for="inputTermoCertidaoAluno">15b. Número do termo</label>
                                                 <input type="text" name="cad_certidaocivil_aluno[]" class="form-control" id="inputTermoCertidaoAluno" placeholder="digite o numero do termo" maxlength="8" onkeypress="formatar('########', this); return SomenteNumero(event);" onblur="showride()">
 
                                             </div>
@@ -421,7 +416,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                         <div class="col-md-4">
 
                                             <div class="form-group">
-                                                <label for="inputFolhaCertidaoAluno">16c. Folha</label>
+                                                <label for="inputFolhaCertidaoAluno">15c. Folha</label>
                                                 <input type="text" name="cad_certidaocivil_aluno[]" class="form-control" id="inputFolhaCertidaoAluno" placeholder="folha" maxlength="4" onkeypress="formatar('####', this); return SomenteNumero(event);" onblur="showride()">
 
                                             </div>
@@ -430,7 +425,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                         <div class="col-md-4">
 
                                             <div class="form-group">
-                                                <label for="inputLivroCertidaoAluno">16d. Livro</label>
+                                                <label for="inputLivroCertidaoAluno">15d. Livro</label>
                                                 <input type="text" name="cad_certidaocivil_aluno[]" class="form-control" id="inputLivroCertidaoAluno" placeholder="livro" maxlength="8" onkeypress="formatar('########', this); return SomenteNumero(event);" onblur="showride()">
 
                                             </div>
@@ -443,7 +438,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                         <div class="col-md-4">
 
                                             <div class="form-group">
-                                                <label for="inputDataCertidaoAluno">16e. Data de emissão da certidão</label>
+                                                <label for="inputDataCertidaoAluno">15e. Data de emissão da certidão</label>
                                                 <input type="text" name="cad_certidaocivil_aluno[]" class="form-control" id="inputDataCertidaoAluno" placeholder="00/00/0000" maxlength="10" onkeypress="formatar('##/##/####', this); return SomenteNumero(event);" onblur="showride()">
 
                                             </div>
@@ -452,7 +447,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                         <div class="col-md-4">
 
                                             <div class="form-group">
-                                                <label for="inputEstadoCartorioAluno">16f. UF do cartório</label>
+                                                <label for="inputEstadoCartorioAluno">15f. UF do cartório</label>
 
                                                 <select class="form-control" name="cad_certidaocivil_aluno[]">
                                                     <option value="">Selecione</option>
@@ -490,7 +485,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                         <div class="col-md-4">
 
                                             <div class="form-group">
-                                                <label for="inputMunicipioCartorioAluno">16g. Município do cartório</label>
+                                                <label for="inputMunicipioCartorioAluno">15g. Município do cartório</label>
                                                 <input type="text" name="cad_certidaocivil_aluno[]" class="form-control" id="inputMunicipioCartorioAluno" placeholder="municipio do cartorio">
 
                                             </div>
@@ -499,13 +494,13 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="inputNomeCartorioAluno">16h. Nome do cartório</label>
+                                        <label for="inputNomeCartorioAluno">15h. Nome do cartório</label>
                                         <input type="text" name="cad_certidaocivil_aluno[]" class="form-control" id="inputNomeCartorioAluno" placeholder="digite o nome do cartorio">
 
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="inputNumeroMatriculaAluno">16i. Número da matricula (Registro civil - Certidão nova)</label>
+                                        <label for="inputNumeroMatriculaAluno">15i. Número da matricula (Registro civil - Certidão nova)</label>
                                         <input type="text" name="cad_certidaocivil_aluno[]" class="form-control" id="inputNumeroMatriculaAluno" placeholder="numero da matricula" maxlength="40" onkeypress="formatar('###### ## ## #### # ##### ### ####### ##', this); return SomenteNumero(event);" onblur="showride()">
 
                                     </div>
@@ -514,13 +509,13 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                     <div class="row">
                                         <div class="col-md-4">
 
-                                            <label for="inputCpfAluno">17. Número do CPF</label>
+                                            <label for="inputCpfAluno">16. Número do CPF</label>
                                             <input type="text" name="cad_cpf_aluno" class="form-control" id="inputCpfAluno" placeholder="digite o CPF" maxlength="14" onkeypress="formatar('###.###.###-##', this); return SomenteNumero(event);" onblur="showhide()">
 
                                         </div>
                                         <div class="col-md-4">
 
-                                            <label for="inputPassaporteAluno">18. Documento extrangeiro/Passaporte</label>
+                                            <label for="inputPassaporteAluno">17. Documento extrangeiro/Passaporte</label>
                                             <input type="text" name="cad_passaporte_aluno" class="form-control" id="inputPassaporteAluno" placeholder="digite o passaporte" maxlength="8" onkeypress="formatar('########', this)" onblur="showhide()">
 
                                         </div>
@@ -557,7 +552,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                         <div class="col-md-6">
 
                                             <div class="form-group">
-                                                <label for="inputLocalizacaoAluno">19. Localização da residência :</label><br>
+                                                <label for="inputLocalizacaoAluno">18. Localização da residência :</label><br>
 
                                                 <label class="radio-inline">
                                                     <input type="radio" name="cad_localizacao_aluno" id="inputLocalizacaoAluno" value="urbana"> Urbana
@@ -572,7 +567,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                         <div class="col-md-6">
 
                                             <div class="form-group">
-                                                <label for="inputCepAluno">20. CEP</label>
+                                                <label for="inputCepAluno">19. CEP</label>
                                                 <input type="text" name="cad_cep_aluno" class="form-control" id="inputCepAluno" placeholder="digite o CEP" maxlength="9" onkeypress="formatar('#####-###', this); return SomenteNumero(event);" onblur="showride()">
 
                                             </div>
@@ -584,7 +579,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                         <div class="col-md-10">
 
                                             <div class="form-group">
-                                                <label for="inputEnderecoAluno">21. Endereço</label>
+                                                <label for="inputEnderecoAluno">20. Endereço</label>
                                                 <input type="text" name="cad_endereco_aluno" class="form-control" id="inputEnderecoAluno" placeholder="digite o endereco">
 
                                             </div>
@@ -593,7 +588,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                         <div class="col-md-2">
 
                                             <div class="form-group">
-                                                <label for="inputNumeroEnderecoAluno">22. Número</label>
+                                                <label for="inputNumeroEnderecoAluno">21. Número</label>
                                                 <input type="text" name="cad_numero_aluno" class="form-control" id="inputNumeroEnderecoAluno" placeholder="numero" onkeypress="return SomenteNumero(event);">
 
                                             </div>
@@ -605,7 +600,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                         <div class="col-md-6">
 
                                             <div class="form-group">
-                                                <label for="inputComplementoEnderecoAluno">23. Complemento</label>
+                                                <label for="inputComplementoEnderecoAluno">22. Complemento</label>
                                                 <input type="text" name="cad_complemento_aluno" class="form-control" id="inputComplementoEnderecoAluno" placeholder="complemento">
 
                                             </div>
@@ -614,7 +609,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                         <div class="col-md-6">
 
                                             <div class="form-group">
-                                                <label for="inputBairroAluno">24. Bairro</label>
+                                                <label for="inputBairroAluno">23. Bairro</label>
                                                 <input type="text" name="cad_bairro_aluno" class="form-control" id="inputBairroAluno" placeholder="bairro">
 
                                             </div>
@@ -625,7 +620,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                     <div class="row">
                                         <div class="col-md-2">
                                             <div class="form-group">
-                                                <label for="inputEstadoEnderecoAluno">25. UF</label>
+                                                <label for="inputEstadoEnderecoAluno">24. UF</label>
                                                 <select class="form-control" name="cad_estado_aluno">
                                                     <option value="">Selecione</option>
                                                     <option value="AC">AC</option>
@@ -662,14 +657,14 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
 
                                         <div class="col-md-10">
                                             <div class="form-group">
-                                                <label for="inputMunicipioAluno">26. Município</label>
+                                                <label for="inputMunicipioAluno">25. Município</label>
                                                 <input type="text" name="cad_municipio_aluno" class="form-control" id="inputMunicipioAluno" placeholder="municipio">
 
                                             </div>
                                         </div>
                                     </div>
 
-                                    <label for="inputEscolarizacaoEspacoAluno">27. Rececebe escolarização em outro espaço :</label><br>
+                                    <label for="inputEscolarizacaoEspacoAluno">26. Rececebe escolarização em outro espaço :</label><br>
                                     <label class="radio-inline">
                                         <input type="radio" name="cad_escolarizacao_espaco_aluno" id="inputEscolarizacaoEspacoAluno" value="sim"> Sim
                                     </label>
@@ -680,7 +675,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                     <div class="row">
                                         <div class="col-md-6">
 
-                                            <label for="inputTransporteEscolarAluno">28. Transporte escolar público :</label><br>
+                                            <label for="inputTransporteEscolarAluno">27. Transporte escolar público :</label><br>
 
                                             <label class="radio-inline">
                                                 <input type="radio" name="cad_transporte_aluno" id="inputTransporteEscolarAluno" value="utiliza"> Utiliza
@@ -692,7 +687,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                         </div>
                                         <div class="col-md-6">
 
-                                            <label for="inputPoderPublicoAluno">28a. Poder público responsável pelo transporte :</label><br>
+                                            <label for="inputPoderPublicoAluno">27a. Poder público responsável pelo transporte :</label><br>
 
                                             <label class="radio-inline">
                                                 <input type="radio" name="cad_responsavel_transporte_aluno" id="inputPoderPublicoAluno" value="municipal" checked=""> Municipal
@@ -710,7 +705,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                     <div class="row">
                                         <div class="col-md-6">
 
-                                            <label for="inputTipoveiculoAluno">28b. Rodoviário :</label><br>
+                                            <label for="inputTipoveiculoAluno">27b. Rodoviário :</label><br>
 
                                             <select class="form-control" name="cad_tipo_transporte_aluno[]">
                                                 <option value="">Selecione</option>                                               
@@ -722,7 +717,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                         </div>
 
                                         <div class="col-md-6">
-                                            <label for="inputTipoveiculoAluno">28c. Aquaviário/Embarcação :</label><br>
+                                            <label for="inputTipoveiculoAluno">27c. Aquaviário/Embarcação :</label><br>
 
                                             <select class="form-control" name="cad_tipo_transporte_aluno[]">
                                                 <option value="">Selecione</option>                                               
@@ -752,8 +747,8 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                         <div class="col-md-6">
 
                                             <div class="form-group">
-                                                <label for="inputIdProfessor">1. INEP Educador(a)</label>
-                                                <input type="text" name="cad_inep_professor" class="form-control" id="inputIdProfessor" placeholder="digite a identificação unica" maxlength="8" onkeypress="formatar('########', this); return SomenteNumero(event);" onblur="showride()">
+                                                <label for="inputNomeProfessor">1. Nome do Educador(a)</label>
+                                                <input type="text" name="cad_nome_professor" class="form-control" id="inputNomeProfessor" placeholder="digite nome do educador" required="">
                                             </div>
 
                                         </div>
@@ -761,7 +756,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
 
                                             <div class="form-group">
                                                 <label for="inputCpfProfessor">2. CPF</label>
-                                                <input type="text" name="cad_cpf_professor" class="form-control" id="inputCpfProfessor" placeholder="digite o CPF" maxlength="14" onkeypress="formatar('###.###.###-##', this); return SomenteNumero(event);" onblur="showhide()">
+                                                <input type="text" name="cad_cpf_professor" class="form-control" id="inputCpfProfessor" placeholder="digite o CPF" maxlength="14" onkeypress="formatar('###.###.###-##', this); return SomenteNumero(event);" onblur="showhide()" required="">
                                             </div>
                                         </div>
                                     </div>
@@ -770,8 +765,8 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                         <div class="col-md-6">
 
                                             <div class="form-group">
-                                                <label for="inputNomeProfessor">3. Nome do professor(a)</label>
-                                                <input type="text" name="cad_nome_professor" class="form-control" id="inputNomeProfessor" placeholder="digite nome do professor">
+                                                <label for="inputNisProfessor">3. Número de identificação Social (NIS)</label>
+                                                <input type="text" name="cad_nis_professor" class="form-control" id="inputNisProfessor" placeholder="digite o NIS" maxlength="11" onkeypress="formatar('###########', this); return SomenteNumero(event);" onblur="showride()">
                                             </div>
 
                                         </div>
@@ -787,7 +782,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
 
                                             <div class="form-group">
                                                 <label for="inputTelefoneProfessor">5. Telefone</label>
-                                                <input type="text" name="cad_fone_professor" class="form-control" id="inputTelefoneProfessor" placeholder="91 000000000" maxlength="12" onkeypress="formatar('## #########', this); return SomenteNumero(event);" onblur="showhide()">
+                                                <input type="text" name="cad_fone_professor" class="form-control" id="inputTelefoneProfessor" placeholder="91 000000000" maxlength="12" onkeypress="formatar('## #########', this); return SomenteNumero(event);" onblur="showhide()" required="">
                                             </div>
                                         </div>
 
@@ -804,7 +799,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
 
                                             <div class="form-group">
                                                 <label for="inputEmailProfessor">8.  Endereço eletrônico (e-mail)</label>
@@ -812,12 +807,20 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                             </div>
                                         </div>
 
-                                        <div class="col-md-6">
+                                        <div class="col-md-8">
 
-                                            <div class="form-group">
-                                                <label for="inputNisProfessor">9. Número de identificação Social (NIS)</label>
-                                                <input type="text" name="cad_nis_professor" class="form-control" id="inputNisProfessor" placeholder="digite o NIS" maxlength="11" onkeypress="formatar('###########', this); return SomenteNumero(event);" onblur="showride()">
-                                            </div>
+                                            <label for="inputNacionalidadeProfessor">9. Nacionalidade</label><br>
+
+                                            <label class="radio-inline">
+                                                <input type="radio" name="cad_nacionalidade_professor" id="inputNacionalidadeProfessor" value="brasileira"checked=""> Brasileira
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="cad_nacionalidade_professor" id="inputNacionalidadeProfessor" value="Brasileira – nascido no exterior ou naturalizado"> Brasileira – nascido no exterior ou naturalizado
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="cad_nacionalidade_professor" id="inputNacionalidadeProfessor" value="Estrangeira"> Estrangeira
+                                            </label>
+
                                         </div>
                                     </div>
 
@@ -865,29 +868,16 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                         </div>
                                     </div>
 
-                                    <label for="inputNacionalidadeProfessor">12. Nacionalidade</label><br>
-
-                                    <label class="radio-inline">
-                                        <input type="radio" name="cad_nacionalidade_professor" id="inputNacionalidadeProfessor" value="brasileira"checked=""> Brasileira
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="cad_nacionalidade_professor" id="inputNacionalidadeProfessor" value="Brasileira – nascido no exterior ou naturalizado"> Brasileira – nascido no exterior ou naturalizado
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="cad_nacionalidade_professor" id="inputNacionalidadeProfessor" value="Estrangeira"> Estrangeira
-                                    </label><br><br>
-
-
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="inputPaisorigemProfessor">13. País de origem</label>
+                                                <label for="inputPaisorigemProfessor">12. País de origem</label>
                                                 <input type="text" name="cad_pais_nasc_professor" class="form-control" id="inputPaisorigemProfessor" placeholder="digite o país de origem">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="inputUfdenascimentoProfessor">14. UF de nascimento</label>
+                                                <label for="inputUfdenascimentoProfessor">13. UF de nascimento</label>
                                                 <select class="form-control" name="cad_estado_nasc_professor">
                                                     <option value="">Selecione</option>
                                                     <option value="AC">AC</option>
@@ -922,14 +912,14 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="inputMunidenascimentoProfessor">15. Município de nascimento</label>
+                                                <label for="inputMunidenascimentoProfessor">14. Município de nascimento</label>
                                                 <input type="text" name="cad_municipio_nasc_professor" class="form-control" id="inputMunidenascimentoProfessor" placeholder="digite o município de nascimento">
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="inputNecessidadeEspecialProfessor">16. Profissional Escolar com deficiência</label>
+                                        <label for="inputNecessidadeEspecialProfessor">15. Profissional Escolar com deficiência</label>
 
                                         <label class="radio-inline">
                                             <input type="radio" name="cad_deficiencia_professor" id="inputNecessidadeEspecialProfessor" value="Sim"> Sim
@@ -939,7 +929,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                         </label>
                                     </div>
 
-                                    <label for="inputTipoDeficienciaProfessor">16a. Tipo de deficiência</label>
+                                    <label for="inputTipoDeficienciaProfessor">15a. Tipo de deficiência</label>
 
                                     <div class="row">
                                         <div class="col-md-3">
@@ -979,7 +969,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="inputLocalizacaoProfessor">17. Localização/Zona de Residência</label><br>
+                                                <label for="inputLocalizacaoProfessor">16. Localização da Residência</label><br>
 
                                                 <label class="radio-inline">
                                                     <input type="radio" name="cad_localizacao_professor" id="inputLocalizacaoProfessor" value="urbana"> Urbana
@@ -992,7 +982,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="inputCepProfessor">18. CEP</label>
+                                                <label for="inputCepProfessor">17. CEP</label>
                                                 <input type="text" name="cad_cep_professor" class="form-control" id="inputCepProfessor" placeholder="digite o CEP" maxlength="9" onkeypress="formatar('#####-###', this); return SomenteNumero(event);" onblur="showride()">
 
                                             </div>
@@ -1003,7 +993,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                         <div class="col-md-10">
 
                                             <div class="form-group">
-                                                <label for="inputEnderecoProfessor">19. Endereço</label>
+                                                <label for="inputEnderecoProfessor">18. Endereço</label>
                                                 <input type="text" name="cad_endereco_professor" class="form-control" id="inputEnderecoProfessor" placeholder="digite o endereco">
 
                                             </div>
@@ -1012,7 +1002,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                         <div class="col-md-2">
 
                                             <div class="form-group">
-                                                <label for="inputNumeroEnderecoProfessor">20. Número</label>
+                                                <label for="inputNumeroEnderecoProfessor">19. Número</label>
                                                 <input type="text" name="cad_numero_professor" class="form-control" id="inputNumeroEnderecoProfessor" placeholder="numero" onkeypress="return SomenteNumero(event);">
 
                                             </div>
@@ -1023,7 +1013,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                         <div class="col-md-6">
 
                                             <div class="form-group">
-                                                <label for="inputComplementoEnderecoProfessor">21. Complemento</label>
+                                                <label for="inputComplementoEnderecoProfessor">20. Complemento</label>
                                                 <input type="text" name="cad_complemento_professor" class="form-control" id="inputComplementoEnderecoProfessor" placeholder="complemento">
 
                                             </div>
@@ -1032,20 +1022,20 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                         <div class="col-md-6">
 
                                             <div class="form-group">
-                                                <label for="inputBairroProfessor">22. Bairro</label>
+                                                <label for="inputBairroProfessor">21. Bairro</label>
                                                 <input type="text" name="cad_bairro_professor" class="form-control" id="inputBairroProfessor" placeholder="bairro">
 
                                             </div>
                                         </div>
                                     </div>                                   
 
-                                    <label for="inputMunicipioProfessor">23. Município</label>
+                                    <label for="inputMunicipioProfessor">22. Município</label>
                                     <input type="text" name="cad_municipio_professor" class="form-control" id="inputMunicipioProfessor" placeholder="municipio"><br>
 
 
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <label for="inputEscolaridade">24. Escolaridade</label><br>
+                                            <label for="inputEscolaridade">23. Escolaridade</label><br>
 
                                             <select class="form-control" name="cad_escolaridade_professor">
                                                 <option value="">Selecione</option>                                               
@@ -1059,20 +1049,20 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
 
                                         </div>
                                         <div class="col-md-8">
-                                            <label for="inputCursoProfessor">25. Curso</label>
+                                            <label for="inputCursoProfessor">24. Curso</label>
                                             <input type="text" name="cad_curso_professor" class="form-control" id="inputCursoProfessor" placeholder="curso">
                                         </div>
                                     </div><br>
 
                                     <div class="row">
                                         <div class="col-md-8">
-                                            <label for="inputInstituicaoProfessor">26. Nome da instituição</label>
+                                            <label for="inputInstituicaoProfessor">25. Nome da instituição</label>
                                             <input type="text" name="cad_instituicao_professor" class="form-control" id="inputInstituicaoProfessor" placeholder="instituição">
                                         </div>
 
                                         <div class="col-md-4">
 
-                                            <label for="inputEscolaridade">26a. Situação do curso superior</label><br>
+                                            <label for="inputEscolaridade">25a. Situação do curso superior</label><br>
 
                                             <select class="form-control" name="cad_situacao_curso_professor">
                                                 <option value="">Selecione</option>                                               
@@ -1082,7 +1072,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                         </div>
                                     </div><br>
 
-                                    <label for="inputPosProfessor">27. Pós-graduação</label>
+                                    <label for="inputPosProfessor">26. Pós-graduação</label>
 
                                     <label class="radio-inline">
                                         <input type="radio" name="cad_pos_graduacao_professor" id="inputPosProfessor" value="Especialização"> Especialização
@@ -1097,7 +1087,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                         <input type="radio" name="cad_pos_graduacao_professor" id="inputPosProfessor" value="Nenhum"> Nenhum
                                     </label><br><br>
 
-                                    <label for="inputOutrosCursosProfessor">28. Outros cursos específicos (formação continuada com no mínimo 80 horas)</label>
+                                    <label for="inputOutrosCursosProfessor">27. Outros cursos específicos (formação continuada com no mínimo 80 horas)</label>
 
                                     <div class="row">
                                         <div class="col-md-3">
@@ -1161,7 +1151,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                         </div>
                                     </div><br>
 
-                                    <label for="inputFuncaoProfessor">29. Função que exerce</label><br>
+                                    <label for="inputFuncaoProfessor">28. Função que exerce</label><br>
 
                                     <label class="checkbox-inline">
                                         <input type="checkbox" name="cad_funcao_professor[]" id="inputFuncaoProfessor" value="Docente"> Docente
@@ -1185,7 +1175,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
 
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <label for="inputFuncaoProfessor">30. Vínculo</label>                                    
+                                            <label for="inputFuncaoProfessor">29. Vínculo</label>                                    
 
                                             <select class="form-control" name="cad_vinculo_professor">
                                                 <option value="">Selecione</option>                                               
@@ -1216,7 +1206,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                         <div class="col-md-4">
 
                                             <label for="inputNomeDisciplina">1. Nome da disciplina</label>
-                                            <input type="text" name="cad_nome_disciplina" class="form-control" id="inputNomeDisciplina" placeholder="nome da disciplina">
+                                            <input type="text" name="cad_nome_disciplina" class="form-control" id="inputNomeDisciplina" placeholder="nome da disciplina" required="">
                                         </div>
 
                                         <div class="col-md-4">
