@@ -16,7 +16,7 @@ session_start();
 require_once '../classes/Lotacao.php';
 
 $id_professor = isset($_POST['vincular_id_educador']) ? $_POST['vincular_id_educador'] : '';
-$id_escola = 1;
+$id_escola = $_SESSION['id_escola'];
 $ano_lotacao = isset($_POST['ano_vincular_educador']) ? $_POST['ano_vincular_educador'] : '';
 $cargaHoraria_lotacao = isset($_POST['vincular_cargaHoraria_educador']) ? $_POST['vincular_cargaHoraria_educador'] : '';
 

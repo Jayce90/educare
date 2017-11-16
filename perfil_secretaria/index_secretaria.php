@@ -42,6 +42,7 @@ Secretaria();
                         <li><a class="glyphicon glyphicon-plus" href="cadastro_secretaria.php"> Cadastrar</a></li>
                         <li><a class="glyphicon glyphicon-pushpin" href="vincular_secretaria.php"> Vincular</a></li>
                         <li><a class="glyphicon glyphicon-list" href="lista_secretaria.php"> Listar</a></li>
+                        <li><a class="glyphicon glyphicon-list" href="nota_secretaria.php"> Notas</a></li>
                         <li><a class="glyphicon glyphicon-alert" href="../controle/sair.php"> Sair</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->

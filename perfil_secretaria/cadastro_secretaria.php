@@ -59,7 +59,6 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
         </nav>
 
         <div class="row">
-
             <!-- Navigation Buttons -->
             <div class="col-md-2">
                 <ul class="nav nav-pills nav-stacked" id="myTabs">
@@ -1298,8 +1297,8 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
 
                                             <select class="form-control" name="cad_professor_disciplina">
                                                 <?php
-                                                foreach ($mostrar_dados_disciplina as $linha_disciplina) {
-                                                    echo "<option value=' $linha_disciplina->id_professor '>" . $linha_disciplina->nome_professor . " - Email: " . $linha_disciplina->email_professor . "</option>"
+                                                foreach ($mostrar_educador as $linha_educador) {
+                                                    echo "<option value=' $linha_educador->id_professor '>" . $linha_educador->nome_professor . " - " . $linha_educador->fone_professor . "</option>"
                                                     ;
                                                 }
                                                 ?>
@@ -1313,7 +1312,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                             <select class="form-control" name="cad_turma_disciplina">
                                                 <?php
                                                 foreach ($mostrar_dados_disciplina as $linha_disciplina) {
-                                                    echo "<option value=' $linha_disciplina->id_turma '>ID: " . $linha_disciplina->id_turma . " NOME: " . $linha_disciplina->nome_turma . " - QTD: " . $linha_disciplina->capacidade_turma . "</option>"
+                                                    echo "<option value=' $linha_disciplina->id_turma '>" . $linha_disciplina->nome_turma . " - Nível: " . $linha_disciplina->nivel_turma . " - Etapa: " . $linha_disciplina->etapa_turma . "</option>"
                                                     ;
                                                 }
                                                 ?>

@@ -7,6 +7,7 @@
 </script>
 
 <?php
+session_start();
 include_once '../classes/Disciplina.php';
 
 $nome_disciplina = isset($_POST['cad_nome_disciplina']) ? $_POST['cad_nome_disciplina'] : '';
@@ -16,7 +17,7 @@ $nivel_disciplina = isset($_POST['cad_nivel_disciplina']) ? $_POST['cad_nivel_di
 $etapa_disciplina = isset($_POST['cad_etapa_disciplina']) ? $_POST['cad_etapa_disciplina'] : '';
 $id_professor = isset($_POST['cad_professor_disciplina']) ? $_POST['cad_professor_disciplina'] : '';
 $id_turma = isset($_POST['cad_turma_disciplina']) ? $_POST['cad_turma_disciplina'] : '';
-$id_escola = 1;
+$id_escola = $_SESSION['id_escola'];
 
 $disciplina = new Disciplina();
 
