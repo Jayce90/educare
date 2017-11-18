@@ -10,9 +10,11 @@ Secretaria();
 $id_escola = $_SESSION['id_escola'];
 
 $alunos = new Aluno();
-$mostrar_aluno = $alunos->ler_todos_alunos_escola();
+$mostrar_aluno = $alunos->ler_todos_alunos_escola($id_escola);
 
 $disciplinaealuno = new Disciplinaealuno();
+
+$exibir_disciplina = isset($_POST['listar_disciplina_vincular']) ? $_POST['listar_disciplina_vincular'] : FALSE;
 
 if (isset($_POST['listar_turma_vincular'])) {
 
@@ -23,23 +25,27 @@ if (isset($_POST['listar_turma_vincular'])) {
 
     $mostrar_turma = $disciplinaealuno->ler_turmas_vincular($ano_vincular_aluno, $nivel_vincular_aluno, $etapa_vincular_aluno, $id_escola);
 } elseif (!isset($_POST['listar_turma_vincular'])) {
-    $_POST['etapa'] = "";
+    unset($mostrar_disciplinas);
+    $mostrar = FALSE;
 }
 
-if (isset($_POST['listar_disciplina_vincular'])) {
+if (isset($exibir_disciplina)) {
 
     $id_turma_vincular_aluno = isset($_POST['id_turma_vincular']) ? $_POST['id_turma_vincular'] : '';
-    
+
     $mostrar_disciplinas = $disciplinaealuno->ler_disciplinas_vincular($id_turma_vincular_aluno, $id_escola);
-} elseif (!isset($_POST['listar_disciplina_vincular'])) {
-    $_POST['etapa'] = "";
+    $mostrar = $exibir_disciplina;
+    
+} elseif ($exibir_disciplina == FALSE) {
+    unset($mostrar_disciplinas);
+    $mostrar = FALSE;
 }
 
 
 
 
 $listar_educador = new Educador();
-$mostrar_educador = $listar_educador->ler_todos("professor");
+$mostrar_educador = $listar_educador->ler_todos_professores();
 ?>
 
 <!DOCTYPE html>
@@ -52,9 +58,9 @@ $mostrar_educador = $listar_educador->ler_todos("professor");
         <link href="../layout/css/local.css" rel="stylesheet">
         <script src="../layout/js/bootstrap.min.js"></script>
         <script src="../layout/js/mascara_local.js"></script>
-        <script src="../layout/js/validacao_local.js"></script>
+        <script language="javascript" type="text/javascript" src="../js_local/validacao_local.js"></script>
         <link rel="shortcut icon" href="../imagens/icone.png" type="image/x-icon">
-        <title>SECRETARIA ESCOLAR</title>
+        <title>VINCULAR</title>
     </head>
 
     <body>
@@ -98,7 +104,7 @@ $mostrar_educador = $listar_educador->ler_todos("professor");
                         <div class="panel panel-primary">
                             <div class="panel-heading">VINCULAR ALUNO(A)</div>
                             <div class="panel-body box_conteudo">
-                                <form action="vincular_secretaria.php" method="post">
+                                <form action="" method="post">
 
                                     <div class="row">
 
@@ -157,86 +163,90 @@ $mostrar_educador = $listar_educador->ler_todos("professor");
                                 <hr>
 
                                 <!--listas das turmas - vincular-->
-                                <?php
-                                if (isset($_POST['listar_turma_vincular'])) {
-                                    echo " <table width = '100%'>
-                                <tr>
-                                <th data-field = 'turma'>TURMA</th>
-                                <th data-field = 'turma'>CAPACIDADE</th>
-                                <th data-field = 'turma'>TURNO</th>
-                                <th data-field = 'turma'>HORÁRIO</th>
-                                <th data-field = 'turma'>NÍVEL</th>
-                                <th data-field = 'turma'>ETAPA</th>
-                                <th data-field = 'turma'>DIAS</th>
-                                <th data-field = 'turma'>VISUALIZAR</th>
-                                </tr>
-                                <tbody>";
-                                    foreach ($mostrar_turma as $linha_turma) {
-                                        echo "<tr>"
-                                        . "<form action='vincular_secretaria.php' method='post'>" .
-                                        "<td>" . $linha_turma->nome_turma . "</td>" .
-                                        "<td>" . $linha_turma->capacidade_turma . "</td>" .
-                                        "<td>" . $linha_turma->turno_turma . "</td>" .
-                                        "<td>" . $linha_turma->horario_turma . "</td>" .
-                                        "<td>" . $linha_turma->nivel_turma . "</td>" .
-                                        "<td>" . $linha_turma->etapa_turma . "</td>" .
-                                        "<td>" . $linha_turma->dias_turma . "</td>" .
-                                        "<td  style='text-align:center;'> <input type='hidden' name='id_turma_vincular' value=" . $linha_turma->id_turma . ">" .
-                                        "<input type='hidden' name='listar_disciplina_vincular' value='true'>" .
-                                        "<input type='submit' class='btn btn-success' value='Selecionar'></td>" .
-                                        "</form></tr>";
-                                    }
-                                }
-                                ?>
-                                </tbody>
+                                <label>Turmas :</label><br>
+                                <table width = '100%'>
+                                    <tr>
+                                        <th data-field = 'turma'>TURMA</th>
+                                        <th data-field = 'turma'>CAPACIDADE</th>
+                                        <th data-field = 'turma'>TURNO</th>
+                                        <th data-field = 'turma'>HORÁRIO</th>
+                                        <th data-field = 'turma'>NÍVEL</th>
+                                        <th data-field = 'turma'>ETAPA</th>
+                                        <th data-field = 'turma'>DIAS</th>
+                                        <th data-field = 'turma'>VISUALIZAR</th>
+                                    </tr>
+                                    <tbody>
+                                        <?php
+                                        if (isset($_POST['listar_turma_vincular'])) {
+                                            foreach ($mostrar_turma as $linha_turma) {
+                                                echo "<tr>"
+                                                . "<form action='vincular_secretaria.php' method='post'>" .
+                                                "<td>" . $linha_turma->nome_turma . "</td>" .
+                                                "<td>" . $linha_turma->capacidade_turma . "</td>" .
+                                                "<td>" . $linha_turma->turno_turma . "</td>" .
+                                                "<td>" . $linha_turma->horario_turma . "</td>" .
+                                                "<td>" . $linha_turma->nivel_turma . "</td>" .
+                                                "<td>" . $linha_turma->etapa_turma . "</td>" .
+                                                "<td>" . $linha_turma->dias_turma . "</td>" .
+                                                "<td  style='text-align:center;'> <input type='hidden' name='id_turma_vincular' value=" . $linha_turma->id_turma . ">" .
+                                                "<input type='hidden' name='listar_disciplina_vincular' value='true'>" .
+                                                "<input type='submit' class='btn btn-success' value='Selecionar'></td>" .
+                                                "</form></tr>";
+                                            }
+                                        }
+                                        ?>
+                                    </tbody>
                                 </table>
 
                                 <hr>
                                 <!--listas das disciplinas por turma - vincular-->
-                                <?php
-                                if (isset($_POST['listar_disciplina_vincular'])) {
-                                    echo "<table width = '100%'>
+                                <label>Disciplinas :</label><br>
+                                <table width = '100%'>
                                     <tr>
-                                    <th data-field = 'disciplina'>DISCIPLINA</th>
-                                    <th data-field = 'disciplina'>H/A</th>
-                                    <th data-field = 'disciplina'>DESCRIÇÃO</th>
-                                    <th data-field = 'disciplina'>PROFESSOR</th>
-                                    <th data-field = 'disciplina'>SELECIONAR</th>
+                                        <th data-field = 'disciplina'>DISCIPLINA</th>
+                                        <th data-field = 'disciplina'>H/A</th>
+                                        <th data-field = 'disciplina'>DESCRIÇÃO</th>
+                                        <th data-field = 'disciplina'>PROFESSOR</th>
+                                        <th data-field = 'disciplina'>SELECIONAR</th>
                                     </tr>
-                                    <tbody>";
-                                    foreach ($mostrar_disciplinas as $linha_disciplina) {
+                                    <tbody>
+                                        <?php
+                                        if (isset($mostrar)) {
+                                            foreach ($mostrar_disciplinas as $linha_disciplina) {
 
-                                        echo "<tr>"
-                                        . "<form action='../controle/vinculando_disciplina_aluno.php' method='post'>" .
-                                        "<td>" . $linha_disciplina->nome_disciplina . "</td>" .
-                                        "<td>" . $linha_disciplina->cargaHoraria_disciplina . "</td>" .
-                                        "<td>" . $linha_disciplina->descricao_disciplina . "</td>" .
-                                        "<td>" . $linha_disciplina->nome_professor . "</td>" .
-                                        "<td style='text-align:center;'><input type='hidden' name='listar_disciplina_vincular' value='true'>" .
-                                        "<input type='checkbox' name='id_disciplina_vincular[]' value=" . $linha_disciplina->id_disciplina . " style='width:20px;height:20px;'></td>" .
-                                        "</tr>";
-                                    }
-                                }
-                                ?>
-                                </tbody>
+                                                echo "<tr>"
+                                                . "<form name='vincularAluno' action='../controle/vinculando_disciplina_aluno.php' method='post'>" .
+                                                "<td>" . $linha_disciplina->nome_disciplina . "</td>" .
+                                                "<td>" . $linha_disciplina->cargaHoraria_disciplina . "</td>" .
+                                                "<td>" . $linha_disciplina->descricao_disciplina . "</td>" .
+                                                "<td>" . $linha_disciplina->nome_professor . "</td>" .
+                                                "<td style='text-align:center;'><input type='hidden' name='listar_disciplina_vincular' value='true'>" .
+                                                "<input type='checkbox' name='id_disciplina_vincular[]' value=" . $linha_disciplina->id_disciplina . " style='width:20px;height:20px;'></td>" .
+                                                "</tr>";
+                                            }
+                                        }
+                                        ?>
+                                    </tbody>
                                 </table><br>
 
-                                <?php
-                                if (isset($_POST['listar_disciplina_vincular'])) {
 
-                                    echo "<label for='inputVincularTurmaAluno'>Aluno(a) :</label><br>";
+                                <label for='inputVincularTurmaAluno'>Aluno(a) :</label><br>
 
-                                    echo "<select class='form-control' name='vincular_id_aluno'>";
-
+                                <select class='form-control' name='vincular_id_aluno'>
+                                    <option value="">Selecione</option>                                               
+                                    <?php
                                     foreach ($mostrar_aluno as $linha_aluno) {
-                                        echo "<option value='" . $linha_aluno->id_aluno . "'>" . $linha_aluno->nome_aluno . " - Mãe: " . $linha_aluno->mae_aluno . " - Bairro: " . $linha_aluno->bairro_aluno . " - Portador de deficiência: " . $linha_aluno->deficiencia_aluno . " - Transporte Público: " . $linha_aluno->transporte_aluno . "</option>";
+                                        if (isset($mostrar)) {
+                                            echo "<option value='" . $linha_aluno->id_aluno . "'>" . $linha_aluno->nome_aluno . " - Mãe: " . $linha_aluno->mae_aluno . " - Bairro: " . $linha_aluno->bairro_aluno . " - Portador de deficiência: " . $linha_aluno->deficiencia_aluno . " - Transporte Público: " . $linha_aluno->transporte_aluno . "</option>";
+                                        }
                                     }
-                                }
-                                ?>                                              
-                                </select>
+                                    ?>                                              
+                                </select><br>
 
                                 <?php
-                                if (isset($_POST['listar_disciplina_vincular'])) {
+                                    echo $mostrar;
+                                
+                                if (isset($mostrar)) {
                                     echo "<button type='submit' class='btn btn-primary btn-lg' >Vincular</button>"
                                     . "</form>";
                                 }
@@ -250,11 +260,12 @@ $mostrar_educador = $listar_educador->ler_todos("professor");
                         <div class="panel panel-primary">
                             <div class="panel-heading">LOTAR EDUCADOR(A)</div>
                             <div class="panel-body box_conteudo">
-                                <form action="../controle/lotando_educador.php" method="post">
+                                <form name="lotandoEducador" action="../controle/lotando_educador.php" method="post">
 
                                     <label for="inputVincularTurmaEducador">Educador(a) :</label><br>
 
                                     <select class="form-control" name="vincular_id_educador">
+                                        <option value="">Selecione</option>
                                         <?php
                                         foreach ($mostrar_educador as $linha_educador) {
                                             echo "<option value='" . $linha_educador->id_professor . "'>" . $linha_educador->nome_professor . "</option>";
@@ -283,7 +294,7 @@ $mostrar_educador = $listar_educador->ler_todos("professor");
                                         </div>
                                     </div><br>
 
-                                    <button type="submit" class="btn btn-primary btn-lg">Vincular</button>
+                                    <button type="submit" class="btn btn-primary btn-lg" onclick="return validar_vincular_educador()">Vincular</button>
                                 </form>
                             </div>
                         </div>

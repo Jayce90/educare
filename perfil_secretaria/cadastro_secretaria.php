@@ -31,12 +31,12 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
         <link href="../layout/css/local.css" rel="stylesheet">
         <script src="../layout/js/bootstrap.min.js"></script>
         <script src="../layout/js/mascara_local.js"></script>
-        <script src="../layout/js/validacao_local.js"></script>
+        <script language="javascript" type="text/javascript" src="../js_local/validacao_local.js"></script>
         <link rel="shortcut icon" href="../imagens/icone.png" type="image/x-icon">
-        <title>SECRETARIA ESCOLAR</title>
+        <title>CADASTRO</title>
     </head>
 
-    <body onload="document.cadastro_educador.reset(); document.cadastro_aluno.reset();">
+    <body onload="document.getElementById('cadastro_aluno').reset(), document.getElementById('cadastro_educador').reset(), document.getElementById('cadastro_disciplina').reset();">
         <div class="cabecalho">
             <div class="banner">
                 <img src="../imagens/logo.png">
@@ -79,14 +79,14 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                             <div class="panel-heading">CADASTRO DO ALUNO(A)</div>
                             <div class="panel-body box_conteudo">
 
-                                <form id="cadastro_aluno" action="../controle/cadastrando_aluno.php" method="post">
+                                <form id="cadastro_aluno" name="cadastroAluno" action="../controle/cadastrando_aluno.php" method="post">
 
                                     <div class="row">
                                         <div class="col-md-4">
 
                                             <div class="form-group">
                                                 <label for="inputNomeAluno">1. Nome do aluno(a)</label>
-                                                <input type="text" name="cad_nome_aluno" class="form-control" id="inputNomeAluno" placeholder="digite nome do aluno(a)" required="">
+                                                <input type="text" name="cad_nome_aluno" class="form-control" id="inputNomeAluno" placeholder="digite nome do aluno(a)">
                                             </div>
 
                                         </div>
@@ -95,7 +95,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
 
                                             <div class="form-group">
                                                 <label for="inputNascimentoAluno">2. Data de Nascimento</label>
-                                                <input type="text" name="cad_nasc_aluno" class="form-control" id="inputNascimentoAluno" placeholder="00/00/0000" maxlength="10" onkeypress="formatar('##/##/####', this); return SomenteNumero(event);" onblur="showride()" required="">
+                                                <input type="text" name="cad_nasc_aluno" class="form-control" id="inputNascimentoAluno" placeholder="00/00/0000" maxlength="10" onkeypress="formatar('##/##/####', this); return SomenteNumero(event);" onblur="showride()">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
@@ -155,7 +155,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
 
                                             <div class="form-group">
                                                 <label for="inputMaeAluno">6. Nome da mãe</label>
-                                                <input type="text" name="cad_mae_aluno" class="form-control" id="inputMaeAluno" placeholder="digite nome da mãe" required="">
+                                                <input type="text" name="cad_mae_aluno" class="form-control" id="inputMaeAluno" placeholder="digite nome da mãe">
                                             </div>
 
                                         </div>
@@ -732,7 +732,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                         </div>
                                     </div><br>
 
-                                    <input type="submit" class="btn btn-primary btn-lg" value="Enviar">
+                                    <input type="submit" class="btn btn-primary btn-lg" value="Enviar" onclick="return validar_cadastro_aluno()">
 
                                     <button type="submit" class="btn btn-success btn-lg" onClick="window.print()">Imprimir Página</button>
 
@@ -746,14 +746,14 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                             <div class="panel-heading">CADASTRO DO EDUCADOR(A)</div>
                             <div class="panel-body box_conteudo">
 
-                                <form id="cadastro_educador" action="../controle/cadastrando_educador.php" method="post">
+                                <form id="cadastro_educador" name="cadastroEducador" action="../controle/cadastrando_educador.php" method="post">
 
                                     <div class="row">
                                         <div class="col-md-4">
 
                                             <div class="form-group">
                                                 <label for="inputNomeProfessor">1. Nome do Educador(a)</label>
-                                                <input type="text" name="cad_nome_professor" class="form-control" id="inputNomeProfessor" placeholder="digite nome do educador(a)" required="">
+                                                <input type="text" name="cad_nome_professor" class="form-control" id="inputNomeProfessor" placeholder="digite nome do educador(a)">
                                             </div>
 
                                         </div>
@@ -770,7 +770,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
 
                                             <div class="form-group">
                                                 <label for="inputCpfProfessor">3. CPF</label>
-                                                <input type="text" name="cad_cpf_professor" class="form-control" id="inputCpfProfessor" placeholder="digite o CPF" maxlength="14" onkeypress="formatar('###.###.###-##', this); return SomenteNumero(event);" onblur="showhide()" required="">
+                                                <input type="text" name="cad_cpf_professor" class="form-control" id="inputCpfProfessor" placeholder="digite o CPF" maxlength="14" onkeypress="formatar('###.###.###-##', this); return SomenteNumero(event);" onblur="showhide()">
                                             </div>
 
                                         </div>
@@ -790,7 +790,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
 
                                             <div class="form-group">
                                                 <label for="inputTelefoneProfessor">5. Telefone</label>
-                                                <input type="text" name="cad_fone_professor" class="form-control" id="inputTelefoneProfessor" placeholder="91 000000000" maxlength="12" onkeypress="formatar('## #########', this); return SomenteNumero(event);" onblur="showhide()" required="">
+                                                <input type="text" name="cad_fone_professor" class="form-control" id="inputTelefoneProfessor" placeholder="91 000000000" maxlength="12" onkeypress="formatar('## #########', this); return SomenteNumero(event);" onblur="showhide()">
                                             </div>
 
                                         </div>
@@ -1223,7 +1223,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                         </div>                   
                                     </div><br>
 
-                                    <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                                    <button type="submit" class="btn btn-primary btn-lg" onclick="return validar_cadastro_educador()">Enviar</button>
 
                                     <button type="submit" class="btn btn-success btn-lg" onClick="window.print()">Imprimir Página</button>
 
@@ -1236,13 +1236,13 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                         <div class="panel panel-primary">
                             <div class="panel-heading">CADASTRO DE DISCIPLINA</div>
                             <div class="panel-body box_conteudo">
-                                <form action="../controle/cadastrando_disciplina.php" method="post">
+                                <form id="cadastro_disciplina" name="cadastroDisciplina" action="../controle/cadastrando_disciplina.php" method="post">
 
                                     <div class="row">
                                         <div class="col-md-4">
 
                                             <label for="inputNomeDisciplina">1. Nome da disciplina</label>
-                                            <input type="text" name="cad_nome_disciplina" class="form-control" id="inputNomeDisciplina" placeholder="nome da disciplina" required="">
+                                            <input type="text" name="cad_nome_disciplina" class="form-control" id="inputNomeDisciplina" placeholder="nome da disciplina">
                                         </div>
 
                                         <div class="col-md-4">
@@ -1296,6 +1296,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                             <label for="inputProfessorDisciplina">5. Professor da disciplina</label><br>
 
                                             <select class="form-control" name="cad_professor_disciplina">
+                                                <option value="">Selecione</option>
                                                 <?php
                                                 foreach ($mostrar_educador as $linha_educador) {
                                                     echo "<option value=' $linha_educador->id_professor '>" . $linha_educador->nome_professor . " - " . $linha_educador->fone_professor . "</option>"
@@ -1310,6 +1311,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                             <label for="inputTurmaDisciplina">6. Turma da disciplina</label><br>
 
                                             <select class="form-control" name="cad_turma_disciplina">
+                                                <option value="">Selecione</option>
                                                 <?php
                                                 foreach ($mostrar_dados_disciplina as $linha_disciplina) {
                                                     echo "<option value=' $linha_disciplina->id_turma '>" . $linha_disciplina->nome_turma . " - Nível: " . $linha_disciplina->nivel_turma . " - Etapa: " . $linha_disciplina->etapa_turma . "</option>"
@@ -1323,7 +1325,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                     <label for="inputDescricaoDisciplina">7. Descrição da disciplina</label><br>
                                     <textarea class="form-control" rows="6"></textarea><br>
 
-                                    <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                                    <button type="submit" class="btn btn-primary btn-lg" onclick="return validar_cadastro_disciplina()">Enviar</button>
 
                                     <button type="submit" class="btn btn-success btn-lg" onClick="window.print()">Imprimir Página</button>
 
@@ -1371,11 +1373,12 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                             <div class="panel-heading">APROVAÇÃO DE USUÁRIOS PENDENTES</div>
                             <div class="panel-body box_conteudo">
 
-                                <form action="../controle/aprovando_usuario.php" method="post">
+                                <form id="usuarios_pendentes" name="usuariosPendentes" action="../controle/aprovando_usuario.php" method="post">
                                     <div class="row">
                                         <div class="col-md-12">
                                             <label for="inputNivelDisciplina">Usuários</label><br>
                                             <select class="form-control" name="id_aprovado">
+                                                <option value="">Selecione</option>
                                                 <?php
                                                 foreach ($mostrar_pendentes as $linha_pendente) {
                                                     echo "<option value='" . $linha_pendente->id_usuario . "'>" . $linha_pendente->nome_usuario . "&nbsp;&nbsp;&nbsp; Fone: " . $linha_pendente->fone_usuario . "&nbsp;&nbsp;&nbsp; Função: " . $linha_pendente->funcao_usuario . "</option>";
@@ -1386,7 +1389,7 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                                     </div>
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <br><button type="submit" class="btn btn-primary btn-lg">Aprovar</button>
+                                            <br><button type="submit" class="btn btn-primary btn-lg" onclick="return validar_usuario_pendente()">Aprovar</button>
                                         </div>
                                     </div>
                                 </form>

@@ -9,7 +9,7 @@
         <script src="layout/js/bootstrap.min.js"></script>
         <script src="layout/js/componente_local.js"></script>
         <script src="layout/js/mascara_local.js"></script>
-        <script src="layout/js/validacao_local.js"></script>
+        <script language="javascript" type="text/javascript" src="js_local/validacao_local.js"></script>
         <script src="layout/js/aviso_local.js"></script>
         <link rel="shortcut icon" href="imagens/icone.png" type="image/x-icon">
         <title>Bem Vindo</title>

@@ -3,7 +3,6 @@
     {
         alert("Aluno(a) cadastrado(a) com sucesso!");
         history.back(-1);
-        document.getElementById("cadastro_aluno").reset();
     }
 </script>
 

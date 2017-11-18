@@ -259,14 +259,29 @@ class Aluno extends Crud {
         }
     }
     
-    public function ler_todos_alunos_escola() {
+    public function ler_todos_alunos_escola($id_escola) {
         try {
-            $sql = "SELECT id_aluno, nome_aluno, mae_aluno, bairro_aluno, deficiencia_aluno, transporte_aluno FROM aluno WHERE escola_id_escola = 1";
+            $sql = "SELECT id_aluno, nome_aluno, mae_aluno, bairro_aluno, deficiencia_aluno, transporte_aluno FROM aluno WHERE escola_id_escola = :id_escola";
             $stmt = DB::prepare($sql);
+            $stmt->bindParam(':id_escola', $id_escola);
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_OBJ);
         } catch (Exception $exc) {
-            echo 'Falha ao ler todos os dados <br>';
+            echo 'Falha ao ler todos os Alunos por Escola <br>';
+            echo $exc->getMessage();
+        }
+
+    }
+    
+    public function ler_alunos_sem_inep($id_escola) {
+        try {
+            $sql = "SELECT * FROM aluno WHERE inep_aluno = '' AND escola_id_escola = :id_escola";
+            $stmt = DB::prepare($sql);
+            $stmt->bindParam(':id_escola', $id_escola);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
+        } catch (Exception $exc) {
+            echo 'Falha ao ler todos os Alunos sem Inep <br>';
             echo $exc->getMessage();
         }
 

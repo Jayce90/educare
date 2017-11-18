@@ -221,5 +221,19 @@ class Educador extends Crud {
             echo 'Falha ao inserir Professor<br>';
             echo $ex->getMessage();
         }
-    }    
+    }
+
+    public function ler_todos_professores() {
+        try {
+            $sql = "SELECT * FROM professor ORDER BY nome_professor";
+            $stmt = DB::prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
+        } catch (Exception $exc) {
+            echo 'Falha ao ler todos Professores <br>';
+            echo $exc->getMessage();
+        }
+
+    }
+    
 }
