@@ -275,7 +275,7 @@ class Aluno extends Crud {
     
     public function ler_alunos_sem_inep($id_escola) {
         try {
-            $sql = "SELECT * FROM aluno WHERE inep_aluno = '' AND escola_id_escola = :id_escola";
+            $sql = "SELECT * FROM aluno WHERE inep_aluno = 0 AND escola_id_escola = :id_escola ORDER BY nome_aluno";
             $stmt = DB::prepare($sql);
             $stmt->bindParam(':id_escola', $id_escola);
             $stmt->execute();

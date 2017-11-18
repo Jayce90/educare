@@ -35,7 +35,7 @@ $mostrar_disciplina = $listar_disciplina ->ler_professor_turma($id_escola)
         <script src="../layout/js/mascara_local.js"></script>
         <script src="../layout/js/validacao_local.js"></script>
         <link rel="shortcut icon" href="../imagens/icone.png" type="image/x-icon">
-        <title>SECRETARIA ESCOLAR</title>
+        <title>LISTAS</title>
     </head>
 
     <body>

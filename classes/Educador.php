@@ -218,7 +218,7 @@ class Educador extends Crud {
             $stmt->bindParam(':vinculo_professor', $this->vinculo_professor);
             return $stmt->execute();
         } catch (Exception $ex) {
-            echo 'Falha ao inserir Professor<br>';
+            echo 'Falha ao inserir Educador<br>';
             echo $ex->getMessage();
         }
     }
@@ -235,5 +235,6 @@ class Educador extends Crud {
         }
 
     }
+   
     
 }

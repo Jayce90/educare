@@ -13,7 +13,7 @@ include_once '../classes/Aluno.php';
 include 'verificacao_de_campos.php';
 
 
-$inep_aluno = isset($_POST['cad_inep_aluno']) ? $_POST['cad_inep_aluno'] : '';
+$inep_aluno = 0;
 $nome_aluno = isset($_POST['cad_nome_aluno']) ? $_POST['cad_nome_aluno'] : '';
 $nascimento_aluno = isset($_POST['cad_nasc_aluno']) ? $_POST['cad_nasc_aluno'] : '';
 $sexo_aluno = isset($_POST['cad_sexo_aluno']) ? $_POST['cad_sexo_aluno'] : '';

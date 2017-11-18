@@ -10,7 +10,7 @@
 include_once '../classes/Educador.php';
 include 'verificacao_de_campos.php';
 
-$inep_professor = isset($_POST['cad_inep_professor']) ? $_POST['cad_inep_professor'] : '';
+$inep_professor = 0;
 $cpf_professor = isset($_POST['cad_cpf_professor']) ? $_POST['cad_cpf_professor'] : '';
 $fone_professor = isset($_POST['cad_fone_professor']) ? $_POST['cad_fone_professor'] : '';
 $nome_professor = isset($_POST['cad_nome_professor']) ? $_POST['cad_nome_professor'] : '';

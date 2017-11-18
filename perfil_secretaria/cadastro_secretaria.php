@@ -4,6 +4,7 @@ session_start();
 include_once '../classes/Usuario.php';
 include_once '../classes/Disciplina.php';
 include_once '../classes/Lotacao.php';
+include_once '../classes/Aluno.php';
 require '../controle/autenticacao.php';
 
 Secretaria();
@@ -19,6 +20,10 @@ $mostrar_dados_disciplina = $dados_disciplina->listagem_por_escola($id_escola, "
 
 $listar_educador = new Lotacao();
 $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao);
+$mostrar_educador_sem_inep = $listar_educador->listagem_lotacao_sem_inep($id_escola, $ano_lotacao);
+
+$alunos = new Aluno();
+$mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
 ?>
 
 <!DOCTYPE html>
@@ -1340,28 +1345,54 @@ $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao)
                             <div class="panel-heading">CADASTRO INEP</div>
                             <div class="panel-body box_conteudo">
 
-                                <form action="" method="post">
-
+                                <form name="inepAluno" action="" method="post">
                                     <div class="row">
-                                        <div class="col-md-4">
 
-                                            <label for="inputInepAluno">1. INEP do Aluno(a)</label>
-                                            <input type="text" name="cad_inep_aluno" class="form-control" id="inputInepAluno" placeholder="inep do aluno(a)" maxlength="8" onkeypress="formatar('########', this); return SomenteNumero(event);" onblur="showride()">
-
+                                        <div class="col-md-8">
+                                            <label for='inputInserirInepAluno'>Aluno(a):</label><br>
+                                            <select class='form-control' name='vincular_id_aluno'>
+                                                <option value="">Selecione</option>                                               
+                                                <?php
+                                                foreach ($mostrar_aluno_sem_inep as $linha_aluno_sem_inep) {
+                                                        echo "<option value='" . $linha_aluno_sem_inep->id_aluno . "'>" . $linha_aluno_sem_inep->nome_aluno ."</option>";
+                                                }
+                                                ?>                                              
+                                            </select>
                                         </div>
 
                                         <div class="col-md-4">
-
-                                            <label for="inputInepProfessor">2. INEP do Educador(a)</label>
-                                            <input type="text" name="cad_inep_professor" class="form-control" id="inputInepProfessor" placeholder="inep do educador(a)"maxlength="8" onkeypress="formatar('########', this); return SomenteNumero(event);" onblur="showride()">
-
+                                            <label for="inputInepProfessor">INEP do Aluno(a):</label>
+                                            <input type="text" name="cad_inep_professor" class="form-control" id="inputInepProfessor" placeholder="insira o numero do inep do Aluno(a)"maxlength="8" onkeypress="formatar('########', this); return SomenteNumero(event);" onblur="showride()">
                                         </div>
-
-                                        
                                     </div><br>
 
-                                    <button type="submit" class="btn btn-primary btn-lg">Enviar</button>                                  <button type="submit" class="btn btn-success btn-lg" onClick="window.print()">Imprimir Página</button>
+                                    <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                                </form>
 
+                                <hr>
+
+                                <form name="inepEducador" action="" method="post">
+                                    <div class="row">
+
+                                        <div class="col-md-8">
+                                            <label for="inputInserirInepEducador">Educador(a):</label><br>
+                                            <select class="form-control" name="vincular_id_educador">
+                                                <option value="">Selecione</option>
+                                                <?php
+                                                foreach ($mostrar_educador_sem_inep as $linha_educador_sem_inep) {
+                                                    echo "<option value='" . $linha_educador_sem_inep->id_professor . "'>" . $linha_educador_sem_inep->nome_professor . "</option>";
+                                                }
+                                                ?>                                              
+                                            </select>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <label for="inputInepProfessor">INEP do Educador(a):</label>
+                                            <input type="text" name="cad_inep_professor" class="form-control" id="inputInepProfessor" placeholder="insira o numero do inep do Educador(a)"maxlength="8" onkeypress="formatar('########', this); return SomenteNumero(event);" onblur="showride()">
+                                        </div>
+                                    </div><br>
+
+                                    <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
                                 </form>
 
                             </div>

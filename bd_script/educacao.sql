@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.7.4
+-- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: 16-Nov-2017 às 21:02
--- Versão do servidor: 10.1.16-MariaDB
--- PHP Version: 5.5.38
+-- Host: localhost
+-- Generation Time: 18-Nov-2017 às 22:48
+-- Versão do servidor: 10.1.28-MariaDB
+-- PHP Version: 7.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -28,7 +30,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `aluno` (
   `id_aluno` int(11) NOT NULL,
-  `inep_aluno` varchar(45) DEFAULT NULL,
+  `inep_aluno` int(11) DEFAULT NULL,
   `nome_aluno` varchar(45) DEFAULT NULL,
   `nascimento_aluno` varchar(45) DEFAULT NULL,
   `sexo_aluno` varchar(45) DEFAULT NULL,
@@ -73,14 +75,16 @@ CREATE TABLE `aluno` (
 --
 
 INSERT INTO `aluno` (`id_aluno`, `inep_aluno`, `nome_aluno`, `nascimento_aluno`, `sexo_aluno`, `nis_aluno`, `raca_aluno`, `mae_aluno`, `pai_aluno`, `nacionalidade_aluno`, `pais_nasc_aluno`, `estado_nasc_aluno`, `fone_aluno`, `municipio_nasc_aluno`, `deficiencia_aluno`, `tipo_deficiencia_aluno`, `identidade_aluno`, `complemento_identidade_aluno`, `orgao_identidade_aluno`, `estado_identidade_aluno`, `data_identidade_aluno`, `certidao_civil_aluno`, `cpf_aluno`, `passaporte_aluno`, `justificativa_aluno`, `localizacao_aluno`, `cep_aluno`, `endereco_aluno`, `numero_aluno`, `complemento_aluno`, `bairro_aluno`, `estado_aluno`, `municipio_aluno`, `outra_escolarizacao_aluno`, `transporte_aluno`, `responsavel_transporte_aluno`, `tipo_transporte_aluno`, `status_aluno`, `escola_id_escola`) VALUES
-(1, '', 'THIAGO BORGES', '24/02/1990', 'masculino', '12431312312', 'preta', 'DONA THIAGA', '', 'brasileira', 'BRASIL', 'PA', '', 'TOMÃ‰-AÃ‡U', 'NÃ£o', '; ; ', '', '', '', 'PA', '', '; ; ; ; ; ; PA; ; ; ', '', '', '', '', '', '', '', '', '', 'PA', '', 'nao', 'utiliza', 'municipal', '; Barco', 'aguardando', 3),
-(2, '', 'ALEXANDRE MATIAS', '07/07/1990', 'masculino', '21233231212', 'branca', 'DONA ALEXANDRINA', '', 'brasileira', '', 'PA', '', '', 'NÃ£o', '; ; ', '', '', '', 'PA', '', '; ; ; ; ; ; PA; ; ; ', '', '', '', '', '', '', '', '', '', 'PA', '', 'nao', 'nÃ£o utiliza', 'municipal', '; ', 'aguardando', 3),
-(3, '', 'BENEDITO FERNADES', '07/09/1980', 'masculino', '21233287987', 'preta', 'DONA BENEDITA', '', 'brasileira', '', 'PA', '', '', 'NÃ£o', '; ; ', '', '', '', 'PA', '', '; ; ; ; ; ; PA; ; ; ', '', '', '', '', '', '', '', '', '', 'PA', '', 'nao', 'nÃ£o utiliza', 'municipal', '; ', 'aguardando', 3),
-(4, '', 'CHARLES OLIVEIRA', '28/11/1987', 'masculino', '98798798786', 'preta', 'DONA CHARLITA', '', 'brasileira', '', 'PA', '', '', 'NÃ£o', '; ; ', '', '', '', 'PA', '', '; ; ; ; ; ; PA; ; ; ', '', '', '', '', '', '', '', '', '', 'PA', '', 'nao', 'nÃ£o utiliza', 'municipal', '; ', 'aguardando', 3),
-(5, '', 'DANIEL FEITOSA', '10/03/1992', 'masculino', '87647567687', 'parda', 'DONA DANIELA', '', 'brasileira', '', 'PA', '', '', 'NÃ£o', '; ; ', '', '', '', 'PA', '', '; ; ; ; ; ; PA; ; ; ', '', '', '', '', '', '', '', '', '', 'PA', '', 'nao', 'nÃ£o utiliza', 'municipal', '; ', 'aguardando', 3),
-(6, '', 'GLEYSON DU POP', '24/04/1996', 'masculino', '52876359678', 'indigena', 'DONA GLEYDSA', '', 'brasileira', '', 'PA', '', '', 'NÃ£o', '; ; ', '', '', '', 'PA', '', '; ; ; ; ; ; PA; ; ; ', '', '', '', '', '', '', '', '', '', 'PA', '', 'nao', 'nÃ£o utiliza', 'municipal', '; ', 'aguardando', 3),
-(7, '', 'MILENA TEIXEIRA', '10/11/1991', 'feminino', '80980980980', 'branca', 'DONA MILENESA', '', 'brasileira', '', 'PA', '', '', 'NÃ£o', '; ; ', '', '', '', 'PA', '', '; ; ; ; ; ; PA; ; ; ', '', '', '', '', '', '', '', '', '', 'PA', '', 'nao', 'nÃ£o utiliza', 'municipal', '; ', 'aguardando', 3),
-(8, '', 'FERNANDA PIRES', '31/04/1970', 'feminino', '80980980980', 'preta', 'DONA FERNANDETHE', '', 'brasileira', '', 'PA', '', '', 'NÃ£o', '; ; ', '', '', '', 'PA', '', '; ; ; ; ; ; PA; ; ; ', '', '', '', '', '', '', '', '', '', 'PA', '', 'nao', 'nÃ£o utiliza', 'municipal', '; ', 'aguardando', 3);
+(1, 0, 'THIAGO BORGES', '24/02/1990', 'masculino', '12431312312', 'preta', 'DONA THIAGA', '', 'brasileira', 'BRASIL', 'PA', '', 'TOMÃ‰-AÃ‡U', 'NÃ£o', '; ; ', '', '', '', 'PA', '', '; ; ; ; ; ; PA; ; ; ', '', '', '', '', '', '', '', '', '', 'PA', '', 'nao', 'utiliza', 'municipal', '; Barco', 'aguardando', 3),
+(2, 2, 'ALEXANDRE MATIAS', '07/07/1990', 'masculino', '21233231212', 'branca', 'DONA ALEXANDRINA', '', 'brasileira', '', 'PA', '', '', 'NÃ£o', '; ; ', '', '', '', 'PA', '', '; ; ; ; ; ; PA; ; ; ', '', '', '', '', '', '', '', '', '', 'PA', '', 'nao', 'nÃ£o utiliza', 'municipal', '; ', 'aguardando', 3),
+(3, 0, 'BENEDITO FERNADES', '07/09/1980', 'masculino', '21233287987', 'preta', 'DONA BENEDITA', '', 'brasileira', '', 'PA', '', '', 'NÃ£o', '; ; ', '', '', '', 'PA', '', '; ; ; ; ; ; PA; ; ; ', '', '', '', '', '', '', '', '', '', 'PA', '', 'nao', 'nÃ£o utiliza', 'municipal', '; ', 'aguardando', 3),
+(4, 0, 'CHARLES OLIVEIRA', '28/11/1987', 'masculino', '98798798786', 'preta', 'DONA CHARLITA', '', 'brasileira', '', 'PA', '', '', 'NÃ£o', '; ; ', '', '', '', 'PA', '', '; ; ; ; ; ; PA; ; ; ', '', '', '', '', '', '', '', '', '', 'PA', '', 'nao', 'nÃ£o utiliza', 'municipal', '; ', 'aguardando', 3),
+(5, 0, 'DANIEL FEITOSA', '10/03/1992', 'masculino', '87647567687', 'parda', 'DONA DANIELA', '', 'brasileira', '', 'PA', '', '', 'NÃ£o', '; ; ', '', '', '', 'PA', '', '; ; ; ; ; ; PA; ; ; ', '', '', '', '', '', '', '', '', '', 'PA', '', 'nao', 'nÃ£o utiliza', 'municipal', '; ', 'aguardando', 3),
+(6, 6, 'GLEYSON DU POP', '24/04/1996', 'masculino', '52876359678', 'indigena', 'DONA GLEYDSA', '', 'brasileira', '', 'PA', '', '', 'NÃ£o', '; ; ', '', '', '', 'PA', '', '; ; ; ; ; ; PA; ; ; ', '', '', '', '', '', '', '', '', '', 'PA', '', 'nao', 'nÃ£o utiliza', 'municipal', '; ', 'aguardando', 3),
+(7, 0, 'MILENA TEIXEIRA', '10/11/1991', 'feminino', '80980980980', 'branca', 'DONA MILENESA', '', 'brasileira', '', 'PA', '', '', 'NÃ£o', '; ; ', '', '', '', 'PA', '', '; ; ; ; ; ; PA; ; ; ', '', '', '', '', '', '', '', '', '', 'PA', '', 'nao', 'nÃ£o utiliza', 'municipal', '; ', 'aguardando', 3),
+(8, 0, 'FERNANDA PIRES', '31/04/1970', 'feminino', '80980980980', 'preta', 'DONA FERNANDETHE', '', 'brasileira', '', 'PA', '', '', 'NÃ£o', '; ; ', '', '', '', 'PA', '', '; ; ; ; ; ; PA; ; ; ', '', '', '', '', '', '', '', '', '', 'PA', '', 'nao', 'nÃ£o utiliza', 'municipal', '; ', 'aguardando', 3),
+(13, 12, 'RODRIGO GOMES', '31/07/1983', 'masculino', '23768327282', 'preta', 'DONA RODRIGA', '', 'brasileira', '', 'PA', '', '', 'NÃ£o', '; ; ', '', '', '', 'PA', '', '; ; ; ; ; ; PA; ; ; ', '', '', '', '', '', '', '', '', '', 'PA', '', 'nao', 'nÃ£o utiliza', 'municipal', 'Bicicleta; Barco', 'aguardando', 3),
+(14, 0, 'MARCELO COSTA', '27/09/1989', 'masculino', '31231231231', 'amarela', 'DONA MARCELA', '', 'brasileira', '', 'PA', '', '', 'NÃ£o', '; ; ', '', '', '', 'PA', '', '; ; ; ; ; ; PA; ; ; ', '', '', '', '', '', '', '', '', '', 'PA', '', 'nao', 'nÃ£o utiliza', 'municipal', 'Micro - Ã”nibus; Barco', 'aguardando', 3);
 
 -- --------------------------------------------------------
 
@@ -105,7 +109,9 @@ CREATE TABLE `disciplina` (
 --
 
 INSERT INTO `disciplina` (`id_disciplina`, `nome_disciplina`, `descricao_disciplina`, `cargaHoraria_disciplina`, `nivel_disciplina`, `etapa_disciplina`, `turma_id_turma`, `lotacao_professor_id_professor`, `lotacao_escola_id_escola`) VALUES
-(7, 'POO COM PHP', '', '05', 'EJA', 'EJA - Ensino Fundamental anos iniciais', 3, 2, 3);
+(7, 'POO COM PHP', '', '05', 'EJA', 'EJA - Ensino Fundamental anos iniciais', 3, 2, 3),
+(9, 'DTESTEOO2', '', '05', 'EJA', 'Creche 2', 3, 2, 3),
+(10, 'DTESTEOO3', '', '06', 'Ensino Fundamental', '7Âº ano', 3, 2, 3);
 
 -- --------------------------------------------------------
 
@@ -213,7 +219,10 @@ CREATE TABLE `lotacao` (
 --
 
 INSERT INTO `lotacao` (`professor_id_professor`, `escola_id_escola`, `ano_lotacao`, `cargaHoraria_lotacao`) VALUES
-(2, 3, '2017', '100');
+(1, 3, '2017', '300'),
+(2, 3, '2017', '100'),
+(3, 3, '2017', '400'),
+(6, 3, '2017', '100');
 
 -- --------------------------------------------------------
 
@@ -264,10 +273,15 @@ CREATE TABLE `professor` (
 INSERT INTO `professor` (`id_professor`, `inep_professor`, `cpf_professor`, `fone_professor`, `nome_professor`, `nascimento_professor`, `mae_professor`, `pai_professor`, `email_professor`, `nis_professor`, `sexo_professor`, `raca_professor`, `nacionalidade_professor`, `pais_nasc_professor`, `estado_nasc_professor`, `municipio_nasc_professor`, `deficiencia_professor`, `tipo_deficiencia_professor`, `localizacao_professor`, `cep_professor`, `endereco_professor`, `numero_professor`, `complemento_professor`, `bairro_professor`, `municipio_professor`, `escolaridade_professor`, `curso_professor`, `instituicao_curso_professor`, `situacao_curso_professor`, `pos_graduacao_professor`, `outro_curso_professor`, `funcao_professor`, `vinculo_professor`) VALUES
 (1, 0, '477.267.763-28', '91 919191919', 'DECIOLA FERREIRA', '30/04/1880', '', '', '', '18721627627', 'masculino', '', 'brasileira', '', 'PA', '', 'NÃ£o', ' ', '', '', '', '', '', '', '', '', '', '', 'concluido', '', ' ', ' ', 'Contrato temporÃ¡rio'),
 (2, 0, '687.236.487-26', '91 999372873', 'FABIO BRITO', '30/10/1980', '', '', '', '63876234762', 'masculino', '', 'brasileira', '', 'PA', '', 'NÃ£o', ' ', '', '', '', '', '', '', '', '', '', '', 'concluido', '', ' ', ' ', ''),
-(3, 0, '989.797.869-68', '91 888888888', 'SILVANA DA SILVA', '03/10/1980', '', '', '', '67868347963', 'masculino', '', 'brasileira', '', 'PA', '', 'NÃ£o', ' ', '', '', '', '', '', '', '', '', '', '', 'concluido', '', ' ', ' ', ''),
+(3, 2, '989.797.869-68', '91 888888888', 'SILVANA DA SILVA', '03/10/1980', '', '', '', '67868347963', 'masculino', '', 'brasileira', '', 'PA', '', 'NÃ£o', ' ', '', '', '', '', '', '', '', '', '', '', 'concluido', '', ' ', ' ', ''),
 (4, 0, '382.472.345-83', '91 888888555', 'ANDREA DO NASCIMENTO', '27/12/1970', '', '', '', '73541827364', 'masculino', '', 'brasileira', '', 'PA', '', 'NÃ£o', ' ', '', '', '', '', '', '', '', '', '', '', 'concluido', '', ' ', ' ', ''),
 (5, 0, '836.393.217-63', '91 889090909', 'CANDIDO NETO', '17/11/1989', '', '', '', '39810732987', 'masculino', '', 'brasileira', '', 'PA', '', 'NÃ£o', ' ', '', '', '', '', '', '', '', '', '', '', 'concluido', '', ' ', ' ', ''),
-(6, 0, '546.541.265-46', '91 991763287', 'MARCEL BOTELHO', '03/07/1979', '', '', '', '97812987192', 'masculino', '', 'brasileira', '', 'PA', '', 'NÃ£o', ' ', '', '', '', '', '', '', '', '', '', '', 'concluido', '', ' ', ' ', '');
+(6, 0, '546.541.265-46', '91 991763287', 'MARCEL BOTELHO', '03/07/1979', '', '', '', '97812987192', 'masculino', '', 'brasileira', '', 'PA', '', 'NÃ£o', ' ', '', '', '', '', '', '', '', '', '', '', 'concluido', '', ' ', ' ', ''),
+(8, 3, '363.762.736-72', '91 999999999', 'RAIMUNDO PEREIRA', '21/09/1982', '', '', '', '', 'masculino', '', 'brasileira', '', 'PA', '', 'NÃ£o', ' ', '', '', '', '', '', '', '', '', '', '', 'concluido', '', ' ', ' ', 'Concursado/efetivo/estÃ¡vel'),
+(11, 0, '987.987.897-98', '919090909090', 'JULIANA SILVEIRA', '02/02/1985', '', '', '', '42342342342', 'masculino', '', 'brasileira', '', 'PA', '', 'NÃ£o', ' ', '', '', '', '', '', '', '', '', '', '', 'concluido', '', ' ', ' ', 'Contrato terceirizado'),
+(12, 1, '123.123.123-33', '91 234234234', 'THABILA VICTORIA', '18/01/1990', '', '', '', '32123123123', 'masculino', '', 'brasileira', '', 'PA', '', 'NÃ£o', ' ', '', '', '', '', '', '', '', '', '', '', 'concluido', '', ' ', 'Docente', 'Concursado/efetivo/estÃ¡vel'),
+(13, 0, '532.523.452-34', '23 452345234', 'ALEKSANDRA DA SILVA', '24/04/1970', '', '', '', '42342342312', 'masculino', '', 'brasileira', '', 'PA', '', 'NÃ£o', ' ', '', '', '', '', '', '', '', '', '', '', 'concluido', '', ' ', 'Auxiliar/Assistente Educacional', 'Concursado/efetivo/estÃ¡vel'),
+(14, 0, '328.812.931-23', '91 232838282', 'DULCI MARIA', '26/10/1982', '', '', '', '32898123129', 'masculino', '', 'brasileira', '', 'PA', '', 'NÃ£o', ' ', '', '', '', '', '', '', '', '', '', '', 'concluido', '', ' ', 'Profissional/Monitor de Atividade', 'Concursado/efetivo/estÃ¡vel');
 
 -- --------------------------------------------------------
 
@@ -430,37 +444,44 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `aluno`
 --
 ALTER TABLE `aluno`
-  MODIFY `id_aluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_aluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
 --
 -- AUTO_INCREMENT for table `disciplina`
 --
 ALTER TABLE `disciplina`
-  MODIFY `id_disciplina` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_disciplina` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
 --
 -- AUTO_INCREMENT for table `escola`
 --
 ALTER TABLE `escola`
   MODIFY `id_escola` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `historico`
 --
 ALTER TABLE `historico`
   MODIFY `id_historico` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `professor`
 --
 ALTER TABLE `professor`
-  MODIFY `id_professor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_professor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
 --
 -- AUTO_INCREMENT for table `turma`
 --
 ALTER TABLE `turma`
   MODIFY `id_turma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- Constraints for dumped tables
 --
@@ -519,6 +540,7 @@ ALTER TABLE `turma`
 --
 ALTER TABLE `usuario`
   ADD CONSTRAINT `fk_usuario_escola1` FOREIGN KEY (`escola_id_escola`) REFERENCES `escola` (`id_escola`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

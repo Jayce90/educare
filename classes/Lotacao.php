@@ -70,5 +70,20 @@ class Lotacao extends Crud {
         }
 
     }
+    
+    public function listagem_lotacao_sem_inep($id_escola, $ano_lotacao) {
+        try {
+            $sql = "SELECT * FROM professor AS P INNER JOIN lotacao AS L ON P.id_professor = L.professor_id_professor AND L.escola_id_escola = :id_escola AND P.inep_professor = 0 AND L.ano_lotacao = :ano_lotacao";
+            $stmt = DB::prepare($sql);
+            $stmt->bindParam(':id_escola', $id_escola);
+            $stmt->bindParam(':ano_lotacao', $ano_lotacao);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
+        } catch (Exception $exc) {
+            echo 'Falha ao ler todos os dados <br>';
+            echo $exc->getMessage();
+        }
+
+    }
 
 }
