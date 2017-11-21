@@ -17,7 +17,7 @@ $senha_login = isset($_POST['senha_login']) ? $_POST['senha_login'] : '';
 
 $usuario_login = new Usuario();
 
-$login = $usuario_login->login_usuario($apelido_login, $senha_login);
+$login = $usuario_login->login_usuario($apelido_login, sha1($senha_login));
 
 if (isset($login)) {
     $_SESSION['id'] = $login->id_usuario;

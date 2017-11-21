@@ -89,14 +89,14 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="inputNomeGestorEscola">1. Nome do Gestor(a) Escolar</label>
+                                                <label for="inputNomeGestorEscola">1. Nome do Gestor(a)</label>
                                                 <input type="text" name="cad_nome_gestor_escola" class="form-control" id="inputNomeGestorEscola" placeholder="digite o nome" required="">
                                             </div>
                                         </div>
 
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="inputCpfGestorEscola">2. Número do CPF do Gestor(a) Escolar</label>
+                                                <label for="inputCpfGestorEscola">2. Número do CPF do Gestor(a)</label>
                                                 <input type="text" name="cad_cpf_gestor_escola" class="form-control" id="inputCpfGestorEscola" placeholder="CPF gestor escolar" maxlength="14" onkeypress="formatar('###.###.###-##', this); return SomenteNumero(event);" onblur="showhide()" required="">
                                             </div>
                                         </div>

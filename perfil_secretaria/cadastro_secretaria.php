@@ -1345,12 +1345,12 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
                             <div class="panel-heading">CADASTRO INEP</div>
                             <div class="panel-body box_conteudo">
 
-                                <form name="inepAluno" action="" method="post">
+                                <form name="inepAluno" action="../controle/inserindo_inep_aluno.php" method="post">
                                     <div class="row">
 
                                         <div class="col-md-8">
                                             <label for='inputInserirInepAluno'>Aluno(a):</label><br>
-                                            <select class='form-control' name='vincular_id_aluno'>
+                                            <select class='form-control' name='numero_inep'>
                                                 <option value="">Selecione</option>                                               
                                                 <?php
                                                 foreach ($mostrar_aluno_sem_inep as $linha_aluno_sem_inep) {
@@ -1362,11 +1362,11 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
 
                                         <div class="col-md-4">
                                             <label for="inputInepProfessor">INEP do Aluno(a):</label>
-                                            <input type="text" name="cad_inep_professor" class="form-control" id="inputInepProfessor" placeholder="insira o numero do inep do Aluno(a)"maxlength="8" onkeypress="formatar('########', this); return SomenteNumero(event);" onblur="showride()">
+                                            <input type="text" name="id_aluno" class="form-control" id="inputInepProfessor" placeholder="insira o numero do inep do Aluno(a)"maxlength="8" onkeypress="formatar('########', this); return SomenteNumero(event);" onblur="showride()">
                                         </div>
                                     </div><br>
 
-                                    <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                                    <button type="button" class="btn btn-primary btn-lg">Enviar</button>
                                 </form>
 
                                 <hr>
@@ -1392,7 +1392,7 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
                                         </div>
                                     </div><br>
 
-                                    <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                                    <button type="button" class="btn btn-primary btn-lg">Enviar</button>
                                 </form>
 
                             </div>

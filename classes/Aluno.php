@@ -4,6 +4,7 @@ require_once '../conexao/Crud.php';
 
 class Aluno extends Crud {
 
+    private $id_aluno;
     private $inep_aluno;
     private $nome;
     private $nascimento;
@@ -43,6 +44,10 @@ class Aluno extends Crud {
     private $status;
     private $id_escola;
 
+    function setId_Aluno($id_aluno) {
+        $this->id_aluno = $id_aluno;
+    }
+    
     function setInep_Aluno($inep_aluno) {
         $this->inep_aluno = $inep_aluno;
     }
@@ -261,7 +266,7 @@ class Aluno extends Crud {
     
     public function ler_todos_alunos_escola($id_escola) {
         try {
-            $sql = "SELECT id_aluno, nome_aluno, mae_aluno, bairro_aluno, deficiencia_aluno, transporte_aluno FROM aluno WHERE escola_id_escola = :id_escola";
+            $sql = "SELECT * FROM aluno WHERE escola_id_escola = :id_escola";
             $stmt = DB::prepare($sql);
             $stmt->bindParam(':id_escola', $id_escola);
             $stmt->execute();
@@ -280,6 +285,20 @@ class Aluno extends Crud {
             $stmt->bindParam(':id_escola', $id_escola);
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_OBJ);
+        } catch (Exception $exc) {
+            echo 'Falha ao ler todos os Alunos sem Inep <br>';
+            echo $exc->getMessage();
+        }
+
+    }
+    
+    public function inserir_inep() {
+        try {
+            $sql = "UPDATE aluno SET inep_aluno = :numero_inep WHERE id_aluno = :id_entidade";
+            $stmt = DB::prepare($sql);
+            $stmt->bindParam(':numero_inep', $this->inep_aluno);
+            $stmt->bindParam(':id_entidade', $this->id_aluno);
+            $stmt->execute();
         } catch (Exception $exc) {
             echo 'Falha ao ler todos os Alunos sem Inep <br>';
             echo $exc->getMessage();

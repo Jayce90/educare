@@ -21,6 +21,8 @@ $perfil_usuario = isset($_POST['cad_perfil_usuario']) ? $_POST['cad_perfil_usuar
 $status_usuario = "aguardando";
 $id_escola = isset($_POST['cad_id_escola_usuario']) ? $_POST['cad_id_escola_usuario'] : '';
 
+$senha_cript = sha1($senha_usuario);
+
 $usuario = new Usuario();
 
 $usuario->setNome($nome_usuario);
@@ -28,7 +30,7 @@ $usuario->setEmail($email_usuario);
 $usuario->setFone($fone_usuario);
 $usuario->setCPF($cpf_usuario);
 $usuario->setApelido($apelido_usuario);
-$usuario->setSenha($senha_usuario);
+$usuario->setSenha($senha_cript);
 $usuario->setPerfil($perfil_usuario);
 $usuario->setStatus($status_usuario);
 $usuario->setId_escola($id_escola);

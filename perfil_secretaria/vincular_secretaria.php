@@ -247,7 +247,7 @@ $mostrar_educador = $listar_educador->ler_todos_professores();
                                     echo $mostrar;
                                 
                                 if (isset($mostrar)) {
-                                    echo "<button type='submit' class='btn btn-primary btn-lg' >Vincular</button>"
+                                    echo "<button type='submit' class='btn btn-primary btn-lg' onclick='return validar_vinculo_aluno()'>Vincular</button>"
                                     . "</form>";
                                 }
                                 ?>

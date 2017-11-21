@@ -79,10 +79,10 @@ $mostrar_escola = $escola->ler_todos_org();
                                 <label for="inputPerfilUsuario">Perfil</label>
                                 <select class="form-control" name="cad_perfil_usuario">
                                     <option value="">Selecione</option>
-                                    <option value="Aluno">Aluno</option>
-                                    <option value="Professor(a)">Professor(a)</option>
+                                    <option value="Aluno(a)">Aluno(a)</option>
+                                    <option value="Educador(a)">Educador(a)</option>
                                     <option value="Secretário(a)">Secretário(a)</option>
-                                    <option value="Outro">Outro</option>
+                                    <option value="Outros">Outros</option>
                                 </select>
                             </div>
 

@@ -1,3 +1,14 @@
+<script language="JavaScript">
+    $('#alunosTurma').on('shown.bs.modal', function () {
+        $('#myInput').focus()
+    });
+
+    function abrirmodal{
+        $("#alunosTurma").modal();
+    }
+    ;
+</script>
+
 <?php
 session_start();
 require '../controle/autenticacao.php';
@@ -5,6 +16,7 @@ include_once '../classes/Turma.php';
 include_once '../classes/Aluno.php';
 include_once '../classes/Lotacao.php';
 include_once '../classes/Disciplina.php';
+include_once '../classes/Disciplinaealuno.php';
 
 Secretaria();
 
@@ -15,25 +27,40 @@ $listar_turmas = new Turma();
 $mostrar_turma = $listar_turmas->listagem_por_escola($id_escola, "turma");
 
 $listar_alunos = new Aluno();
-$mostrar_aluno = $listar_alunos->ler_todos("aluno");
+$mostrar_aluno = $listar_alunos->ler_todos_alunos_escola($id_escola);
 
 $listar_educador = new Lotacao();
 $mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao);
 
 $listar_disciplina = new Disciplina();
-$mostrar_disciplina = $listar_disciplina ->ler_professor_turma($id_escola)
+$mostrar_disciplina = $listar_disciplina->ler_professor_turma($id_escola);
+
+$listar_alunos_turma = new Disciplinaealuno();
+
+if (isset($_POST['listar_alunos_turma'])) {
+
+    $id_lista_turma = isset($_POST['id_lista_turma']) ? $_POST['id_lista_turma'] : '';
+
+    $mostrar_alunos_turma = $listar_alunos_turma->ler_alunos_turma($id_lista_turma, $id_escola);
+    echo "<script>abrirmodal()</script>";
+} elseif (!isset($_POST['listar_alunos_turma'])) {
+    unset($mostrar_disciplinas);
+    $mostrar = FALSE;
+}
 ?>
 <!DOCTYPE html>
 
 <html>
     <head>
         <meta charset="UTF-8">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <link href="../layout/css/bootstrap.min.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <link type="text/css" href="../layout/css/bootstrap.min.css" rel="stylesheet">
         <link href="../layout/css/local.css" rel="stylesheet">
         <script src="../layout/js/bootstrap.min.js"></script>
         <script src="../layout/js/mascara_local.js"></script>
         <script src="../layout/js/validacao_local.js"></script>
+        <script language="javascript" type="text/javascript" src="../js_local/ajax_local.js"></script>
         <link rel="shortcut icon" href="../imagens/icone.png" type="image/x-icon">
         <title>LISTAS</title>
     </head>
@@ -68,6 +95,8 @@ $mostrar_disciplina = $listar_disciplina ->ler_professor_turma($id_escola)
                     <li><a class="glyphicon glyphicon-list" href="#list_alunos" data-toggle="pill"> Listar Alunos</a></li>
                     <li><a class="glyphicon glyphicon-list" href="#list_educadores" data-toggle="pill"> Listar Educadores</a></li>
                     <li><a class="glyphicon glyphicon-list" href="#list_disciplinas" data-toggle="pill"> Listar Disciplinas</a></li>
+                    <li><a class="glyphicon glyphicon-list" href="#list_aluno_turmas" data-toggle="pill"> Listar Aluno/Turma</a></li>
+                    <li><a class="glyphicon glyphicon-list" href="#list_aluno_disciplinas" data-toggle="pill"> Listar Aluno/Disciplina</a></li>
                 </ul>
             </div>
 
@@ -236,11 +265,75 @@ $mostrar_disciplina = $listar_disciplina ->ler_professor_turma($id_escola)
                         </div>
                     </div>
 
+                    <div class="tab-pane" id="list_aluno_turmas">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">LISTAGEM DE ALUNOS POR TURMA</div>
+                            <div class="panel-body box_conteudo">
+
+                                <select class="form-control" id="turma">
+                                    <option value="">Selecione</option>
+                                    <?php
+                                    foreach ($mostrar_turma as $linha_turma) {
+                                        echo "<option value=' $linha_turma->id_turma '>" . $linha_turma->nome_turma . " - Nível: " . $linha_turma->nivel_turma . " - Etapa: " . $linha_turma->etapa_turma . "</option>"
+                                        ;
+                                    }
+                                    ?>
+                                </select><br>
+
+                                <button class="btn btn-primary btn-lg" id="buscar" type="button" onclick="listar_alunosTurmas(document.getElementById('turma').value)">Listar Alunos</button>
+
+                                <hr>
+
+                                <div id="dados"></div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" id="list_aluno_disciplinas">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">LISTAGEM DE ALUNOS POR DISCIPLINA</div>
+                            <div class="panel-body box_conteudo">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <select class="form-control" id="turma_disciplina">
+                                            <option value="">Selecione</option>
+                                            <?php
+                                            foreach ($mostrar_turma as $linha_turma) {
+                                                echo "<option value=' $linha_turma->id_turma '>" . $linha_turma->nome_turma . " - Nível: " . $linha_turma->nivel_turma . " - Etapa: " . $linha_turma->etapa_turma . "</option>"
+                                                ;
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <select class="form-control" id="disciplina">
+                                            <option value="">Selecione</option>
+                                            <?php
+                                            foreach ($mostrar_disciplina as $linha_disciplina) {
+                                                echo "<option value=' $linha_disciplina->id_disciplina '>" . $linha_disciplina->nome_disciplina . " - Educador(a): " . $linha_disciplina->nome_professor . " - Total Aluno: " . $linha_disciplina->capacidade_turma . "</option>"
+                                                ;
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
+                                </div><br>
+                                <button class="btn btn-primary btn-lg" id="buscar" type="button" onclick="listar_alunosDisciplina(document.getElementById('turma_disciplina').value, document.getElementById('disciplina').value)">Listar Alunos</button>
+
+                                <hr>
+
+                                <div id="dados_lista_aluno"></div>
+
+                            </div>
+                        </div>
+                    </div>
+
 
 
                 </div>
             </div>
 
         </div>
+
     </body>
 </html>

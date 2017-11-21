@@ -137,15 +137,9 @@ function validar_vincular_educador() {
 }
 
 function validar_vinculo_aluno() {
-    var disciplina_vinculo = vincularAluno.id_disciplina_vincular.value;
     var aluno_vinculo = vincularAluno.vincular_id_aluno.value;
     
 
-    if (disciplina_vinculo === "") {
-        alert('Selecione pelo menos uma Disciplina!');
-        vincularAluno.id_disciplina_vincular.focus();
-        return false;
-    }
     if (aluno_vinculo === "") {
         alert('Selecione um Aluno(a)!');
         vincularAluno.vincular_id_aluno.focus();
