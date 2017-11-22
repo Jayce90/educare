@@ -1,14 +1,3 @@
-<script language="JavaScript">
-    $('#alunosTurma').on('shown.bs.modal', function () {
-        $('#myInput').focus()
-    });
-
-    function abrirmodal{
-        $("#alunosTurma").modal();
-    }
-    ;
-</script>
-
 <?php
 session_start();
 require '../controle/autenticacao.php';
@@ -55,7 +44,7 @@ if (isset($_POST['listar_alunos_turma'])) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <link type="text/css" href="../layout/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../layout/css/bootstrap.min.css" rel="stylesheet">
         <link href="../layout/css/local.css" rel="stylesheet">
         <script src="../layout/js/bootstrap.min.js"></script>
         <script src="../layout/js/mascara_local.js"></script>

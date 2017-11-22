@@ -31,4 +31,4 @@ foreach ($id_disciplina_vincular as $linha_disciplina) {
     $obj_disciplina ->vincular_aluno();
 }
 
-echo "<script>confirmacao()</script>";
+//echo "<script>confirmacao()</script>";
