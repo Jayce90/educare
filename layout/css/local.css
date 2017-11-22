@@ -138,7 +138,7 @@ th{
 .medidaboletim{
 
     height: 21cm;
-    width: 29.7cm;
+    width: 29.2cm;
 
 }
 
@@ -161,7 +161,7 @@ tbody{
 .medidaboletimII{
 
     height: 21cm;
-    width: 29.7cm; 
+    width: 29.2cm; 
 
 }
 
@@ -169,4 +169,13 @@ tbody{
 
     font-size: 12px;
 
+}
+.fontsize{
+    font-size: 16px;    
+    
+}
+
+#fonte{
+    
+    font-size: 16px;
 }
