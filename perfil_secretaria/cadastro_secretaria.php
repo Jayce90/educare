@@ -83,7 +83,7 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
                     <div class="tab-pane active" id="cad_aluno">
                         <div class="panel panel-primary">
                             <div class="panel-heading" id="noprint">CADASTRO DO ALUNO(A)</div>
-                            <div class="panel-body box_conteudo">
+                            <div class="panel-body box_conteudo" id="yesprint">
 
                                 <form id="cadastro_aluno" name="cadastroAluno" action="../controle/cadastrando_aluno.php" method="post">
 
@@ -750,7 +750,7 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
                     <div class="tab-pane" id="cad_professor">
                         <div class="panel panel-primary">
                             <div class="panel-heading" id="noprint">CADASTRO DO EDUCADOR(A)</div>
-                            <div class="panel-body box_conteudo">
+                            <div class="panel-body box_conteudo" id="yesprint">
 
                                 <form id="cadastro_educador" name="cadastroEducador" action="../controle/cadastrando_educador.php" method="post">
 
@@ -1241,7 +1241,7 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
                     <div class="tab-pane" id="cad_turma">
                         <div class="panel panel-primary">
                             <div class="panel-heading" id="noprint">CADASTRO DA TURMA</div>
-                            <div class="panel-body box_conteudo">
+                            <div class="panel-body box_conteudo" id="yesprint">
 
                                 <form action="../controle/cadastrando_turma.php" method="post">
 
@@ -1489,7 +1489,7 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
                     <div class="tab-pane" id="cad_disciplina">
                         <div class="panel panel-primary">
                             <div class="panel-heading" id="noprint">CADASTRO DE DISCIPLINA</div>
-                            <div class="panel-body box_conteudo">
+                            <div class="panel-body box_conteudo" id="yesprint">
                                 <form id="cadastro_disciplina" name="cadastroDisciplina" action="../controle/cadastrando_disciplina.php" method="post">
 
                                     <div class="row">

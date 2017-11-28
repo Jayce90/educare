@@ -19,7 +19,7 @@ and open the template in the editor.
         <title>IMPRESSÃO</title>
     </head>
     <body>
-        <div class="cabecalho">
+        <div class="cabecalho" id="noprint">
             <div class="banner">
                 <img src="../imagens/logo.png">
             </div>
@@ -59,7 +59,7 @@ and open the template in the editor.
                     <div class="tab-pane active" id="imprimir_boletim">
                         <div class="panel panel-primary" id="mapao">
                             <div class="panel-heading" id="noprint">BOLETIM</div>
-                            <div class="panel-body box_conteudo">
+                            <div class="panel-body box_conteudo" id="yesprint">
 
                                 <div class="medidaboletimII">
 
@@ -158,7 +158,7 @@ and open the template in the editor.
                     <div class="tab-pane" id="imprimir_relatorio">
                         <div class="panel panel-primary" id="mapao">
                             <div class="panel-heading" id="noprint">RELATÓRIO</div>
-                            <div class="panel-body box_conteudo">
+                            <div class="panel-body box_conteudo" id="yesprint">
 
                                 <div class="medidaboletim">
 
@@ -294,7 +294,7 @@ and open the template in the editor.
                     <div class="tab-pane" id="imprimir_mapa">
                         <div class="panel panel-primary" id="mapao">
                             <div class="panel-heading" id="noprint">MAPA</div>
-                            <div class="panel-body box_conteudo">
+                            <div class="panel-body box_conteudo" id="yesprint">
 
                                 <div class="medidasmapao">
 

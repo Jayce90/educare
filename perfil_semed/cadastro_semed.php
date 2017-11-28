@@ -83,7 +83,7 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
                     <div class="tab-pane active" id="cad_escola">
                         <div class="panel panel-primary">
                             <div class="panel-heading"id="noprint">CADASTRO DA ESCOLA</div>
-                            <div class="panel-body box_conteudo">
+                            <div class="panel-body box_conteudo" id="yesprint">
 
                                 <form action="../controle/cadastrando_escola.php" method="post">
 
@@ -302,7 +302,7 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
                     <div class="tab-pane" id="cad_turma">
                         <div class="panel panel-primary">
                             <div class="panel-heading" id="noprint">CADASTRO DA TURMA</div>
-                            <div class="panel-body box_conteudo">
+                            <div class="panel-body box_conteudo" id="yesprint">
 
                                 <form action="../controle/cadastrando_turma.php" method="post">
 
@@ -550,7 +550,7 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
                     <div class="tab-pane" id="cad_disciplina">
                         <div class="panel panel-primary">
                             <div class="panel-heading" id="noprint">CADASTRO DE DISCIPLINA</div>
-                            <div class="panel-body box_conteudo">
+                            <div class="panel-body box_conteudo" id="yesprint">
                                 <form action="../controle/cadastrando_disciplina.php" method="post">
 
                                     <div class="row">
@@ -651,7 +651,7 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
                     <div class="tab-pane" id="cad_professor">
                         <div class="panel panel-primary">
                             <div class="panel-heading" id="noprint">CADASTRO DO EDUCADOR(A)</div>
-                            <div class="panel-body box_conteudo">
+                            <div class="panel-body box_conteudo" id="yesprint">
 
                                 <form id="cadastro_educador" action="../controle/cadastrando_educador.php" method="post">
 
@@ -1142,7 +1142,7 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
                     <div class="tab-pane" id="cad_aluno">
                         <div class="panel panel-primary">
                             <div class="panel-heading" id="noprint">CADASTRO DO ALUNO(A)</div>
-                            <div class="panel-body box_conteudo">
+                            <div class="panel-body box_conteudo" id="yesprint">
 
                                 <form id="cadastro_aluno" action="../controle/cadastrando_aluno.php" method="post">
 
