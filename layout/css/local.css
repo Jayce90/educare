@@ -172,10 +172,25 @@ tbody{
 }
 .fontsize{
     font-size: 16px;    
-    
+
 }
 
 #fonte{
-    
+
     font-size: 16px;
+}
+
+@media print {
+
+    #noprint {
+        display : none          
+    }
+
+}
+
+#mapao {
+
+    float:left;
+    height:auto; 
+
 }

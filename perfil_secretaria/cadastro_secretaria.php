@@ -65,7 +65,7 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
 
         <div class="row">
             <!-- Navigation Buttons -->
-            <div class="col-md-2">
+            <div class="col-md-2" id="noprint">
                 <ul class="nav nav-pills nav-stacked" id="myTabs">
                     <li class="active"><a class="glyphicon glyphicon-user" href="#cad_aluno" data-toggle="pill"> Cadastro Aluno(a)</a></li>
                     <li><a class="glyphicon glyphicon-briefcase" href="#cad_professor" data-toggle="pill"> Cadastro Educador(a)</a></li>
@@ -82,7 +82,7 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
 
                     <div class="tab-pane active" id="cad_aluno">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">CADASTRO DO ALUNO(A)</div>
+                            <div class="panel-heading" id="noprint">CADASTRO DO ALUNO(A)</div>
                             <div class="panel-body box_conteudo">
 
                                 <form id="cadastro_aluno" name="cadastroAluno" action="../controle/cadastrando_aluno.php" method="post">
@@ -738,9 +738,9 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
                                         </div>
                                     </div><br>
 
-                                    <input type="submit" class="btn btn-primary btn-lg" value="Enviar" onclick="return validar_cadastro_aluno()">
+                                    <input type="submit" class="btn btn-primary btn-lg" value="Enviar" onclick="return validar_cadastro_aluno()" id="noprint">
 
-                                    <button type="submit" class="btn btn-success btn-lg" onClick="window.print()">Imprimir Página</button>
+                                    <button type="submit" class="btn btn-success btn-lg" onClick="window.print()" id="noprint">Imprimir Página</button>
 
                                 </form>
                             </div>
@@ -749,7 +749,7 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
 
                     <div class="tab-pane" id="cad_professor">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">CADASTRO DO EDUCADOR(A)</div>
+                            <div class="panel-heading" id="noprint">CADASTRO DO EDUCADOR(A)</div>
                             <div class="panel-body box_conteudo">
 
                                 <form id="cadastro_educador" name="cadastroEducador" action="../controle/cadastrando_educador.php" method="post">
@@ -1229,9 +1229,9 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
                                         </div>                   
                                     </div><br>
 
-                                    <button type="submit" class="btn btn-primary btn-lg" onclick="return validar_cadastro_educador()">Enviar</button>
+                                    <button type="submit" class="btn btn-primary btn-lg" onclick="return validar_cadastro_educador()" id="noprint">Enviar</button>
 
-                                    <button type="submit" class="btn btn-success btn-lg" onClick="window.print()">Imprimir Página</button>
+                                    <button type="submit" class="btn btn-success btn-lg" onClick="window.print()" id="noprint">Imprimir Página</button>
 
                                 </form>
                             </div>
@@ -1240,7 +1240,7 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
 
                     <div class="tab-pane" id="cad_turma">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">CADASTRO DA TURMA</div>
+                            <div class="panel-heading" id="noprint">CADASTRO DA TURMA</div>
                             <div class="panel-body box_conteudo">
 
                                 <form action="../controle/cadastrando_turma.php" method="post">
@@ -1477,9 +1477,9 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
                                     <label for="inputDescricaodaturma">12. Descrição da turma</label><br>
                                     <textarea class="form-control" name="cad_descricao_turma" rows="6"></textarea><br>
 
-                                    <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                                    <button type="submit" class="btn btn-primary btn-lg" id="noprint">Enviar</button>
 
-                                    <button type="submit" class="btn btn-success btn-lg" onClick="window.print()">Imprimir Página</button>
+                                    <button type="submit" class="btn btn-success btn-lg" onClick="window.print()" id="noprint">Imprimir Página</button>
 
                                 </form>
                             </div>
@@ -1488,7 +1488,7 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
 
                     <div class="tab-pane" id="cad_disciplina">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">CADASTRO DE DISCIPLINA</div>
+                            <div class="panel-heading" id="noprint">CADASTRO DE DISCIPLINA</div>
                             <div class="panel-body box_conteudo">
                                 <form id="cadastro_disciplina" name="cadastroDisciplina" action="../controle/cadastrando_disciplina.php" method="post">
 
@@ -1579,9 +1579,9 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
                                     <label for="inputDescricaoDisciplina">7. Descrição da disciplina</label><br>
                                     <textarea class="form-control" rows="6"></textarea><br>
 
-                                    <button type="submit" class="btn btn-primary btn-lg" onclick="return validar_cadastro_disciplina()">Enviar</button>
+                                    <button type="submit" class="btn btn-primary btn-lg" onclick="return validar_cadastro_disciplina()" id="noprint">Enviar</button>
 
-                                    <button type="submit" class="btn btn-success btn-lg" onClick="window.print()">Imprimir Página</button>
+                                    <button type="submit" class="btn btn-success btn-lg" onClick="window.print()" id="noprint">Imprimir Página</button>
 
                                 </form>
 

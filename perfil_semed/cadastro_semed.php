@@ -62,7 +62,7 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
 
         <div class="row">
             <!-- Navigation Buttons -->
-            <div class="col-md-2">
+            <div class="col-md-2" id="noprint">
                 <ul class="nav nav-pills nav-stacked" id="myTabs">
                     <li class="active"><a class="glyphicon glyphicon-pencil" href="#cad_escola" data-toggle="pill"> Cadastro Escola</a></li>
                     <li><a class="glyphicon glyphicon-book" href="#cad_turma" data-toggle="pill"> Cadastro Turma</a></li>
@@ -82,7 +82,7 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
 
                     <div class="tab-pane active" id="cad_escola">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">CADASTRO DA ESCOLA</div>
+                            <div class="panel-heading"id="noprint">CADASTRO DA ESCOLA</div>
                             <div class="panel-body box_conteudo">
 
                                 <form action="../controle/cadastrando_escola.php" method="post">
@@ -289,9 +289,9 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
 
                                     </div><br>                                    
 
-                                    <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                                    <button type="submit" class="btn btn-primary btn-lg" id="noprint">Enviar</button>
 
-                                    <button type="submit" class="btn btn-success btn-lg" onClick="window.print()">Imprimir Página</button>
+                                    <button type="submit" class="btn btn-success btn-lg" onClick="window.print()" id="noprint">Imprimir Página</button>
 
                                 </form>
 
@@ -301,7 +301,7 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
 
                     <div class="tab-pane" id="cad_turma">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">CADASTRO DA TURMA</div>
+                            <div class="panel-heading" id="noprint">CADASTRO DA TURMA</div>
                             <div class="panel-body box_conteudo">
 
                                 <form action="../controle/cadastrando_turma.php" method="post">
@@ -538,9 +538,9 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
                                     <label for="inputDescricaodaturma">12. Descrição da turma</label><br>
                                     <textarea class="form-control" name="cad_descricao_turma" rows="6"></textarea><br>
 
-                                    <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                                    <button type="submit" class="btn btn-primary btn-lg" id="noprint">Enviar</button>
 
-                                    <button type="submit" class="btn btn-success btn-lg" onClick="window.print()">Imprimir Página</button>
+                                    <button type="submit" class="btn btn-success btn-lg" onClick="window.print()" id="noprint">Imprimir Página</button>
 
                                 </form>
                             </div>
@@ -549,7 +549,7 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
 
                     <div class="tab-pane" id="cad_disciplina">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">CADASTRO DE DISCIPLINA</div>
+                            <div class="panel-heading" id="noprint">CADASTRO DE DISCIPLINA</div>
                             <div class="panel-body box_conteudo">
                                 <form action="../controle/cadastrando_disciplina.php" method="post">
 
@@ -638,9 +638,9 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
                                     <label for="inputDescricaoDisciplina">7. Descrição da disciplina</label><br>
                                     <textarea class="form-control" rows="6"></textarea><br>
 
-                                    <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                                    <button type="submit" class="btn btn-primary btn-lg" id="noprint">Enviar</button>
 
-                                    <button type="submit" class="btn btn-success btn-lg" onClick="window.print()">Imprimir Página</button>
+                                    <button type="submit" class="btn btn-success btn-lg" onClick="window.print()" id="noprint">Imprimir Página</button>
 
                                 </form>
 
@@ -650,7 +650,7 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
 
                     <div class="tab-pane" id="cad_professor">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">CADASTRO DO EDUCADOR(A)</div>
+                            <div class="panel-heading" id="noprint">CADASTRO DO EDUCADOR(A)</div>
                             <div class="panel-body box_conteudo">
 
                                 <form id="cadastro_educador" action="../controle/cadastrando_educador.php" method="post">
@@ -1130,9 +1130,9 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
                                         </div>                   
                                     </div><br>
 
-                                    <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                                    <button type="submit" class="btn btn-primary btn-lg" id="noprint">Enviar</button>
 
-                                    <button type="submit" class="btn btn-success btn-lg" onClick="window.print()">Imprimir Página</button>
+                                    <button type="submit" class="btn btn-success btn-lg" onClick="window.print()" id="noprint">Imprimir Página</button>
 
                                 </form>
                             </div>
@@ -1141,7 +1141,7 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
 
                     <div class="tab-pane" id="cad_aluno">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">CADASTRO DO ALUNO(A)</div>
+                            <div class="panel-heading" id="noprint">CADASTRO DO ALUNO(A)</div>
                             <div class="panel-body box_conteudo">
 
                                 <form id="cadastro_aluno" action="../controle/cadastrando_aluno.php" method="post">
@@ -1797,9 +1797,9 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
                                         </div>
                                     </div><br>
 
-                                    <input type="submit" class="btn btn-primary btn-lg" value="Enviar">
+                                    <input type="submit" class="btn btn-primary btn-lg" value="Enviar" id="noprint">
 
-                                    <button type="submit" class="btn btn-success btn-lg" onClick="window.print()">Imprimir Página</button>
+                                    <button type="submit" class="btn btn-success btn-lg" onClick="window.print()" id="noprint">Imprimir Página</button>
 
                                 </form>
                             </div>

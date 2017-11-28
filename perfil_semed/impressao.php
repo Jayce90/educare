@@ -44,7 +44,7 @@ and open the template in the editor.
         <div class="row">
 
             <!-- Navigation Buttons -->
-            <div class="col-md-2">
+            <div class="col-md-2" id="noprint">
                 <ul class="nav nav-pills nav-stacked" id="myTabs">
                     <li class="active"><a class="glyphicon glyphicon-list-alt" href="#imprimir_boletim" data-toggle="pill"> Imprimir Boletim</a></li>
                     <li><a class="glyphicon glyphicon-list-alt" href="#imprimir_relatorio" data-toggle="pill"> Imprimir Relatório</a></li>
@@ -57,8 +57,8 @@ and open the template in the editor.
                 <div class="tab-content">
 
                     <div class="tab-pane active" id="imprimir_boletim">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">BOLETIM</div>
+                        <div class="panel panel-primary" id="mapao">
+                            <div class="panel-heading" id="noprint">BOLETIM</div>
                             <div class="panel-body box_conteudo">
 
                                 <div class="medidaboletimII">
@@ -148,7 +148,7 @@ and open the template in the editor.
 
                                 </div>
 
-                                <button type="submit" class="btn btn-success btn-lg" onClick="window.print()">Imprimir</button>
+                                <button type="submit" class="btn btn-success btn-lg" onClick="window.print()" id="noprint">Imprimir</button>
 
 
                             </div>
@@ -156,8 +156,8 @@ and open the template in the editor.
                     </div>
 
                     <div class="tab-pane" id="imprimir_relatorio">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">RELATÓRIO</div>
+                        <div class="panel panel-primary" id="mapao">
+                            <div class="panel-heading" id="noprint">RELATÓRIO</div>
                             <div class="panel-body box_conteudo">
 
                                 <div class="medidaboletim">
@@ -283,7 +283,7 @@ and open the template in the editor.
 
                                     </div><br>
 
-                                    <button type="submit" class="btn btn-success btn-lg" onClick="window.print()">Imprimir</button>
+                                    <button type="submit" class="btn btn-success btn-lg" onClick="window.print()" id="noprint">Imprimir</button>
 
                                 </div>
 
@@ -292,8 +292,8 @@ and open the template in the editor.
                     </div>
 
                     <div class="tab-pane" id="imprimir_mapa">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">MAPA</div>
+                        <div class="panel panel-primary" id="mapao">
+                            <div class="panel-heading" id="noprint">MAPA</div>
                             <div class="panel-body box_conteudo">
 
                                 <div class="medidasmapao">
@@ -529,7 +529,7 @@ and open the template in the editor.
 
                                     </div><br>
 
-                                    <button type="submit" class="btn btn-success btn-lg" onClick="window.print()">Imprimir</button>
+                                    <button type="submit" class="btn btn-success btn-lg" onClick="window.print()" id="noprint">Imprimir</button>
 
                                 </div>
 
