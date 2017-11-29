@@ -31,7 +31,7 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
         <script src="../layout/js/mascara_local.js"></script>
         <script src="../layout/js/validacao_local.js"></script>        
         <link rel="shortcut icon" href="../imagens/icone.png" type="image/x-icon">
-        <title>SECRETARIA ESCOLAR</title>
+        <title>CADASTRO</title>
     </head>
 
     <body>
@@ -52,6 +52,7 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
                         <li class="active"><a class="glyphicon glyphicon-plus"> Cadastrar<span class="sr-only">(current)</span></a></li>
                         <li><a class="glyphicon glyphicon-list" href="lista_semed.php"> Listar</a></li>
                         <li><a class="glyphicon glyphicon-pencil glyphicon" href="editar_semed.php"> Editar</a></li>
+                        <li><a class="glyphicon glyphicon-list-alt" href="impressao.php"> Imprimir</a></li>
                         <li><a class="glyphicon glyphicon-remove" href="#"> Apagar</a></li>
                         <li><a class="glyphicon glyphicon-alert" href="../controle/sair.php"> Sair</a></li>
                     </ul>
@@ -61,7 +62,7 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
 
         <div class="row">
             <!-- Navigation Buttons -->
-            <div class="col-md-2">
+            <div class="col-md-2" id="noprint">
                 <ul class="nav nav-pills nav-stacked" id="myTabs">
                     <li class="active"><a class="glyphicon glyphicon-pencil" href="#cad_escola" data-toggle="pill"> Cadastro Escola</a></li>
                     <li><a class="glyphicon glyphicon-book" href="#cad_turma" data-toggle="pill"> Cadastro Turma</a></li>
@@ -81,8 +82,8 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
 
                     <div class="tab-pane active" id="cad_escola">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">CADASTRO DA ESCOLA</div>
-                            <div class="panel-body box_conteudo">
+                            <div class="panel-heading"id="noprint">CADASTRO DA ESCOLA</div>
+                            <div class="panel-body box_conteudo" id="yesprint">
 
                                 <form action="../controle/cadastrando_escola.php" method="post">
 
@@ -288,9 +289,9 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
 
                                     </div><br>                                    
 
-                                    <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                                    <button type="submit" class="btn btn-primary btn-lg" id="noprint">Enviar</button>
 
-                                    <button type="submit" class="btn btn-success btn-lg" onClick="window.print()">Imprimir Página</button>
+                                    <button type="submit" class="btn btn-success btn-lg" onClick="window.print()" id="noprint">Imprimir Página</button>
 
                                 </form>
 
@@ -300,8 +301,8 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
 
                     <div class="tab-pane" id="cad_turma">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">CADASTRO DA TURMA</div>
-                            <div class="panel-body box_conteudo">
+                            <div class="panel-heading" id="noprint">CADASTRO DA TURMA</div>
+                            <div class="panel-body box_conteudo" id="yesprint">
 
                                 <form action="../controle/cadastrando_turma.php" method="post">
 
@@ -537,9 +538,9 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
                                     <label for="inputDescricaodaturma">12. Descrição da turma</label><br>
                                     <textarea class="form-control" name="cad_descricao_turma" rows="6"></textarea><br>
 
-                                    <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                                    <button type="submit" class="btn btn-primary btn-lg" id="noprint">Enviar</button>
 
-                                    <button type="submit" class="btn btn-success btn-lg" onClick="window.print()">Imprimir Página</button>
+                                    <button type="submit" class="btn btn-success btn-lg" onClick="window.print()" id="noprint">Imprimir Página</button>
 
                                 </form>
                             </div>
@@ -548,26 +549,26 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
 
                     <div class="tab-pane" id="cad_disciplina">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">CADASTRO DE DISCIPLINA</div>
-                            <div class="panel-body box_conteudo">
-                                <form action="../controle/cadastrando_disciplina.php" method="post">
+                            <div class="panel-heading" id="noprint">CADASTRO DE DISCIPLINA</div>
+                            <div class="panel-body box_conteudo" id="yesprint">
+                                <form id="cadastro_disciplina" name="cadastroDisciplina" action="../controle/cadastrando_disciplina.php" method="post">
 
                                     <div class="row">
                                         <div class="col-md-4">
 
-                                            <label for="inputNomeDisciplina">1. Nome da disciplina</label>
-                                            <input type="text" name="cad_nome_disciplina" class="form-control" id="inputNomeDisciplina" placeholder="nome da disciplina" required="">
+                                            <label for="inputNomeDisciplina">1. Nome da disciplina *</label>
+                                            <input type="text" name="cad_nome_disciplina" class="form-control" id="inputNomeDisciplina" placeholder="nome da disciplina">
                                         </div>
 
                                         <div class="col-md-4">
 
-                                            <label for="inputCargaHorariaDisciplina">2. Carga Horária</label>
+                                            <label for="inputCargaHorariaDisciplina">2. Carga Horária *</label>
                                             <input type="text" name="cad_carga_horaria_disciplina" class="form-control" id="inputCargaHorariaDisciplina" placeholder="carga horária">                                            
                                         </div>
 
                                         <div class="col-md-4">
 
-                                            <label for="inputNivelDisciplina">3. Nivel da disciplina</label><br>
+                                            <label for="inputNivelDisciplina">3. Nivel da disciplina *</label><br>
 
                                             <select class="form-control" name="cad_nivel_disciplina">
                                                 <option value="">Selecione</option>                                               
@@ -581,7 +582,7 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
                                     <div class="row">
                                         <div class="col-md-4">
 
-                                            <label for="inputEtapaDisciplina">4. Etapa da disciplina</label><br>
+                                            <label for="inputEtapaDisciplina">4. Etapa da disciplina *</label><br>
 
                                             <select class="form-control" name="cad_etapa_disciplina">
                                                 <option value="">Selecione</option>                                               
@@ -607,12 +608,13 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
 
                                         <div class="col-md-4">
 
-                                            <label for="inputProfessorDisciplina">5. Professor da disciplina</label><br>
+                                            <label for="inputProfessorDisciplina">5. Educador(a) da disciplina *</label><br>
 
                                             <select class="form-control" name="cad_professor_disciplina">
+                                                <option value="">Selecione</option>
                                                 <?php
-                                                foreach ($mostrar_dados_disciplina as $linha_disciplina) {
-                                                    echo "<option value=' $linha_disciplina->id_professor '>" . $linha_disciplina->nome_professor . " - Email: " . $linha_disciplina->email_professor . "</option>"
+                                                foreach ($mostrar_educador as $linha_educador) {
+                                                    echo "<option value=' $linha_educador->id_professor '>" . $linha_educador->nome_professor . " - " . $linha_educador->fone_professor . "</option>"
                                                     ;
                                                 }
                                                 ?>
@@ -621,12 +623,13 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
 
                                         <div class="col-md-4">
 
-                                            <label for="inputTurmaDisciplina">6. Turma da disciplina</label><br>
+                                            <label for="inputTurmaDisciplina">6. Turma da disciplina *</label><br>
 
                                             <select class="form-control" name="cad_turma_disciplina">
+                                                <option value="">Selecione</option>
                                                 <?php
                                                 foreach ($mostrar_dados_disciplina as $linha_disciplina) {
-                                                    echo "<option value=' $linha_disciplina->id_turma '>ID: " . $linha_disciplina->id_turma . " NOME: " . $linha_disciplina->nome_turma . " - QTD: " . $linha_disciplina->capacidade_turma . "</option>"
+                                                    echo "<option value=' $linha_disciplina->id_turma '>" . $linha_disciplina->nome_turma . " - Nível: " . $linha_disciplina->nivel_turma . " - Etapa: " . $linha_disciplina->etapa_turma . "</option>"
                                                     ;
                                                 }
                                                 ?>
@@ -637,9 +640,9 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
                                     <label for="inputDescricaoDisciplina">7. Descrição da disciplina</label><br>
                                     <textarea class="form-control" rows="6"></textarea><br>
 
-                                    <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                                    <button type="submit" class="btn btn-primary btn-lg" onclick="return validar_cadastro_disciplina()" id="noprint">Enviar</button>
 
-                                    <button type="submit" class="btn btn-success btn-lg" onClick="window.print()">Imprimir Página</button>
+                                    <button type="submit" class="btn btn-success btn-lg" onClick="window.print()" id="noprint">Imprimir Página</button>
 
                                 </form>
 
@@ -649,17 +652,17 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
 
                     <div class="tab-pane" id="cad_professor">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">CADASTRO DO EDUCADOR(A)</div>
-                            <div class="panel-body box_conteudo">
+                            <div class="panel-heading" id="noprint">CADASTRO DO EDUCADOR(A)</div>
+                            <div class="panel-body box_conteudo" id="yesprint">
 
-                                <form id="cadastro_educador" action="../controle/cadastrando_educador.php" method="post">
+                                <form id="cadastro_educador" name="cadastroEducador" action="../controle/cadastrando_educador.php" method="post">
 
                                     <div class="row">
                                         <div class="col-md-4">
 
                                             <div class="form-group">
-                                                <label for="inputNomeProfessor">1. Nome do Educador(a)</label>
-                                                <input type="text" name="cad_nome_professor" class="form-control" id="inputNomeProfessor" placeholder="digite nome do educador(a)" required="">
+                                                <label for="inputNomeProfessor">1. Nome do Educador(a) *</label>
+                                                <input type="text" name="cad_nome_professor" class="form-control" id="inputNomeProfessor" placeholder="digite nome do educador(a)">
                                             </div>
 
                                         </div>
@@ -675,8 +678,8 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
                                         <div class="col-md-4">
 
                                             <div class="form-group">
-                                                <label for="inputCpfProfessor">3. CPF</label>
-                                                <input type="text" name="cad_cpf_professor" class="form-control" id="inputCpfProfessor" placeholder="digite o CPF" maxlength="14" onkeypress="formatar('###.###.###-##', this); return SomenteNumero(event);" onblur="showhide()" required="">
+                                                <label for="inputCpfProfessor">3. CPF *</label>
+                                                <input type="text" name="cad_cpf_professor" class="form-control" id="inputCpfProfessor" placeholder="digite o CPF" maxlength="14" onkeypress="formatar('###.###.###-##', this); return SomenteNumero(event);" onblur="showhide()">
                                             </div>
 
                                         </div>
@@ -695,8 +698,8 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
                                         <div class="col-md-4">
 
                                             <div class="form-group">
-                                                <label for="inputTelefoneProfessor">5. Telefone</label>
-                                                <input type="text" name="cad_fone_professor" class="form-control" id="inputTelefoneProfessor" placeholder="91 000000000" maxlength="12" onkeypress="formatar('## #########', this); return SomenteNumero(event);" onblur="showhide()" required="">
+                                                <label for="inputTelefoneProfessor">5. Telefone *</label>
+                                                <input type="text" name="cad_fone_professor" class="form-control" id="inputTelefoneProfessor" placeholder="91 000000000" maxlength="12" onkeypress="formatar('## #########', this); return SomenteNumero(event);" onblur="showhide()">
                                             </div>
 
                                         </div>
@@ -1129,28 +1132,28 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
                                         </div>                   
                                     </div><br>
 
-                                    <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                                    <button type="submit" class="btn btn-primary btn-lg" onclick="return validar_cadastro_educador()" id="noprint">Enviar</button>
 
-                                    <button type="submit" class="btn btn-success btn-lg" onClick="window.print()">Imprimir Página</button>
+                                    <button type="submit" class="btn btn-success btn-lg" onClick="window.print()" id="noprint">Imprimir Página</button>
 
                                 </form>
                             </div>
                         </div>
                     </div>
 
-                    <div class="tab-pane" id="cad_aluno">
+                    <div class="tab-pane active" id="cad_aluno">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">CADASTRO DO ALUNO(A)</div>
-                            <div class="panel-body box_conteudo">
+                            <div class="panel-heading" id="noprint">CADASTRO DO ALUNO(A)</div>
+                            <div class="panel-body box_conteudo" id="yesprint">
 
-                                <form id="cadastro_aluno" action="../controle/cadastrando_aluno.php" method="post">
+                                <form id="cadastro_aluno" name="cadastroAluno" action="../controle/cadastrando_aluno.php" method="post">
 
                                     <div class="row">
                                         <div class="col-md-4">
 
                                             <div class="form-group">
-                                                <label for="inputNomeAluno">1. Nome do aluno(a)</label>
-                                                <input type="text" name="cad_nome_aluno" class="form-control" id="inputNomeAluno" placeholder="digite nome do aluno(a)" required="">
+                                                <label for="inputNomeAluno">1. Nome do aluno(a) *</label>
+                                                <input type="text" name="cad_nome_aluno" class="form-control" id="inputNomeAluno" placeholder="digite nome do aluno(a)">
                                             </div>
 
                                         </div>
@@ -1158,14 +1161,14 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
                                         <div class="col-md-4">
 
                                             <div class="form-group">
-                                                <label for="inputNascimentoAluno">2. Data de Nascimento</label>
-                                                <input type="text" name="cad_nasc_aluno" class="form-control" id="inputNascimentoAluno" placeholder="00/00/0000" maxlength="10" onkeypress="formatar('##/##/####', this); return SomenteNumero(event);" onblur="showride()" required="">
+                                                <label for="inputNascimentoAluno">2. Data de Nascimento *</label>
+                                                <input type="text" name="cad_nasc_aluno" class="form-control" id="inputNascimentoAluno" placeholder="00/00/0000" maxlength="10" onkeypress="formatar('##/##/####', this); return SomenteNumero(event);" onblur="showride()">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
 
                                             <div class="form-group">
-                                                <label for="inputSexoAluno">3. Sexo</label><br>
+                                                <label for="inputSexoAluno">3. Sexo *</label><br>
 
                                                 <label class="radio-inline">
                                                     <input type="radio" name="cad_sexo_aluno" id="inputSexoAluno" value="masculino" checked=""> Masculino
@@ -1218,8 +1221,8 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
                                         <div class="col-md-6">
 
                                             <div class="form-group">
-                                                <label for="inputMaeAluno">6. Nome da mãe</label>
-                                                <input type="text" name="cad_mae_aluno" class="form-control" id="inputMaeAluno" placeholder="digite nome da mãe" required="">
+                                                <label for="inputMaeAluno">6. Nome da mãe *</label>
+                                                <input type="text" name="cad_mae_aluno" class="form-control" id="inputMaeAluno" placeholder="digite nome da mãe">
                                             </div>
 
                                         </div>
@@ -1796,9 +1799,9 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
                                         </div>
                                     </div><br>
 
-                                    <input type="submit" class="btn btn-primary btn-lg" value="Enviar">
+                                    <input type="submit" class="btn btn-primary btn-lg" value="Enviar" onclick="return validar_cadastro_aluno()" id="noprint">
 
-                                    <button type="submit" class="btn btn-success btn-lg" onClick="window.print()">Imprimir Página</button>
+                                    <button type="submit" class="btn btn-success btn-lg" onClick="window.print()" id="noprint">Imprimir Página</button>
 
                                 </form>
                             </div>
@@ -1810,34 +1813,80 @@ $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id
                             <div class="panel-heading">CADASTRO INEP</div>
                             <div class="panel-body box_conteudo">
 
-                                <form action="" method="post">
-
+                                <form name="inepAluno" action="../controle/inserindo_inep_aluno.php" method="post">
                                     <div class="row">
-                                        <div class="col-md-4">
 
-                                            <label for="inputInepAluno">1. INEP do Aluno(a)</label>
-                                            <input type="text" name="cad_inep_aluno" class="form-control" id="inputInepAluno" placeholder="inep do aluno(a)" maxlength="8" onkeypress="formatar('########', this); return SomenteNumero(event);" onblur="showride()">
-
+                                        <div class="col-md-8">
+                                            <label for='inputInserirInepAluno'>Aluno(a):</label><br>
+                                            <select class='form-control' name='numero_inep'>
+                                                <option value="">Selecione</option>                                               
+                                                <?php
+                                                foreach ($mostrar_aluno_sem_inep as $linha_aluno_sem_inep) {
+                                                    echo "<option value='" . $linha_aluno_sem_inep->id_aluno . "'>" . $linha_aluno_sem_inep->nome_aluno . "</option>";
+                                                }
+                                                ?>                                              
+                                            </select>
                                         </div>
 
                                         <div class="col-md-4">
-
-                                            <label for="inputInepProfessor">2. INEP do Educador(a)</label>
-                                            <input type="text" name="cad_inep_professor" class="form-control" id="inputInepProfessor" placeholder="inep do educador(a)"maxlength="8" onkeypress="formatar('########', this); return SomenteNumero(event);" onblur="showride()">
-
+                                            <label for="inputInepProfessor">INEP do Aluno(a):</label>
+                                            <input type="text" name="id_aluno" class="form-control" id="inputInepProfessor" placeholder="insira o numero do inep do Aluno(a)"maxlength="8" onkeypress="formatar('########', this); return SomenteNumero(event);" onblur="showride()">
                                         </div>
-
-                                        <div class="col-md-4">
-
-                                            <label for="inputInepEscola">3. INEP da Escola</label>
-                                            <input type="text" name="cad_inep_escola" class="form-control" id="inputInepEscola" placeholder="inep da escola"maxlength="8" onkeypress="formatar('########', this); return SomenteNumero(event);" onblur="showride()">
-
-                                        </div>
-
                                     </div><br>
 
-                                    <button type="submit" class="btn btn-primary btn-lg">Enviar</button>                                  
+                                    <button type="button" class="btn btn-primary btn-lg">Enviar</button>
+                                </form>
 
+                                <hr>
+
+                                <form name="inepEducador" action="" method="post">
+                                    <div class="row">
+
+                                        <div class="col-md-8">
+                                            <label for="inputInserirInepEducador">Educador(a):</label><br>
+                                            <select class="form-control" name="vincular_id_educador">
+                                                <option value="">Selecione</option>
+                                                <?php
+                                                foreach ($mostrar_educador_sem_inep as $linha_educador_sem_inep) {
+                                                    echo "<option value='" . $linha_educador_sem_inep->id_professor . "'>" . $linha_educador_sem_inep->nome_professor . "</option>";
+                                                }
+                                                ?>                                              
+                                            </select>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <label for="inputInepProfessor">INEP do Educador(a):</label>
+                                            <input type="text" name="cad_inep_professor" class="form-control" id="inputInepProfessor" placeholder="insira o numero do inep do Educador(a)"maxlength="8" onkeypress="formatar('########', this); return SomenteNumero(event);" onblur="showride()">
+                                        </div>
+                                    </div><br>
+
+                                    <button type="button" class="btn btn-primary btn-lg">Enviar</button>
+                                </form>
+
+                                <hr>
+
+                                <form name="inepEscola" action="" method="post">
+                                    <div class="row">
+
+                                        <div class="col-md-8">
+                                            <label for="inputInserirInepEscola">Escola:</label><br>
+                                            <select class="form-control" name="vincular_id_educador">
+                                                <option value="">Selecione</option>
+                                                <?php
+                                                foreach ($mostrar_educador_sem_inep as $linha_educador_sem_inep) {
+                                                    echo "<option value='" . $linha_educador_sem_inep->id_professor . "'>" . $linha_educador_sem_inep->nome_professor . "</option>";
+                                                }
+                                                ?>                                              
+                                            </select>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <label for="inputInepEscola">INEP da Escola:</label>
+                                            <input type="text" name="cad_inep_escola" class="form-control" id="inputInepEscola" placeholder="insira o numero do inep da escola"maxlength="8" onkeypress="formatar('########', this); return SomenteNumero(event);" onblur="showride()">
+                                        </div>
+                                    </div><br>
+
+                                    <button type="button" class="btn btn-primary btn-lg">Enviar</button>
                                 </form>
 
                             </div>

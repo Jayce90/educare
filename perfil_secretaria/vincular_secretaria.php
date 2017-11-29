@@ -164,8 +164,8 @@ $mostrar_educador = $listar_educador->ler_todos_professores();
 
                                 <!--listas das turmas - vincular-->
                                 <label>Turmas :</label><br>
-                                <table width = '100%'>
-                                    <tr>
+                                <table class="table table-condensed">
+                                    <tr class="fontsize">
                                         <th data-field = 'turma'>TURMA</th>
                                         <th data-field = 'turma'>CAPACIDADE</th>
                                         <th data-field = 'turma'>TURNO</th>
@@ -179,7 +179,7 @@ $mostrar_educador = $listar_educador->ler_todos_professores();
                                         <?php
                                         if (isset($_POST['listar_turma_vincular'])) {
                                             foreach ($mostrar_turma as $linha_turma) {
-                                                echo "<tr>"
+                                                echo "<tr class='fontsize'>"
                                                 . "<form action='vincular_secretaria.php' method='post'>" .
                                                 "<td>" . $linha_turma->nome_turma . "</td>" .
                                                 "<td>" . $linha_turma->capacidade_turma . "</td>" .
@@ -201,8 +201,8 @@ $mostrar_educador = $listar_educador->ler_todos_professores();
                                 <hr>
                                 <!--listas das disciplinas por turma - vincular-->
                                 <label>Disciplinas :</label><br>
-                                <table width = '100%'>
-                                    <tr>
+                                <table class="table table-condensed">
+                                    <tr class="fontsize">
                                         <th data-field = 'disciplina'>DISCIPLINA</th>
                                         <th data-field = 'disciplina'>H/A</th>
                                         <th data-field = 'disciplina'>DESCRIÇÃO</th>
@@ -214,7 +214,7 @@ $mostrar_educador = $listar_educador->ler_todos_professores();
                                         if (isset($mostrar)) {
                                             foreach ($mostrar_disciplinas as $linha_disciplina) {
 
-                                                echo "<tr>"
+                                                echo "<tr class='fontsize'>"
                                                 . "<form name='vincularAluno' action='../controle/vinculando_disciplina_aluno.php' method='post'>" .
                                                 "<td>" . $linha_disciplina->nome_disciplina . "</td>" .
                                                 "<td>" . $linha_disciplina->cargaHoraria_disciplina . "</td>" .

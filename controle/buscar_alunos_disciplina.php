@@ -18,16 +18,16 @@ $mostrar_alunos_turma = $alunos_turma ->ler_alunos_disciplina($id_disciplina, $i
 <section class="panel col-lg-9">
     <?php 
     if (count($mostrar_alunos_turma)>0) { ?>
-    <table>
+    <table class="table table-condensed">
         <tbody>
-            <tr>
+            <tr class="fontsize">
                 <th>Nº</th>
                 <th>Aluno(a)</th>
             </tr>
             <?php
             foreach ($mostrar_alunos_turma as $linha_aluno_turma) {
                 ?>
-                <tr>
+                <tr class="fontsize">
                     <td><?php echo $count++; ?></td>
                     <td><?php echo $linha_aluno_turma->nome_aluno; ?></td>
                 </tr>
