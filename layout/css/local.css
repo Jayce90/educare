@@ -185,9 +185,9 @@ tbody{
     #noprint {
         display : none          
     }
-    
+
     #yesprint {
-        
+
         visibility:visible;
         position: absolute;
         top:0;
@@ -202,4 +202,16 @@ tbody{
     float:left;
     height:auto; 
 
+}
+
+#escolacor {
+    background: linear-gradient(90deg, #324270, #324680, #337ab7);
+    height: 150px;  
+    padding-top: 5%;
+
+}
+
+#afonte {
+    
+    color: #ffffff
 }
