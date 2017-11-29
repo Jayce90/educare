@@ -63,10 +63,70 @@ and open the template in the editor.
 
                                 <div class="medidaboletimII">
 
+                                    <div class="text-center">  
+
+                                        <img class="tomeacuboletim" src="../imagens/tomeacu.png" alt="brasao">   
+
+                                    </div>
+
+                                    <div class="text-center">
+                                        <label><h6><b>GOVERNO DO ESTADO DO PARÁ</b></h6></label><br>
+
+                                        <label><h6><b>PREFEITURA MUNICIPAL DE TOMÉ - AÇU</b></h6></label><br>
+
+                                        <label><h6><b>SECRETARIA MUNICIPAL DE EDUCAÇÃO E DESPORTO - SEMED</b></h6></label><br>
+
+                                        <label><h6><b>RESOLUÇÃO Nº 469/2009 CEE/PA REGIMENTO UNIFICADO</b></h6></label><br>
+
+                                        <label><h6><b>RESOLUÇÃO Nº 04/2011 COMED/TA - APROVA A ESTRUTURA CURRICULAR UNIFICADA DE ENSINO FUNDAMENTAL DE 1º AO 9º ANO</b></h6></label>
+
+                                        <label><h6><b>AUTORIZAÇÃO DE FUNCIONAMENTO: RESOLUÇÃO Nº - COMED/TA</b></h6></label><br>
+
+                                        <label>"Nome da Escola"</label><br>
+
+                                        <label><h6>INEP :   REGIMENTAR : 6,0</h6></label>
+
+                                        <h3><b>BOLETIM ESCOLAR - ANO LETIVO "ano"</b></h3>
+
+                                    </div>
+
+                                    <ul>                                        
+                                        <hr style="height:1px; color:#000; background-color:#000; margin-top: 0px; margin-bottom: 0px;"/>
+
+                                    </ul>
+
+                                    <div class="row">
+                                        <div class="col-md-8"><label><h5><b>"Nome da escola"</b></h5></label></div>
+                                        <div class="col-md-4"><label><h5><b>"INEP da escola"</b></h5></label></div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-8"><label><h6>ALUNO(A) :</h6></label></div>
+                                        <div class="col-md-4"><label><h6>NASC :</h6></label></div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-8"><label><h6>CURSO :</h6></label></div>
+                                        <div class="col-md-4"><label><h6>REGIME : ANO</h6></label></div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-3"><label><h6>TURMA :</h6></label></div>
+                                        <div class="col-md-3"><label><h6>ANO/SÉRIE/ETAPA :</h6></label></div>
+                                        <div class="col-md-3"><label><h6>SEXO :</h6></label></div>
+                                        <div class="col-md-3"><label><h6>TURNO :</h6></label></div>
+                                    </div>
+
+                                    <ul>                                        
+                                        <hr style="height:1px; color:#000; background-color:#000; margin-top: 0px; margin-bottom: 0px;"/>
+
+                                    </ul>
+
+
                                     <table class="table table-bordered">
 
                                         <tr>
-                                            <th>DISCIPLINA</th>
+                                            <th>DISCIPLINAS</th>
                                             <th>1ª AV.</th>                    
                                             <th>2ª AV.</th>
                                             <th>3ª AV.</th>
@@ -90,9 +150,14 @@ and open the template in the editor.
                                     </table>
 
                                     <div class="row">
+                                        <div class="col-md-6"><h4><b>FREQUÊNCIA ANUAL :</b></h4></div>
 
+                                        <div class="col-md-6"><h4><b>RESULTADO FINAL :</b></h4></div>
+                                    </div>
+
+                                    <div class="row">
                                         <div class="col-md-6">                
-                                            FÓRMULA - PESO 6 - REGIME DE ANO <br><br>
+                                            <h5>FÓRMULA - PESO 6 - REGIME DE ANO</h5>
 
                                             <fieldset class="formatar">
                                                 <p>1. O aluno terá 4 Avaliações bimestrais;</p> 
@@ -110,7 +175,7 @@ and open the template in the editor.
 
                                         <div class="col-md-6">
 
-                                            FÓRMULA - PESO 5 - REGIME DE SÉRIE <br><br>
+                                            <h5>FÓRMULA - PESO 5 - REGIME DE SÉRIE</h5>
 
                                             <fieldset class="formatar">
                                                 <p>1. O aluno terá 4 Avaliações bimestrais;</p> 

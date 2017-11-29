@@ -25,7 +25,7 @@ Semed();
 
 
 
-        <title>SECRETARIA ESCOLAR</title>
+        <title>SEMED</title>
     </head>
 
     <body>

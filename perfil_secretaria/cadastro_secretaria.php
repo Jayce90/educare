@@ -91,7 +91,7 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
                                         <div class="col-md-4">
 
                                             <div class="form-group">
-                                                <label for="inputNomeAluno">1. Nome do aluno(a)</label>
+                                                <label for="inputNomeAluno">1. Nome do aluno(a) *</label>
                                                 <input type="text" name="cad_nome_aluno" class="form-control" id="inputNomeAluno" placeholder="digite nome do aluno(a)">
                                             </div>
 
@@ -100,14 +100,14 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
                                         <div class="col-md-4">
 
                                             <div class="form-group">
-                                                <label for="inputNascimentoAluno">2. Data de Nascimento</label>
+                                                <label for="inputNascimentoAluno">2. Data de Nascimento *</label>
                                                 <input type="text" name="cad_nasc_aluno" class="form-control" id="inputNascimentoAluno" placeholder="00/00/0000" maxlength="10" onkeypress="formatar('##/##/####', this); return SomenteNumero(event);" onblur="showride()">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
 
                                             <div class="form-group">
-                                                <label for="inputSexoAluno">3. Sexo</label><br>
+                                                <label for="inputSexoAluno">3. Sexo *</label><br>
 
                                                 <label class="radio-inline">
                                                     <input type="radio" name="cad_sexo_aluno" id="inputSexoAluno" value="masculino" checked=""> Masculino
@@ -160,7 +160,7 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
                                         <div class="col-md-6">
 
                                             <div class="form-group">
-                                                <label for="inputMaeAluno">6. Nome da mãe</label>
+                                                <label for="inputMaeAluno">6. Nome da mãe *</label>
                                                 <input type="text" name="cad_mae_aluno" class="form-control" id="inputMaeAluno" placeholder="digite nome da mãe">
                                             </div>
 
@@ -758,7 +758,7 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
                                         <div class="col-md-4">
 
                                             <div class="form-group">
-                                                <label for="inputNomeProfessor">1. Nome do Educador(a)</label>
+                                                <label for="inputNomeProfessor">1. Nome do Educador(a) *</label>
                                                 <input type="text" name="cad_nome_professor" class="form-control" id="inputNomeProfessor" placeholder="digite nome do educador(a)">
                                             </div>
 
@@ -775,7 +775,7 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
                                         <div class="col-md-4">
 
                                             <div class="form-group">
-                                                <label for="inputCpfProfessor">3. CPF</label>
+                                                <label for="inputCpfProfessor">3. CPF *</label>
                                                 <input type="text" name="cad_cpf_professor" class="form-control" id="inputCpfProfessor" placeholder="digite o CPF" maxlength="14" onkeypress="formatar('###.###.###-##', this); return SomenteNumero(event);" onblur="showhide()">
                                             </div>
 
@@ -795,7 +795,7 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
                                         <div class="col-md-4">
 
                                             <div class="form-group">
-                                                <label for="inputTelefoneProfessor">5. Telefone</label>
+                                                <label for="inputTelefoneProfessor">5. Telefone *</label>
                                                 <input type="text" name="cad_fone_professor" class="form-control" id="inputTelefoneProfessor" placeholder="91 000000000" maxlength="12" onkeypress="formatar('## #########', this); return SomenteNumero(event);" onblur="showhide()">
                                             </div>
 
@@ -1495,19 +1495,19 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
                                     <div class="row">
                                         <div class="col-md-4">
 
-                                            <label for="inputNomeDisciplina">1. Nome da disciplina</label>
+                                            <label for="inputNomeDisciplina">1. Nome da disciplina *</label>
                                             <input type="text" name="cad_nome_disciplina" class="form-control" id="inputNomeDisciplina" placeholder="nome da disciplina">
                                         </div>
 
                                         <div class="col-md-4">
 
-                                            <label for="inputCargaHorariaDisciplina">2. Carga Horária</label>
+                                            <label for="inputCargaHorariaDisciplina">2. Carga Horária *</label>
                                             <input type="text" name="cad_carga_horaria_disciplina" class="form-control" id="inputCargaHorariaDisciplina" placeholder="carga horária">                                            
                                         </div>
 
                                         <div class="col-md-4">
 
-                                            <label for="inputNivelDisciplina">3. Nivel da disciplina</label><br>
+                                            <label for="inputNivelDisciplina">3. Nivel da disciplina *</label><br>
 
                                             <select class="form-control" name="cad_nivel_disciplina">
                                                 <option value="">Selecione</option>                                               
@@ -1521,7 +1521,7 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
                                     <div class="row">
                                         <div class="col-md-4">
 
-                                            <label for="inputEtapaDisciplina">4. Etapa da disciplina</label><br>
+                                            <label for="inputEtapaDisciplina">4. Etapa da disciplina *</label><br>
 
                                             <select class="form-control" name="cad_etapa_disciplina">
                                                 <option value="">Selecione</option>                                               
@@ -1547,7 +1547,7 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
 
                                         <div class="col-md-4">
 
-                                            <label for="inputProfessorDisciplina">5. Professor da disciplina</label><br>
+                                            <label for="inputProfessorDisciplina">5. Educador(a) da disciplina *</label><br>
 
                                             <select class="form-control" name="cad_professor_disciplina">
                                                 <option value="">Selecione</option>
@@ -1562,7 +1562,7 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
 
                                         <div class="col-md-4">
 
-                                            <label for="inputTurmaDisciplina">6. Turma da disciplina</label><br>
+                                            <label for="inputTurmaDisciplina">6. Turma da disciplina *</label><br>
 
                                             <select class="form-control" name="cad_turma_disciplina">
                                                 <option value="">Selecione</option>

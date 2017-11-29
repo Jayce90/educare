@@ -6,7 +6,6 @@ require '../controle/autenticacao.php';
 include_once '../classes/Usuario.php';
 
 Semed();
-
 ?>
 <html>
     <head>
@@ -18,7 +17,7 @@ Semed();
         <script src="../layout/js/mascara_local.js"></script>
         <script src="../layout/js/validacao_local.js"></script>
         <link rel="shortcut icon" href="../imagens/icone.png" type="image/x-icon">
-        <title>SECRETARIA ESCOLAR</title>
+        <title>EDITAR</title>
     </head>
 
     <body>
@@ -54,8 +53,8 @@ Semed();
                     <li class="active"><a class="glyphicon glyphicon-pencil" href="#cad_escola" data-toggle="pill"> Editar Escola</a></li>
                     <li><a class="glyphicon glyphicon-book" href="#cad_turma" data-toggle="pill"> Editar Turma</a></li>
                     <li><a class="glyphicon glyphicon-folder-open" href="#cad_disciplina" data-toggle="pill"> Editar Disciplina</a></li>
-                    <li><a class="glyphicon glyphicon-briefcase" href="#cad_professor" data-toggle="pill"> Editar Professor</a></li>
-                    <li><a class="glyphicon glyphicon-user" href="#cad_aluno" data-toggle="pill"> Editar Aluno</a></li>
+                    <li><a class="glyphicon glyphicon-briefcase" href="#cad_professor" data-toggle="pill"> Editar Educador(a)</a></li>
+                    <li><a class="glyphicon glyphicon-user" href="#cad_aluno" data-toggle="pill"> Editar Aluno(a)</a></li>
                 </ul>
             </div>
 
@@ -67,79 +66,89 @@ Semed();
 
                     <div class="tab-pane active" id="cad_escola">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">CADASTRO DA ESCOLA</div>
-                            <div class="panel-body box_conteudo">
+                            <div class="panel-heading"id="noprint">CADASTRO DA ESCOLA</div>
+                            <div class="panel-body box_conteudo" id="yesprint">
 
                                 <form action="../controle/cadastrando_escola.php" method="post">
 
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="inputIdEscola">1. INEP</label>
-                                                <input type="text" name="cad_inep_escola" class="form-control" id="inputIdEscola" placeholder="digite a identificação unica" required="" maxlength="" onkeypress="return SomenteNumero(event);" onblur="showride()">
+                                                <label for="inputNomeGestorEscola">1. Nome do Gestor(a)</label>
+                                                <input type="text" name="cad_nome_gestor_escola" class="form-control" id="inputNomeGestorEscola" placeholder="digite o nome" required="">
                                             </div>
                                         </div>
 
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="inputCpfGestorEscola">2. Número do CPF do Gestor Escolar</label>
-                                                <input type="text" name="cad_cpf_gestor_escola" class="form-control" id="inputCpfGestorEscola" placeholder="CPF gestor escolar" required="" maxlength="14" onkeypress="formatar('###.###.###-##', this); return SomenteNumero(event);" onblur="showhide()">
+                                                <label for="inputCpfGestorEscola">2. Número do CPF do Gestor(a)</label>
+                                                <input type="text" name="cad_cpf_gestor_escola" class="form-control" id="inputCpfGestorEscola" placeholder="CPF gestor escolar" maxlength="14" onkeypress="formatar('###.###.###-##', this); return SomenteNumero(event);" onblur="showhide()" required="">
                                             </div>
                                         </div>
+
+                                        <div class="col-md-4">
+
+                                            <div class="form-group">
+                                                <label for="inputCargoGestorEscola">3. Cargo</label><br>
+
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="cad_cargo_gestor_escola" id="inputCargoGestorEscola" value="Diretor(a)" checked=""> Diretor(a)
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="cad_cargo_gestor_escola" id="inputCargoGestorEscola" value="Educador(a) Dirigente"> Educador(a) Dirigente
+                                                </label>
+                                            </div>
+
+                                        </div>
+
                                     </div>
 
-                                    <label for="inputNomeGestorEscola">3. Nome do Gestor Escolar</label>
-                                    <input type="text" name="cad_nome_gestor_escola" class="form-control" id="inputNomeGestorEscola" placeholder="digite o nome"><br>
-
                                     <div class="row">
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <label for="inputCargoGestorEscola">4. Cargo</label><br>
 
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="cad_cargo_gestor_escola" id="inputCargoGestorEscola" value="diretor"> Diretor
-                                                </label>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="cad_cargo_gestor_escola" id="inputCargoGestorEscola" value="outro cargo"> Outro cargo
-                                                </label>
+                                        <div class="col-md-2">
 
-                                            </div>
+                                            <label for="inputFoneGestorEscola">4. Telefone</label>
+                                            <input type="text" name="cad_fone_gestor_escola" class="form-control" id="inputFoneGestorEscola" placeholder="91 000000000" maxlength="12" onkeypress="formatar('## #########', this); return SomenteNumero(event);" onblur="showhide()" required="">
                                         </div>
-                                        <div class="col-md-5">
+
+                                        <div class="col-md-4">
+
                                             <div class="form-group">
                                                 <label for="inputEmailGestorEscola">5. Endereço eletrônico (e-mail)</label>
                                                 <input type="text" name="cad_email_gestor_escola" class="form-control" id="inputEmailGestorEscola" placeholder="digite o Email">
                                             </div>
                                         </div>
 
-                                        <div class="col-md-4">
+                                        <div class="col-md-6">
 
-                                            <label for="inputFuncionamentoEscola">6. Situação de funcionamento</label>
+                                            <label for="inputNomeEscola">6. Nome da escola</label>
+                                            <input type="text" name="cad_nome_escola" class="form-control" id="inputNomeEscola" placeholder="nome da escola" required="">
 
-                                            <label class="radio-inline">
-                                                <input type="radio" name="cad_funcionamento_escola" id="inputFuncionamentoEscola" value="Em atividade"> Em atividade
-                                            </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="cad_funcionamento_escola" id="inputFuncionamentoEscola" value="Paralisada"> Paralisada
-                                            </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="cad_funcionamento_escola" id="inputFuncionamentoEscola" value="Extinta"> Extinta
-                                            </label>
                                         </div>
+
                                     </div>
 
-                                    <label for="inputNomeEscola">7. Nome da escola</label>
-                                    <input type="text" name="cad_nome_escola" class="form-control" id="inputNomeEscola" placeholder="nome da escola"><br>
-
-                                    <div class="row">
+                                    <div class="row">                                        
                                         <div class="col-md-4">
+
+                                            <label for="inputFuncionamentoEscola">7. Situação de funcionamento</label><br>
+
+                                            <label class="radio-inline">
+                                                <input type="radio" name="cad_funcionamento_escola" id="inputFuncionamentoEscola" value="Ativa" checked=""> Ativa
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="cad_funcionamento_escola" id="inputFuncionamentoEscola" value="Inativa"> Inativa
+                                            </label>                                            
+                                        </div>
+
+                                        <div class="col-md-3">
                                             <div class="form-group">
                                                 <label for="inputCepEscola">8. CEP</label>
-                                                <input type="text" name="cad_cep_escola" class="form-control" id="inputCepEscola" placeholder="digite o CEP" required="" maxlength="9" onkeypress="formatar('#####-###', this); return SomenteNumero(event);" onblur="showride()">
+                                                <input type="text" name="cad_cep_escola" class="form-control" id="inputCepEscola" placeholder="digite o CEP" maxlength="9" onkeypress="formatar('#####-###', this); return SomenteNumero(event);" onblur="showride()">
                                             </div>
                                         </div>
 
-                                        <div class="col-md-8">
+                                        <div class="col-md-5">
                                             <div class="form-group">
                                                 <label for="inputPoloEscola">9. Polo</label>
 
@@ -159,23 +168,24 @@ Semed();
                                             </div>
                                         </div>
 
-                                        <div class="col-md-8">
+                                        <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="inputEnderecoEscola">11. Endereço</label>
                                                 <input type="text" name="cad_endereco_escola" class="form-control" id="inputEnderecoEscola" placeholder="digite o endereço">
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div class="row">
                                         <div class="col-md-2">
                                             <div class="form-group">
                                                 <label for="inputNumeroEscola">12. Número</label>
                                                 <input type="text" name="cad_numero_escola" class="form-control" id="inputNumeroEscola" placeholder="digite o numero" onkeypress="return SomenteNumero(event);">
                                             </div>
                                         </div>
+                                    </div>
 
-                                        <div class="col-md-7">
+                                    <div class="row">
+
+                                        <div class="col-md-3">
                                             <div class="form-group">
                                                 <label for="inputComplementoEnderecoEscola">13. Complemento</label>
                                                 <input type="text" name="cad_complemento_endereco_escola" class="form-control" id="inputComplementoEnderecoEscola" placeholder="digite o complemento">
@@ -188,75 +198,82 @@ Semed();
                                                 <input type="text" name="cad_bairro_escola" class="form-control" id="inputBairroEscola" placeholder="digite o bairro">
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div class="row">
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label for="inputFoneEscola">15. Telefone</label>
-                                                <input type="text" name="cad_fone_escola" class="form-control" id="inputFoneEscola" placeholder="91 000000000" required="" maxlength="12" onkeypress="formatar('## #########', this); return SomenteNumero(event);" onblur="showhide()">
+                                                <input type="text" name="cad_fone_escola" class="form-control" id="inputFoneEscola" placeholder="91 000000000" maxlength="12" onkeypress="formatar('## #########', this); return SomenteNumero(event);" onblur="showhide()">
                                             </div>                                            
                                         </div>
 
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="inputOutroFoneEscola">16. Outro telefone</label>
-                                                <input type="text" name="cad_outro_fone_escola" class="form-control" id="inputOutroFoneEscola" placeholder="91 000000000" required="" maxlength="12" onkeypress="formatar('## #########', this); return SomenteNumero(event);" onblur="showhide()">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="inputEmailEscola">17. Endereço eletrônico (e-mail)</label>
+                                                <label for="inputEmailEscola">16. Email</label>
                                                 <input type="text" name="cad_email_escola" class="form-control" id="inputEmailEscola" placeholder="digite o email">
                                             </div>
                                         </div>
+
                                     </div>
 
                                     <div class="row">
+
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="inputLocalizacaoescola">18. Localização/Zona da escola</label><br>
+                                                <label for="inputLocalizacaoescola">17. Localização/Espaço da escola</label><br>
 
                                                 <label class="radio-inline">
-                                                    <input type="radio" name="cad_localizacao_escola" id="inputLocalizacaoescola" value="urbana"> Urbana
+                                                    <input type="radio" name="cad_localizacao_escola" id="inputLocalizacaoescola" value="Urbana"> Urbana
                                                 </label>
                                                 <label class="radio-inline">
-                                                    <input type="radio" name="cad_localizacao_escola" id="inputLocalizacaoescola" value="rural"> Rural
+                                                    <input type="radio" name="cad_localizacao_escola" id="inputLocalizacaoescola" value="Rural"> Rural
                                                 </label>
                                             </div>
                                         </div>
 
                                         <div class="col-md-8">
                                             <div class="form-group">
-                                                <label for="inputRegulamentacaoEscola">19. Autorização no conselho ou órgão municipal, estadual ou federal de educação</label><br>
+                                                <label for="inputRegulamentacaoEscola">18. Autorização no conselho ou órgão municipal de educação</label><br>
 
                                                 <label class="radio-inline">
-                                                    <input type="radio" name="cad_regulamentacao_escola" id="inputRegulamentacaoEscola" value="sim"> Sim
+                                                    <input type="radio" name="cad_regulamentacao_escola[]" id="inputRegulamentacaoEscola" value="Sim"> Sim
                                                 </label>
                                                 <label class="radio-inline">
-                                                    <input type="radio" name="cad_regulamentacao_escola" id="inputRegulamentacaoEscola" value="Em tramitação"> Em tramitação
+                                                    <input type="radio" name="cad_regulamentacao_escola[]" id="inputRegulamentacaoEscola" value="Em tramitação"> Em tramitação
                                                 </label>
                                                 <label class="radio-inline">
-                                                    <input type="radio" name="cad_regulamentacao_escola" id="inputRegulamentacaoEscola" value="nao"> Não
+                                                    <input type="radio" name="cad_regulamentacao_escola[]" id="inputRegulamentacaoEscola" value="Não"> Não
                                                 </label>
                                             </div>
                                         </div>
+
                                     </div>
 
-                                    <div class="form-group">
-                                        <label for="inputAutorizacaoEscola">20. Autorização para emitir/assinar documentos</label><br>
+                                    <div class="row">
 
-                                        <label class="radio-inline">
-                                            <input type="radio" name="cad_autorizacao_escola" id="inputAutorizacaoEscola" value="sim"> Sim
-                                        </label>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="cad_autorizacao_escola" id="inputAutorizacaoEscola" value="não"> Não
-                                        </label>
+                                        <div class="col-md-4">
+                                            <label for="inputPortariaEscola">18a. De acordo com a portaria:</label>
+                                            <input type="text" name="cad_portaria_escola" class="form-control" id="inputPortariaEscola" placeholder="digite a portaria">
+                                        </div>
 
-                                    </div><br>
+                                        <div class="col-md-8">
 
-                                    <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                                            <div class="form-group">
+                                                <label for="inputAutorizacaoEscola">19. Autorização para emitir/assinar documentos</label><br>
+
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="cad_autorizacao_escola" id="inputAutorizacaoEscola" value="Sim" checked=""> Sim
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="cad_autorizacao_escola" id="inputAutorizacaoEscola" value="Não"> Não
+                                                </label>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div><br>                                    
+
+                                    <button type="submit" class="btn btn-primary btn-lg" id="noprint">Enviar</button>
 
                                 </form>
 
@@ -267,28 +284,38 @@ Semed();
 
                     <div class="tab-pane" id="cad_turma">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">CADASTRO DA TURMA</div>
-                            <div class="panel-body box_conteudo">
+                            <div class="panel-heading" id="noprint">CADASTRO DA TURMA</div>
+                            <div class="panel-body box_conteudo" id="yesprint">
 
                                 <form action="../controle/cadastrando_turma.php" method="post">
 
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
 
                                             <div class="form-group">
                                                 <label for="inputTurma">1. Nome da Turma</label>
-                                                <input type="text" name="cad_nome_turma" class="form-control" id="inputTurma" placeholder="digite nome da turma">
+                                                <input type="text" name="cad_nome_turma" class="form-control" id="inputTurma" placeholder="digite nome da turma" required="">
                                             </div>
 
                                         </div>
-                                        <div class="col-md-6">
 
-                                            <label for="inputMaiseducacao">2. Ano da turma</label><br>
+                                        <div class="col-md-4">
+
+                                            <div class="form-group">
+                                                <label for="inputCapacidadeTurma">2. Número de alunos</label>
+                                                <input type="text" name="cad_capacidade_turma" class="form-control" id="inputCapacidadeTurma" placeholder="digite capacidade da turma">
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-md-4">
+
+                                            <label for="inputMaiseducacao">3. Ano da turma</label><br>
 
                                             <select class="form-control" name="cad_ano_turma">
                                                 <option value="">Selecione</option>                                               
                                                 <option value="2017">2017</option>                                               
-                                                <option value="2018">2018</option>                                        
+                                                <option selected="" value="2018">2018</option>                                        
                                                 <option value="2019">2019</option>                                        
                                                 <option value="2020">2020</option>                                        
                                             </select>
@@ -299,33 +326,36 @@ Semed();
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="inputiniciofuncionamento">3. Horário de funcionamento Inicio</label>
+                                                <label for="inputiniciofuncionamento">4. Horário de funcionamento Inicio</label>
                                                 <input type="text" name="cad_horario_turma[]" class="form-control" id="inputiniciofuncionamento" placeholder="00:00" required="" maxlength="5" onkeypress="formatar('##:##', this); return SomenteNumero(event);" onblur="showhide()">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="inputfinalfuncionamento">3. Horário de funcionamento Fim</label>
+                                                <label for="inputfinalfuncionamento">4. Horário de funcionamento Fim</label>
                                                 <input type="text" name="cad_horario_turma[]" class="form-control" id="inputfinalfuncionamento" placeholder="00:00" required="" maxlength="5" onkeypress="formatar('##:##', this); return SomenteNumero(event);" onblur="showhide()">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <label for="inputTurno">3a. Turno</label><br>
+                                            <label for="inputTurno">4a. Turno</label><br>
 
                                             <select class="form-control" name="cad_turno_turma">
                                                 <option value="">Selecione</option>                                               
-                                                <option value="manha">Manhã</option>                                               
-                                                <option value="tarde">Tarde</option>                                        
-                                                <option value="noite">Noite</option>                                        
-                                                <option value="intermediario">Intermediário</option>                                        
-                                                <option value="integral">Integral</option>                                        
+                                                <option value="Manhã">Manhã</option>                                               
+                                                <option value="Tarde">Tarde</option>                                        
+                                                <option value="Noite">Noite</option>                                        
+                                                <option value="Intermediário">Intermediário</option>                                        
+                                                <option value="Integral">Integral</option>                                        
                                             </select>
                                         </div>
                                     </div>
 
 
-                                    <label for="inputDiassemana">4. Dias da semana da turma</label><br>
+                                    <label for="inputDiassemana">5. Dias da semana da turma</label><br>
 
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="cad_diassemana_turma[]" id="inputDiassemana" value="segunda, terça, quarta, quinta e sexta" checked=""> Segunda a Sexta
+                                    </label>
                                     <label class="checkbox-inline">
                                         <input type="checkbox" name="cad_diassemana_turma[]" id="inputDiassemana" value="segunda"> Segunda
                                     </label>
@@ -346,79 +376,79 @@ Semed();
                                     </label><br><br>
 
 
-                                    <label for="inputAtendimento">5. Tipo de atendimento</label><br>
+                                    <label for="inputAtendimento">6. Tipo de atendimento</label><br>
 
                                     <label class="radio-inline">
-                                        <input type="radio" name="cad_tipo_turma" id="inputAtendimento" value="hospitalar"> Classe hospitalar
+                                        <input type="radio" name="cad_tipo_turma" id="inputAtendimento" value="Classe Hospitalar"> Classe Hospitalar
                                     </label>
                                     <label class="radio-inline">
-                                        <input type="radio" name="cad_tipo_turma" id="inputAtendimento" value="internacaosocioeducativa"> Unidade de internação socioeducativa
+                                        <input type="radio" name="cad_tipo_turma" id="inputAtendimento" value="Unidade de Internação Socioeducativa"> Unidade de Internação Socioeducativa
                                     </label>
                                     <label class="radio-inline">
-                                        <input type="radio" name="cad_tipo_turma" id="inputAtendimento" value="unidadeprisional"> Unidade prisional
+                                        <input type="radio" name="cad_tipo_turma" id="inputAtendimento" value="Unidade Prisional"> Unidade Prisional
                                     </label>                                      
                                     <label class="radio-inline">
-                                        <input type="radio" name="cad_tipo_turma" id="inputAtendimento" value="atividadecomplementar"> Atividade complementar
+                                        <input type="radio" name="cad_tipo_turma" id="inputAtendimento" value="Atividade Complementar"> Atividade Complementar
                                     </label>
                                     <label class="radio-inline">
-                                        <input type="radio" name="cad_tipo_turma" id="inputAtendimento" value="aee"> Atendimento educacional especializado (AEE)
+                                        <input type="radio" name="cad_tipo_turma" id="inputAtendimento" value="Atendimento Educacional Especializado (AEE)"> Atendimento Educacional Especializado (AEE)
                                     </label>
                                     <label class="radio-inline">
-                                        <input type="radio" name="cad_tipo_turma" id="inputAtendimento" value="naoseaplica"> Não se aplica
+                                        <input type="radio" name="cad_tipo_turma" id="inputAtendimento" value="Não se Aplica"> Não se Aplica
                                     </label><br>
 
-                                    <label for="inputMaiseducacao">6. Turma participante do programa mais educação/Ensino médio inovador</label><br>
+                                    <label for="inputMaiseducacao">7. Turma participante do programa mais educação/Ensino médio inovador</label><br>
 
                                     <label class="radio-inline">
-                                        <input type="radio" name="cad_programa_turma" id="inputMaiseducacao" value="sim"> Sim
+                                        <input type="radio" name="cad_programa_turma" id="inputMaiseducacao" value="Sim"> Sim
                                     </label>
                                     <label class="radio-inline">
-                                        <input type="radio" name="cad_programa_turma" id="inputMaiseducacao" value="nao"> Não
+                                        <input type="radio" name="cad_programa_turma" id="inputMaiseducacao" value="Não" checked=""> Não
                                     </label><br><br>
 
 
                                     <div class="form-group">
-                                        <label for="inputAeeatividades">7. Atividades do atendimento educacional especializado (AEE)</label><br>
+                                        <label for="inputAeeatividades">8. Atividades do atendimento educacional especializado (AEE)</label><br>
 
 
                                         <div class="row">
                                             <div class="col-md-6">
 
                                                 <label class="radio-inline">
-                                                    <input type="radio" name="cad_aeeatividades_turma" id="inputAeeatividades" value="braile"> Ensino do sistema braile
+                                                    <input type="radio" name="cad_aeeatividades_turma" id="inputAeeatividades" value="Ensino do sistema braile"> Ensino do sistema braile
                                                 </label>
                                                 <label class="radio-inline">
-                                                    <input type="radio" name="cad_aeeatividades_turma" id="inputAeeatividades" value="libras"> Ensino da língua brasileira de sinais (libras)
+                                                    <input type="radio" name="cad_aeeatividades_turma" id="inputAeeatividades" value="Ensino da língua brasileira de sinais (libras)"> Ensino da língua brasileira de sinais (libras)
                                                 </label>
                                                 <label class="radio-inline">
-                                                    <input type="radio" name="cad_aeeatividades_turma" id="inputAeeatividades" value="informáticaacessivel"> Ensino da usabilidade e das funcionalidades de informática acessível
+                                                    <input type="radio" name="cad_aeeatividades_turma" id="inputAeeatividades" value="Ensino da usabilidade e das funcionalidades"> Ensino da usabilidade e das funcionalidades de informática acessível
                                                 </label>
                                                 <label class="radio-inline">
-                                                    <input type="radio" name="cad_aeeatividades_turma" id="inputAeeatividades" value="opticosenaoopticos"> Ensino do uso de recursos ópticos e não ópticos
+                                                    <input type="radio" name="cad_aeeatividades_turma" id="inputAeeatividades" value="Ensino do uso de recursos ópticos e não ópticos"> Ensino do uso de recursos ópticos e não ópticos
                                                 </label>
                                                 <label class="radio-inline">
-                                                    <input type="radio" name="cad_aeeatividades_turma" id="inputAeeatividades" value="caa"> Ensino do uso da comunicação alternativa e aumentativa (CAA)
+                                                    <input type="radio" name="cad_aeeatividades_turma" id="inputAeeatividades" value="Ensino do uso da comunicação alternativa e aumentativa (CAA)"> Ensino do uso da comunicação alternativa e aumentativa (CAA)
                                                 </label>
                                                 <label class="radio-inline">
-                                                    <input type="radio" name="cad_aeeatividades_turma" id="inputAeeatividades" value="lportuguesaescrita"> Ensino da língua portuguesa na modalidade escrita
+                                                    <input type="radio" name="cad_aeeatividades_turma" id="inputAeeatividades" value="Ensino da língua portuguesa na modalidade escrita"> Ensino da língua portuguesa na modalidade escrita
                                                 </label>
 
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="radio-inline">
-                                                    <input type="radio" name="cad_aeeatividades_turma" id="inputAeeatividades" value="processosmentais"> Estratégias para o desenvolvimento de processos mentais
+                                                    <input type="radio" name="cad_aeeatividades_turma" id="inputAeeatividades" value="Estratégias para o desenvolvimento de processos mentais"> Estratégias para o desenvolvimento de processos mentais
                                                 </label>
                                                 <label class="radio-inline">
-                                                    <input type="radio" name="cad_aeeatividades_turma" id="inputAeeatividades" value="enriquecimentocurricular"> Estratégias para o emriquecimento curricular
+                                                    <input type="radio" name="cad_aeeatividades_turma" id="inputAeeatividades" value="Estratégias para o enriquecimento curricular"> Estratégias para o enriquecimento curricular
                                                 </label>
                                                 <label class="radio-inline">
-                                                    <input type="radio" name="cad_aeeatividades_turma" id="inputAeeatividades" value="autonomiaescolar"> Estratégias para autonomia no ambiente escolar
+                                                    <input type="radio" name="cad_aeeatividades_turma" id="inputAeeatividades" value="Estratégias para autonomia no ambiente escolar"> Estratégias para autonomia no ambiente escolar
                                                 </label>
                                                 <label class="radio-inline">
-                                                    <input type="radio" name="cad_aeeatividades_turma" id="inputAeeatividades" value="orientaaoemobilidade"> Técnicas de orientação e mobilidade
+                                                    <input type="radio" name="cad_aeeatividades_turma" id="inputAeeatividades" value="Técnicas de orientação e mobilidade"> Técnicas de orientação e mobilidade
                                                 </label>
                                                 <label class="radio-inline">
-                                                    <input type="radio" name="cad_aeeatividades_turma" id="inputAeeatividades" value="soroban"> Ensino do uso do Soroban
+                                                    <input type="radio" name="cad_aeeatividades_turma" id="inputAeeatividades" value="Ensino do uso do Soroban"> Ensino do uso do Soroban
                                                 </label>
 
                                             </div>
@@ -426,39 +456,39 @@ Semed();
                                     </div><br>
 
 
-                                    <label for="inputModalidade">8. Modalidade</label><br>
+                                    <label for="inputModalidade">9. Modalidade</label><br>
                                     <label class="radio-inline">
-                                        <input type="radio" name="cad_modalidade_turma" id="inputModalidade" value="EnsinoRegular"> Ensino Regular
+                                        <input type="radio" name="cad_modalidade_turma" id="inputModalidade" value="Ensino Regular"> Ensino Regular
                                     </label>
                                     <label class="radio-inline">
-                                        <input type="radio" name="cad_modalidade_turma" id="inputModalidade" value="EducaçãoEspecial"> Educação Especial - Modalidade Substitutiva
+                                        <input type="radio" name="cad_modalidade_turma" id="inputModalidade" value="Educação Especial - Modalidade Substitutiva"> Educação Especial - Modalidade Substitutiva
                                     </label>
                                     <label class="radio-inline">
-                                        <input type="radio" name="cad_modalidade_turma" id="inputModalidade" value="EJA"> Educação de Jovens e Adultos (EJA)
+                                        <input type="radio" name="cad_modalidade_turma" id="inputModalidade" value="Educação de Jovens e Adultos (EJA)"> Educação de Jovens e Adultos (EJA)
                                     </label><br><br>
 
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <label for="inputNivel">9. Nivel de ensino</label><br>
+                                            <label for="inputNivel">10. Nivel de ensino</label><br>
 
                                             <select class="form-control" name="cad_nivel_turma">
                                                 <option value="">Selecione</option>                                               
-                                                <option value="infantil">Educação Infantil</option>                                               
-                                                <option value="Fundamental">Ensino Fundamental</option>                                        
-                                                <option value="Eja">EJA</option>                                        
+                                                <option value="Educação Infantil">Educação Infantil</option>                                               
+                                                <option value="Ensino Fundamental">Ensino Fundamental</option>                                        
+                                                <option value="EJA">EJA</option>                                         
                                             </select>
 
                                         </div>
                                         <div class="col-md-6">
 
-                                            <label for="inputEtapa">9a. Etapa</label><br>
+                                            <label for="inputEtapa">10a. Etapa</label><br>
 
                                             <select class="form-control" name="cad_etapa_turma">
                                                 <option value="">Selecione</option>                                               
                                                 <option value="Creche 2">Creche 2</option>                                               
                                                 <option value="Creche 3">Creche 3</option>                                               
-                                                <option value="preescola 1">Pré - Escola 1</option>                                        
-                                                <option value="preescola 2">Pré - Escola 2</option>                                        
+                                                <option value="Pré - Escola 1">Pré - Escola 1</option>                                        
+                                                <option value="Pré - Escola 2">Pré - Escola 2</option>                                        
                                                 <option value="1º ano">1º ano</option>                                        
                                                 <option value="2º ano">2º ano</option>                                        
                                                 <option value="3º ano">3º ano</option>                                        
@@ -468,27 +498,30 @@ Semed();
                                                 <option value="7º ano">7º ano</option>                                        
                                                 <option value="8º ano">8º ano</option>                                        
                                                 <option value="9º ano">9º ano</option>                                        
-                                                <option value="fundamentalInicial">EJA - Ensino Fundamental
-                                                    anos iniciais</option>                                        
-                                                <option value="fundamentalFinal">EJA - Ensino Fundamental
-                                                    anos finais</option>                                        
-                                                <option value="fundamentalInicialeFinal">EJA - Ensino Fundamental
-                                                    anos iniciais e anos finais</option>                                        
-                                                <option value="fic">EJA - EJA integrada à Educação
-                                                    Profissional de Nível Fundamental (FIC)</option>                                        
-                                                <option value="urbano">EJA - Ensino Fundamental -
-                                                    Projovem (Urbano)</option>                                        
-                                                <option value="ensinomedio">EJA - Ensino Médio</option>                                        
-                                                <option value="profissionalmedio">EJA integrada à Educação
-                                                    Profissional de Nível Médio</option>                                        
+                                                <option value="EJA - Ensino Fundamental anos iniciais">EJA - Ensino Fundamental anos iniciais</option>                                        
+                                                <option value="EJA - Ensino Fundamental anos finais">EJA - Ensino Fundamental anos finais</option>                                        
+                                                <option value="EJA - Ensino Fundamental anos iniciais e anos finais">EJA - Ensino Fundamental anos iniciais e anos finais</option>                                        
+                                                <option value="EJA - EJA integrada à Educação Profissional de Nível Fundamental (FIC)">EJA - EJA integrada à Educação Profissional de Nível Fundamental (FIC)</option>                                      
                                             </select>
                                         </div>
                                     </div><br>
 
-                                    <label for="inputDescricaodaturma">10. Descrição da turma</label><br>
+                                    <div class="form-group">
+                                        <label for="inputVincularTurmaEducador">11. Escola:</label><br>
+
+                                        <select class="form-control" name="cad_id_escola_turma">
+                                            <?php
+                                            foreach ($mostrar_escola as $linha_escola) {
+                                                echo "<option value='" . $linha_escola->id_escola . "'>" . $linha_escola->nome_escola . "</option>";
+                                            }
+                                            ?>                                              
+                                        </select>
+                                    </div>
+
+                                    <label for="inputDescricaodaturma">12. Descrição da turma</label><br>
                                     <textarea class="form-control" name="cad_descricao_turma" rows="6"></textarea><br>
 
-                                    <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                                    <button type="submit" class="btn btn-primary btn-lg" id="noprint">Enviar</button>
 
                                 </form>
                             </div>
@@ -497,32 +530,32 @@ Semed();
 
                     <div class="tab-pane" id="cad_disciplina">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">CADASTRO DE DISCIPLINA</div>
-                            <div class="panel-body">
-                                <form action="" method="post">
+                            <div class="panel-heading" id="noprint">CADASTRO DE DISCIPLINA</div>
+                            <div class="panel-body box_conteudo" id="yesprint">
+                                <form id="cadastro_disciplina" name="cadastroDisciplina" action="../controle/cadastrando_disciplina.php" method="post">
 
                                     <div class="row">
                                         <div class="col-md-4">
 
-                                            <label for="inputNomeDisciplina">1. Nome da disciplina</label>
+                                            <label for="inputNomeDisciplina">1. Nome da disciplina *</label>
                                             <input type="text" name="cad_nome_disciplina" class="form-control" id="inputNomeDisciplina" placeholder="nome da disciplina">
                                         </div>
 
                                         <div class="col-md-4">
 
-                                            <label for="inputCargaHorariaDisciplina">2. Carga Horária</label>
+                                            <label for="inputCargaHorariaDisciplina">2. Carga Horária *</label>
                                             <input type="text" name="cad_carga_horaria_disciplina" class="form-control" id="inputCargaHorariaDisciplina" placeholder="carga horária">                                            
                                         </div>
 
                                         <div class="col-md-4">
 
-                                            <label for="inputNivelDisciplina">3. Nivel da disciplina</label><br>
+                                            <label for="inputNivelDisciplina">3. Nivel da disciplina *</label><br>
 
                                             <select class="form-control" name="cad_nivel_disciplina">
                                                 <option value="">Selecione</option>                                               
-                                                <option value="infantil">Educação Infantil</option>                                               
-                                                <option value="Fundamental">Ensino Fundamental</option>                                        
-                                                <option value="Eja">EJA</option>                                        
+                                                <option value="Educação Infantil">Educação Infantil</option>                                               
+                                                <option value="Ensino Fundamental">Ensino Fundamental</option>                                        
+                                                <option value="EJA">EJA</option>                                        
                                             </select>                                             
                                         </div>
                                     </div><br>
@@ -530,14 +563,14 @@ Semed();
                                     <div class="row">
                                         <div class="col-md-4">
 
-                                            <label for="inputEtapaDisciplina">4. Etapa da disciplina</label><br>
+                                            <label for="inputEtapaDisciplina">4. Etapa da disciplina *</label><br>
 
                                             <select class="form-control" name="cad_etapa_disciplina">
                                                 <option value="">Selecione</option>                                               
                                                 <option value="Creche 2">Creche 2</option>                                               
                                                 <option value="Creche 3">Creche 3</option>                                               
-                                                <option value="preescola 1">Pré - Escola 1</option>                                        
-                                                <option value="preescola 2">Pré - Escola 2</option>                                        
+                                                <option value="Pré - Escola 1">Pré - Escola 1</option>                                        
+                                                <option value="Pré - Escola 2">Pré - Escola 2</option>                                        
                                                 <option value="1º ano">1º ano</option>                                        
                                                 <option value="2º ano">2º ano</option>                                        
                                                 <option value="3º ano">3º ano</option>                                        
@@ -547,37 +580,40 @@ Semed();
                                                 <option value="7º ano">7º ano</option>                                        
                                                 <option value="8º ano">8º ano</option>                                        
                                                 <option value="9º ano">9º ano</option>                                        
-                                                <option value="fundamentalInicial">EJA - Ensino Fundamental
-                                                    anos iniciais</option>                                        
-                                                <option value="fundamentalFinal">EJA - Ensino Fundamental
-                                                    anos finais</option>                                        
-                                                <option value="fundamentalInicialeFinal">EJA - Ensino Fundamental
-                                                    anos iniciais e anos finais</option>                                        
-                                                <option value="fic">EJA - EJA integrada à Educação
-                                                    Profissional de Nível Fundamental (FIC)</option>                                        
-                                                <option value="urbano">EJA - Ensino Fundamental -
-                                                    Projovem (Urbano)</option>                                        
-                                                <option value="ensinomedio">EJA - Ensino Médio</option>                                        
-                                                <option value="profissionalmedio">EJA integrada à Educação
-                                                    Profissional de Nível Médio</option>                                        
+                                                <option value="EJA - Ensino Fundamental anos iniciais">EJA - Ensino Fundamental anos iniciais</option>                                        
+                                                <option value="EJA - Ensino Fundamental anos finais">EJA - Ensino Fundamental anos finais</option>                                        
+                                                <option value="EJA - Ensino Fundamental anos iniciais e anos finais">EJA - Ensino Fundamental anos iniciais e anos finais</option>                                        
+                                                <option value="EJA - EJA integrada à Educação Profissional de Nível Fundamental (FIC)">EJA - EJA integrada à Educação Profissional de Nível Fundamental (FIC)</option>                                        
                                             </select>
                                         </div>
 
                                         <div class="col-md-4">
 
-                                            <label for="inputProfessorDisciplina">5. Professor da disciplina</label><br>
+                                            <label for="inputProfessorDisciplina">5. Educador(a) da disciplina *</label><br>
 
                                             <select class="form-control" name="cad_professor_disciplina">
-                                                <option value="">Selecione</option>                                              
+                                                <option value="">Selecione</option>
+                                                <?php
+                                                foreach ($mostrar_educador as $linha_educador) {
+                                                    echo "<option value=' $linha_educador->id_professor '>" . $linha_educador->nome_professor . " - " . $linha_educador->fone_professor . "</option>"
+                                                    ;
+                                                }
+                                                ?>
                                             </select>
                                         </div>
 
                                         <div class="col-md-4">
 
-                                            <label for="inputTurmaDisciplina">6. Turma da disciplina</label><br>
+                                            <label for="inputTurmaDisciplina">6. Turma da disciplina *</label><br>
 
                                             <select class="form-control" name="cad_turma_disciplina">
-                                                <option value="">Selecione</option>                                              
+                                                <option value="">Selecione</option>
+                                                <?php
+                                                foreach ($mostrar_dados_disciplina as $linha_disciplina) {
+                                                    echo "<option value=' $linha_disciplina->id_turma '>" . $linha_disciplina->nome_turma . " - Nível: " . $linha_disciplina->nivel_turma . " - Etapa: " . $linha_disciplina->etapa_turma . "</option>"
+                                                    ;
+                                                }
+                                                ?>
                                             </select>
                                         </div>
                                     </div><br>
@@ -585,8 +621,9 @@ Semed();
                                     <label for="inputDescricaoDisciplina">7. Descrição da disciplina</label><br>
                                     <textarea class="form-control" rows="6"></textarea><br>
 
+                                    <button type="submit" class="btn btn-primary btn-lg" onclick="return validar_cadastro_disciplina()" id="noprint">Enviar</button>
 
-                                    <button type="submit" class="btn btn-primary btn-lg">Enviar</button>  
+
                                 </form>
 
                             </div>
@@ -595,74 +632,87 @@ Semed();
 
                     <div class="tab-pane" id="cad_professor">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">CADASTRO DO PROFESSOR</div>
-                            <div class="panel-body box_conteudo">
+                            <div class="panel-heading" id="noprint">CADASTRO DO EDUCADOR(A)</div>
+                            <div class="panel-body box_conteudo" id="yesprint">
 
-                                <form action="" method="post">
-
-                                    <div class="row">
-                                        <div class="col-md-6">
-
-                                            <div class="form-group">
-                                                <label for="inputIdProfessor">1. INEP Professor</label>
-                                                <input type="text" name="cad_id_professor" class="form-control" id="inputIdProfessor" placeholder="digite a identificação unica" required="" maxlength="" onkeypress="return SomenteNumero(event);" onblur="showride()">
-                                            </div>
-
-                                        </div>
-                                        <div class="col-md-6">
-
-                                            <div class="form-group">
-                                                <label for="inputCpfProfessor">2. CPF</label>
-                                                <input type="text" name="cad_cpf_professor" class="form-control" id="inputCpfProfessor" placeholder="digite o CPF" required="" maxlength="14" onkeypress="formatar('###.###.###-##', this); return SomenteNumero(event);" onblur="showhide()">
-                                            </div>
-                                        </div>
-                                    </div>
+                                <form id="cadastro_educador" name="cadastroEducador" action="../controle/cadastrando_educador.php" method="post">
 
                                     <div class="row">
-                                        <div class="col-md-9">
+                                        <div class="col-md-4">
 
                                             <div class="form-group">
-                                                <label for="inputNomeProfessor">3. Nome do professor</label>
-                                                <input type="text" name="cad_nome_professor" class="form-control" id="inputNomeProfessor" placeholder="digite nome do professor">
+                                                <label for="inputNomeProfessor">1. Nome do Educador(a) *</label>
+                                                <input type="text" name="cad_nome_professor" class="form-control" id="inputNomeProfessor" placeholder="digite nome do educador(a)">
                                             </div>
 
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-4">
 
                                             <div class="form-group">
-                                                <label for="inputNascimentoProfessor">4. Data de Nascimento</label>
-                                                <input type="text" name="cad_nasc_professor" class="form-control" id="inputNascimentoProfessor" placeholder="00/00/0000" required="" maxlength="10" onkeypress="formatar('##/##/####', this); return SomenteNumero(event);" onblur="showride()">
+                                                <label for="inputNascimentoProfessor">2. Data de Nascimento</label>
+                                                <input type="text" name="cad_nasc_professor" class="form-control" id="inputNascimentoProfessor" placeholder="00/00/0000" maxlength="10" onkeypress="formatar('##/##/####', this); return SomenteNumero(event);" onblur="showride()">
                                             </div>
+
                                         </div>
-                                    </div>
 
-                                    <div class="form-group">
-                                        <label for="inputMaeProfessor">5. Nome da mãe</label>
-                                        <input type="text" name="cad_mae_professor" class="form-control" id="inputMaeProfessor" placeholder="digite nome da mae">
-                                    </div>
+                                        <div class="col-md-4">
 
-                                    <div class="form-group">
-                                        <label for="inputPaiProfessor">6. Nome do pai</label>
-                                        <input type="text" name="cad_pai_professor" class="form-control" id="inputPaiProfessor" placeholder="digite nome do pai">
+                                            <div class="form-group">
+                                                <label for="inputCpfProfessor">3. CPF *</label>
+                                                <input type="text" name="cad_cpf_professor" class="form-control" id="inputCpfProfessor" placeholder="digite o CPF" maxlength="14" onkeypress="formatar('###.###.###-##', this); return SomenteNumero(event);" onblur="showhide()">
+                                            </div>
+
+                                        </div>
+
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
 
                                             <div class="form-group">
-                                                <label for="inputEmailProfessor">7.  Endereço eletrônico (e-mail)</label>
+                                                <label for="inputNisProfessor">4. Número de identificação Social (NIS)</label>
+                                                <input type="text" name="cad_nis_professor" class="form-control" id="inputNisProfessor" placeholder="digite o NIS" maxlength="11" onkeypress="formatar('###########', this); return SomenteNumero(event);" onblur="showride()">
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-4">
+
+                                            <div class="form-group">
+                                                <label for="inputTelefoneProfessor">5. Telefone *</label>
+                                                <input type="text" name="cad_fone_professor" class="form-control" id="inputTelefoneProfessor" placeholder="91 000000000" maxlength="12" onkeypress="formatar('## #########', this); return SomenteNumero(event);" onblur="showhide()">
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-md-4">
+
+                                            <div class="form-group">
+                                                <label for="inputEmailProfessor">6.  Endereço eletrônico (e-mail)</label>
                                                 <input type="text" name="cad_email_professor" class="form-control" id="inputEmailProfessor" placeholder="digite o Email">
                                             </div>
                                         </div>
 
+                                    </div>
+
+                                    <div class="row">
                                         <div class="col-md-6">
 
                                             <div class="form-group">
-                                                <label for="inputNisProfessor">8. Número de identificação Social (NIS)</label>
-                                                <input type="text" name="cad_nis_professor" class="form-control" id="inputNisProfessor" placeholder="digite o NIS" required="" maxlength="11" onkeypress="formatar('###########', this); return SomenteNumero(event);" onblur="showride()">
+                                                <label for="inputMaeProfessor">7. Nome da mãe</label>
+                                                <input type="text" name="cad_mae_professor" class="form-control" id="inputMaeProfessor" placeholder="digite nome da mãe">
                                             </div>
+
+                                        </div>
+                                        <div class="col-md-6">
+
+                                            <div class="form-group">
+                                                <label for="inputPaiProfessor">8. Nome do pai</label>
+                                                <input type="text" name="cad_pai_professor" class="form-control" id="inputPaiProfessor" placeholder="digite nome do pai">
+                                            </div>
+
                                         </div>
                                     </div>
+
 
                                     <div class="row">
                                         <div class="col-md-4">
@@ -671,7 +721,7 @@ Semed();
                                                 <label for="inputSexoProfessor">9. Sexo</label><br>
 
                                                 <label class="radio-inline">
-                                                    <input type="radio" name="cad_sexo_professor" id="inputSexoProfessor" value="masculino"> Masculino
+                                                    <input type="radio" name="cad_sexo_professor" id="inputSexoProfessor" value="masculino" checked=""> Masculino
                                                 </label>
                                                 <label class="radio-inline">
                                                     <input type="radio" name="cad_sexo_professor" id="inputSexoProfessor" value="feminino"> Feminino
@@ -679,58 +729,36 @@ Semed();
 
                                             </div>
 
-
                                         </div>
+
                                         <div class="col-md-8">
 
-                                            <div class="form-group">
-                                                <label for="inputRacaProfessor">10. Cor/Raça</label><br>
+                                            <label for="inputNacionalidadeProfessor">10. Nacionalidade</label><br>
 
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="cad_raca_professor" id="inputRacaProfessor" value="branca"> Branca
-                                                </label>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="cad_raca_professor" id="inputRacaProfessor" value="preta"> Preta
-                                                </label>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="cad_raca_professor" id="inputRacaProfessor" value="parda"> Parda
-                                                </label>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="cad_raca_professor" id="inputRacaProfessor" value="amarela"> Amarela
-                                                </label>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="cad_raca_professor" id="inputRacaProfessor" value="indigena"> Indígena
-                                                </label>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="cad_raca_professor" id="inputRacaProfessor" value="naodeclarada"> Não Declarada
-                                                </label>
-                                            </div>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="cad_nacionalidade_professor" id="inputNacionalidadeProfessor" value="brasileira"checked=""> Brasileiro
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="cad_nacionalidade_professor" id="inputNacionalidadeProfessor" value="Naturalizado"> Naturalizado
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="cad_nacionalidade_professor" id="inputNacionalidadeProfessor" value="Estrangeiro"> Estrangeiro
+                                            </label>
+
                                         </div>
                                     </div>
-
-                                    <label for="inputNacionalidadeProfessor">11. Nacionalidade</label><br>
-
-                                    <label class="radio-inline">
-                                        <input type="radio" name="cad_nacionalidade_professor" id="inputNacionalidadeProfessor" value="brasileira"> Brasileira
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="cad_nacionalidade_professor" id="inputNacionalidadeProfessor" value="brasileira – nascido no exterior ou naturalizado"> brasileira – nascido no exterior ou naturalizado
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="cad_nacionalidade_professor" id="inputNacionalidadeProfessor" value="Estrangeira"> Estrangeira
-                                    </label><br><br>
 
 
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="inputPaisorigemProfessor">12. País de origem</label>
+                                                <label for="inputPaisorigemProfessor">11. País de origem</label>
                                                 <input type="text" name="cad_pais_nasc_professor" class="form-control" id="inputPaisorigemProfessor" placeholder="digite o país de origem">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="inputUfdenascimentoProfessor">13. UF de nascimento</label>
+                                                <label for="inputUfdenascimentoProfessor">12. UF de nascimento</label>
                                                 <select class="form-control" name="cad_estado_nasc_professor">
                                                     <option value="">Selecione</option>
                                                     <option value="AC">AC</option>
@@ -746,7 +774,7 @@ Semed();
                                                     <option value="MG">MG</option>
                                                     <option value="MS">MS</option>
                                                     <option value="MT">MT</option>
-                                                    <option value="PA">PA</option>
+                                                    <option selected="" value="PA">PA</option>
                                                     <option value="PB">PB</option>
                                                     <option value="PE">PE</option>
                                                     <option value="PI">PI</option>
@@ -765,21 +793,53 @@ Semed();
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="inputMunidenascimentoProfessor">14. Município de nascimento</label>
-                                                <input type="text" name="cad_muninasci_Professor" class="form-control" id="inputMunidenascimentoProfessor" placeholder="digite o município de nascimento">
+                                                <label for="inputMunidenascimentoProfessor">13. Município de nascimento</label>
+                                                <input type="text" name="cad_municipio_nasc_professor" class="form-control" id="inputMunidenascimentoProfessor" placeholder="digite o município de nascimento">
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label for="inputNecessidadeEspecialProfessor">15. Profissional Escolar com deficiência</label>
+                                    <div class="row">
+                                        <div class="col-md-7">
 
-                                        <label class="radio-inline">
-                                            <input type="radio" name="cad_deficiencia_professor" id="inputNecessidadeEspecialProfessor" value="sim"> Sim
-                                        </label>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="cad_deficiencia_professor" id="inputNecessidadeEspecialProfessor" value="nao"> Não
-                                        </label>
+                                            <div class="form-group">
+                                                <label for="inputRacaProfessor">14. Cor/Raça</label><br>
+
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="cad_raca_professor" id="inputRacaProfessor" value="branca"> Branca
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="cad_raca_professor" id="inputRacaProfessor" value="preta"> Preta
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="cad_raca_professor" id="inputRacaProfessor" value="parda"> Parda
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="cad_raca_professor" id="inputRacaProfessor" value="amarela"> Amarela
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="cad_raca_professor" id="inputRacaProfessor" value="indigena"> Indígena
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="cad_raca_professor" id="inputRacaProfessor" value="Não Declarada"> Não Declarada
+                                                </label>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-5">
+
+                                            <div class="form-group">
+                                                <label for="inputNecessidadeEspecialProfessor">15. Profissional Escolar com deficiência</label><br>
+
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="cad_deficiencia_professor" id="inputNecessidadeEspecialProfessor" value="Sim"> Sim
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="cad_deficiencia_professor" id="inputNecessidadeEspecialProfessor" value="Não" checked=""> Não
+                                                </label>
+                                            </div>
+
+                                        </div>
                                     </div>
 
                                     <label for="inputTipoDeficienciaProfessor">15a. Tipo de deficiência</label>
@@ -787,42 +847,42 @@ Semed();
                                     <div class="row">
                                         <div class="col-md-3">
                                             <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_professor[]" id="inputTipoDeficienciaProfessor" value="deficienciaintelectual"> Deficiência Intelectual
+                                                <input type="checkbox" name="cad_tipo_deficiencia_professor[]" id="inputTipoDeficienciaProfessor" value="Deficiência Intelectual"> Deficiência Intelectual
                                             </label>
                                             <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_professor[]" id="inputTipoDeficienciaProfessor" value="baixavisao"> Baixa Visão
-                                            </label>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_professor[]" id="inputTipoDeficienciaProfessor" value="surdez"> Surdez
-                                            </label>
-                                            <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_professor[]" id="inputTipoDeficienciaProfessor" value="deficienciaauditiva"> Deficiência Auditiva
+                                                <input type="checkbox" name="cad_tipo_deficiencia_professor[]" id="inputTipoDeficienciaProfessor" value="Baixa Visão"> Baixa Visão
                                             </label>
                                         </div>
                                         <div class="col-md-3">
                                             <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_professor[]" id="inputTipoDeficienciaProfessor" value="surdocegueira"> Surdocegueira
+                                                <input type="checkbox" name="cad_tipo_deficiencia_professor[]" id="inputTipoDeficienciaProfessor" value="Surdez"> Surdez
                                             </label>
                                             <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_professor[]" id="inputTipoDeficienciaProfessor" value="deficienciafisica"> Deficiência Física
+                                                <input type="checkbox" name="cad_tipo_deficiencia_professor[]" id="inputTipoDeficienciaProfessor" value="Deficiência Auditiva"> Deficiência Auditiva
                                             </label>
                                         </div>
                                         <div class="col-md-3">
                                             <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_professor[]" id="inputTipoDeficienciaProfessor" value="cegueira"> Cegueira
+                                                <input type="checkbox" name="cad_tipo_deficiencia_professor[]" id="inputTipoDeficienciaProfessor" value="Surdocegueira"> Surdocegueira
                                             </label>
                                             <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_professor[]" id="inputTipoDeficienciaProfessor" value="deficienciamultipla"> Deficiência Múltipla
+                                                <input type="checkbox" name="cad_tipo_deficiencia_professor[]" id="inputTipoDeficienciaProfessor" value="Deficiência Física"> Deficiência Física
+                                            </label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="cad_tipo_deficiencia_professor[]" id="inputTipoDeficienciaProfessor" value="Cegueira"> Cegueira
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="cad_tipo_deficiencia_professor[]" id="inputTipoDeficienciaProfessor" value="Deficiência Múltipla"> Deficiência Múltipla
                                             </label>
                                         </div>
                                     </div><br>
 
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="inputLocalizacaoProfessor">16. Localização/Zona de residência</label><br>
+                                                <label for="inputLocalizacaoProfessor">16. Local da Residência</label><br>
 
                                                 <label class="radio-inline">
                                                     <input type="radio" name="cad_localizacao_professor" id="inputLocalizacaoProfessor" value="urbana"> Urbana
@@ -833,17 +893,15 @@ Semed();
 
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-3">
                                             <div class="form-group">
                                                 <label for="inputCepProfessor">17. CEP</label>
-                                                <input type="text" name="cad_cep_professor" class="form-control" id="inputCepProfessor" placeholder="digite o CEP" required="" maxlength="9" onkeypress="formatar('#####-###', this); return SomenteNumero(event);" onblur="showride()">
+                                                <input type="text" name="cad_cep_professor" class="form-control" id="inputCepProfessor" placeholder="digite o CEP" maxlength="9" onkeypress="formatar('#####-###', this); return SomenteNumero(event);" onblur="showride()">
 
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div class="row">
-                                        <div class="col-md-10">
+                                        <div class="col-md-4">
 
                                             <div class="form-group">
                                                 <label for="inputEnderecoProfessor">18. Endereço</label>
@@ -856,23 +914,24 @@ Semed();
 
                                             <div class="form-group">
                                                 <label for="inputNumeroEnderecoProfessor">19. Número</label>
-                                                <input type="text" name="cad_numeroendereco_professor" class="form-control" id="inputNumeroEnderecoProfessor" placeholder="numero" onkeypress="return SomenteNumero(event);">
+                                                <input type="text" name="cad_numero_professor" class="form-control" id="inputNumeroEnderecoProfessor" placeholder="número" onkeypress="return SomenteNumero(event);">
 
                                             </div>
                                         </div>
+
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
 
                                             <div class="form-group">
                                                 <label for="inputComplementoEnderecoProfessor">20. Complemento</label>
-                                                <input type="text" name="cad_complementoendereco_professor" class="form-control" id="inputComplementoEnderecoProfessor" placeholder="complemento">
+                                                <input type="text" name="cad_complemento_professor" class="form-control" id="inputComplementoEnderecoProfessor" placeholder="complemento">
 
                                             </div>
                                         </div>
 
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
 
                                             <div class="form-group">
                                                 <label for="inputBairroProfessor">21. Bairro</label>
@@ -880,11 +939,15 @@ Semed();
 
                                             </div>
                                         </div>
-                                    </div>                                   
 
-                                    <label for="inputMunicipioProfessor">22. Município</label>
-                                    <input type="text" name="cad_municipio_professor" class="form-control" id="inputMunicipioProfessor" placeholder="municipio"><br>
+                                        <div class="col-md-4">
 
+                                            <label for="inputMunicipioProfessor">22. Município</label>
+                                            <input type="text" name="cad_municipio_professor" class="form-control" id="inputMunicipioProfessor" placeholder="município">
+
+                                        </div>
+
+                                    </div><br>                                
 
                                     <div class="row">
                                         <div class="col-md-4">
@@ -892,53 +955,62 @@ Semed();
 
                                             <select class="form-control" name="cad_escolaridade_professor">
                                                 <option value="">Selecione</option>                                               
-                                                <option value="FundamentalIncompleto">Fundamental incompleto</option>                                               
-                                                <option value="FundamentalCompleto">Fundamental completo</option>                                        
-                                                <option value="EnsinoMedioMagisterio">Ensino Médio – Normal/Magistério</option>                                        
-                                                <option value="EnsinoMedioIndigena">Ensino Médio – Normal/Magistério Específico Indígena</option>                                        
-                                                <option value="EnsinoMedio">Ensino Médio</option>                                        
+                                                <option value="Fundamental incompleto">Fundamental incompleto</option>                                               
+                                                <option value="Fundamental completo">Fundamental completo</option>                                        
+                                                <option value="Ensino Médio – Normal/Magistério">Ensino Médio – Normal/Magistério</option>                                        
+                                                <option value="Ensino Médio – Normal/Magistério Específico Indígena">Ensino Médio – Normal/Magistério Específico Indígena</option>                                        
+                                                <option value="Ensino Médio">Ensino Médio</option>                                        
                                                 <option value="Superior">Superior</option>                                        
                                             </select>
 
                                         </div>
-                                        <div class="col-md-8">
+
+                                        <div class="col-md-4">
                                             <label for="inputCursoProfessor">24. Curso</label>
                                             <input type="text" name="cad_curso_professor" class="form-control" id="inputCursoProfessor" placeholder="curso">
                                         </div>
+
+                                        <div class="col-md-4">
+
+                                            <label for="inputInstituicaoProfessor">25. Nome da instituição</label>
+                                            <input type="text" name="cad_instituicao_professor" class="form-control" id="inputInstituicaoProfessor" placeholder="instituição">
+
+                                        </div>
+
                                     </div><br>
 
                                     <div class="row">
-                                        <div class="col-md-8">
-                                            <label for="inputInstituicaoProfessor">25. Nome da instituição</label>
-                                            <input type="text" name="cad_instituicao_professor" class="form-control" id="inputInstituicaoProfessor" placeholder="instituição">
-                                        </div>
-
                                         <div class="col-md-4">
 
                                             <label for="inputEscolaridade">25a. Situação do curso superior</label><br>
 
                                             <select class="form-control" name="cad_situacao_curso_professor">
                                                 <option value="">Selecione</option>                                               
-                                                <option value="concluido">Concluído</option>                                               
-                                                <option value="emandamento">Em andamento</option>                                       
+                                                <option selected="" value="concluido">Concluído</option>                                               
+                                                <option value="em andamento">Em andamento</option>                                       
                                             </select>
+
+                                        </div>
+
+                                        <div class="col-md-6">
+
+                                            <label for="inputPosProfessor">26. Pós-graduação</label><br>
+
+                                            <label class="radio-inline">
+                                                <input type="radio" name="cad_pos_graduacao_professor" id="inputPosProfessor" value="Especialização"> Especialização
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="cad_pos_graduacao_professor" id="inputPosProfessor" value="Mestrado"> Mestrado
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="cad_pos_graduacao_professor" id="inputPosProfessor" value="Doutorado"> Doutorado
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="cad_pos_graduacao_professor" id="inputPosProfessor" value="Nenhum"> Nenhum
+                                            </label>
+
                                         </div>
                                     </div><br>
-
-                                    <label for="inputPosProfessor">26. Pós-graduação</label>
-
-                                    <label class="radio-inline">
-                                        <input type="radio" name="cad_pos_graduacao_professor" id="inputPosProfessor" value="Especialização"> Especialização
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="cad_pos_graduacao_professor" id="inputPosProfessor" value="Mestrado"> Mestrado
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="cad_pos_graduacao_professor" id="inputPosProfessor" value="Doutorado"> Doutorado
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="cad_pos_graduacao_professor" id="inputPosProfessor" value="Nenhum"> Nenhum
-                                    </label><br><br>
 
                                     <label for="inputOutrosCursosProfessor">27. Outros cursos específicos (formação continuada com no mínimo 80 horas)</label>
 
@@ -954,7 +1026,7 @@ Semed();
                                                 <input type="checkbox" name="cad_outros_cursos_professor[]" id="inputOutrosCursosProfessor" value="Anos iniciais do ensino fundamental"> Anos iniciais do ensino fundamental
                                             </label>
                                             <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_outros_cursos_professor[]" id="inputOutrosCursosProfessor" value="deficienciafisica"> Anos finais do ensino fundamental
+                                                <input type="checkbox" name="cad_outros_cursos_professor[]" id="inputOutrosCursosProfessor" value="Anos finais do ensino fundamental"> Anos finais do ensino fundamental
                                             </label>
                                         </div>
 
@@ -1040,46 +1112,45 @@ Semed();
                                         </div>                   
                                     </div><br>
 
+                                    <button type="submit" class="btn btn-primary btn-lg" onclick="return validar_cadastro_educador()" id="noprint">Enviar</button>
 
-                                    <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
 
                                 </form>
                             </div>
                         </div>
                     </div>
 
-                    <div class="tab-pane" id="cad_aluno">
+                    <div class="tab-pane active" id="cad_aluno">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">CADASTRO DO ALUNO</div>
-                            <div class="panel-body box_conteudo">
+                            <div class="panel-heading" id="noprint">CADASTRO DO ALUNO(A)</div>
+                            <div class="panel-body box_conteudo" id="yesprint">
 
-                                <form action="../controle/cadastrando_aluno.php" method="post">
-
-                                    <div class="form-group">
-                                        <label for="inputIdAluno">1. Identificação Unica</label>
-                                        <input type="text" name="cad_id_aluno" class="form-control" id="inputIdAluno" placeholder="digite a identificação unica" required="" maxlength="" onkeypress="return SomenteNumero(event);" onblur="showride()">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="inputNomeAluno">2. Nome do aluno</label>
-                                        <input type="text" name="cad_nome_aluno" class="form-control" id="inputNomeAluno" placeholder="digite nome do aluno">
-                                    </div>
+                                <form id="cadastro_aluno" name="cadastroAluno" action="../controle/cadastrando_aluno.php" method="post">
 
                                     <div class="row">
-                                        <div class="col-xs-6 col-md-6">
+                                        <div class="col-md-4">
 
                                             <div class="form-group">
-                                                <label for="inputNascimentoAluno">3. Data de Nascimento</label>
-                                                <input type="text" name="cad_nasc_aluno" class="form-control" id="inputNascimentoAluno" placeholder="00/00/0000" required="" maxlength="10" onkeypress="formatar('##/##/####', this); return SomenteNumero(event);" onblur="showride()">
+                                                <label for="inputNomeAluno">1. Nome do aluno(a) *</label>
+                                                <input type="text" name="cad_nome_aluno" class="form-control" id="inputNomeAluno" placeholder="digite nome do aluno(a)">
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-md-4">
+
+                                            <div class="form-group">
+                                                <label for="inputNascimentoAluno">2. Data de Nascimento *</label>
+                                                <input type="text" name="cad_nasc_aluno" class="form-control" id="inputNascimentoAluno" placeholder="00/00/0000" maxlength="10" onkeypress="formatar('##/##/####', this); return SomenteNumero(event);" onblur="showride()">
                                             </div>
                                         </div>
-                                        <div class="col-xs-6 col-md-6">
+                                        <div class="col-md-4">
 
                                             <div class="form-group">
-                                                <label for="inputSexoAluno">4. Sexo :</label><br>
+                                                <label for="inputSexoAluno">3. Sexo *</label><br>
 
                                                 <label class="radio-inline">
-                                                    <input type="radio" name="cad_sexo_aluno" id="inputSexoAluno" value="masculino"> Masculino
+                                                    <input type="radio" name="cad_sexo_aluno" id="inputSexoAluno" value="masculino" checked=""> Masculino
                                                 </label>
                                                 <label class="radio-inline">
                                                     <input type="radio" name="cad_sexo_aluno" id="inputSexoAluno" value="feminino"> Feminino
@@ -1093,15 +1164,15 @@ Semed();
                                     <div class="row">
                                         <div class="col-xs-6 col-md-4">
                                             <div class="form-group">
-                                                <label for="inputNisAluno">5. Número de identificação Social (NIS)</label>
-                                                <input type="text" name="cad_nis_aluno" class="form-control" id="inputNisAluno" placeholder="digite o NIS" required="" maxlength="11" onkeypress="formatar('###########', this); return SomenteNumero(event);" onblur="showride()">
+                                                <label for="inputNisAluno">4. Número de identificação Social (NIS)</label>
+                                                <input type="text" name="cad_nis_aluno" class="form-control" id="inputNisAluno" placeholder="digite o NIS" maxlength="11" onkeypress="formatar('###########', this); return SomenteNumero(event);" onblur="showride()">
                                             </div>
 
                                         </div>
                                         <div class="col-xs-6 col-md-8">
 
                                             <div class="form-group">
-                                                <label for="inputRacaAluno">6. Cor/Raça :</label><br>
+                                                <label for="inputRacaAluno">5. Cor/Raça</label><br>
 
                                                 <label class="radio-inline">
                                                     <input type="radio" name="cad_raca_aluno" id="inputRacaAluno" value="branca"> Branca
@@ -1125,21 +1196,31 @@ Semed();
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label for="inputMaeAluno">7. Nome da mãe</label>
-                                        <input type="text" name="cad_mae_aluno" class="form-control" id="inputMaeAluno" placeholder="digite nome da mae">
+                                    <div class="row">
+                                        <div class="col-md-6">
+
+                                            <div class="form-group">
+                                                <label for="inputMaeAluno">6. Nome da mãe *</label>
+                                                <input type="text" name="cad_mae_aluno" class="form-control" id="inputMaeAluno" placeholder="digite nome da mãe">
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-md-6">
+
+                                            <div class="form-group">
+                                                <label for="inputPaiAluno">7. Nome do pai</label>
+                                                <input type="text" name="cad_pai_aluno" class="form-control" id="inputPaiAluno" placeholder="digite nome do pai">
+                                            </div>                                      
+
+                                        </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="inputPaiAluno">8. Nome do pai</label>
-                                        <input type="text" name="cad_pai_aluno" class="form-control" id="inputPaiAluno" placeholder="digite nome do pai">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="inputNacionalidadeAluno">9. Nacionalidade do aluno :</label>
+                                        <label for="inputNacionalidadeAluno">8. Nacionalidade do aluno</label>
 
                                         <label class="radio-inline">
-                                            <input type="radio" name="cad_nacionalidade_aluno" id="inputNacionalidadeAluno" value="brasileira"> Brasileiro
+                                            <input type="radio" name="cad_nacionalidade_aluno" id="inputNacionalidadeAluno" value="brasileira" checked=""> Brasileiro
                                         </label>
                                         <label class="radio-inline">
                                             <input type="radio" name="cad_nacionalidade_aluno" id="inputNacionalidadeAluno" value="naturalizado"> Naturalizado
@@ -1151,10 +1232,10 @@ Semed();
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-3">
 
                                             <div class="form-group">
-                                                <label for="inputPaisOrigemAluno">10. País de origem</label>
+                                                <label for="inputPaisOrigemAluno">9. País de origem</label>
                                                 <input type="text" name="cad_pais_nasc_aluno" class="form-control" id="inputPaisOrigemAluno" placeholder="digite o país de origem">
                                             </div>
 
@@ -1162,7 +1243,7 @@ Semed();
                                         <div class="col-md-3">
 
                                             <div class="form-group">
-                                                <label for="inputEstadoNascAluno">11. UF de nascimento</label>
+                                                <label for="inputEstadoNascAluno">10. UF de nascimento</label>
 
                                                 <select class="form-control" name="cad_estadonasc_aluno">
                                                     <option value="">Selecione</option>
@@ -1179,7 +1260,259 @@ Semed();
                                                     <option value="MG">MG</option>
                                                     <option value="MS">MS</option>
                                                     <option value="MT">MT</option>
-                                                    <option value="PA">PA</option>
+                                                    <option selected="" value="PA">PA</option>
+                                                    <option value="PB">PB</option>
+                                                    <option value="PE">PE</option>
+                                                    <option value="PI">PI</option>
+                                                    <option value="PR">PR</option>
+                                                    <option value="RJ">RJ</option>
+                                                    <option value="RN">RN</option>
+                                                    <option value="RS">RS</option>
+                                                    <option value="RO">RO</option>
+                                                    <option value="RR">RR</option>
+                                                    <option value="SC">SC</option>
+                                                    <option value="SE">SE</option>
+                                                    <option value="SP">SP</option>
+                                                    <option value="TO">TO</option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-md-3">
+
+                                            <div class="form-group">
+                                                <label for="inputMunicipioNascAluno">11. Município de nascimento</label>
+                                                <input type="text" name="cad_municipionasc_aluno" class="form-control" id="inputMunicipioNascAluno" placeholder="digite o município de nascimento">
+                                            </div>
+
+                                        </div>                                        
+
+                                        <div class="col-md-3">
+
+                                            <div class="form-group">
+                                                <label for="inputTelefoneAluno">12. Telefone</label>
+                                                <input type="text" name="cad_telefone_aluno" class="form-control" id="inputTelefoneAluno" placeholder="91 000000000" maxlength="12" onkeypress="formatar('## #########', this); return SomenteNumero(event);" onblur="showhide()">
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <label for="inputNecessidadeEspecialAluno">13. Aluno(a) com deficiência</label><br>
+
+                                            <select class="form-control" name="cad_deficiencia_aluno" id="inputNecessidadeEspecialAluno">
+                                                <option value="">Selecione</option>
+                                                <option value="Sim">Sim</option>                                               
+                                                <option selected="" value="Não">Não</option>
+                                            </select>
+
+                                        </div>
+
+                                        <div class="col-md-3">
+
+                                            <label for="inputTipoDeficienciaAluno">13a. Deficiência</label><br>
+
+                                            <select class="form-control" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficienciaAluno">
+                                                <option value="">Selecione</option>
+                                                <option value="Cegueira">Cegueira</option>                                               
+                                                <option value="Baixa Visao">Baixa Visão</option>
+                                                <option value="Surdez">Surdez</option>
+                                                <option value="Deficiência Auditiva">Deficiência Auditiva</option>
+                                                <option value="Surdocegueira">Surdocegueira</option>
+                                                <option value="Deficiência Física">Deficiência Física</option>
+                                                <option value="Deficiência Intelectual">Deficiência Intelectual</option>
+                                                <option value="Deficiência Múltipla">Deficiência Múltipla</option>
+                                            </select>                                              
+
+                                        </div>
+
+                                        <div class="col-md-3">
+
+                                            <label for="inputTranstornoGloAluno">13b. Transtorno global</label><br>
+
+                                            <select class="form-control" name="cad_tipo_deficiencia_aluno[]" id="inputTranstornoGloAluno">
+                                                <option value="">Selecione</option>
+                                                <option value="Autismo Infantil">Autismo Infantil</option>                                               
+                                                <option value="Síndrome de Asperger">Síndrome de Asperger</option>
+                                                <option value="Síndrome de Rett">Síndrome de Rett</option>
+                                                <option value="Transtorno desintegrativo da infância">Transtorno desintegrativo da infância</option>                                                
+                                            </select>
+
+                                        </div>
+
+                                        <div class="col-md-3">
+
+                                            <label for="inputSuperdotacaoAluno">13c. Altas Habilidades</label><br>
+
+                                            <select class="form-control" name="cad_tipo_deficiencia_aluno[]" id="inputSuperdotacaoAluno">
+                                                <option value="">Selecione</option>
+                                                <option value="Altas Habilidades/Superdotação">Altas Habilidades/Superdotação</option>                                              
+                                            </select>
+
+                                        </div>
+                                    </div><br>                                   
+
+                                    <div class="row">
+                                        <div class="col-md-3">
+
+                                            <div class="form-group">
+                                                <label for="inputIdentidadeAluno">14. Identidade</label>
+                                                <input type="text" name="cad_identidade_aluno" class="form-control" id="inputIdentidadeAluno" placeholder="digite o número da identidade" maxlength="20" onkeypress="formatar('####################', this); return SomenteNumero(event);" onblur="showride()">
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-3">
+
+                                            <div class="form-group">
+                                                <label for="inputOrgaoIdentidadeAluno">14a. Orgão Emissor</label>
+                                                <input type="text" name="cad_orgao_identidade_aluno" class="form-control" id="inputOrgaoIdentidadeAluno" placeholder="digite o orgão emissor">
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-3">
+
+                                            <div class="form-group">
+                                                <label for="inputEstadoIdentidadeAluno">14b. UF da identidade</label>
+
+                                                <select class="form-control" name="cad_estado_identidade_aluno">
+                                                    <option value="">Selecione</option>
+                                                    <option value="AC">AC</option>
+                                                    <option value="AL">AL</option>
+                                                    <option value="AM">AM</option>
+                                                    <option value="AP">AP</option>
+                                                    <option value="BA">BA</option>
+                                                    <option value="CE">CE</option>
+                                                    <option value="DF">DF</option>
+                                                    <option value="ES">ES</option>
+                                                    <option value="GO">GO</option>
+                                                    <option value="MA">MA</option>
+                                                    <option value="MG">MG</option>
+                                                    <option value="MS">MS</option>
+                                                    <option value="MT">MT</option>
+                                                    <option selected="" value="PA">PA</option>
+                                                    <option value="PB">PB</option>
+                                                    <option value="PE">PE</option>
+                                                    <option value="PI">PI</option>
+                                                    <option value="PR">PR</option>
+                                                    <option value="RJ">RJ</option>
+                                                    <option value="RN">RN</option>
+                                                    <option value="RS">RS</option>
+                                                    <option value="RO">RO</option>
+                                                    <option value="RR">RR</option>
+                                                    <option value="SC">SC</option>
+                                                    <option value="SE">SE</option>
+                                                    <option value="SP">SP</option>
+                                                    <option value="TO">TO</option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-md-3">
+
+                                            <div class="form-group">
+                                                <label for="inputDataIdentidadeAluno">14c. Data da expedição</label>
+                                                <input type="text" name="cad_data_identidade_aluno" class="form-control" id="inputDataIdentidadeAluno" placeholder="00/00/0000" maxlength="10" onkeypress="formatar('##/##/####', this); return SomenteNumero(event);" onblur="showride()">
+                                            </div>
+
+                                        </div>
+
+                                    </div><br>
+
+
+                                    <div class="row">
+                                        <div class="col-md-2">
+
+                                            <label for="inputCertidaoCivilAluno">15. Certidão Civil</label><br>
+
+                                            <select class="form-control" name="cad_certidaocivil_aluno[]">
+                                                <option value="">Selecione</option>
+                                                <option value="Modelo Novo">Modelo Novo</option>                                               
+                                                <option value="Modelo Antigo">Modelo Antigo</option>
+                                            </select> 
+
+                                        </div>
+
+                                        <div class="col-md-2">
+
+                                            <label for="inputTipoCertidaoAluno">15a. Tipo</label><br>
+
+                                            <select class="form-control" name="cad_certidaocivil_aluno[]">
+                                                <option value="">Selecione</option>
+                                                <option value="Certidão de nascimento">Certidão de nascimento</option>                                               
+                                                <option value="Certidão de casamento">Certidão de casamento</option>
+                                            </select>
+
+                                        </div>
+
+                                        <div class="col-md-3">
+
+                                            <div class="form-group">
+                                                <label for="inputTermoCertidaoAluno">15b. Termo</label>
+                                                <input type="text" name="cad_certidaocivil_aluno[]" class="form-control" id="inputTermoCertidaoAluno" placeholder="termo" maxlength="8" onkeypress="formatar('########', this); return SomenteNumero(event);" onblur="showride()">
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-md-2">
+
+                                            <div class="form-group">
+                                                <label for="inputFolhaCertidaoAluno">15c. Folha</label>
+                                                <input type="text" name="cad_certidaocivil_aluno[]" class="form-control" id="inputFolhaCertidaoAluno" placeholder="folha" maxlength="4" onkeypress="formatar('####', this); return SomenteNumero(event);" onblur="showride()">
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-md-3">
+
+                                            <div class="form-group">
+                                                <label for="inputLivroCertidaoAluno">15d. Livro</label>
+                                                <input type="text" name="cad_certidaocivil_aluno[]" class="form-control" id="inputLivroCertidaoAluno" placeholder="livro" maxlength="8" onkeypress="formatar('########', this); return SomenteNumero(event);" onblur="showride()">
+
+                                            </div>
+
+                                        </div>
+
+                                    </div><br>                          
+
+
+                                    <div class="row">
+                                        <div class="col-md-3">
+
+                                            <div class="form-group">
+                                                <label for="inputDataCertidaoAluno">15e. Data de Emissão</label>
+                                                <input type="text" name="cad_certidaocivil_aluno[]" class="form-control" id="inputDataCertidaoAluno" placeholder="00/00/0000" maxlength="10" onkeypress="formatar('##/##/####', this); return SomenteNumero(event);" onblur="showride()">
+
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-3">
+
+                                            <div class="form-group">
+                                                <label for="inputEstadoCartorioAluno">15f. UF do cartório</label>
+
+                                                <select class="form-control" name="cad_certidaocivil_aluno[]">
+                                                    <option value="">Selecione</option>
+                                                    <option value="AC">AC</option>
+                                                    <option value="AL">AL</option>
+                                                    <option value="AM">AM</option>
+                                                    <option value="AP">AP</option>
+                                                    <option value="BA">BA</option>
+                                                    <option value="CE">CE</option>
+                                                    <option value="DF">DF</option>
+                                                    <option value="ES">ES</option>
+                                                    <option value="GO">GO</option>
+                                                    <option value="MA">MA</option>
+                                                    <option value="MG">MG</option>
+                                                    <option value="MS">MS</option>
+                                                    <option value="MT">MT</option>
+                                                    <option selected="" value="PA">PA</option>
                                                     <option value="PB">PB</option>
                                                     <option value="PE">PE</option>
                                                     <option value="PI">PI</option>
@@ -1200,344 +1533,82 @@ Semed();
                                         <div class="col-md-3">
 
                                             <div class="form-group">
-                                                <label for="inputTelefoneAluno">12. Telefone</label>
-                                                <input type="text" name="cad_telefone_aluno" class="form-control" id="inputTelefoneAluno" placeholder="91 000000000" required="" maxlength="12" onkeypress="formatar('## #########', this); return SomenteNumero(event);" onblur="showhide()">
+                                                <label for="inputMunicipioCartorioAluno">15g. Município do cartório</label>
+                                                <input type="text" name="cad_certidaocivil_aluno[]" class="form-control" id="inputMunicipioCartorioAluno" placeholder="município do cartório">
+
                                             </div>
-
                                         </div>
-                                    </div>
 
-                                    <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-3">
 
                                             <div class="form-group">
-                                                <label for="inputMunicipioNascAluno">13. Município de nascimento</label>
-                                                <input type="text" name="cad_municipionasc_aluno" class="form-control" id="inputMunicipioNascAluno" placeholder="digite o município de nascimento">
-                                            </div>
-
-                                        </div>
-                                        <div class="col-md-6">
-
-                                            <div class="form-group">
-                                                <label for="inputNecessidadeEspecialAluno">14. Aluno com deficiência, transtorno global do
-                                                    desenvolvimento ou altas habilidades/superdotação :</label>
-
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="cad_deficiencia_aluno" id="inputNecessidadeEspecialAluno" value="sim"> Sim
-                                                </label>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="cad_deficiencia_aluno" id="inputNecessidadeEspecialAluno" value="nao"> Não
-                                                </label>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-md-4">
-
-                                            <label for="inputTipoDeficienciaAluno">14a. Deficiência :</label><br>
-
-                                            <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficienciaAluno" value="Cegueira"> Cegueira
-                                            </label>
-                                            <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficienciaAluno" value="Baixa Visao"> Baixa Visão
-                                            </label>
-                                            <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficienciaAluno" value="Surdez"> Surdez
-                                            </label>
-                                            <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficienciaAluno" value="Deficiencia Auditiva"> Deficiência Auditiva
-                                            </label>
-                                            <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficienciaAluno" value="Surdo Cegueira"> Surdocegueira
-                                            </label>
-                                            <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficienciaAluno" value="Deficiencia Fisica"> Deficiência Física
-                                            </label>
-                                            <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficienciaAluno" value="Deficiencia Intelectual"> Deficiência Intelectual
-                                            </label>
-                                            <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTipoDeficienciaAluno" value="Deficiencia Multipla"> Deficiência Múltipla
-                                            </label>                                            
-
-                                        </div> 
-
-                                        <div class="col-md-4">
-
-                                            <label for="inputTranstornoGloAluno">14b. Transtorno global do desenvolvimento :</label><br>
-
-                                            <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTranstornoGloAluno" value="Autismo Infantil"> Autismo Infantil
-                                            </label>
-                                            <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTranstornoGloAluno" value="Sindrome de Asperger"> Síndrome de Asperger 
-                                            </label>
-                                            <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTranstornoGloAluno" value="Sindrome de Rett"> Síndrome de Rett
-                                            </label>
-                                            <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputTranstornoGloAluno" value="Transtorno Desintegrativo da Infancia"> Transtorno desintegrativo da infância
-                                            </label>
-
-
-                                        </div>
-                                        <div class="col-md-4">
-
-                                            <label for="inputSuperdotacaoAluno">14c. Altas Habilidades/Superdotação :</label><br>
-
-                                            <label class="checkbox-inline">
-                                                <input type="checkbox" name="cad_tipo_deficiencia_aluno[]" id="inputSuperdotacaoAluno" value="Super Dotacao"> Altas Habilidades/Superdotação
-                                            </label>
-
-                                        </div>
-                                    </div>
-
-
-                                    <div class="row">
-                                        <div class="col-md-6">
-
-                                            <div class="form-group">
-                                                <label for="inputIdentidadeAluno">15. Número da identidade</label>
-                                                <input type="text" name="cad_identidade_aluno" class="form-control" id="inputIdentidadeAluno" placeholder="digite o numero da identidade" required="" maxlength="20" onkeypress="formatar('####################', this); return SomenteNumero(event);" onblur="showride()">
+                                                <label for="inputNomeCartorioAluno">15h. Nome do cartório</label>
+                                                <input type="text" name="cad_certidaocivil_aluno[]" class="form-control" id="inputNomeCartorioAluno" placeholder="digite o nome do cartório">
 
                                             </div>
-
                                         </div>
-                                        <div class="col-md-6">
 
-                                            <div class="form-group">
-                                                <label for="inputComplementoIdentidadeAluno">15a. Complemento da identidade</label>
-                                                <input type="text" name="cad_complemento_identidade_aluno" class="form-control" id="inputComplementoIdentidadeAluno" placeholder="digite o complemento da identidade" required="" maxlength="4" onkeypress="formatar('####', this); return SomenteNumero(event);" onblur="showride()">
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-
+                                    </div><br>
 
                                     <div class="row">
                                         <div class="col-md-4">
 
                                             <div class="form-group">
-                                                <label for="inputOrgaoIdentidadeAluno">15b. Orgão emissor da identidade</label>
-                                                <input type="text" name="cad_orgao_identidade_aluno" class="form-control" id="inputOrgaoIdentidadeAluno" placeholder="digite o orgao emissor">
-                                            </div>
-
-                                        </div>
-                                        <div class="col-md-4">
-
-                                            <div class="form-group">
-                                                <label for="inputEstadoIdentidadeAluno">15c. UF da identidade</label>
-
-                                                <select class="form-control" name="cad_estado_identidade_aluno">
-                                                    <option value="">Selecione</option>
-                                                    <option value="AC">AC</option>
-                                                    <option value="AL">AL</option>
-                                                    <option value="AM">AM</option>
-                                                    <option value="AP">AP</option>
-                                                    <option value="BA">BA</option>
-                                                    <option value="CE">CE</option>
-                                                    <option value="DF">DF</option>
-                                                    <option value="ES">ES</option>
-                                                    <option value="GO">GO</option>
-                                                    <option value="MA">MA</option>
-                                                    <option value="MG">MG</option>
-                                                    <option value="MS">MS</option>
-                                                    <option value="MT">MT</option>
-                                                    <option value="PA">PA</option>
-                                                    <option value="PB">PB</option>
-                                                    <option value="PE">PE</option>
-                                                    <option value="PI">PI</option>
-                                                    <option value="PR">PR</option>
-                                                    <option value="RJ">RJ</option>
-                                                    <option value="RN">RN</option>
-                                                    <option value="RS">RS</option>
-                                                    <option value="RO">RO</option>
-                                                    <option value="RR">RR</option>
-                                                    <option value="SC">SC</option>
-                                                    <option value="SE">SE</option>
-                                                    <option value="SP">SP</option>
-                                                    <option value="TO">TO</option>
-                                                </select>
-                                            </div>
-
-                                        </div>
-                                        <div class="col-md-4">
-
-                                            <div class="form-group">
-                                                <label for="inputDataIdentidadeAluno">15d. Data da expedição</label>
-                                                <input type="text" name="cad_data_identidade_aluno" class="form-control" id="inputDataIdentidadeAluno" placeholder="00/00/0000" required="" maxlength="10" onkeypress="formatar('##/##/####', this); return SomenteNumero(event);" onblur="showride()">
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-
-                                    <div class="row">
-                                        <div class="col-md-6">
-
-                                            <label for="inputCertidaoCivilAluno">16. Certidão Civil :</label><br>
-
-                                            <select class="form-control" name="cad_certidaocivil_aluno[]">
-                                                <option value="">Selecione</option>
-                                                <option value="Modelo Novo">Modelo Novo</option>                                               
-                                                <option value="Modelo Antigo">Modelo Antigo</option>
-                                            </select> 
-
-                                        </div>
-
-                                        <div class="col-md-6">
-
-                                            <label for="inputTipoCertidaoAluno">16a. Tipo de certidão Civil :</label><br>
-
-                                            <select class="form-control" name="cad_certidaocivil_aluno[]">
-                                                <option value="">Selecione</option>
-                                                <option value="Nascimento">Certidão de nascimento</option>                                               
-                                                <option value="Casamento">Certidão de casamento</option>
-                                            </select>
-
-                                        </div>
-                                    </div>
-
-
-                                    <div class="row">
-                                        <div class="col-md-4">
-
-                                            <div class="form-group">
-                                                <label for="inputTermoCertidaoAluno">16b. Número do termo</label>
-                                                <input type="text" name="cad_certidaocivil_aluno[]" class="form-control" id="inputTermoCertidaoAluno" placeholder="digite o numero do termo" required="" maxlength="8" onkeypress="formatar('########', this); return SomenteNumero(event);" onblur="showride()">
+                                                <label for="inputNumeroMatriculaAluno">15i. Registro civil - Certidão Nova</label>
+                                                <input type="text" name="cad_certidaocivil_aluno[]" class="form-control" id="inputNumeroMatriculaAluno" placeholder="número da matricula" maxlength="40" onkeypress="formatar('###### ## ## #### # ##### ### ####### ##', this); return SomenteNumero(event);" onblur="showride()">
 
                                             </div>
 
                                         </div>
+
                                         <div class="col-md-4">
 
-                                            <div class="form-group">
-                                                <label for="inputFolhaCertidaoAluno">16c. Folha</label>
-                                                <input type="text" name="cad_certidaocivil_aluno[]" class="form-control" id="inputFolhaCertidaoAluno" placeholder="folha" required="" maxlength="4" onkeypress="formatar('####', this); return SomenteNumero(event);" onblur="showride()">
-
-                                            </div>
+                                            <label for="inputCpfAluno">16. Número do CPF</label>
+                                            <input type="text" name="cad_cpf_aluno" class="form-control" id="inputCpfAluno" placeholder="digite o CPF" maxlength="14" onkeypress="formatar('###.###.###-##', this); return SomenteNumero(event);" onblur="showhide()">
 
                                         </div>
+
                                         <div class="col-md-4">
 
-                                            <div class="form-group">
-                                                <label for="inputLivroCertidaoAluno">16d. Livro</label>
-                                                <input type="text" name="cad_certidaocivil_aluno[]" class="form-control" id="inputLivroCertidaoAluno" placeholder="livro" required="" maxlength="8" onkeypress="formatar('########', this); return SomenteNumero(event);" onblur="showride()">
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-
-                                    <div class="row">
-                                        <div class="col-md-4">
-
-                                            <div class="form-group">
-                                                <label for="inputDataCertidaoAluno">16e. Data de emissão da certidão</label>
-                                                <input type="text" name="cad_certidaocivil_aluno[]" class="form-control" id="inputDataCertidaoAluno" placeholder="00/00/0000" required="" maxlength="10" onkeypress="formatar('##/##/####', this); return SomenteNumero(event);" onblur="showride()">
-
-                                            </div>
-
-                                        </div>
-                                        <div class="col-md-4">
-
-                                            <div class="form-group">
-                                                <label for="inputEstadoCartorioAluno">16f. UF do cartório</label>
-
-                                                <select class="form-control" name="cad_certidaocivil_aluno[]">
-                                                    <option value="">Selecione</option>
-                                                    <option value="AC">AC</option>
-                                                    <option value="AL">AL</option>
-                                                    <option value="AM">AM</option>
-                                                    <option value="AP">AP</option>
-                                                    <option value="BA">BA</option>
-                                                    <option value="CE">CE</option>
-                                                    <option value="DF">DF</option>
-                                                    <option value="ES">ES</option>
-                                                    <option value="GO">GO</option>
-                                                    <option value="MA">MA</option>
-                                                    <option value="MG">MG</option>
-                                                    <option value="MS">MS</option>
-                                                    <option value="MT">MT</option>
-                                                    <option value="PA">PA</option>
-                                                    <option value="PB">PB</option>
-                                                    <option value="PE">PE</option>
-                                                    <option value="PI">PI</option>
-                                                    <option value="PR">PR</option>
-                                                    <option value="RJ">RJ</option>
-                                                    <option value="RN">RN</option>
-                                                    <option value="RS">RS</option>
-                                                    <option value="RO">RO</option>
-                                                    <option value="RR">RR</option>
-                                                    <option value="SC">SC</option>
-                                                    <option value="SE">SE</option>
-                                                    <option value="SP">SP</option>
-                                                    <option value="TO">TO</option>
-                                                </select>
-                                            </div>
-
-                                        </div>
-                                        <div class="col-md-4">
-
-                                            <div class="form-group">
-                                                <label for="inputMunicipioCartorioAluno">16g. Município do cartório</label>
-                                                <input type="text" name="cad_certidaocivil_aluno[]" class="form-control" id="inputMunicipioCartorioAluno" placeholder="municipio do cartorio">
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="inputNomeCartorioAluno">16h. Nome do cartório</label>
-                                        <input type="text" name="cad_certidaocivil_aluno[]" class="form-control" id="inputNomeCartorioAluno" placeholder="digite o nome do cartorio">
-
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="inputNumeroMatriculaAluno">16i. Número da matricula (Registro civil - Certidão nova)</label>
-                                        <input type="text" name="cad_certidaocivil_aluno[]" class="form-control" id="inputNumeroMatriculaAluno" placeholder="numero da matricula" required="" maxlength="40" onkeypress="formatar('###### ## ## #### # ##### ### ####### ##', this); return SomenteNumero(event);" onblur="showride()">
-
-                                    </div>
-
-
-                                    <div class="row">
-                                        <div class="col-md-4">
-
-                                            <label for="inputCpfAluno">17. Número do CPF</label>
-                                            <input type="text" name="cad_cpf_aluno" class="form-control" id="inputCpfAluno" placeholder="digite o CPF" required="" maxlength="14" onkeypress="formatar('###.###.###-##', this); return SomenteNumero(event);" onblur="showhide()">
-
-                                        </div>
-                                        <div class="col-md-4">
-
-                                            <label for="inputPassaporteAluno">18. Documento extrangeiro/Passaporte</label>
-                                            <input type="text" name="cad_passaporte_aluno" class="form-control" id="inputPassaporteAluno" placeholder="digite o passaporte" required="" maxlength="8" onkeypress="formatar('########', this)" onblur="showhide()">
+                                            <label for="inputPassaporteAluno">17. Documento extrangeiro/Passaporte</label>
+                                            <input type="text" name="cad_passaporte_aluno" class="form-control" id="inputPassaporteAluno" placeholder="digite o passaporte" maxlength="8" onkeypress="formatar('########', this)" onblur="showhide()">
 
                                         </div>
                                     </div><br>
 
-                                    <div class="form-group">
-                                        <label for="inputJustificativaAluno">Justificativa da falta de informação de documento do aluno :</label><br>
-
-                                        <label class="radio-inline">
-                                            <input type="radio" name="cad_justificativa_aluno" id="inputJustificativaAluno" value="alunonaopossuidocumento"> Aluno não possui documento
-                                        </label>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="cad_justificativa_aluno" id="inputJustificativaAluno" value="escolanaopossuiinformaçãodedocumentodoaluno"> Escola não possui informação de documento do aluno
-                                        </label>
-
-                                    </div>
 
                                     <div class="row">
                                         <div class="col-md-6">
 
+                                            <label for="inputJustificativaAluno">Justificativa da falta de informação de documento do aluno :</label><br>
+
+                                            <select class="form-control" name="cad_justificativa_aluno">
+                                                <option value="">Selecione</option>
+                                                <option value="Aluno não possui documento">Aluno não possui documento</option>                                               
+                                                <option value="Escola não possui informação de documento do aluno">Escola não possui informação de documento do aluno</option>
+                                            </select>
+
+                                        </div>
+
+                                        <div class="col-md-3">
+
+                                            <label for="inputDocumentacaoPedenteAluno">Documentação Pedente :</label><br>
+
+                                            <select class="form-control" name="cad_documentacao_pedente_aluno">
+                                                <option value="">Selecione</option>
+                                                <option value="Sim">Sim</option>                                               
+                                                <option value="Não">Não</option>
+                                            </select>
+
+                                        </div>
+
+                                    </div><br>                                    
+
+                                    <div class="row">
+                                        <div class="col-md-3">
+
                                             <div class="form-group">
-                                                <label for="inputLocalizacaoAluno">19. Localização/Zona de residência :</label><br>
+                                                <label for="inputLocalizacaoAluno">18. Local da Residência</label><br>
 
                                                 <label class="radio-inline">
                                                     <input type="radio" name="cad_localizacao_aluno" id="inputLocalizacaoAluno" value="urbana"> Urbana
@@ -1549,63 +1620,59 @@ Semed();
                                             </div>
 
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-3">
 
                                             <div class="form-group">
-                                                <label for="inputCepAluno">20. CEP</label>
-                                                <input type="text" name="cad_cep_aluno" class="form-control" id="inputCepAluno" placeholder="digite o CEP" required="" maxlength="9" onkeypress="formatar('#####-###', this); return SomenteNumero(event);" onblur="showride()">
+                                                <label for="inputCepAluno">19. CEP</label>
+                                                <input type="text" name="cad_cep_aluno" class="form-control" id="inputCepAluno" placeholder="digite o CEP" maxlength="9" onkeypress="formatar('#####-###', this); return SomenteNumero(event);" onblur="showride()">
 
                                             </div>
 
                                         </div>
-                                    </div>
 
-                                    <div class="row">
-                                        <div class="col-md-10">
+                                        <div class="col-md-4">
 
                                             <div class="form-group">
-                                                <label for="inputEnderecoAluno">21. Endereço</label>
+                                                <label for="inputEnderecoAluno">20. Endereço</label>
                                                 <input type="text" name="cad_endereco_aluno" class="form-control" id="inputEnderecoAluno" placeholder="digite o endereco">
 
                                             </div>
-
                                         </div>
+
                                         <div class="col-md-2">
 
                                             <div class="form-group">
-                                                <label for="inputNumeroEnderecoAluno">22. Número</label>
-                                                <input type="text" name="cad_numero_aluno" class="form-control" id="inputNumeroEnderecoAluno" placeholder="numero" onkeypress="return SomenteNumero(event);">
+                                                <label for="inputNumeroEnderecoAluno">21. Número</label>
+                                                <input type="text" name="cad_numero_aluno" class="form-control" id="inputNumeroEnderecoAluno" placeholder="número" onkeypress="return SomenteNumero(event);">
 
                                             </div>
-
                                         </div>
+
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-3">
 
                                             <div class="form-group">
-                                                <label for="inputComplementoEnderecoAluno">23. Complemento</label>
+                                                <label for="inputComplementoEnderecoAluno">22. Complemento</label>
                                                 <input type="text" name="cad_complemento_aluno" class="form-control" id="inputComplementoEnderecoAluno" placeholder="complemento">
 
                                             </div>
 
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-3">
 
                                             <div class="form-group">
-                                                <label for="inputBairroAluno">24. Bairro</label>
+                                                <label for="inputBairroAluno">23. Bairro</label>
                                                 <input type="text" name="cad_bairro_aluno" class="form-control" id="inputBairroAluno" placeholder="bairro">
 
                                             </div>
 
                                         </div>
-                                    </div>
 
-                                    <div class="row">
                                         <div class="col-md-2">
                                             <div class="form-group">
-                                                <label for="inputEstadoEnderecoAluno">25. UF</label>
+                                                <label for="inputEstadoEnderecoAluno">24. UF</label>
                                                 <select class="form-control" name="cad_estado_aluno">
                                                     <option value="">Selecione</option>
                                                     <option value="AC">AC</option>
@@ -1621,7 +1688,7 @@ Semed();
                                                     <option value="MG">MG</option>
                                                     <option value="MS">MS</option>
                                                     <option value="MT">MT</option>
-                                                    <option value="PA">PA</option>
+                                                    <option selected="" value="PA">PA</option>
                                                     <option value="PB">PB</option>
                                                     <option value="PE">PE</option>
                                                     <option value="PI">PI</option>
@@ -1640,42 +1707,43 @@ Semed();
                                             </div>
                                         </div>
 
-                                        <div class="col-md-10">
+                                        <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="inputMunicipioAluno">26. Município</label>
-                                                <input type="text" name="cad_municipio_aluno" class="form-control" id="inputMunicipioAluno" placeholder="municipio">
+                                                <label for="inputMunicipioAluno">25. Município</label>
+                                                <input type="text" name="cad_municipio_aluno" class="form-control" id="inputMunicipioAluno" placeholder="município">
 
                                             </div>
                                         </div>
                                     </div>
 
-                                    <label for="inputEscolarizacaoEspacoAluno">27. Rececebe escolarização em outro espaço :</label><br>
+
+                                    <label for="inputEscolarizacaoEspacoAluno">26. Rececebe escolarização em outro espaço :</label><br>
                                     <label class="radio-inline">
                                         <input type="radio" name="cad_escolarizacao_espaco_aluno" id="inputEscolarizacaoEspacoAluno" value="sim"> Sim
                                     </label>
                                     <label class="radio-inline">
-                                        <input type="radio" name="cad_escolarizacao_espaco_aluno" id="inputEscolarizacaoEspacoAluno" value="nao"> Não
+                                        <input type="radio" name="cad_escolarizacao_espaco_aluno" id="inputEscolarizacaoEspacoAluno" value="nao" checked=""> Não
                                     </label><br>
 
                                     <div class="row">
                                         <div class="col-md-6">
 
-                                            <label for="inputTransporteEscolarAluno">28. Transporte escolar público :</label><br>
+                                            <label for="inputTransporteEscolarAluno">27. Transporte escolar público :</label><br>
 
                                             <label class="radio-inline">
                                                 <input type="radio" name="cad_transporte_aluno" id="inputTransporteEscolarAluno" value="utiliza"> Utiliza
                                             </label>
                                             <label class="radio-inline">
-                                                <input type="radio" name="cad_transporte_aluno" id="inputTransporteEscolarAluno" value="não utiliza"> Não Utiliza
+                                                <input type="radio" name="cad_transporte_aluno" id="inputTransporteEscolarAluno" value="não utiliza" checked=""> Não Utiliza
                                             </label>
 
                                         </div>
                                         <div class="col-md-6">
 
-                                            <label for="inputPoderPublicoAluno">28a. Poder público responsável pelo transporte :</label><br>
+                                            <label for="inputPoderPublicoAluno">27a. Poder público responsável pelo transporte :</label><br>
 
                                             <label class="radio-inline">
-                                                <input type="radio" name="cad_responsavel_transporte_aluno" id="inputPoderPublicoAluno" value="municipal"> Municipal
+                                                <input type="radio" name="cad_responsavel_transporte_aluno" id="inputPoderPublicoAluno" value="municipal" checked=""> Municipal
                                             </label>
                                             <label class="radio-inline">
                                                 <input type="radio" name="cad_responsavel_transporte_aluno" id="inputPoderPublicoAluno" value="estadual"> Estadual
@@ -1685,38 +1753,33 @@ Semed();
                                     </div><br>
 
 
-
-
                                     <div class="row">
                                         <div class="col-md-6">
 
-                                            <label for="inputTipoveiculoAluno">28b. Rodoviário :</label><br>
+                                            <label for="inputTipoveiculoAluno">27b. Rodoviário :</label><br>
 
                                             <select class="form-control" name="cad_tipo_transporte_aluno[]">
                                                 <option value="">Selecione</option>                                               
                                                 <option value="Van/Kombi">Van/Kombi</option>                                               
                                                 <option value="Micro - Ônibus">Micro - Ônibus</option>                                       
                                                 <option value="Ônibus">Ônibus</option>                                       
-                                                <option value="Bicicleta">Bicicleta</option>                                       
-                                                <option value="Tração animal">Tração animal</option>                                       
-                                                <option value="Outro tipo de veículo rodoviário">Outro tipo de veículo rodoviário</option>                                       
+                                                <option value="Bicicleta">Bicicleta</option>
                                             </select>
                                         </div>
 
                                         <div class="col-md-6">
-                                            <label for="inputTipoveiculoAluno">28c. Aquaviário/Embarcação :</label><br>
+                                            <label for="inputTipoveiculoAluno">27c. Aquaviário/Embarcação :</label><br>
 
                                             <select class="form-control" name="cad_tipo_transporte_aluno[]">
                                                 <option value="">Selecione</option>                                               
-                                                <option value="Capacidade de até 5 alunos">Capacidade de até 5 alunos</option>                                               
-                                                <option value="Capacidade entre 5 a 15 alunos">Capacidade entre 5 a 15 alunos</option>                                       
-                                                <option value="Capacidade entre 15 a 35 alunos">Capacidade entre 15 a 35 alunos</option>                                       
-                                                <option value="Capacidade acima de 35 alunos">Capacidade acima de 35 alunos</option>                                      
+                                                <option value="Barco">Barco</option>                                               
+                                                <option value="Lancha">Lancha</option>                                                                             
                                             </select>
                                         </div>
                                     </div><br>
 
-                                    <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                                    <input type="submit" class="btn btn-primary btn-lg" value="Enviar" onclick="return validar_cadastro_aluno()" id="noprint">
+
 
                                 </form>
                             </div>
