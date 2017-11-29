@@ -14,7 +14,7 @@ $mostrar_escola = $escola->ler_todos_org();
 $id_escola = $_SESSION['id_escola'];
 
 $pendentes = new Usuario();
-$mostrar_pendentes = $pendentes->usuarios_pendente($id_escola);
+$mostrar_pendentes = $pendentes->usuarios_pendente_geral();
 
 $dados_disciplina = new Disciplina();
 $mostrar_dados_disciplina = $dados_disciplina->ler_professor_turma($_SESSION['id_escola']);
