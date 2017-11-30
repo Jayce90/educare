@@ -65,10 +65,10 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
 
         <div class="row">
             <!-- Navigation Buttons -->
-            <div class="col-md-2">
+            <div class="col-md-2" id="noprint">
                 <ul class="nav nav-pills nav-stacked" id="myTabs">
                     <li class="active"><a class="glyphicon glyphicon-user" href="#cad_aluno" data-toggle="pill"> Cadastro Aluno(a)</a></li>
-                    <li><a class="glyphicon glyphicon-briefcase" href="#cad_professor" data-toggle="pill"> Cadastro Educador(a)</a></li>
+                    <li><a class="glyphicon glyphicon-briefcase" href="#cad_professor" data-toggle="pill"> Cadastro Educador(a)</a></li>                    
                     <li><a class="glyphicon glyphicon-folder-open" href="#cad_disciplina" data-toggle="pill"> Cadastro Disciplina</a></li>
                     <li><a class="glyphicon glyphicon-folder-open" href="#cad_inep" data-toggle="pill"> Cadastro INEP</a></li>
                     <li><a class="glyphicon glyphicon-ok" href="#aprovacao" data-toggle="pill"> Aprovar Usuário</a></li>
@@ -81,8 +81,8 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
 
                     <div class="tab-pane active" id="cad_aluno">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">CADASTRO DO ALUNO(A)</div>
-                            <div class="panel-body box_conteudo">
+                            <div class="panel-heading" id="noprint">CADASTRO DO ALUNO(A)</div>
+                            <div class="panel-body box_conteudo" id="yesprint">
 
                                 <form id="cadastro_aluno" name="cadastroAluno" action="../controle/cadastrando_aluno.php" method="post">
 
@@ -90,7 +90,7 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
                                         <div class="col-md-4">
 
                                             <div class="form-group">
-                                                <label for="inputNomeAluno">1. Nome do aluno(a)</label>
+                                                <label for="inputNomeAluno">1. Nome do aluno(a) *</label>
                                                 <input type="text" name="cad_nome_aluno" class="form-control" id="inputNomeAluno" placeholder="digite nome do aluno(a)">
                                             </div>
 
@@ -99,14 +99,14 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
                                         <div class="col-md-4">
 
                                             <div class="form-group">
-                                                <label for="inputNascimentoAluno">2. Data de Nascimento</label>
+                                                <label for="inputNascimentoAluno">2. Data de Nascimento *</label>
                                                 <input type="text" name="cad_nasc_aluno" class="form-control" id="inputNascimentoAluno" placeholder="00/00/0000" maxlength="10" onkeypress="formatar('##/##/####', this); return SomenteNumero(event);" onblur="showride()">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
 
                                             <div class="form-group">
-                                                <label for="inputSexoAluno">3. Sexo</label><br>
+                                                <label for="inputSexoAluno">3. Sexo *</label><br>
 
                                                 <label class="radio-inline">
                                                     <input type="radio" name="cad_sexo_aluno" id="inputSexoAluno" value="masculino" checked=""> Masculino
@@ -159,7 +159,7 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
                                         <div class="col-md-6">
 
                                             <div class="form-group">
-                                                <label for="inputMaeAluno">6. Nome da mãe</label>
+                                                <label for="inputMaeAluno">6. Nome da mãe *</label>
                                                 <input type="text" name="cad_mae_aluno" class="form-control" id="inputMaeAluno" placeholder="digite nome da mãe">
                                             </div>
 
@@ -737,9 +737,9 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
                                         </div>
                                     </div><br>
 
-                                    <input type="submit" class="btn btn-primary btn-lg" value="Enviar" onclick="return validar_cadastro_aluno()">
+                                    <input type="submit" class="btn btn-primary btn-lg" value="Enviar" onclick="return validar_cadastro_aluno()" id="noprint">
 
-                                    <button type="submit" class="btn btn-success btn-lg" onClick="window.print()">Imprimir Página</button>
+                                    <button type="submit" class="btn btn-success btn-lg" onClick="window.print()" id="noprint">Imprimir Página</button>
 
                                 </form>
                             </div>
@@ -748,8 +748,8 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
 
                     <div class="tab-pane" id="cad_professor">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">CADASTRO DO EDUCADOR(A)</div>
-                            <div class="panel-body box_conteudo">
+                            <div class="panel-heading" id="noprint">CADASTRO DO EDUCADOR(A)</div>
+                            <div class="panel-body box_conteudo" id="yesprint">
 
                                 <form id="cadastro_educador" name="cadastroEducador" action="../controle/cadastrando_educador.php" method="post">
 
@@ -757,7 +757,7 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
                                         <div class="col-md-4">
 
                                             <div class="form-group">
-                                                <label for="inputNomeProfessor">1. Nome do Educador(a)</label>
+                                                <label for="inputNomeProfessor">1. Nome do Educador(a) *</label>
                                                 <input type="text" name="cad_nome_professor" class="form-control" id="inputNomeProfessor" placeholder="digite nome do educador(a)">
                                             </div>
 
@@ -774,7 +774,7 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
                                         <div class="col-md-4">
 
                                             <div class="form-group">
-                                                <label for="inputCpfProfessor">3. CPF</label>
+                                                <label for="inputCpfProfessor">3. CPF *</label>
                                                 <input type="text" name="cad_cpf_professor" class="form-control" id="inputCpfProfessor" placeholder="digite o CPF" maxlength="14" onkeypress="formatar('###.###.###-##', this); return SomenteNumero(event);" onblur="showhide()">
                                             </div>
 
@@ -794,7 +794,7 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
                                         <div class="col-md-4">
 
                                             <div class="form-group">
-                                                <label for="inputTelefoneProfessor">5. Telefone</label>
+                                                <label for="inputTelefoneProfessor">5. Telefone *</label>
                                                 <input type="text" name="cad_fone_professor" class="form-control" id="inputTelefoneProfessor" placeholder="91 000000000" maxlength="12" onkeypress="formatar('## #########', this); return SomenteNumero(event);" onblur="showhide()">
                                             </div>
 
@@ -1228,37 +1228,37 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
                                         </div>                   
                                     </div><br>
 
-                                    <button type="submit" class="btn btn-primary btn-lg" onclick="return validar_cadastro_educador()">Enviar</button>
+                                    <button type="submit" class="btn btn-primary btn-lg" onclick="return validar_cadastro_educador()" id="noprint">Enviar</button>
 
-                                    <button type="submit" class="btn btn-success btn-lg" onClick="window.print()">Imprimir Página</button>
+                                    <button type="submit" class="btn btn-success btn-lg" onClick="window.print()" id="noprint">Imprimir Página</button>
 
                                 </form>
                             </div>
                         </div>
                     </div>
-
+                    
                     <div class="tab-pane" id="cad_disciplina">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">CADASTRO DE DISCIPLINA</div>
-                            <div class="panel-body box_conteudo">
+                            <div class="panel-heading" id="noprint">CADASTRO DE DISCIPLINA</div>
+                            <div class="panel-body box_conteudo" id="yesprint">
                                 <form id="cadastro_disciplina" name="cadastroDisciplina" action="../controle/cadastrando_disciplina.php" method="post">
 
                                     <div class="row">
                                         <div class="col-md-4">
 
-                                            <label for="inputNomeDisciplina">1. Nome da disciplina</label>
+                                            <label for="inputNomeDisciplina">1. Nome da disciplina *</label>
                                             <input type="text" name="cad_nome_disciplina" class="form-control" id="inputNomeDisciplina" placeholder="nome da disciplina">
                                         </div>
 
                                         <div class="col-md-4">
 
-                                            <label for="inputCargaHorariaDisciplina">2. Carga Horária</label>
+                                            <label for="inputCargaHorariaDisciplina">2. Carga Horária *</label>
                                             <input type="text" name="cad_carga_horaria_disciplina" class="form-control" id="inputCargaHorariaDisciplina" placeholder="carga horária">                                            
                                         </div>
 
                                         <div class="col-md-4">
 
-                                            <label for="inputNivelDisciplina">3. Nivel da disciplina</label><br>
+                                            <label for="inputNivelDisciplina">3. Nivel da disciplina *</label><br>
 
                                             <select class="form-control" name="cad_nivel_disciplina">
                                                 <option value="">Selecione</option>                                               
@@ -1272,7 +1272,7 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
                                     <div class="row">
                                         <div class="col-md-4">
 
-                                            <label for="inputEtapaDisciplina">4. Etapa da disciplina</label><br>
+                                            <label for="inputEtapaDisciplina">4. Etapa da disciplina *</label><br>
 
                                             <select class="form-control" name="cad_etapa_disciplina">
                                                 <option value="">Selecione</option>                                               
@@ -1298,7 +1298,7 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
 
                                         <div class="col-md-4">
 
-                                            <label for="inputProfessorDisciplina">5. Professor da disciplina</label><br>
+                                            <label for="inputProfessorDisciplina">5. Educador(a) da disciplina *</label><br>
 
                                             <select class="form-control" name="cad_professor_disciplina">
                                                 <option value="">Selecione</option>
@@ -1313,7 +1313,7 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
 
                                         <div class="col-md-4">
 
-                                            <label for="inputTurmaDisciplina">6. Turma da disciplina</label><br>
+                                            <label for="inputTurmaDisciplina">6. Turma da disciplina *</label><br>
 
                                             <select class="form-control" name="cad_turma_disciplina">
                                                 <option value="">Selecione</option>
@@ -1330,9 +1330,9 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
                                     <label for="inputDescricaoDisciplina">7. Descrição da disciplina</label><br>
                                     <textarea class="form-control" rows="6"></textarea><br>
 
-                                    <button type="submit" class="btn btn-primary btn-lg" onclick="return validar_cadastro_disciplina()">Enviar</button>
+                                    <button type="submit" class="btn btn-primary btn-lg" onclick="return validar_cadastro_disciplina()" id="noprint">Enviar</button>
 
-                                    <button type="submit" class="btn btn-success btn-lg" onClick="window.print()">Imprimir Página</button>
+                                    <button type="submit" class="btn btn-success btn-lg" onClick="window.print()" id="noprint">Imprimir Página</button>
 
                                 </form>
 
@@ -1354,7 +1354,7 @@ $mostrar_aluno_sem_inep = $alunos->ler_alunos_sem_inep($id_escola);
                                                 <option value="">Selecione</option>                                               
                                                 <?php
                                                 foreach ($mostrar_aluno_sem_inep as $linha_aluno_sem_inep) {
-                                                        echo "<option value='" . $linha_aluno_sem_inep->id_aluno . "'>" . $linha_aluno_sem_inep->nome_aluno ."</option>";
+                                                    echo "<option value='" . $linha_aluno_sem_inep->id_aluno . "'>" . $linha_aluno_sem_inep->nome_aluno . "</option>";
                                                 }
                                                 ?>                                              
                                             </select>

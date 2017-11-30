@@ -20,7 +20,7 @@ Semed();
         <script src="../js_local/ajax_local.js"></script>
         <link rel="shortcut icon" href="../imagens/icone.png" type="image/x-icon">
 
-        <title>SECRETARIA ESCOLAR</title>
+        <title>FEED</title>
     </head>
 
     <body onload="ler_feed();">
@@ -40,6 +40,7 @@ Semed();
                         <li><a class="glyphicon glyphicon-home" href="index_semed.php"> Início</a></li>
                         <li><a class="glyphicon glyphicon-plus" href="cadastro_semed.php"> Cadastrar</a></li>
                         <li><a class="glyphicon glyphicon-list" href="lista_semed.php"> Listar</a></li>
+                        <li><a class="glyphicon glyphicon-list-alt" href="impressao.php"> Imprimir</a></li>
                         <li class="active"><a class="glyphicon glyphicon-pencil"> Feed<span class="sr-only">(current)</span></a></li>
                         <li><a class="glyphicon glyphicon-comment" href="chat_semed.php"> Chat</a></li>
                         <li><a class="glyphicon glyphicon-alert" href="../controle/sair.php"> Sair</a></li>

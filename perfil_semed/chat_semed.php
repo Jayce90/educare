@@ -38,9 +38,9 @@ Semed();
                         <li><a class="glyphicon glyphicon-home" href="index_semed.php"> Início</a></li>
                         <li><a class="glyphicon glyphicon-plus" href="cadastro_semed.php"> Cadastrar</a></li>
                         <li><a class="glyphicon glyphicon-list" href="lista_semed.php"> Listar</a></li>
+                        <li><a class="glyphicon glyphicon-list-alt" href="impressao.php"> Imprimir</a></li>
                         <li><a class="glyphicon glyphicon-pencil" href="feed_semed.php"> Feed</a></li>
-                        <li class="active"><a class="glyphicon glyphicon-comment"> Chat<span class="sr-only">(current)</span></a></li>
-                        <li><a class="glyphicon glyphicon-remove" href="#"> Apagar</a></li>
+                        <li class="active"><a class="glyphicon glyphicon-comment"> Chat<span class="sr-only">(current)</span></a></li>                        
                         <li><a class="glyphicon glyphicon-alert" href="../controle/sair.php"> Sair</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->

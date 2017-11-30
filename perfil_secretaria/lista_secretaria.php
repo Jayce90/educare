@@ -98,8 +98,8 @@ if (isset($_POST['listar_alunos_turma'])) {
                             <div class="panel-heading">LISTAGEM DE TODAS AS TURMAS</div>
                             <div class="panel-body box_conteudo">
 
-                                <table width="100%">
-                                    <tr>
+                                <table class="table table-condensed">
+                                    <tr class="fontsize">
                                         <th data-field="teste">NOME</th>
                                         <th data-field="teste">CAPACIDADE</th>
                                         <th data-field="teste">TURNO</th>
@@ -112,7 +112,7 @@ if (isset($_POST['listar_alunos_turma'])) {
                                     <tbody> 
                                         <?php
                                         foreach ($mostrar_turma as $linha_turma) {
-                                            echo "<tr>"
+                                            echo "<tr class='fontsize'>"
                                             . "<form action='' method='post'>" .
                                             "<td>" . $linha_turma->nome_turma . "</td>" .
                                             "<td>" . $linha_turma->capacidade_turma . "</td>" .
@@ -135,11 +135,11 @@ if (isset($_POST['listar_alunos_turma'])) {
 
                     <div class="tab-pane" id="list_alunos">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">LISTAGEM DE TODOS OS ALUNO</div>
+                            <div class="panel-heading">LISTAGEM DE TODOS OS ALUNOS</div>
                             <div class="panel-body box_conteudo">
 
-                                <table width="100%">
-                                    <tr>
+                                <table class="table table-condensed">
+                                    <tr class="fontsize">
                                         <th data-field="aluno">NOME</th>
                                         <th data-field="aluno">NASCIMENTO</th>
                                         <th data-field="aluno">SEXO</th>
@@ -152,7 +152,7 @@ if (isset($_POST['listar_alunos_turma'])) {
                                     <tbody> 
                                         <?php
                                         foreach ($mostrar_aluno as $linha_aluno) {
-                                            echo "<tr>"
+                                            echo "<tr class='fontsize'>"
                                             . "<form action='' method='post'>" .
                                             "<td>" . $linha_aluno->nome_aluno . "</td>" .
                                             "<td>" . $linha_aluno->nascimento_aluno . "</td>" .
@@ -177,8 +177,8 @@ if (isset($_POST['listar_alunos_turma'])) {
                             <div class="panel-heading">LISTAGEM DE TODOS OS EDUCADORES</div>
                             <div class="panel-body box_conteudo">
 
-                                <table width="100%">
-                                    <tr>
+                                <table class="table table-condensed">
+                                    <tr class="fontsize">
                                         <th data-field="educador">NOME</th>
                                         <th data-field="educador">CURSO</th>
                                         <th data-field="educador">PÓS GRADUAÇÃO</th>
@@ -191,7 +191,7 @@ if (isset($_POST['listar_alunos_turma'])) {
                                     <tbody> 
                                         <?php
                                         foreach ($mostrar_educador as $linha_educador) {
-                                            echo "<tr>"
+                                            echo "<tr class='fontsize'>"
                                             . "<form action='' method='post'>" .
                                             "<td>" . $linha_educador->nome_professor . "</td>" .
                                             "<td>" . $linha_educador->curso_professor . "</td>" .
@@ -216,8 +216,8 @@ if (isset($_POST['listar_alunos_turma'])) {
                             <div class="panel-heading">LISTAGEM DE TODAS AS DISCIPLINAS</div>
                             <div class="panel-body box_conteudo">
 
-                                <table width="100%">
-                                    <tr>
+                                <table class="table table-condensed">
+                                    <tr class="fontsize">
                                         <th data-field="disciplina">DISCIPLINA</th>
                                         <th data-field="disciplina">H/A</th>
                                         <th data-field="disciplina">PROFESSOR</th>
@@ -232,7 +232,7 @@ if (isset($_POST['listar_alunos_turma'])) {
                                     <tbody> 
                                         <?php
                                         foreach ($mostrar_disciplina as $linha_disciplina) {
-                                            echo "<tr>"
+                                            echo "<tr class='fontsize'>"
                                             . "<form action='' method='post'>" .
                                             "<td>" . $linha_disciplina->nome_disciplina . "</td>" .
                                             "<td>" . $linha_disciplina->cargaHoraria_disciplina . "</td>" .
