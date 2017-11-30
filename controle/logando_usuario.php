@@ -23,6 +23,7 @@ if (isset($login)) {
     $_SESSION['id'] = $login->id_usuario;
     $_SESSION['nome'] = $login->nome_usuario;
     $_SESSION['email'] = $login->email_usuario;
+    $_SESSION['avatar'] = $login->avatar_usuario;
     $_SESSION['perfil'] = $login->perfil_usuario;
     $_SESSION['status'] = $login->status_usuario;
     $_SESSION['id_escola'] = $login->escola_id_escola;

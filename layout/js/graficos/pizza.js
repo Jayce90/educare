@@ -15,16 +15,12 @@ function drawChart() {
     data.addColumn('number', 'Slices');
     data.addRows([
         ['de 0 a 3 anos', 3],
-        ['de 3 a 5 anos', 1],
-        ['de 5 a 10 anos', 1],
-        ['de 10 a 14 anos', 1],
-        ['de 14 a 18 anos', 1],
-        ['de 18 a 21 anos', 2]
+        ['de 3 a 5 anos', 1]
     ]);
 
     // Set chart options
-    var options = {'title': 'Alunos por faixa etária',
-        'width': 600,
+    var options = {'title': 'Usuários da Platafoma',
+        'width': 500,
         'height': 500};
 
     // Instantiate and draw our chart, passing in some options.

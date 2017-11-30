@@ -10,6 +10,7 @@ class Usuario extends Crud {
     private $cpf;
     private $apelido;
     private $senha;
+    private $avatar;
     private $perfil;
     private $status;
     private $id_escola;
@@ -37,6 +38,10 @@ class Usuario extends Crud {
     function setSenha($senha) {
         $this->senha = $senha;
     }
+    
+    function setAvatar($avatar) {
+        $this->avatar = $avatar;
+    }
 
     function setPerfil($perfil) {
         $this->perfil = $perfil;
@@ -52,8 +57,8 @@ class Usuario extends Crud {
 
     public function inserir_usuario() {
         try {
-            $sql = "INSERT INTO usuario (nome_usuario, email_usuario, fone_usuario, cpf_usuario, apelido_usuario, senha_usuario, perfil_usuario, status_usuario, escola_id_escola) "
-                    . "VALUES (:nome, :email, :fone, :cpf, :apelido, :senha, :perfil, :status, :id_escola)";
+            $sql = "INSERT INTO usuario (nome_usuario, email_usuario, fone_usuario, cpf_usuario, apelido_usuario, senha_usuario, avatar_usuario, perfil_usuario, status_usuario, escola_id_escola) "
+                    . "VALUES (:nome, :email, :fone, :cpf, :apelido, :senha, :avatar, :perfil, :status, :id_escola)";
 
             $stmt = DB::prepare($sql);
             $stmt->bindParam(':nome', $this->nome);
@@ -62,6 +67,7 @@ class Usuario extends Crud {
             $stmt->bindParam(':cpf', $this->cpf);
             $stmt->bindParam(':apelido', $this->apelido);
             $stmt->bindParam(':senha', $this->senha);
+            $stmt->bindParam(':avatar', $this->avatar);
             $stmt->bindParam(':perfil', $this->perfil);
             $stmt->bindParam(':status', $this->status);
             $stmt->bindParam(':id_escola', $this->id_escola);
@@ -98,6 +104,18 @@ class Usuario extends Crud {
             return $stmt->fetchAll(PDO::FETCH_OBJ);
         } catch (Exception $exc) {
             echo 'Falha ao ler todos os Usuários pendentes<br>';
+            echo $exc->getMessage();
+        }
+    }
+    
+    public function usuarios_pendente_geral() {
+        try {
+            $sql = "SELECT * FROM usuario WHERE status_usuario = 'aguardando'";
+            $stmt = DB::prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
+        } catch (Exception $exc) {
+            echo 'Falha ao ler todos os Usuários pendentes no sistema<br>';
             echo $exc->getMessage();
         }
     }

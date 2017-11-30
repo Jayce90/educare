@@ -21,7 +21,7 @@ $id_escola = $_SESSION['id_escola'];
 
 $disciplina = new Disciplina();
 
-$disciplina ->setNome_disciplina($nome_disciplina);
+$disciplina ->setNome_disciplina(mb_strtoupper($nome_disciplina));
 $disciplina ->setDescricao_disciplina($descricao_disciplina);
 $disciplina ->setCargaHoraria_disciplina($cargaHoraria_disciplina);
 $disciplina ->setNivel_disciplina($nivel_disciplina);

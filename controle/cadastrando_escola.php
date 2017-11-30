@@ -36,11 +36,11 @@ $escola = new Escola();
 
 $escola ->setInep_escola($inep_escola);
 $escola ->setCPF_gestor($cpf_gestor);
-$escola ->setNome_gestor($nome_gestor);
+$escola ->setNome_gestor(mb_strtoupper($nome_gestor));
 $escola ->setCargo_gestor($cargo_gestor);
 $escola ->setEmail_gestor($email_gestor);
 $escola ->setSituacao_escola($situacao_escola);
-$escola ->setNome_escola($nome_escola);
+$escola ->setNome_escola(mb_strtoupper($nome_escola));
 $escola ->setCEP_escola($cep_escola);
 $escola ->setPolo_escola($polo_escola);
 $escola ->setDistrito_escola($distrito_escola);

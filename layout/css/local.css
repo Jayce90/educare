@@ -56,6 +56,11 @@
     margin-right: 30%;
 }
 
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
 .box_conteudo{
     background-color: #f6f3f3;
 }
@@ -163,7 +168,7 @@ th{
 .medidaboletim{
 
     height: 21cm;
-    width: 29.2cm;
+    width: 29.7cm;
 
 }
 
@@ -186,46 +191,13 @@ tbody{
 .medidaboletimII{
 
     height: 21cm;
-    width: 29.2cm; 
+    width: 29.7cm; 
 
 }
 
 .formatar{
 
     font-size: 12px;
-
-}
-.fontsize{
-    font-size: 16px;    
-
-}
-
-#fonte{
-
-    font-size: 16px;
-}
-
-@media print {
-
-    #noprint {
-        display : none          
-    }
-
-    #yesprint {
-
-        visibility:visible;
-        position: absolute;
-        top:0;
-        left:0;
-        margin:0;
-    }
-
-}
-
-#mapao {
-
-    float:left;
-    height:auto; 
 
 }
 

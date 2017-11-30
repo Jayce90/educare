@@ -58,13 +58,13 @@ $id_escola_aluno = $_SESSION['id_escola'];
 $aluno = new Aluno();
 
 $aluno->setInep_Aluno($inep_aluno);
-$aluno->setNome($nome_aluno);
+$aluno->setNome(mb_strtoupper($nome_aluno));
 $aluno->setNascimento($nascimento_aluno);
 $aluno->setSexo($sexo_aluno);
 $aluno->setNis($nis_aluno);
 $aluno->setRaca($raca_aluno);
-$aluno->setMae($mae_aluno);
-$aluno->setPai($pai_aluno);
+$aluno->setMae(mb_strtoupper($mae_aluno));
+$aluno->setPai(mb_strtoupper($pai_aluno));
 $aluno->setNacionalidade($nacionalidade_aluno);
 $aluno->setPais_nasc($pais_nasc_aluno);
 $aluno->setEstado_nasc($estado_nasc_aluno);

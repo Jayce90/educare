@@ -29,7 +29,7 @@ $id_escola = isset($_POST['cad_id_escola_turma']) ? $_POST['cad_id_escola_turma'
 
 $turma = new Turma();
 
-$turma->setNome_turma($nome_turma);
+$turma->setNome_turma(mb_strtoupper($nome_turma));
 $turma->setCapacidade_turma($capacidade_turma);
 $turma->setAno_turma($ano_turma);
 $turma->setHorario_turma($horario_turma);
