@@ -115,6 +115,20 @@ class Disciplinaealuno extends Crud {
 
     }
     
+    public function ler_alunos_turma_geral($id_turma) {
+        try {
+            $sql = "SELECT DISTINCT A.nome_aluno, A.sexo_aluno, A.nascimento_aluno, A.mae_aluno, A.deficiencia_aluno, A.transporte_aluno FROM aluno A INNER JOIN disciplinaEaluno D ON A.id_aluno = D.aluno_id_aluno AND D.disciplina_turma_id_turma = :id_turma ORDER BY A.nome_aluno";
+            $stmt = DB::prepare($sql);
+            $stmt->bindParam(':id_turma', $id_turma);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
+        } catch (Exception $exc) {
+            echo 'Falha ao ler todos os alunos por turma <br>';
+            echo $exc->getMessage();
+        }
+
+    }
+    
     public function ler_alunos_disciplina($id_disciplina, $id_turma, $id_escola) {
         try {
             $sql = "SELECT A.nome_aluno FROM aluno A INNER JOIN disciplinaEaluno D ON A.id_aluno = D.aluno_id_aluno AND D.disciplina_id_disciplina = :id_disciplina AND D.disciplina_turma_id_turma = :id_turma AND D.disciplina_lotacao_escola_id_escola = :id_escola ORDER BY A.nome_aluno";
@@ -126,6 +140,21 @@ class Disciplinaealuno extends Crud {
             return $stmt->fetchAll(PDO::FETCH_OBJ);
         } catch (Exception $exc) {
             echo 'Falha ao ler todos os alunos por turma <br>';
+            echo $exc->getMessage();
+        }
+
+    }
+    
+    public function ler_alunos_disciplina_geral($id_disciplina, $id_turma) {
+        try {
+            $sql = "SELECT A.nome_aluno FROM aluno A INNER JOIN disciplinaEaluno D ON A.id_aluno = D.aluno_id_aluno AND D.disciplina_id_disciplina = :id_disciplina AND D.disciplina_turma_id_turma = :id_turma ORDER BY A.nome_aluno";
+            $stmt = DB::prepare($sql);
+            $stmt->bindParam(':id_disciplina', $id_disciplina);
+            $stmt->bindParam(':id_turma', $id_turma);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
+        } catch (Exception $exc) {
+            echo 'Falha ao ler todos os alunos por disciplina geral <br>';
             echo $exc->getMessage();
         }
 

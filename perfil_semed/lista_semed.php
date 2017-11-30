@@ -3,7 +3,7 @@ session_start();
 require '../controle/autenticacao.php';
 include_once '../classes/Turma.php';
 include_once '../classes/Aluno.php';
-include_once '../classes/Lotacao.php';
+include_once '../classes/Educador.php';
 include_once '../classes/Disciplina.php';
 include_once '../classes/Disciplinaealuno.php';
 
@@ -13,16 +13,16 @@ $id_escola = $_SESSION['id_escola'];
 $ano_lotacao = "2017";
 
 $listar_turmas = new Turma();
-$mostrar_turma = $listar_turmas->listagem_por_escola($id_escola, "turma");
+$mostrar_turma = $listar_turmas->ler_todos("turma");
 
 $listar_alunos = new Aluno();
-$mostrar_aluno = $listar_alunos->ler_todos_alunos_escola($id_escola);
+$mostrar_aluno = $listar_alunos->ler_todos("aluno");
 
-$listar_educador = new Lotacao();
-$mostrar_educador = $listar_educador->listagem_lotacao($id_escola, $ano_lotacao);
+$listar_educador = new Educador();
+$mostrar_educador = $listar_educador->ler_todos("professor");
 
 $listar_disciplina = new Disciplina();
-$mostrar_disciplina = $listar_disciplina->ler_professor_turma($id_escola);
+$mostrar_disciplina = $listar_disciplina->ler_todas_disciplinas();
 
 $listar_alunos_turma = new Disciplinaealuno();
 
@@ -30,7 +30,7 @@ if (isset($_POST['listar_alunos_turma'])) {
 
     $id_lista_turma = isset($_POST['id_lista_turma']) ? $_POST['id_lista_turma'] : '';
 
-    $mostrar_alunos_turma = $listar_alunos_turma->ler_alunos_turma($id_lista_turma, $id_escola);
+    $mostrar_alunos_turma = $listar_alunos_turma->ler_alunos_turma_geral($id_lista_turma);
     echo "<script>abrirmodal()</script>";
 } elseif (!isset($_POST['listar_alunos_turma'])) {
     unset($mostrar_disciplinas);
@@ -47,6 +47,7 @@ if (isset($_POST['listar_alunos_turma'])) {
         <script src="../layout/js/bootstrap.min.js"></script>
         <script src="../layout/js/mascara_local.js"></script>
         <script src="../layout/js/validacao_local.js"></script>
+        <script src="../js_local/ajax_local.js"></script>
         <link rel="shortcut icon" href="../imagens/icone.png" type="image/x-icon">
         <title>LISTAS</title>
     </head>
@@ -311,7 +312,7 @@ if (isset($_POST['listar_alunos_turma'])) {
                                         </select>
                                     </div>
                                 </div><br>
-                                <button class="btn btn-primary btn-lg" id="buscar" type="button" onclick="listar_alunosDisciplina(document.getElementById('turma_disciplina').value, document.getElementById('disciplina').value)">Listar Alunos</button>
+                                <button class="btn btn-primary btn-lg" id="buscar" type="button" onclick="listar_alunosDisciplina_geral(document.getElementById('turma_disciplina').value, document.getElementById('disciplina').value)">Listar Alunos</button>
 
                                 <hr>
 

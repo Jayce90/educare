@@ -83,5 +83,20 @@ class Disciplina extends Crud {
             echo $exc->getMessage();
         }
     }
+    
+    public function ler_todas_disciplinas() {
+        try {
+            $sql = "SELECT Resultado.id_disciplina, Resultado.id_professor, Resultado.nome_professor, Resultado.curso_professor, Resultado.nome_disciplina, Resultado.cargaHoraria_disciplina, 
+                    Resultado.id_turma, Resultado.nome_turma, Resultado.capacidade_turma, Resultado.nivel_turma, Resultado.etapa_turma, Resultado.turno_turma FROM 
+                    (SELECT * FROM disciplina INNER JOIN professor ON professor.id_professor = disciplina.lotacao_professor_id_professor
+                    INNER JOIN turma ON turma.id_turma = disciplina.turma_id_turma) as Resultado";
+            $stmt = DB::prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
+        } catch (Exception $exc) {
+            echo 'Falha ao ler todos os dados de Professor e Turma<br>';
+            echo $exc->getMessage();
+        }
+    }
 
 }

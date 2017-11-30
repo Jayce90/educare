@@ -15,11 +15,32 @@ function listar_alunosTurmas(turma)
                     $("#dados").html(msg);
                 }
             });
+            
 }
 
 function listar_alunosDisciplina(turma, disciplina)
 {
     var page = "../controle/buscar_alunos_disciplina.php";
+    $.ajax
+            ({
+                type: 'POST',
+                dataType: 'html',
+                url: page,
+                beforeSend: function () {
+                    $("#dados_lista_aluno").html("carregando...");
+                },
+                data: {turma: turma,
+                    disciplina: disciplina},
+                success: function (msg)
+                {
+                    $("#dados_lista_aluno").html(msg);
+                }
+            });
+}
+
+function listar_alunosDisciplina_geral(turma, disciplina)
+{
+    var page = "../controle/buscar_alunos_disciplina_geral.php";
     $.ajax
             ({
                 type: 'POST',
