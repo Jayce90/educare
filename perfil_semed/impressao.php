@@ -45,7 +45,7 @@ and open the template in the editor.
 
             <!-- Navigation Buttons -->
             <div class="col-md-2" id="noprint">
-                <ul class="nav nav-pills nav-stacked" id="myTabs">
+                <ul class="nav nav-pills nav-stacked" id="mytabs">
                     <li class="active"><a class="glyphicon glyphicon-list-alt" href="#imprimir_boletim" data-toggle="pill"> Imprimir Boletim</a></li>
                     <li><a class="glyphicon glyphicon-list-alt" href="#imprimir_relatorio" data-toggle="pill"> Imprimir Relatório</a></li>
                     <li><a class="glyphicon glyphicon-list-alt" href="#imprimir_mapa" data-toggle="pill"> Imprimir Mapa</a></li>                    

@@ -23,6 +23,11 @@
     height: 100%;
 }
 
+.enviar-mensagem{
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
 .cursor_alterado {
     cursor:Pointer;
 }
@@ -41,14 +46,31 @@
     text-align: center;
 }
 
+.centralizar{
+    text-align: center;
+}
+
 #box_login{
     margin-top: 5%;
     margin-left: 30%;
     margin-right: 30%;
 }
 
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
 .box_conteudo{
     background-color: #f6f3f3;
+}
+
+.media_conteudo{
+    padding: 2%;
+}
+
+.chat{
+    color: #ffffff;
 }
 
 #titulo{
@@ -87,6 +109,14 @@ label{
     font-size: 22px;
 }
 
+.rolagem{
+    background-color: #324270;
+    color: white;
+    width: 100%;
+    height: 60%;
+    overflow: auto;
+}
+
 .table{
     text-align: center;
     font-size: 7px;
@@ -97,7 +127,7 @@ label{
 th{
 
     text-align: center;
-    font-size: 7x;
+    
 }
 
 .medidasmapao {
@@ -214,4 +244,9 @@ tbody{
 #afonte {
 
     color: #ffffff
+}
+
+#mytabs {
+    
+    color: #0066cc;
 }
