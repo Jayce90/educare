@@ -25,7 +25,7 @@ Semed();
 
 
 
-        <title>SECRETARIA ESCOLAR</title>
+        <title>SEMED</title>
     </head>
 
     <body>
@@ -45,6 +45,7 @@ Semed();
                         <li class="active"><a class="glyphicon glyphicon-home"> Início<span class="sr-only">(current)</span></a></li>
                         <li><a class="glyphicon glyphicon-plus" href="cadastro_semed.php"> Cadastrar</a></li>
                         <li><a class="glyphicon glyphicon-list" href="lista_semed.php"> Listar</a></li>
+                        <li><a class="glyphicon glyphicon-list-alt" href="impressao.php"> Imprimir</a></li>
                         <li><a class="glyphicon glyphicon-pencil" href="feed_semed.php"> Feed</a></li>
                         <li><a class="glyphicon glyphicon-comment" href="chat_semed.php"> Chat</a></li>
                         <li><a class="glyphicon glyphicon-alert" href="../controle/sair.php"> Sair</a></li>
