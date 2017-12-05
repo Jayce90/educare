@@ -61,7 +61,7 @@ and open the template in the editor.
                             <div class="panel-heading" id="noprint">BOLETIM</div>
                             <div class="panel-body box_conteudo" id="yesprint">
 
-                                <div class="medidaboletimII">
+                                <div class="medidaboletim">
 
                                     <div class="text-center">  
 
@@ -70,57 +70,25 @@ and open the template in the editor.
                                     </div>
 
                                     <div class="text-center">
-                                        <label><h6><b>GOVERNO DO ESTADO DO PARÁ</b></h6></label><br>
 
-                                        <label><h6><b>PREFEITURA MUNICIPAL DE TOMÉ - AÇU</b></h6></label><br>
+                                        <span><h4><b>GOVERNO DO ESTADO DO PARÁ</b></h4></span>
 
-                                        <label><h6><b>SECRETARIA MUNICIPAL DE EDUCAÇÃO E DESPORTO - SEMED</b></h6></label><br>
+                                        <span><h4><b>PREFEITURA MUNICIPAL DE TOMÉ - AÇU</b></h4></span>
 
-                                        <label><h6><b>RESOLUÇÃO Nº 469/2009 CEE/PA REGIMENTO UNIFICADO</b></h6></label><br>
+                                        <span><h4><b>SECRETARIA MUNICIPAL DE EDUCAÇÃO E DESPORTO - SEMED</b></h4></span>
 
-                                        <label><h6><b>RESOLUÇÃO Nº 04/2011 COMED/TA - APROVA A ESTRUTURA CURRICULAR UNIFICADA DE ENSINO FUNDAMENTAL DE 1º AO 9º ANO</b></h6></label>
+                                        <span><h6><b>Resolução nº. 469/2009 CEE – Regimento Unificado</b></h6></span><br>
 
-                                        <label><h6><b>AUTORIZAÇÃO DE FUNCIONAMENTO: RESOLUÇÃO Nº - COMED/TA</b></h6></label><br>
 
-                                        <label>"Nome da Escola"</label><br>
-
-                                        <label><h6>INEP :   REGIMENTAR : 6,0</h6></label>
-
-                                        <h3><b>BOLETIM ESCOLAR - ANO LETIVO "ano"</b></h3>
+                                        <h3><b>BOLETIM ESCOLAR - ANO LETIVO "****"</b></h3><br>
 
                                     </div>
 
-                                    <ul>                                        
-                                        <hr style="height:1px; color:#000; background-color:#000; margin-top: 0px; margin-bottom: 0px;"/>
-
-                                    </ul>
-
-                                    <div class="row">
-                                        <div class="col-md-8"><label><h5><b>"Nome da escola"</b></h5></label></div>
-                                        <div class="col-md-4"><label><h5><b>"INEP da escola"</b></h5></label></div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-md-8"><label><h6>ALUNO(A) :</h6></label></div>
-                                        <div class="col-md-4"><label><h6>NASC :</h6></label></div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-md-8"><label><h6>CURSO :</h6></label></div>
-                                        <div class="col-md-4"><label><h6>REGIME : ANO</h6></label></div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-md-3"><label><h6>TURMA :</h6></label></div>
-                                        <div class="col-md-3"><label><h6>ANO/SÉRIE/ETAPA :</h6></label></div>
-                                        <div class="col-md-3"><label><h6>SEXO :</h6></label></div>
-                                        <div class="col-md-3"><label><h6>TURNO :</h6></label></div>
-                                    </div>
-
-                                    <ul>                                        
-                                        <hr style="height:1px; color:#000; background-color:#000; margin-top: 0px; margin-bottom: 0px;"/>
-
-                                    </ul>
+                                    <p class="text-justify"><h5><b>Escola Municipal de Ensino Infantil e Fundamental “________________”  INEP:_______ <br><br> 
+                                            Aluno (a): __________________  Nascimento: ___/___/______ <br><br>
+                                            Curso:___________ Regime: Ano _________<br><br>
+                                            Turma: ________  Ano/Série/Etapa: ___________ Sexo: ____ Turno: _______<br><br>
+                                        </b></h5></p>
 
 
                                     <table class="table table-bordered">
@@ -149,67 +117,46 @@ and open the template in the editor.
 
                                     </table>
 
-                                    <div class="row">
-                                        <div class="col-md-6"><h4><b>FREQUÊNCIA ANUAL :</b></h4></div>
+                                    <table class="table table-bordered">
 
-                                        <div class="col-md-6"><h4><b>RESULTADO FINAL :</b></h4></div>
-                                    </div>
+                                        <tr>
+                                            <th>FREQUÊNCIA ANUAL :</th>
+                                            <th>RESULTADO FINAL :</th>                    
+                                        </tr>
 
-                                    <div class="row">
-                                        <div class="col-md-6">                
-                                            <h5>FÓRMULA - PESO 6 - REGIME DE ANO</h5>
+                                        <tr>
 
-                                            <fieldset class="formatar">
-                                                <p>1. O aluno terá 4 Avaliações bimestrais;</p> 
-                                                <p>2. A nota minima de aprovação é 6.0;</p> 
-                                                <p>3. Exigência de 75% de frequência anual do aluno;</p> 
-                                                <p>4. Serão oferecidas 2 recuperações semestrais; </p> 
-                                                <p>a) 1º Semestre em todas as disciplinas onde o aluno não obtiver 18 pontos;</p> 
-                                                <p>b) 2º Semestre somente em 4 discipinas onde o aluno não obtiver 60 pontos;</p>
-                                                <P>FÓRMULA PARA CÁLCULO DA MÉDIA ANUAL</P>
-                                                <P>MA=(1Av. x 1)+(2Av. x 2)+(3Av. x 3)+(4Av. x 4) = 60 / 10 = 6.0</P>
+                                            <td>FÓRMULA - PESO 6 - REGIME DE ANO<br>
+                                                1. O aluno terá 4 Avaliações bimestrais;<br>
+                                                2. A nota minima de aprovação é 6.0;<br>
+                                                3. Exigência de 75% de frequência anual do aluno;<br>
+                                                4. Serão oferecidas 2 recuperações semestrais;<br>
+                                                a) 1º Semestre em todas as disciplinas onde o aluno não obtiver 18 pontos;<br>
+                                                b) 2º Semestre somente em 4 discipinas onde o aluno não obtiver 60 pontos;<br>
+                                                FÓRMULA PARA CÁLCULO DA MÉDIA ANUAL<br>
+                                                MA=(1Av. x 1)+(2Av. x 2)+(3Av. x 3)+(4Av. x 4) = 60 / 10 = 6.0               
 
-                                            </fieldset>
+                                            </td>
+                                            <td>
+                                                FÓRMULA - PESO 6 - REGIME DE ANO<br>
+                                                1. O aluno terá 4 Avaliações bimestrais;<br>
+                                                2. A nota minima de aprovação é 5.0;<br>
+                                                3. Exigência de 75% de frequência anual do aluno;<br>
+                                                4. Serão oferecidas 2 recuperações semestrais;<br>
+                                                a) 1º Semestre em todas as disciplinas onde o aluno não obtiver 15 pontos;<br>
+                                                b) 2º Semestre somente em 4 discipinas onde o aluno não obtiver 50 pontos;<br>
+                                                FÓRMULA PARA CÁLCULO DA MÉDIA ANUAL<br>
+                                                MA=(1Av. x 2)+(2Av. x 3)+(3Av. x 2)+(4Av. x 3) = 50 / 10 = 5.0
 
-                                        </div>
+                                            </td>
 
-                                        <div class="col-md-6">
+                                        </tr>          
 
-                                            <h5>FÓRMULA - PESO 5 - REGIME DE SÉRIE</h5>
+                                    </table>
 
-                                            <fieldset class="formatar">
-                                                <p>1. O aluno terá 4 Avaliações bimestrais;</p> 
-                                                <p>2. A nota minima de aprovação é 5.0;</p> 
-                                                <p>3. Exigência de 75% de frequência anual do aluno;</p> 
-                                                <p>4. Serão oferecidas 2 recuperações semestrais; </p> 
-                                                <p>a) 1º Semestre em todas as disciplinas onde o aluno não obtiver 15 pontos;</p> 
-                                                <p>b) 2º Semestre somente em 4 discipinas onde o aluno não obtiver 50 pontos;</p>
-                                                <P>FÓRMULA PARA CÁLCULO DA MÉDIA ANUAL</P>
-                                                <P>MA=(1Av. x 2)+(2Av. x 3)+(3Av. x 2)+(4Av. x 3) = 50 / 10 = 5.0</P>
 
-                                            </fieldset>
+                                    <p class="text-center">EDUCADOR(A) DIRIGENTE: __________________________    EDUCADOR(A): __________________________</p><br>
 
-                                        </div>
-
-                                    </div>
-
-                                    <div class="row" id="fonte">
-
-                                        <div class="col-md-6">
-
-                                            <p>_____________________________________</p>
-                                            SECRETÁRIO(A)
-
-                                        </div>
-
-                                        <div class="col-md-6">
-
-                                            <p>_____________________________________</p>
-                                            DIRETOR(A)
-
-                                        </div>
-
-                                    </div>
 
                                 </div><br>
 
@@ -232,62 +179,19 @@ and open the template in the editor.
                                         <img class="tomeacuboletim" src="../imagens/tomeacu.png" alt="brasao">   
 
                                     </div>
+                                    <div class="text-justify">
+                                        <p>SECRETARIA MUNICIPAL DE EDUCAÇÃO E DESPORTO - SEMED</p>
 
-                                    <label>SECRETARIA MUNICIPAL DE EDUCAÇÃO E DESPORTO - SEMED</label><br>
+                                        <p>ESCOLA MUNICIPAL DE ENSINO FUNDAMENTAL _________________________</p>   
 
-                                    <label>ESCOLA MUNICIPAL DE ENSINO FUNDAMENTAL</label><br>   
+                                        <p>NIVEL DE ENSINO:_________ ENSINO FUNDAMENTAL - ANOS FINAIS: __________<br> MÉDIA DE APROVAÇÃO: _______</p>
 
-                                    <div class="row">
-
-                                        <div class="col-md-4">
-
-                                            <label>NÍVEL DE ENSINO:</label>
-                                        </div>
-
-                                        <div class="col-md-4">
-
-                                            <label>ENSINO FUNDAMENTAL – ANOS FINAIS:</label>
-
-                                        </div>
-
-                                        <div class="col-md-4">
-
-                                            <label>MÉDIA DE APROVAÇÃO:</label>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-
-                                        <div class="col-md-3">
-
-                                            <label>ANO:</label>               
-
-                                        </div>
-
-                                        <div class="col-md-3">
-
-                                            <label>TURMA:</label>
-
-                                        </div>
-
-                                        <div class="col-md-3">
-
-                                            <label>TURNO:</label>
-
-                                        </div>
-
-                                        <div class="col-md-3">
-
-                                            <label>ANO:</label>
-
-                                        </div>
-
+                                        <p>ANO:_______ TURMA: ________ TURNO: _______ ANO:________</p>
                                     </div>
 
                                     <div class="tituloboletim">
 
-                                        <label>RELATÓRIO DE RESULTADO FINAL</label><br>
+                                        <h3><b>RELATÓRIO DE RESULTADO FINAL</b></h3>
 
                                     </div>
 
@@ -330,23 +234,7 @@ and open the template in the editor.
 
                                     </table>
 
-                                    <div class="row" id="fonte">
-
-                                        <div class="col-md-6">
-
-                                            <p>_____________________________________</p>
-                                            SECRETÁRIO(A)
-
-                                        </div>
-
-                                        <div class="col-md-6">
-
-                                            <p>_____________________________________</p>
-                                            DIRETOR(A)
-
-                                        </div>
-
-                                    </div><br>
+                                    <p class="text-center">EDUCADOR(A) DIRIGENTE: _______________    SECRETÁRIO(A): _______________</p>
 
                                     <button type="submit" class="btn btn-success btn-lg" onClick="window.print()" id="noprint">Imprimir</button>
 
